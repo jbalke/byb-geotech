@@ -1,4 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import Head from 'next/head';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -24,6 +25,12 @@ const theme = {
 function App({ Component, pageProps }) {
   return (
     <>
+      <Head>
+        <link
+          rel='stylesheet'
+          href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css'
+        />
+      </Head>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Component {...pageProps} />

@@ -50,7 +50,7 @@ const StyledLink = styled.a`
     bottom: 0;
     left: 0;
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(0.25em);
     transition: transform 150ms ease-out, opacity 150ms ease-out;
   }
   &:hover::after,
