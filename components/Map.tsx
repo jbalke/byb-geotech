@@ -41,7 +41,7 @@ const Map = ({ camera, bores }: Props) => {
     latitude: MAP_CENTER[1], //-21.142,
     zoom: 11,
     width: '100%',
-    height: 400,
+    height: 600,
   });
 
   const [selectedBore, setSelectedBore] = useState<Bore | null>(null);

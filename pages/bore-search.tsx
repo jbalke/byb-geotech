@@ -17,6 +17,8 @@ import {
 } from '../utils/geocoding';
 import { useForm, Controller } from 'react-hook-form';
 import styled from 'styled-components';
+import InputWarning from '../components/InputWarning';
+import isEmail from 'validator/lib/isEmail';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const {
@@ -52,8 +54,21 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 const MapSearchContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 400px auto;
   gap: 1rem;
+`;
+
+const StyledForm = styled.form`
+  label {
+    display: block;
+    margin-top: 1rem;
+  }
+
+  label input {
+    display: block;
+    width: 100%;
+    padding: 0.5em;
+  }
 `;
 
 type Option = {
@@ -77,14 +92,26 @@ type Props = { mapCenter: [number, number]; bores: Bore[] };
 
 const BoreSearch = ({ mapCenter, bores }: Props) => {
   const router = useRouter();
-  const [address, setAddress] = useState<Option | null>(null);
-  const { handleSubmit, control, register, setValue } = useForm<FormData>();
+  const {
+    handleSubmit,
+    control,
+    register,
+    setValue,
+    getValues,
+    errors,
+    formState: { isValid },
+  } = useForm<FormData>({
+    mode: 'onTouched',
+    defaultValues: {
+      name: '',
+      email: '',
+    },
+  });
 
   const camera = useMemo(
     () => ({ center: mapCenter, zoom: bores.length ? 14 : 11 }),
     [mapCenter[0], mapCenter[1], bores.length]
   );
-  console.log({ bores });
 
   const getLocationOptions = useCallback(
     debounce((query: string, callback: any) => {
@@ -104,9 +131,9 @@ const BoreSearch = ({ mapCenter, bores }: Props) => {
   );
 
   const handleChange = (value: Option | null, action: ActionMeta<Option>) => {
-    console.log({ value, action });
+    // console.log({ value, action });
 
-    setAddress(value);
+    setValue('address', value);
     if (value) {
       router.push(`?lng=${value.value[0]}&lat=${value.value[1]}`);
     } else {
@@ -121,30 +148,62 @@ const BoreSearch = ({ mapCenter, bores }: Props) => {
   return (
     <Layout title='Bore Search'>
       <MapSearchContainer>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <input name='name' type='text' placeholder='Name' ref={register} />
-          <input name='email' type='email' placeholder='Email' ref={register} />
-          <input name='phone' type='text' placeholder='Phone' ref={register} />
-          <AsyncSelect
-            value={address}
-            loadOptions={getLocationOptions}
-            onChange={handleChange}
-            placeholder='Enter address or POI'
-            isClearable
-          />
-          {/* <Controller
-            name='address'
-            as={AsyncSelect}
-            control={control}
-            loadOptions={getLocationOptions}
-            onChange={handleChange}
-            isClearable
-            placeholder='Enter address or POI'
-            defaultValue=''
-          /> */}
+        <StyledForm onSubmit={handleSubmit(onSubmit)}>
+          <label>
+            Name
+            <input
+              name='name'
+              type='text'
+              placeholder='Name'
+              ref={register({ required: 'Required', maxLength: 25 })}
+            />
+          </label>
+          {errors.name && <InputWarning message={errors.name.message!} />}
+          <label>
+            Email
+            <input
+              name='email'
+              type='email'
+              placeholder='Email'
+              ref={register({
+                required: 'Required',
+                validate: (value) =>
+                  isEmail(value) || 'Not a valid emaill address',
+              })}
+            />
+          </label>
+          {errors.email && <InputWarning message={errors.email.message!} />}
+          <label>
+            Phone (optional)
+            <input
+              name='phone'
+              type='text'
+              placeholder='Phone'
+              ref={register}
+            />
+          </label>
+          <label>
+            Address
+            <Controller
+              name='address'
+              render={({ value }) => (
+                <AsyncSelect
+                  value={value}
+                  loadOptions={getLocationOptions}
+                  onChange={handleChange}
+                  placeholder='Enter address or POI'
+                  isClearable
+                />
+              )}
+              control={control}
+            />
+          </label>
+          <input type='submit' disabled={!isValid} />
 
-          <input type='submit' value='' />
-        </form>
+          <pre style={{ whiteSpace: 'break-spaces' }}>
+            {JSON.stringify(getValues())}
+          </pre>
+        </StyledForm>
 
         <ClientRenderedMap camera={camera} bores={bores} />
       </MapSearchContainer>
