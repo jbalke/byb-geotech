@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Theme } from '../styles/theme';
 
 const WarningContainer = styled.div`
   display: flex;
   align-items: center;
-  color: red;
+  color: ${Theme.color.danger};
   font-size: 1rem;
   margin-top: 5px;
 `;

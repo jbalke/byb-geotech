@@ -3,10 +3,14 @@ import debounce from 'lodash/debounce';
 import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useMemo } from 'react';
+import { Controller, useForm } from 'react-hook-form';
 import { ActionMeta } from 'react-select';
 import AsyncSelect from 'react-select/async';
-import { MAP_CENTER } from '../constants';
+import styled from 'styled-components';
+import isEmail from 'validator/lib/isEmail';
+import InputWarning from '../components/InputWarning';
+import { BORE_SEARCH_RADIUS, MAP_CENTER } from '../constants';
 import Layout from '../layouts/Main';
 import { Bore } from '../types/bore';
 import { FeatureCollection } from '../types/geojson-types';
@@ -15,10 +19,8 @@ import {
   isValidCoordinates,
   parseCoordinates,
 } from '../utils/geocoding';
-import { useForm, Controller } from 'react-hook-form';
-import styled from 'styled-components';
-import InputWarning from '../components/InputWarning';
-import isEmail from 'validator/lib/isEmail';
+
+//TODO: Use map to confirm provided address, not to show bores (report number of bores found within 1Km of address). Inform user that an email will be sent with bore information.
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const {
@@ -28,10 +30,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   if (lng && lat && isValidCoordinates(lng as string, lat as string)) {
     try {
       const { data } = await axios.get<Bore[]>(
-        `http://localhost:5000/api/v1/bores/search?lng=${lng}&lat=${lat}&radius=1000`
+        `${process.env.BORE_API_URL}/bores/search?lng=${lng}&lat=${lat}&radius=${BORE_SEARCH_RADIUS}`
       );
-
-      console.log({ data });
 
       return {
         props: {

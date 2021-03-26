@@ -92,7 +92,7 @@ const Map = ({ camera, bores }: Props) => {
               e.preventDefault(), setSelectedBore(bore);
             }}
           >
-            <Img src='/water-marker.svg' alt='Bore' />
+            <Img src='/assets/water-marker.svg' alt='Bore' />
           </Button>
         </Marker>
       ))}
