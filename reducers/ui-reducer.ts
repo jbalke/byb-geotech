@@ -1,5 +1,5 @@
-import { Action } from '../actions/ui-actions';
-import navLinks, { SubmenuLinks } from '../data/main-menu';
+import { Action } from 'actions/ui-actions';
+import navLinks, { SubmenuLinks } from 'data/main-navigation';
 
 export const initialState = {
   isSidebarOpen: false,

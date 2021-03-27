@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Theme } from '../styles/theme';
+import { Theme } from 'styles/theme';
 
 const Button = styled.button<{
   size?: 'sm' | 'lg';

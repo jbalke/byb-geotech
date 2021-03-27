@@ -2,8 +2,8 @@ import * as d3 from 'd3-ease';
 import React, { useEffect, useState } from 'react';
 import ReactMapGL, { FlyToInterpolator, Marker, Popup } from 'react-map-gl';
 import { MAP_CENTER } from '../constants';
-import { Bore } from '../types/bore';
-import BoreMarker from '../assets/water-marker.svg';
+import { Bore } from 'types/bore';
+import BoreMarker from 'assets/water-marker.svg';
 import styled from 'styled-components';
 
 const Button = styled.button`

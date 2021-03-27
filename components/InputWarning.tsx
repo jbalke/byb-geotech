@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Theme } from '../styles/theme';
+import { Theme } from 'styles/theme';
 
 const WarningContainer = styled.div`
   display: flex;

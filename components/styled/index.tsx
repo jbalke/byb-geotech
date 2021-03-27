@@ -1,6 +1,6 @@
 // Misc styled components
-import styled, { keyframes } from 'styled-components';
-import { Theme } from '../../styles/theme';
+import styled, { keyframes, css } from 'styled-components';
+import { Theme } from 'styles/theme';
 
 // KEYFRAMES
 export const FadeIn = keyframes`
@@ -13,11 +13,27 @@ export const FadeIn = keyframes`
   }
 `;
 
+export const FadeOut = keyframes`
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+`;
+
 // WRAPPERS
-export const Wrapper = styled.div<{ maxWidth?: string }>`
+export const Wrapper = styled.div<{ maxWidth?: string; main?: boolean }>`
   width: 100%;
   max-width: ${({ maxWidth }) => maxWidth ?? Theme.width.max};
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+
+  ${({ main }) =>
+    main &&
+    css`
+      min-height: 100vh;
+    `}
 `;

@@ -1,10 +1,10 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { UIProvider } from '../context/ui-context';
-import { BREAKPOINTS } from '../styles/style-constants';
-import { DarkTheme, Theme } from '../styles/theme';
-import '../font/font.css';
+import { UIProvider } from 'context/ui-context';
+import { BREAKPOINTS } from 'styles/style-constants';
+import { DarkTheme, Theme } from 'styles/theme';
+import 'font/font.css';
 
 const GlobalStyle = createGlobalStyle`
   html {
