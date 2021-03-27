@@ -34,18 +34,22 @@ type MainNavigationBoxProps = {
   description: string;
   imageSrc: string;
   title: string;
+  url: string;
 };
 
 function MainNavBox({
   description,
   imageSrc,
   title,
+  url,
 }: MainNavigationBoxProps): ReactElement {
   return (
     <Wrapper>
-      <MainNavBoxImage src={imageSrc} alt='' />
-      <MainNavBoxTitle>{title}</MainNavBoxTitle>
-      <MainNavBoxDescription>{description}</MainNavBoxDescription>
+      <a href={url}>
+        <MainNavBoxImage src={imageSrc} alt='' />
+        <MainNavBoxTitle>{title}</MainNavBoxTitle>
+        <MainNavBoxDescription>{description}</MainNavBoxDescription>
+      </a>
     </Wrapper>
   );
 }

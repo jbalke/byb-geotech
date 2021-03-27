@@ -68,6 +68,35 @@ export const Wrapper = styled.div`
   }
 `;
 
+const DropdownContext = React.createContext<{
+  isFocused: boolean;
+  handleFocus: () => void;
+  handleBlur: () => void;
+}>(null!);
+type ProviderProps = { children: React.ReactNode };
+
+function DropdownProvider({ children }: ProviderProps) {
+  const [isFocused, setIsFocused] = useState(false);
+  const handleFocus = () => setIsFocused(true);
+  const handleBlur = () => setIsFocused(false);
+
+  return (
+    <DropdownContext.Provider value={{ isFocused, handleFocus, handleBlur }}>
+      {children}
+    </DropdownContext.Provider>
+  );
+}
+
+function useDropdownState() {
+  const dropdownState = React.useContext(DropdownContext);
+
+  if (dropdownState === undefined) {
+    throw new Error('useDropdownState must be used within a DropdownProvider');
+  }
+
+  return dropdownState;
+}
+
 type NavigationItemProps = {
   label: string;
   dropdownContent: ReactNode;

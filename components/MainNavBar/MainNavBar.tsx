@@ -1,4 +1,4 @@
-import navLinks from 'data/main-navigation';
+import navLinks, { extraLinks } from 'data/main-navigation';
 import React from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
@@ -82,36 +82,11 @@ const MainNavBar = () => {
                       description='TBD'
                       imageSrc='http://placekitten.com/300'
                       title={link.label}
+                      url={link.url}
                     />
                   ))}
                 </MainNavBoxes>
-                <MainNavBoxExtras
-                  links={[
-                    {
-                      label: 'Marketing Link',
-                      to: '#',
-                    },
-                    {
-                      label: 'Marketing Link',
-                      to: '#',
-                    },
-                    ,
-                    {
-                      label: 'Marketing Link',
-                      to: '#',
-                    },
-                    null,
-                    {
-                      label: 'Marketing Link',
-                      to: '#',
-                    },
-                    ,
-                    {
-                      label: 'Marketing Link',
-                      to: '#',
-                    },
-                  ]}
-                />
+                <MainNavBoxExtras links={extraLinks} />
               </MainNavBoxesExtras>
             }
           />

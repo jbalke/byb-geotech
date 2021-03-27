@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../styles/theme';
+import { ExtraLink } from 'data/main-navigation';
+import { Theme } from 'styles/theme';
 
 const Wrapper = styled.div`
   display: flex;
@@ -25,14 +26,6 @@ const Wrapper = styled.div`
     border: 1px solid rgba(255, 255, 255, 0.15);
   }
 `;
-
-export type ExtraLink =
-  | {
-      label: string;
-      to: string;
-    }
-  | null
-  | undefined;
 
 type MainNavBoxExtrasProps = {
   links: ExtraLink[];
