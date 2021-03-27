@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import navLinks from 'data/main-navigation';
+import React from 'react';
 import styled from 'styled-components';
-import MainNavItem, { Wrapper } from './MainNavItem';
 import { Theme } from 'styles/theme';
-import navLinks, { SubmenuLinks } from 'data/main-navigation';
+import MainNavBoxExtras from '../MainNavBoxExtras';
+import MainNavBox from './MainNavBox';
+import MainNavItem, { Wrapper } from './MainNavItem';
 
 const MainNav = styled.nav`
   display: flex;
@@ -42,12 +44,17 @@ const NavLogoLink = styled.a.attrs({
 const MainNavBoxes = styled.div`
   display: flex;
   flex-flow: row nowrap;
+  padding: 0 20px 0 13px;
+`;
+
+const MainNavBoxesExtras = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
 `;
 
 const MainNavContainer = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  width: 500px;
   height: 100%;
 
   ${Wrapper} + ${Wrapper} {
@@ -67,15 +74,45 @@ const MainNavBar = () => {
             key={page.title}
             label={page.title}
             dropdownContent={
-              <>
+              <MainNavBoxesExtras>
                 <MainNavBoxes>
                   {page.links?.map((link) => (
-                    <a href={link.url} key={link.label}>
-                      <h1>{link.label}</h1>
-                    </a>
+                    <MainNavBox
+                      key={link.label}
+                      description='TBD'
+                      imageSrc='http://placekitten.com/300'
+                      title={link.label}
+                    />
                   ))}
                 </MainNavBoxes>
-              </>
+                <MainNavBoxExtras
+                  links={[
+                    {
+                      label: 'Marketing Link',
+                      to: '#',
+                    },
+                    {
+                      label: 'Marketing Link',
+                      to: '#',
+                    },
+                    ,
+                    {
+                      label: 'Marketing Link',
+                      to: '#',
+                    },
+                    null,
+                    {
+                      label: 'Marketing Link',
+                      to: '#',
+                    },
+                    ,
+                    {
+                      label: 'Marketing Link',
+                      to: '#',
+                    },
+                  ]}
+                />
+              </MainNavBoxesExtras>
             }
           />
         ))}
