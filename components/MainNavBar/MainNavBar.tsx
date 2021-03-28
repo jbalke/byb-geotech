@@ -2,8 +2,8 @@ import navLinks, { extraLinks } from 'data/main-navigation';
 import React from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
-import MainNavBoxExtras from '../MainNavBoxExtras';
-import MainNavBox from './MainNavBox';
+import MainNavBoxes from './MainNavBoxes';
+import MainNavBoxExtras from './MainNavBoxExtras';
 import MainNavItem, { Wrapper } from './MainNavItem';
 
 const MainNav = styled.nav`
@@ -41,12 +41,6 @@ const NavLogoLink = styled.a.attrs({
   }
 `;
 
-const MainNavBoxes = styled.div`
-  display: flex;
-  flex-flow: row nowrap;
-  padding: 0 20px 0 13px;
-`;
-
 const MainNavBoxesExtras = styled.div`
   display: flex;
   flex-flow: row nowrap;
@@ -75,17 +69,7 @@ const MainNavBar = () => {
             label={page.title}
             dropdownContent={
               <MainNavBoxesExtras>
-                <MainNavBoxes>
-                  {page.links?.map((link) => (
-                    <MainNavBox
-                      key={link.label}
-                      description='TBD'
-                      imageSrc='http://placekitten.com/300'
-                      title={link.label}
-                      url={link.url}
-                    />
-                  ))}
-                </MainNavBoxes>
+                <MainNavBoxes subLinks={page.links} />
                 <MainNavBoxExtras links={extraLinks} />
               </MainNavBoxesExtras>
             }

@@ -53,5 +53,6 @@ export const extraLinks = [
 ];
 
 export type SubmenuLinks = typeof navLinks[0];
+export type SubLinks = SubmenuLinks['links'];
 export type ExtraLink = typeof extraLinks[0];
 export default navLinks;

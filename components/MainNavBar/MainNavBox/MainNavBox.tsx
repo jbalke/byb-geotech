@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../../../styles/theme';
+import { Theme } from 'styles/theme';
 
 const MainNavBoxDescription = styled.div`
   color: ${Theme.color.primaryLight};

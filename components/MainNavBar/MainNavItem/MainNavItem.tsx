@@ -1,7 +1,7 @@
 import React, { ReactElement, ReactNode, useState } from 'react';
+import { BsChevronDown } from 'react-icons/bs';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
-import { BsChevronDown } from 'react-icons/bs';
 
 const MainNavLink = styled.a.attrs({
   href: '#',
@@ -55,47 +55,24 @@ export const Wrapper = styled.div`
   height: 100%;
   position: relative;
 
-  :hover ${MainNavLinkDropdown}, &.focus ${MainNavLinkDropdown} {
+  :hover
+    ${MainNavLinkDropdown},
+    &.focus
+    ${MainNavLinkDropdown},
+    :focus-within
+    ${MainNavLinkDropdown} {
     display: block;
     transition: transform 200ms ease-out;
     transform: scaleY(1);
   }
 
   :hover ${MainNavLinkDropdown} > *,
-  &.focus ${MainNavLinkDropdown} > * {
+  &.focus ${MainNavLinkDropdown} > *,
+  :focus-within ${MainNavLinkDropdown} > * {
     opacity: 1;
     transition: opacity 50ms 200ms ease-out;
   }
 `;
-
-const DropdownContext = React.createContext<{
-  isFocused: boolean;
-  handleFocus: () => void;
-  handleBlur: () => void;
-}>(null!);
-type ProviderProps = { children: React.ReactNode };
-
-function DropdownProvider({ children }: ProviderProps) {
-  const [isFocused, setIsFocused] = useState(false);
-  const handleFocus = () => setIsFocused(true);
-  const handleBlur = () => setIsFocused(false);
-
-  return (
-    <DropdownContext.Provider value={{ isFocused, handleFocus, handleBlur }}>
-      {children}
-    </DropdownContext.Provider>
-  );
-}
-
-function useDropdownState() {
-  const dropdownState = React.useContext(DropdownContext);
-
-  if (dropdownState === undefined) {
-    throw new Error('useDropdownState must be used within a DropdownProvider');
-  }
-
-  return dropdownState;
-}
 
 type NavigationItemProps = {
   label: string;
@@ -107,12 +84,12 @@ function MainNavItem({
   dropdownContent,
 }: NavigationItemProps): ReactElement {
   const [isFocused, setIsFocused] = useState(false);
-
+  const handleFocus = () => setIsFocused(true);
   const handleBlur = () => setIsFocused(false);
 
   return (
     <Wrapper className={`${isFocused ? 'focus' : ''}`}>
-      <MainNavLink onFocus={() => setIsFocused(true)}>
+      <MainNavLink onFocus={handleFocus} onBlur={handleBlur}>
         <MainNavLinkText>{label}</MainNavLinkText>
         <MainNavLinkChevronDown />
       </MainNavLink>

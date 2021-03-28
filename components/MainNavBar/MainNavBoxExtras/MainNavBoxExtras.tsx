@@ -1,6 +1,6 @@
+import { ExtraLink } from 'data/main-navigation';
 import React from 'react';
 import styled from 'styled-components';
-import { ExtraLink } from 'data/main-navigation';
 import { Theme } from 'styles/theme';
 
 const Wrapper = styled.div`
