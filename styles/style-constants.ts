@@ -1,6 +1,6 @@
 export const BREAKPOINTS = {
   tablet: '800px',
-  desktop: '1200px',
+  desktop: '1000px',
   desktopWide: '1400px',
 } as const;
 
@@ -44,4 +44,4 @@ export const SPACING = {
   xl: 32,
 } as const;
 
-export const WIDTH = { max: '1200px' } as const;
+export const WIDTH = { max: '1200px', mobileMenuMax: '620px' } as const;

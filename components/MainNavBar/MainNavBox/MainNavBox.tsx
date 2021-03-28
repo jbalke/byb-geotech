@@ -9,7 +9,7 @@ const MainNavBoxDescription = styled.div`
 
 const MainNavBoxImage = styled.img`
   border-radius: 4px;
-  width: 150px;
+  width: 100px;
   object-fit: cover;
   object-position: center;
 `;

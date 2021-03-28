@@ -9,6 +9,8 @@ import 'font/font.css';
 const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+
     ${Theme.css.string}
   }
   

@@ -3,7 +3,8 @@ import { ReactNode } from 'react';
 import styled from 'styled-components';
 import MainNavBar from 'components/MainNavBar';
 import { Wrapper } from 'components/styled';
-import SkipToMain from '../components/SkipToMain';
+import SkipToMain from 'components/SkipToMain';
+import MobileMainNav from 'components/MobileMainNav';
 
 const StyledMain = styled.main`
   flex: 1;
@@ -13,7 +14,7 @@ type PageProps = { children: ReactNode; title: string };
 
 const Main = ({ children, title = 'Page Title' }: PageProps) => {
   return (
-    <Wrapper maxWidth='initial' main>
+    <Wrapper main>
       <Head>
         <title>{title}</title>
       </Head>
@@ -21,6 +22,7 @@ const Main = ({ children, title = 'Page Title' }: PageProps) => {
       <MainNavBar />
       <StyledMain id='main-content'>{children}</StyledMain>
       <footer>footer</footer>
+      <MobileMainNav />
     </Wrapper>
   );
 };

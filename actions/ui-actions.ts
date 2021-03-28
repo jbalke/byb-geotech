@@ -12,6 +12,12 @@ export function closeSidebar() {
   } as const;
 }
 
+export function toggleSidebar() {
+  return {
+    type: 'TOGGLE_SIDEBAR',
+  } as const;
+}
+
 export function openSubmenu(page: string, coordinates: MenuCoords) {
   return {
     type: 'OPEN_SUBMENU',
@@ -28,6 +34,7 @@ export function closeSubmenu() {
 export type Action = ReturnType<
   | typeof openSidebar
   | typeof closeSidebar
+  | typeof toggleSidebar
   | typeof openSubmenu
   | typeof closeSubmenu
 >;

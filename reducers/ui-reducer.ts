@@ -16,6 +16,8 @@ export function UIReducer(state: State, action: Action): State {
       return { ...state, isSidebarOpen: true };
     case 'CLOSE_SIDEBAR':
       return { ...state, isSidebarOpen: false };
+    case 'TOGGLE_SIDEBAR':
+      return { ...state, isSidebarOpen: !state.isSidebarOpen };
     case 'OPEN_SUBMENU':
       const { page, coordinates } = action.payload;
       const submenuLinks = navLinks.find(
