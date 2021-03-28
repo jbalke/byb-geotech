@@ -6,6 +6,22 @@ import { useUIDispatch, useUIState } from '../../context/ui-context';
 import { Theme } from '../../styles/theme';
 import Button from '../Button';
 
+const MenuContainer = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  max-width: ${Theme.width.mobileMenuMax};
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: ${Theme.color.textBackground};
+  color: ${Theme.color.text};
+  transform: translateY(-100vh);
+  transition: transform 300ms ease-in;
+  will-change: transform, opacity;
+`;
+
 const Wrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
@@ -14,34 +30,24 @@ const Wrapper = styled.div`
   position: fixed;
   height: 100vh;
   width: 100vw;
-  padding: 5vmin;
-  background-color: transparent;
-  backdrop-filter: blur(10px) brightness(0.6);
-  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.8);
   transform: translateY(-100vh);
-  transition: transform 0ms 150ms ease-in, opacity 150ms ease-in;
-  will-change: transform, opacity;
+  transition: transform 0ms 300ms;
   z-index: 999;
 
+  @supports (backdrop-filter: blur(10px) brightness(0.6)) {
+    background-color: transparent;
+    backdrop-filter: blur(10px) brightness(0.6);
+  }
+
   &.show {
-    opacity: 1;
-    transition: opacity 200ms ease-out;
     transform: translateY(0);
   }
-`;
 
-const MenuContainer = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  border-radius: 6px;
-  width: 100%;
-  padding: 15px;
-  max-width: ${Theme.width.mobileMenuMax};
-  margin: 0 auto;
-  overflow: hidden;
-  background-color: ${Theme.color.textBackground};
-  color: ${Theme.color.text};
+  &.show ${MenuContainer} {
+    transform: translateY(0);
+    transition: transform 600ms ease-out;
+  }
 `;
 
 type MobileMainNavProps = {};

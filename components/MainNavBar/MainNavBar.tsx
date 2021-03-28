@@ -81,7 +81,7 @@ const MainNavBar = () => {
       <NavLogoLink>
         <img src='http://unsplash.it/90/30?gravity=center' alt='Logo' />
       </NavLogoLink>
-      <MobileMenuToggle noBorder onClick={toggleMobileNav}>
+      <MobileMenuToggle variant='outline' onClick={toggleMobileNav}>
         <FaBars />
       </MobileMenuToggle>
       <MainNavContainer>

@@ -8,7 +8,7 @@ const Button = styled.button<{
   margin?: string;
   shadow?: boolean;
   block?: boolean;
-  noBorder?: boolean;
+  borderWidth?: string;
 }>`
   appearance: none;
   justify-content: center;
@@ -17,8 +17,8 @@ const Button = styled.button<{
   letter-spacing: 0.08em;
   color: ${Theme.color.white};
   background-color: ${Theme.color.primary};
-  border: ${({ noBorder }) =>
-    noBorder ? '0' : `2px solid ${Theme.color.white}`};
+  border: ${({ borderWidth }) =>
+    borderWidth ? '0' : `${borderWidth ?? '1px'} solid ${Theme.color.white}`};
   margin: ${({ margin }) => margin || '0'};
   transition: background-color 0.25s, color 0.25s;
   cursor: pointer;

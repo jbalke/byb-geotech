@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background-color: ${Theme.color.textBackground};
+    background-color: ${Theme.color.black};
     color: ${Theme.color.text};
     font-family: 'Public Sans', sans-serif;
   }

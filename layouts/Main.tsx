@@ -5,9 +5,12 @@ import MainNavBar from 'components/MainNavBar';
 import { Wrapper } from 'components/styled';
 import SkipToMain from 'components/SkipToMain';
 import MobileMainNav from 'components/MobileMainNav';
+import { Theme } from '../styles/theme';
 
 const StyledMain = styled.main`
   flex: 1;
+  color: ${Theme.color.text};
+  background-color: ${Theme.color.textBackground};
 `;
 
 type PageProps = { children: ReactNode; title: string };
