@@ -18,7 +18,7 @@ const MainNav = styled.nav`
   background-color: ${Theme.color.primaryDark};
   height: 56px;
   padding: 0 10px;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
   z-index: 999;
 
   @media (min-width: ${(props) => props.theme.bp.desktop}) {

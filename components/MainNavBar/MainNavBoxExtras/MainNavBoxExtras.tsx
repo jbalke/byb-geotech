@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   flex-flow: column nowrap;
   background-color: rgba(0, 0, 0, 0.2);
   padding: 20px 30px 30px 17px;
-  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.3);
 
   > div > a {
     color: ${Theme.color.white};
