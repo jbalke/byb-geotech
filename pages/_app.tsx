@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import Image from 'next/image';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { UIProvider } from 'context/ui-context';
 import { BREAKPOINTS } from 'styles/style-constants';
@@ -28,6 +29,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     background-color: ${Theme.color.black};
+    background-image: url('/water.webp');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: cover;
     color: ${Theme.color.text};
     font-family: 'Public Sans', sans-serif;
   }
