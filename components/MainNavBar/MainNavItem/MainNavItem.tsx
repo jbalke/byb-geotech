@@ -14,10 +14,6 @@ const MainNavLink = styled.a.attrs({
   color: ${Theme.color.primaryLight};
   text-decoration: none;
   text-transform: capitalize;
-
-  :hover {
-    color: ${Theme.color.white};
-  }
 `;
 
 const MainNavLinkText = styled.span`
@@ -41,6 +37,7 @@ const MainNavLinkDropdown = styled.div`
   transform-origin: top center;
   will-change: transform;
   transition: transform 100ms 50ms ease-in;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
 
   & > * {
     opacity: 0;
@@ -54,6 +51,10 @@ export const Wrapper = styled.div`
   align-items: center;
   height: 100%;
   position: relative;
+
+  :hover ${MainNavLink} {
+    color: ${Theme.color.white};
+  }
 
   :hover
     ${MainNavLinkDropdown},

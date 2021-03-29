@@ -6,6 +6,10 @@ import { useUIDispatch, useUIState } from '../../context/ui-context';
 import { Theme } from '../../styles/theme';
 import Button from '../Button';
 
+const MenuCloseBtn = styled(Button)`
+  align-self: flex-end;
+`;
+
 const MenuContainer = styled.div`
   display: flex;
   flex-flow: column nowrap;
@@ -61,9 +65,9 @@ function MobileMainNav(props: MobileMainNavProps) {
   return (
     <Wrapper className={`${isSidebarOpen ? 'show' : ''}`}>
       <MenuContainer>
-        <Button onClick={closeMobileNav} variant='outline'>
+        <MenuCloseBtn onClick={closeMobileNav} variant='outline'>
           <FaTimes />
-        </Button>
+        </MenuCloseBtn>
         <h1>MobileMainNav</h1>
       </MenuContainer>
     </Wrapper>

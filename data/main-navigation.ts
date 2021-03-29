@@ -2,27 +2,26 @@ import { FaCreditCard, FaBook, FaBriefcase } from 'react-icons/fa';
 
 const navLinks = [
   {
-    title: 'products',
+    title: 'Services',
     links: [
-      { label: 'payment', icon: FaCreditCard, url: '/payment' },
-      { label: 'terminal', icon: FaCreditCard, url: '/terminal' },
-      { label: 'connect', icon: FaCreditCard, url: '/connect' },
+      { label: 'Drilling', icon: FaCreditCard, url: '/payment' },
+      { label: 'Prices', icon: FaCreditCard, url: '/connect' },
     ],
   },
   {
-    title: 'developers',
+    title: 'Bores',
     links: [
-      { label: 'plugins', icon: FaBook, url: '/plugins' },
-      { label: 'libraries', icon: FaBook, url: '/libraries' },
-      { label: 'help', icon: FaBook, url: '/help' },
-      { label: 'billing', icon: FaBook, url: '/billing' },
+      { label: 'information', icon: FaBook, url: '/plugins' },
+      { label: 'regulations', icon: FaBook, url: '/libraries' },
+      { label: 'search', icon: FaBook, url: '/bore-search' },
+      { label: 'FAQ', icon: FaBook, url: '/faq' },
     ],
   },
   {
-    title: 'company',
+    title: 'About',
     links: [
-      { label: 'about', icon: FaBriefcase, url: '/about' },
-      { label: 'customers', icon: FaBriefcase, url: '/customers' },
+      { label: 'contact', icon: FaBriefcase, url: '/contact' },
+      { label: 'our story', icon: FaBriefcase, url: '/our-story' },
     ],
   },
 ];

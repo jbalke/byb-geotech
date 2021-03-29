@@ -1,9 +1,14 @@
 import * as d3 from 'd3-ease';
 import React, { useEffect, useState } from 'react';
-import ReactMapGL, { FlyToInterpolator, Marker, Popup } from 'react-map-gl';
+import ReactMapGL, {
+  FlyToInterpolator,
+  Marker,
+  Popup,
+  ScaleControl,
+} from 'react-map-gl';
 import { MAP_CENTER } from '../constants';
 import { Bore } from 'types/bore';
-import BoreMarker from 'assets/water-marker.svg';
+import BoreImg from '../assets/water-marker.svg'; // must use relative paths
 import styled from 'styled-components';
 
 const Button = styled.button`
@@ -19,7 +24,7 @@ const Button = styled.button`
   }
 `;
 
-const Img = styled.img`
+const BoreMarker = styled(BoreImg)`
   width: 24px;
   height: 24px;
   filter: drop-shadow(3px 3px 2px rgb(0, 0, 0, 0.8));
@@ -73,6 +78,11 @@ const Map = ({ camera, bores }: Props) => {
     return () => window.removeEventListener('keydown', listener);
   }, []);
 
+  const scaleControlStyle = {
+    left: 20,
+    bottom: 50,
+  };
+
   return (
     <ReactMapGL
       {...viewport}
@@ -82,6 +92,8 @@ const Map = ({ camera, bores }: Props) => {
         setViewport(nextViewport)
       }
     >
+      <ScaleControl maxWidth={100} unit='metric' style={scaleControlStyle} />
+
       {bores.map((bore) => (
         <Marker
           key={bore._id}
@@ -93,7 +105,7 @@ const Map = ({ camera, bores }: Props) => {
               e.preventDefault(), setSelectedBore(bore);
             }}
           >
-            <BoreMarker height={24} width={24} fill={'red'} />
+            <BoreMarker fill={'blue'} />
           </Button>
         </Marker>
       ))}
