@@ -77,7 +77,7 @@ export const Wrapper = styled.div`
 
 type NavigationItemProps = {
   label: string;
-  dropdownContent: ReactNode;
+  dropdownContent?: ReactNode;
 };
 
 function MainNavItem({
@@ -94,7 +94,9 @@ function MainNavItem({
         <MainNavLinkText>{label}</MainNavLinkText>
         <MainNavLinkChevronDown />
       </MainNavLink>
-      <MainNavLinkDropdown>{dropdownContent}</MainNavLinkDropdown>
+      {dropdownContent && (
+        <MainNavLinkDropdown>{dropdownContent}</MainNavLinkDropdown>
+      )}
     </Wrapper>
   );
 }

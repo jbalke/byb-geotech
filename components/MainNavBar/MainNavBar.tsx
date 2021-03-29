@@ -87,18 +87,21 @@ const MainNavBar = () => {
         <FaBars />
       </MobileMenuToggle>
       <MainNavContainer>
-        {navLinks?.map((page) => (
-          <MainNavItem
-            key={page.title}
-            label={page.title}
-            dropdownContent={
-              <MainNavBoxesExtras>
-                <MainNavBoxes subLinks={page.links} />
-                <MainNavBoxExtras links={extraLinks} />
-              </MainNavBoxesExtras>
-            }
-          />
-        ))}
+        <>
+          {navLinks?.map((page) => (
+            <MainNavItem
+              key={page.title}
+              label={page.title}
+              dropdownContent={
+                <MainNavBoxesExtras>
+                  <MainNavBoxes subLinks={page.links} />
+                  <MainNavBoxExtras links={extraLinks} />
+                </MainNavBoxesExtras>
+              }
+            />
+          ))}
+        </>
+        <MainNavItem label='Contact' />
       </MainNavContainer>
     </MainNav>
   );
