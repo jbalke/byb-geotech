@@ -15,9 +15,8 @@ const MenuContainer = styled.div`
   flex-flow: column nowrap;
   align-items: center;
   width: 100%;
-  padding: 15px;
-  max-width: ${Theme.width.mobileMenuMax};
-  margin: 0 auto;
+  padding: 10px;
+  border-radius: 15px;
   overflow: hidden;
   background-color: ${Theme.color.textBackground};
   color: ${Theme.color.text};
@@ -34,6 +33,7 @@ const Wrapper = styled.div`
   position: fixed;
   height: 100vh;
   width: 100vw;
+  padding: 5px;
   background-color: rgba(0, 0, 0, 0.8);
   transform: translateY(-100vh);
   transition: transform 0ms 300ms;

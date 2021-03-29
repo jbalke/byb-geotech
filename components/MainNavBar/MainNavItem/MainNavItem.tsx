@@ -37,7 +37,7 @@ const MainNavLinkDropdown = styled.div`
   transform-origin: top center;
   will-change: transform;
   transition: transform 100ms 50ms ease-in;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
 
   & > * {
     opacity: 0;

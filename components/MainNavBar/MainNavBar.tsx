@@ -3,8 +3,8 @@ import React from 'react';
 import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
-import { toggleSidebar } from '../../actions/ui-actions';
-import { useUIDispatch, useUIState } from '../../context/ui-context';
+import { toggleSidebar } from 'actions/ui-actions';
+import { useUIDispatch } from 'context/ui-context';
 import Button from '../Button';
 import MainNavBoxes from './MainNavBoxes';
 import MainNavBoxExtras from './MainNavBoxExtras';
@@ -18,7 +18,7 @@ const MainNav = styled.nav`
   background-color: ${Theme.color.primaryDark};
   height: 56px;
   padding: 0 10px;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
   z-index: 999;
 
   @media (min-width: ${(props) => props.theme.bp.desktop}) {
