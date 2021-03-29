@@ -6,10 +6,10 @@ import ReactMapGL, {
   Popup,
   ScaleControl,
 } from 'react-map-gl';
-import { MAP_CENTER } from '../constants';
+import styled from 'styled-components';
 import { Bore } from 'types/bore';
 import BoreImg from '../assets/water-marker.svg'; // must use relative paths
-import styled from 'styled-components';
+import { MAP_CENTER } from '../constants';
 
 const Button = styled.button`
   display: flex;
@@ -46,8 +46,6 @@ const Map = ({ camera, bores }: Props) => {
     longitude: MAP_CENTER[0], //149.1865,
     latitude: MAP_CENTER[1], //-21.142,
     zoom: 11,
-    width: '100%',
-    height: 600,
   });
 
   const [selectedBore, setSelectedBore] = useState<Bore | null>(null);
@@ -83,6 +81,11 @@ const Map = ({ camera, bores }: Props) => {
     bottom: 50,
   };
 
+  const geolocateControlStyle = {
+    right: 10,
+    top: 10,
+  };
+
   return (
     <ReactMapGL
       {...viewport}
@@ -91,8 +94,16 @@ const Map = ({ camera, bores }: Props) => {
       onViewportChange={(nextViewport: typeof viewport) =>
         setViewport(nextViewport)
       }
+      width='100%'
+      height='600px'
     >
       <ScaleControl maxWidth={100} unit='metric' style={scaleControlStyle} />
+      {/* <GeolocateControl
+        style={geolocateControlStyle}
+        positionOptions={{ enableHighAccuracy: true }}
+        trackUserLocation={true}
+        auto
+      /> */}
 
       {bores.map((bore) => (
         <Marker
