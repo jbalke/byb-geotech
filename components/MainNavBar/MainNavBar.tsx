@@ -11,6 +11,7 @@ import MainNavBoxExtras from './MainNavBoxExtras';
 import MainNavItem, { Wrapper } from './MainNavItem';
 import { motion } from 'framer-motion';
 
+//TODO: Need ot use next/link for all navigation
 const MainNav = styled.nav`
   display: flex;
   justify-content: space-between;
@@ -29,10 +30,7 @@ const MainNav = styled.nav`
 `;
 
 const NavLogoLink = styled.a.attrs({
-  href: '#',
-  onClick: (e) => {
-    e.preventDefault();
-  },
+  href: '/',
 })`
   display: flex;
   margin-right: 20px;

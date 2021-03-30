@@ -4,24 +4,24 @@ const navLinks = [
   {
     title: 'Services',
     links: [
-      { label: 'Drilling', icon: FaCreditCard, url: '/payment' },
-      { label: 'Prices', icon: FaCreditCard, url: '/connect' },
+      { label: 'Drilling', Icon: FaCreditCard, url: '/payment' },
+      { label: 'Prices', Icon: FaCreditCard, url: '/connect' },
     ],
   },
   {
     title: 'Bores',
     links: [
-      { label: 'information', icon: FaBook, url: '/plugins' },
-      { label: 'regulations', icon: FaBook, url: '/libraries' },
-      { label: 'search', icon: FaBook, url: '/bore-search' },
-      { label: 'FAQ', icon: FaBook, url: '/faq' },
+      { label: 'information', Icon: FaBook, url: '/plugins' },
+      { label: 'regulations', Icon: FaBook, url: '/libraries' },
+      { label: 'search', Icon: FaBook, url: '/bore-search' },
+      { label: 'FAQ', Icon: FaBook, url: '/faq' },
     ],
   },
   {
     title: 'About',
     links: [
-      { label: 'contact', icon: FaBriefcase, url: '/contact' },
-      { label: 'our story', icon: FaBriefcase, url: '/our-story' },
+      { label: 'contact', Icon: FaBriefcase, url: '/contact' },
+      { label: 'our story', Icon: FaBriefcase, url: '/our-story' },
     ],
   },
 ];
