@@ -26,7 +26,7 @@ const MainNavBoxTitle = styled.strong`
   text-align: center;
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.a`
   padding: 30px 17px;
 `;
 
@@ -44,12 +44,10 @@ function MainNavBox({
   url,
 }: MainNavigationBoxProps): ReactElement {
   return (
-    <Wrapper>
-      <a href={url}>
-        <MainNavBoxImage src={imageSrc} alt='' />
-        <MainNavBoxTitle>{title}</MainNavBoxTitle>
-        <MainNavBoxDescription>{description}</MainNavBoxDescription>
-      </a>
+    <Wrapper href={url}>
+      <MainNavBoxImage src={imageSrc} alt='' />
+      <MainNavBoxTitle>{title}</MainNavBoxTitle>
+      <MainNavBoxDescription>{description}</MainNavBoxDescription>
     </Wrapper>
   );
 }

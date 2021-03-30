@@ -7,26 +7,35 @@ import SkipToMain from 'components/SkipToMain';
 import MobileMainNav from 'components/MobileMainNav';
 import { Theme } from '../styles/theme';
 
-const StyledMain = styled.main`
-  flex: 1;
+const StyledWrapper = styled(Wrapper)`
   color: ${Theme.color.text};
   background-color: ${Theme.color.textBackground};
+`;
+const StyledMain = styled.main`
+  flex: 1;
 `;
 
 type PageProps = { children: ReactNode; title: string };
 
 const Main = ({ children, title = 'Page Title' }: PageProps) => {
   return (
-    <Wrapper main>
+    <StyledWrapper main>
       <Head>
         <title>{title}</title>
       </Head>
       <SkipToMain href='#main-content' />
       <MainNavBar />
       <StyledMain id='main-content'>{children}</StyledMain>
-      <footer>footer</footer>
+      <footer
+        style={{
+          backgroundColor: 'black',
+          minHeight: '200px',
+        }}
+      >
+        footer
+      </footer>
       <MobileMainNav />
-    </Wrapper>
+    </StyledWrapper>
   );
 };
 

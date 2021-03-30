@@ -35,7 +35,7 @@ const Wrapper = styled.div`
   width: 100vw;
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.8);
-  transform: translateY(-100vh);
+  transform: translateY(-10000px);
   transition: transform 0ms 300ms;
   z-index: 999;
 

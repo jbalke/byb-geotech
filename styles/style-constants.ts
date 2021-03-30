@@ -18,6 +18,7 @@ export const LIGHT_THEME = {
   info: '#33EAE7',
   warning: '#EFE334',
   success: '#22B712',
+  boxShadow: 'rgba(0,0,0,.3)',
 } as const;
 
 export const DARK_THEME = {
@@ -34,6 +35,7 @@ export const DARK_THEME = {
   info: '#33EAE7',
   warning: '#EFE334',
   success: '#22B712',
+  boxShadow: 'rgba(255,255,255,.3)',
 } as const;
 
 export const SPACING = {
