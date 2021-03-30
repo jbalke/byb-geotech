@@ -9,6 +9,7 @@ import Button from '../Button';
 import MainNavBoxes from './MainNavBoxes';
 import MainNavBoxExtras from './MainNavBoxExtras';
 import MainNavItem, { Wrapper } from './MainNavItem';
+import { motion } from 'framer-motion';
 
 const MainNav = styled.nav`
   display: flex;
@@ -47,7 +48,7 @@ const NavLogoLink = styled.a.attrs({
   }
 `;
 
-const MainNavBoxesExtras = styled.div`
+const MainNavBoxesExtras = styled(motion.div)`
   display: flex;
   flex-flow: row nowrap;
 `;
@@ -74,6 +75,11 @@ const MobileMenuToggle = styled(Button)`
   }
 `;
 
+const dropdownItemsVariants = {
+  open: { opacity: 1, y: 0, transition: { duration: 0.1 } },
+  closed: { opacity: 0, y: -10, transition: { duration: 0.1 } },
+};
+
 const MainNavBar = () => {
   const dispatch = useUIDispatch();
   const toggleMobileNav = () => dispatch(toggleSidebar());
@@ -81,7 +87,7 @@ const MainNavBar = () => {
   return (
     <MainNav>
       <NavLogoLink>
-        <img src='http://unsplash.it/90/30?gravity=center' alt='Logo' />
+        <img src='https://dummyimage.com/90x30.png?text=LOGO' alt='' />
       </NavLogoLink>
       <MobileMenuToggle variant='outline' onClick={toggleMobileNav}>
         <FaBars />
@@ -93,7 +99,7 @@ const MainNavBar = () => {
               key={page.title}
               label={page.title}
               dropdownContent={
-                <MainNavBoxesExtras>
+                <MainNavBoxesExtras variants={dropdownItemsVariants}>
                   <MainNavBoxes subLinks={page.links} />
                   <MainNavBoxExtras links={extraLinks} />
                 </MainNavBoxesExtras>
