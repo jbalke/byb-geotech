@@ -1,4 +1,5 @@
 import { ExtraLink } from 'data/main-navigation';
+import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
@@ -39,9 +40,9 @@ function MainNavBoxExtras({ links }: MainNavBoxExtrasProps) {
         {links.map((linkOrSeparator, index) => {
           if (linkOrSeparator) {
             return (
-              <a key={index} href={linkOrSeparator.to}>
-                {linkOrSeparator.label}
-              </a>
+              <Link key={index} href={linkOrSeparator.to}>
+                <a>{linkOrSeparator.label}</a>
+              </Link>
             );
           }
           return <hr key={index} />;

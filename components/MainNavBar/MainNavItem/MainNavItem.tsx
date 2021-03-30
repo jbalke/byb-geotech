@@ -1,13 +1,11 @@
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 import React, { ReactElement, ReactNode, useState } from 'react';
 import { BsChevronDown } from 'react-icons/bs';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
-import { motion } from 'framer-motion';
 
-const MainNavLink = styled.a.attrs({
-  href: '#',
-  onClick: (e) => e.preventDefault(),
-})`
+const MainNavLink = styled.a`
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -67,11 +65,13 @@ const dropdownVariants = {
 
 type NavigationItemProps = {
   label: string;
+  href?: string;
   dropdownContent?: ReactNode;
 };
 
 function MainNavItem({
   label,
+  href = '#',
   dropdownContent,
 }: NavigationItemProps): ReactElement {
   const [isOpen, setIsOpen] = useState(false);
@@ -80,10 +80,12 @@ function MainNavItem({
 
   return (
     <Wrapper onMouseEnter={openMenu} onMouseLeave={closeMenu}>
-      <MainNavLink>
-        <MainNavLinkText>{label}</MainNavLinkText>
-        <MainNavLinkChevronDown />
-      </MainNavLink>
+      <Link href={href} passHref>
+        <MainNavLink>
+          <MainNavLinkText>{label}</MainNavLinkText>
+          {dropdownContent && <MainNavLinkChevronDown />}
+        </MainNavLink>
+      </Link>
       {dropdownContent && (
         <MainNavLinkDropdown
           variants={dropdownVariants}

@@ -15,13 +15,13 @@ const StyledMain = styled.main`
   flex: 1;
 `;
 
-type PageProps = { children: ReactNode; title: string };
+type PageProps = { children: ReactNode };
 
-const Main = ({ children, title = 'Page Title' }: PageProps) => {
+const Main = ({ children }: PageProps) => {
   return (
     <StyledWrapper main>
       <Head>
-        <title>{title}</title>
+        <title>Backyard Bores</title>
       </Head>
       <SkipToMain href='#main-content' />
       <MainNavBar />

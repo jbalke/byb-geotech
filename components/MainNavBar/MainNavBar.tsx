@@ -1,15 +1,16 @@
+import { toggleSidebar } from 'actions/ui-actions';
+import { useUIDispatch } from 'context/ui-context';
 import navLinks, { extraLinks } from 'data/main-navigation';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 import React from 'react';
 import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
-import { toggleSidebar } from 'actions/ui-actions';
-import { useUIDispatch } from 'context/ui-context';
 import Button from '../Button';
 import MainNavBoxes from './MainNavBoxes';
 import MainNavBoxExtras from './MainNavBoxExtras';
 import MainNavItem, { Wrapper } from './MainNavItem';
-import { motion } from 'framer-motion';
 
 //TODO: Need ot use next/link for all navigation
 const MainNav = styled.nav`
@@ -29,9 +30,7 @@ const MainNav = styled.nav`
   }
 `;
 
-const NavLogoLink = styled.a.attrs({
-  href: '/',
-})`
+const NavLogoLink = styled.a`
   display: flex;
   margin-right: 20px;
   transition: opacity 0.2s ease;
@@ -84,28 +83,33 @@ const MainNavBar = () => {
 
   return (
     <MainNav>
-      <NavLogoLink>
-        <img src='https://dummyimage.com/90x30.png?text=LOGO' alt='' />
-      </NavLogoLink>
+      <Link href='/' passHref>
+        <NavLogoLink>
+          <img src='https://dummyimage.com/90x30.png?text=LOGO' alt='' />
+        </NavLogoLink>
+      </Link>
       <MobileMenuToggle variant='outline' onClick={toggleMobileNav}>
         <FaBars />
       </MobileMenuToggle>
       <MainNavContainer>
         <>
+          <MainNavItem label='Home' href='/' />
           {navLinks?.map((page) => (
             <MainNavItem
               key={page.title}
               label={page.title}
+              href={page?.url}
               dropdownContent={
-                <MainNavBoxesExtras variants={dropdownItemsVariants}>
-                  <MainNavBoxes subLinks={page.links} />
-                  <MainNavBoxExtras links={extraLinks} />
-                </MainNavBoxesExtras>
+                page.links && (
+                  <MainNavBoxesExtras variants={dropdownItemsVariants}>
+                    <MainNavBoxes subLinks={page.links} />
+                    <MainNavBoxExtras links={extraLinks} />
+                  </MainNavBoxesExtras>
+                )
               }
             />
           ))}
         </>
-        <MainNavItem label='Contact' />
       </MainNavContainer>
     </MainNav>
   );

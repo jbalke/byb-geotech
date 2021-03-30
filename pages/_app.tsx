@@ -5,6 +5,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { UIProvider } from 'context/ui-context';
 import { BREAKPOINTS } from 'styles/style-constants';
 import { DarkTheme, Theme } from 'styles/theme';
+import Layout from 'layouts/Main';
 import 'font/font.css';
 
 const GlobalStyle = createGlobalStyle`
@@ -67,7 +68,9 @@ function App({ Component, pageProps }: AppProps) {
         }}
       >
         <UIProvider>
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </UIProvider>
       </ThemeProvider>
     </>

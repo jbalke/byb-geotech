@@ -1,12 +1,14 @@
 import { closeSidebar } from 'actions/ui-actions';
 import { useUIDispatch, useUIState } from 'context/ui-context';
+import navLinks from 'data/main-navigation';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import React from 'react';
-import { FaTimes } from 'react-icons/fa';
+import { FaTimes, FaHome } from 'react-icons/fa';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import Button from '../Button';
-import navLinks from 'data/main-navigation';
+import { UnstyledLink } from '../styled';
 
 const MenuCloseBtn = styled(Button)`
   align-self: flex-end;
@@ -85,6 +87,16 @@ const LinksWrapper = styled.ul`
   }
 `;
 
+const HomeLinkWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+`;
+
+const HomeLink = styled(UnstyledLink)`
+  font-size: 2rem;
+`;
+
 const mobileWrapperVariants = {
   open: { display: 'flex', transition: { when: 'beforeChildren' } },
   closed: {
@@ -117,20 +129,27 @@ function MobileMainNav(props: MobileMainNavProps) {
         <MenuCloseBtn onClick={closeMobileNav} variant='outline'>
           <FaTimes />
         </MenuCloseBtn>
+        <HomeLinkWrapper>
+          <Link href='/' passHref>
+            <HomeLink onClick={closeMobileNav}>
+              <FaHome />
+            </HomeLink>
+          </Link>
+        </HomeLinkWrapper>
         <NavLinksContainer>
           {navLinks.map((page) => (
             <PageWrapper key={page.title}>
               <h2>{page.title}</h2>
               <LinksWrapper>
-                {page.links.map((link) => {
+                {page.links?.map((link) => {
                   const { Icon } = link;
                   return (
-                    <>
+                    <React.Fragment key={link.url}>
                       <Icon />
-                      <a key={link.url} href={link.url}>
-                        {link.label}
-                      </a>
-                    </>
+                      <Link href={link.url}>
+                        <a onClick={closeMobileNav}>{link.label}</a>
+                      </Link>
+                    </React.Fragment>
                   );
                 })}
               </LinksWrapper>

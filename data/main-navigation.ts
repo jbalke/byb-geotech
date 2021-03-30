@@ -1,8 +1,15 @@
-import { FaCreditCard, FaBook, FaBriefcase } from 'react-icons/fa';
+import {
+  FaCreditCard,
+  FaBook,
+  FaBriefcase,
+  FaHome,
+  FaPhone,
+} from 'react-icons/fa';
 
 const navLinks = [
   {
     title: 'Services',
+    url: '/services',
     links: [
       { label: 'Drilling', Icon: FaCreditCard, url: '/payment' },
       { label: 'Prices', Icon: FaCreditCard, url: '/connect' },
@@ -10,6 +17,7 @@ const navLinks = [
   },
   {
     title: 'Bores',
+    url: '/bores',
     links: [
       { label: 'information', Icon: FaBook, url: '/plugins' },
       { label: 'regulations', Icon: FaBook, url: '/libraries' },
@@ -19,6 +27,7 @@ const navLinks = [
   },
   {
     title: 'About',
+    url: '/about',
     links: [
       { label: 'contact', Icon: FaBriefcase, url: '/contact' },
       { label: 'our story', Icon: FaBriefcase, url: '/our-story' },

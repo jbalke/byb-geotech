@@ -11,7 +11,6 @@ import styled from 'styled-components';
 import isEmail from 'validator/lib/isEmail';
 import InputWarning from '../components/InputWarning';
 import { BORE_SEARCH_RADIUS, MAP_CENTER } from '../constants';
-import Layout from '../layouts/Main';
 import { Bore } from '../types/bore';
 import { FeatureCollection } from '../types/geojson-types';
 import {
@@ -105,6 +104,7 @@ const BoreSearch = ({ mapCenter, bores }: Props) => {
     defaultValues: {
       name: '',
       email: '',
+      phone: '',
     },
   });
 
@@ -146,68 +146,62 @@ const BoreSearch = ({ mapCenter, bores }: Props) => {
   };
 
   return (
-    <Layout title='Bore Search'>
-      <MapSearchContainer>
-        <StyledForm onSubmit={handleSubmit(onSubmit)}>
-          <label>
-            Name
-            <input
-              name='name'
-              type='text'
-              placeholder='Name'
-              ref={register({ required: 'Required', maxLength: 25 })}
-            />
-          </label>
-          {errors.name && <InputWarning message={errors.name.message!} />}
-          <label>
-            Email
-            <input
-              name='email'
-              type='email'
-              placeholder='Email'
-              ref={register({
-                required: 'Required',
-                validate: (value) =>
-                  isEmail(value) || 'Not a valid emaill address',
-              })}
-            />
-          </label>
-          {errors.email && <InputWarning message={errors.email.message!} />}
-          <label>
-            Phone (optional)
-            <input
-              name='phone'
-              type='text'
-              placeholder='Phone'
-              ref={register}
-            />
-          </label>
-          <label>
-            Address
-            <Controller
-              name='address'
-              render={({ value }) => (
-                <AsyncSelect
-                  value={value}
-                  loadOptions={getLocationOptions}
-                  onChange={handleChange}
-                  placeholder='Enter address or POI'
-                  isClearable
-                />
-              )}
-              control={control}
-            />
-          </label>
-          <input type='submit' disabled={!isValid} />
+    <MapSearchContainer>
+      <StyledForm onSubmit={handleSubmit(onSubmit)}>
+        <label>
+          Name
+          <input
+            name='name'
+            type='text'
+            placeholder='Name'
+            ref={register({ required: 'Required', maxLength: 25 })}
+          />
+        </label>
+        {errors.name && <InputWarning message={errors.name.message!} />}
+        <label>
+          Email
+          <input
+            name='email'
+            type='email'
+            placeholder='Email'
+            ref={register({
+              required: 'Required',
+              validate: (value) =>
+                isEmail(value) || 'Not a valid emaill address',
+            })}
+          />
+        </label>
+        {errors.email && <InputWarning message={errors.email.message!} />}
+        <label>
+          Phone (optional)
+          <input name='phone' type='text' placeholder='Phone' ref={register} />
+        </label>
+        <label>
+          Address
+          <Controller
+            name='address'
+            defaultValue=''
+            render={({ value }) => (
+              <AsyncSelect
+                value={value}
+                loadOptions={getLocationOptions}
+                onChange={handleChange}
+                placeholder='Enter address or POI'
+                isClearable
+              />
+            )}
+            control={control}
+          />
+        </label>
+        <input type='submit' disabled={!isValid} />
 
-          <pre style={{ whiteSpace: 'break-spaces' }}>
-            {JSON.stringify(getValues())}
-          </pre>
-        </StyledForm>
+        <pre style={{ whiteSpace: 'break-spaces' }}>
+          {JSON.stringify(getValues())}
+        </pre>
+      </StyledForm>
 
-        <ClientRenderedMap camera={camera} bores={bores} />
-      </MapSearchContainer>
-    </Layout>
+      <ClientRenderedMap camera={camera} bores={bores} />
+    </MapSearchContainer>
   );
 };
 

@@ -37,3 +37,14 @@ export const Wrapper = styled.div<{ maxWidth?: string; main?: boolean }>`
       min-height: 100vh;
     `}
 `;
+
+export const UnstyledLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  :visited,
+  :active {
+    color: currentColor;
+  }
+`;
