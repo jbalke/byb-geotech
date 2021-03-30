@@ -1,12 +1,11 @@
+import { UIProvider } from 'context/ui-context';
+import 'font/font.css';
+import Layout from 'layouts/Main';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import Image from 'next/image';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { UIProvider } from 'context/ui-context';
 import { BREAKPOINTS } from 'styles/style-constants';
 import { DarkTheme, Theme } from 'styles/theme';
-import Layout from 'layouts/Main';
-import 'font/font.css';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -51,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps, router }: AppProps) {
   return (
     <>
       <Head>
@@ -69,7 +68,7 @@ function App({ Component, pageProps }: AppProps) {
       >
         <UIProvider>
           <Layout>
-            <Component {...pageProps} />
+            <Component {...pageProps} key={router.route} />
           </Layout>
         </UIProvider>
       </ThemeProvider>

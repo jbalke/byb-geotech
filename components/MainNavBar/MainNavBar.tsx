@@ -12,7 +12,6 @@ import MainNavBoxes from './MainNavBoxes';
 import MainNavBoxExtras from './MainNavBoxExtras';
 import MainNavItem, { Wrapper } from './MainNavItem';
 
-//TODO: Need ot use next/link for all navigation
 const MainNav = styled.nav`
   display: flex;
   justify-content: space-between;
