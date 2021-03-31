@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
 import Switch from 'rc-switch';
-import { Theme, DarkTheme } from 'styles/theme';
+import React, { useState } from 'react';
 
+//TODO Move mediaquery listener from _document.js inlien script to here.
 type ColorModeSwitchProps = {};
 
 function ColorModeSwitch(props: ColorModeSwitchProps) {

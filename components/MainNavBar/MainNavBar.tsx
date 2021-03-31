@@ -13,9 +13,12 @@ import MainNavBoxes from './MainNavBoxes';
 import MainNavBoxExtras from './MainNavBoxExtras';
 import MainNavItem, { Wrapper as MainNavItemWrapper } from './MainNavItem';
 
-const ColorModeSwitch = dynamic(() => import('components/ColorModeSwitch'), {
-  ssr: false,
-});
+const ColorModeSwitch = dynamic(
+  () => import('components/ColorModeSwitch/ColorModeSwitch'),
+  {
+    ssr: false,
+  }
+);
 
 const MainNav = styled.nav`
   display: flex;

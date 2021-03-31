@@ -7,6 +7,7 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { BREAKPOINTS } from 'styles/style-constants';
 import { DarkTheme, Theme } from 'styles/theme';
 import { Page } from '../@types/page';
+import 'styles/styles.css';
 
 const GlobalStyle = createGlobalStyle`
   html {
