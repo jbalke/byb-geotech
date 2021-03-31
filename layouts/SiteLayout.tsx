@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { ReactNode } from 'react';
+import { ReactNode, ReactElement } from 'react';
 import styled from 'styled-components';
 import MainNavBar from 'components/MainNavBar';
 import { Wrapper } from 'components/styled';
@@ -17,7 +17,7 @@ const StyledMain = styled.main`
 
 type PageProps = { children: ReactNode };
 
-const Main = ({ children }: PageProps) => {
+const SiteLayout = ({ children }: PageProps) => {
   return (
     <StyledWrapper main>
       <Head>
@@ -39,4 +39,7 @@ const Main = ({ children }: PageProps) => {
   );
 };
 
-export default Main;
+export const getLayout = (page: ReactElement) => (
+  <SiteLayout>{page}</SiteLayout>
+);
+export default SiteLayout;

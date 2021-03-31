@@ -1,6 +1,6 @@
 import Button from 'components/Button';
-
-export default function Home() {
+import SiteLayout from 'layouts/SiteLayout';
+function Home() {
   return (
     <>
       <h1>Hello World</h1>
@@ -11,3 +11,7 @@ export default function Home() {
     </>
   );
 }
+
+Home.layout = SiteLayout;
+
+export default Home;

@@ -1,11 +1,12 @@
 import { UIProvider } from 'context/ui-context';
 import 'font/font.css';
-import Layout from 'layouts/Main';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { Fragment, ReactElement } from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { BREAKPOINTS } from 'styles/style-constants';
 import { DarkTheme, Theme } from 'styles/theme';
+import { Page } from '../@types/page';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -44,13 +45,15 @@ const GlobalStyle = createGlobalStyle`
   ul {
     list-style-type: none;
   }
-
-  a {
-    text-decoration: none;
-  }
 `;
 
-function App({ Component, pageProps, router }: AppProps) {
+type Props = AppProps & { Component: Page };
+
+function App({ Component, pageProps, router }: Props) {
+  // adjust accordingly if you disabled a layout rendering option
+  const getLayout = Component.getLayout ?? ((page: ReactElement) => page);
+  const Layout = Component.layout ?? Fragment;
+
   return (
     <>
       <Head>
@@ -68,7 +71,7 @@ function App({ Component, pageProps, router }: AppProps) {
       >
         <UIProvider>
           <Layout>
-            <Component {...pageProps} key={router.route} />
+            {getLayout(<Component {...pageProps} key={router.route} />)}
           </Layout>
         </UIProvider>
       </ThemeProvider>
@@ -77,3 +80,6 @@ function App({ Component, pageProps, router }: AppProps) {
 }
 
 export default App;
+
+// https://adamwathan.me/2019/10/17/persistent-layout-patterns-in-nextjs/
+// https://stackoverflow.com/questions/62115518/persistent-layout-in-next-js-with-typescript-and-hoc
