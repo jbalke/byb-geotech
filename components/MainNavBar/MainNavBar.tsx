@@ -3,6 +3,7 @@ import StyledNextLink from 'components/StyledNextLink';
 import { useUIDispatch } from 'context/ui-context';
 import navLinks, { extraLinks } from 'data/main-navigation';
 import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import React from 'react';
 import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
@@ -11,6 +12,10 @@ import Button from '../Button';
 import MainNavBoxes from './MainNavBoxes';
 import MainNavBoxExtras from './MainNavBoxExtras';
 import MainNavItem, { Wrapper as MainNavItemWrapper } from './MainNavItem';
+
+const ColorModeSwitch = dynamic(() => import('components/ColorModeSwitch'), {
+  ssr: false,
+});
 
 const MainNav = styled.nav`
   display: flex;
@@ -107,6 +112,7 @@ const MainNavBar = () => {
           ))}
         </>
       </MainNavContainer>
+      <ColorModeSwitch />
     </MainNav>
   );
 };

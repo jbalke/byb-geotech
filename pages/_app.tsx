@@ -12,15 +12,20 @@ const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
+  }
 
+  body.light {
     ${Theme.css.string}
   }
   
+  body.dark {
+    ${DarkTheme.css.string}
+  }
+  
   @media (prefers-color-scheme: dark) {
-    :root {
+    :root {}
       ${DarkTheme.css.string}
     }
-  }
   
   *, *::before, *::after {
     box-sizing: inherit
