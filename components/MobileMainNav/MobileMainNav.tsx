@@ -1,14 +1,13 @@
 import { closeSidebar } from 'actions/ui-actions';
+import StyledNextLink from 'components/StyledNextLink';
 import { useUIDispatch, useUIState } from 'context/ui-context';
 import navLinks from 'data/main-navigation';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import React from 'react';
-import { FaTimes, FaHome } from 'react-icons/fa';
+import { FaHome, FaTimes } from 'react-icons/fa';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import Button from '../Button';
-import { UnstyledLink } from '../styled';
 
 const MenuCloseBtn = styled(Button)`
   align-self: flex-end;
@@ -93,10 +92,6 @@ const HomeLinkWrapper = styled.div`
   margin: 1rem 0;
 `;
 
-const HomeLink = styled(UnstyledLink)`
-  font-size: 2rem;
-`;
-
 const mobileWrapperVariants = {
   open: { display: 'flex', transition: { when: 'beforeChildren' } },
   closed: {
@@ -130,11 +125,9 @@ function MobileMainNav(props: MobileMainNavProps) {
           <FaTimes />
         </MenuCloseBtn>
         <HomeLinkWrapper>
-          <Link href='/' passHref>
-            <HomeLink onClick={closeMobileNav}>
-              <FaHome />
-            </HomeLink>
-          </Link>
+          <StyledNextLink size='3rem' onClick={closeMobileNav} href='/'>
+            <FaHome />
+          </StyledNextLink>
         </HomeLinkWrapper>
         <NavLinksContainer>
           {navLinks.map((page) => (
@@ -146,9 +139,9 @@ function MobileMainNav(props: MobileMainNavProps) {
                   return (
                     <React.Fragment key={link.url}>
                       <Icon />
-                      <Link href={link.url}>
-                        <a onClick={closeMobileNav}>{link.label}</a>
-                      </Link>
+                      <StyledNextLink href={link.url} onClick={closeMobileNav}>
+                        {link.label}
+                      </StyledNextLink>
                     </React.Fragment>
                   );
                 })}

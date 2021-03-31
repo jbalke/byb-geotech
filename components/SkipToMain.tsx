@@ -3,22 +3,21 @@ import { Theme } from 'styles/theme';
 
 const SkipToMainLink = styled.a`
   position: absolute;
-  left: -10000px;
-  top: auto;
+  top: -10000px;
   width: 1px;
   height: 1px;
   overflow: hidden;
-  appearance: none;
 
   :visited,
   :active {
-    color: initial;
+    color: inherit;
   }
 
   :focus {
     color: ${Theme.color.text};
     background-color: ${Theme.color.textBackground};
     position: relative;
+    top: 0;
     left: 0;
     width: auto;
     height: auto;

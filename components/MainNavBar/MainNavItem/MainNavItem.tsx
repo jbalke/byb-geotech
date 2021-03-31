@@ -1,22 +1,19 @@
+import StyledNextLink from 'components/StyledNextLink';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import React, { ReactElement, ReactNode, useState } from 'react';
 import { BsChevronDown } from 'react-icons/bs';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 
-const MainNavLink = styled.a`
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  padding: 3px 5px;
+const MainNavLink = styled(StyledNextLink)`
   color: ${Theme.color.primaryLight};
-  text-decoration: none;
-  text-transform: capitalize;
-`;
+  padding: 3px 5px;
 
-const MainNavLinkText = styled.span`
-  line-height: 1;
+  :visited,
+  :hover,
+  :active {
+    color: ${Theme.color.primaryLight};
+  }
 `;
 
 const MainNavLinkChevronDown = styled(BsChevronDown)`
@@ -80,12 +77,9 @@ function MainNavItem({
 
   return (
     <Wrapper onMouseEnter={openMenu} onMouseLeave={closeMenu}>
-      <Link href={href} passHref>
-        <MainNavLink>
-          <MainNavLinkText>{label}</MainNavLinkText>
-          {dropdownContent && <MainNavLinkChevronDown />}
-        </MainNavLink>
-      </Link>
+      <MainNavLink href={href}>
+        {label} {dropdownContent && <MainNavLinkChevronDown />}
+      </MainNavLink>
       {dropdownContent && (
         <MainNavLinkDropdown
           variants={dropdownVariants}

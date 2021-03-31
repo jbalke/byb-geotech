@@ -45,6 +45,6 @@ export const UnstyledLink = styled.a`
 
   :visited,
   :active {
-    color: currentColor;
+    color: inherit;
   }
 `;

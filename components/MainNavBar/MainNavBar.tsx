@@ -1,8 +1,8 @@
 import { toggleSidebar } from 'actions/ui-actions';
+import StyledNextLink from 'components/StyledNextLink';
 import { useUIDispatch } from 'context/ui-context';
 import navLinks, { extraLinks } from 'data/main-navigation';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import React from 'react';
 import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
@@ -10,7 +10,7 @@ import { Theme } from 'styles/theme';
 import Button from '../Button';
 import MainNavBoxes from './MainNavBoxes';
 import MainNavBoxExtras from './MainNavBoxExtras';
-import MainNavItem, { Wrapper } from './MainNavItem';
+import MainNavItem, { Wrapper as MainNavItemWrapper } from './MainNavItem';
 
 const MainNav = styled.nav`
   display: flex;
@@ -29,8 +29,7 @@ const MainNav = styled.nav`
   }
 `;
 
-const NavLogoLink = styled.a`
-  display: flex;
+const NavLogoLink = styled(StyledNextLink)`
   margin-right: 20px;
   transition: opacity 0.2s ease;
 
@@ -57,7 +56,7 @@ const MainNavContainer = styled.div`
     flex-flow: row nowrap;
     height: 100%;
 
-    ${Wrapper} + ${Wrapper} {
+    ${MainNavItemWrapper} + ${MainNavItemWrapper} {
       margin-left: 20px;
     }
   }
@@ -82,11 +81,9 @@ const MainNavBar = () => {
 
   return (
     <MainNav>
-      <Link href='/' passHref>
-        <NavLogoLink>
-          <img src='https://dummyimage.com/90x30.png?text=LOGO' alt='' />
-        </NavLogoLink>
-      </Link>
+      <NavLogoLink href='/'>
+        <img src='https://dummyimage.com/90x30.png?text=LOGO' alt='' />
+      </NavLogoLink>
       <MobileMenuToggle variant='outline' onClick={toggleMobileNav}>
         <FaBars />
       </MobileMenuToggle>

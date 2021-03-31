@@ -1,7 +1,11 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
-import Link from 'next/link';
+import StyledNextLink from 'components/StyledNextLink';
+
+const LinkWrapper = styled(StyledNextLink)`
+  flex-flow: column nowrap;
+`;
 
 const MainNavBoxDescription = styled.div`
   color: ${Theme.color.primaryLight};
@@ -31,10 +35,6 @@ const Wrapper = styled.div`
   padding: 30px 17px;
 `;
 
-const StyledATag = styled.a`
-  display: inline-block;
-`;
-
 type MainNavigationBoxProps = {
   description: string;
   imageSrc: string;
@@ -50,13 +50,11 @@ function MainNavBox({
 }: MainNavigationBoxProps): ReactElement {
   return (
     <Wrapper>
-      <Link href={url} passHref>
-        <StyledATag>
-          <MainNavBoxImage src={imageSrc} alt='' />
-          <MainNavBoxTitle>{title}</MainNavBoxTitle>
-          <MainNavBoxDescription>{description}</MainNavBoxDescription>
-        </StyledATag>
-      </Link>
+      <LinkWrapper href={url}>
+        <MainNavBoxImage src={imageSrc} alt='' />
+        <MainNavBoxTitle>{title}</MainNavBoxTitle>
+        <MainNavBoxDescription>{description}</MainNavBoxDescription>
+      </LinkWrapper>
     </Wrapper>
   );
 }
