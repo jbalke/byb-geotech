@@ -19,6 +19,12 @@ export const LIGHT_THEME = {
   warning: '#EFE334',
   success: '#22B712',
   boxShadow: 'rgba(0,0,0,.3)',
+  grey: '#f1f4f8b0',
+  darkGrey: '#6b7c93',
+  green: '#24b47e',
+  teal: '#4F96CE',
+  blue: '#6772e5',
+  darkBlue: '#4F3EF5',
 } as const;
 
 export const DARK_THEME = {
@@ -35,7 +41,13 @@ export const DARK_THEME = {
   info: '#33EAE7',
   warning: '#EFE334',
   success: '#22B712',
-  boxShadow: 'rgba(255,255,255,.3)',
+  boxShadow: 'rgba(0,0,0,.3)',
+  grey: '#f1f4f8b0',
+  darkGrey: '#6b7c93',
+  green: '#24b47e',
+  teal: '#4F96CE',
+  blue: '#6772e5',
+  darkBlue: '#4F3EF5',
 } as const;
 
 export const SPACING = {
@@ -44,6 +56,7 @@ export const SPACING = {
   m: 8,
   l: 16,
   xl: 32,
+  spacer: 28,
 } as const;
 
 export const WIDTH = { max: '1200px', mobileMenuMax: '620px' } as const;

@@ -25,11 +25,11 @@ export const FadeOut = keyframes`
 
 // WRAPPERS
 export const Wrapper = styled.div<{ maxWidth?: string; main?: boolean }>`
-  width: 100%;
-  max-width: ${({ maxWidth }) => maxWidth ?? Theme.width.max};
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  max-width: ${({ maxWidth }) => maxWidth ?? Theme.width.max};
+  width: 100%;
 
   ${({ main }) =>
     main &&

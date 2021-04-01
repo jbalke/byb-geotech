@@ -1,28 +1,27 @@
 import { toggleSidebar } from 'actions/ui-actions';
+import DarkModeToggle from 'components/DarkModeToggle';
 import StyledNextLink from 'components/StyledNextLink';
 import { useUIDispatch } from 'context/ui-context';
-import navLinks, { extraLinks } from 'data/main-navigation';
-import { motion } from 'framer-motion';
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { ReactElement, useState, FC } from 'react';
 import { FaBars } from 'react-icons/fa';
-import Toggle from 'react-toggle';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import Button from '../Button';
-import MainNavBoxes from './MainNavBoxes';
-import MainNavBoxExtras from './MainNavBoxExtras';
-import MainNavItem, { Wrapper as MainNavItemWrapper } from './MainNavItem';
+import ServicesDropdown from './DropdownContents/ServicesDropdown';
+import CompanyDropdown from './DropdownContents/CompanyDropdown';
+import NavBar from './NavBar';
+import DropdownContainer from './DropdownContainer';
+import NavbarItem from './NavBar/NavbarItem';
 
-const MainNav = styled.nav`
+const MainNav = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-flow: row nowrap;
   background-color: ${Theme.color.primaryDark};
-  height: 56px;
   padding: 0 10px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
-  z-index: 999;
+  z-index: 99;
 
   @media (min-width: ${(props) => props.theme.bp.desktop}) {
     justify-content: space-between;
@@ -44,24 +43,15 @@ const NavLogoLink = styled(StyledNextLink)`
   }
 `;
 
-const MainNavBoxesExtras = styled(motion.div)`
-  display: flex;
-  flex-flow: row nowrap;
-`;
+// const NavBar = styled.nav`
+//   display: none;
 
-const MainNavContainer = styled.div`
-  display: none;
-
-  @media (min-width: ${(props) => props.theme.bp.desktop}) {
-    display: flex;
-    flex-flow: row nowrap;
-    height: 100%;
-
-    ${MainNavItemWrapper} + ${MainNavItemWrapper} {
-      margin-left: 20px;
-    }
-  }
-`;
+//   @media (min-width: ${(props) => props.theme.bp.desktop}) {
+//     display: flex;
+//     flex-flow: row nowrap;
+//     height: 100%;
+//   }
+// `;
 
 const MobileControls = styled.div`
   align-items: center;
@@ -77,76 +67,59 @@ const MobileMenuToggle = styled(Button)`
   }
 `;
 
-const dropdownItemsVariants = {
-  open: { opacity: 1, y: 0, transition: { duration: 0.1 } },
-  closed: { opacity: 0, y: -10, transition: { duration: 0.1 } },
-};
+const navbarConfig = [
+  { title: 'Services', dropdown: ServicesDropdown },
+  // { title: 'Developers', dropdown: DevelopersDropdown },
+  { title: 'Company', dropdown: CompanyDropdown },
+];
 
 const MainNavBar = () => {
   const dispatch = useUIDispatch();
   const toggleMobileNav = () => dispatch(toggleSidebar());
 
-  const [theme, setTheme] = useState<string>(null!);
+  const [activeIndices, setActiveIndices] = useState<number[]>([]);
 
-  useEffect(() => {
-    setTheme(window.__theme);
-    window.__onThemeChange = () => {
-      setTheme(window.__theme);
-    };
-  }, []);
+  const onMouseEnter = (i: number) => {
+    if (activeIndices[activeIndices.length - 1] === i) return;
+
+    setActiveIndices((old) => old.concat(i));
+  };
+
+  const onMouseLeave = () => {
+    setActiveIndices([]);
+  };
+
+  let CurrentDropdown: FC;
+
+  const currentIndex = activeIndices[activeIndices.length - 1];
+
+  if (typeof currentIndex === 'number') {
+    CurrentDropdown = navbarConfig[currentIndex].dropdown!;
+  }
 
   return (
     <MainNav>
       <NavLogoLink href='/'>
         <img src='https://dummyimage.com/90x30.png?text=LOGO' alt='' />
       </NavLogoLink>
-      <MainNavContainer>
-        <>
-          <MainNavItem label='Home' href='/' />
-          {navLinks?.map((page) => (
-            <MainNavItem
-              key={page.title}
-              label={page.title}
-              href={page?.url}
-              dropdownContent={
-                page.links && (
-                  <MainNavBoxesExtras variants={dropdownItemsVariants}>
-                    <MainNavBoxes subLinks={page.links} />
-                    <MainNavBoxExtras links={extraLinks} />
-                  </MainNavBoxesExtras>
-                )
-              }
-            />
-          ))}
-        </>
-      </MainNavContainer>
+      <NavBar onMouseLeave={onMouseLeave}>
+        {navbarConfig.map((item, index) => (
+          <NavbarItem
+            key={item.title}
+            title={item.title}
+            index={index}
+            onMouseEnter={onMouseEnter}
+          >
+            {currentIndex === index && (
+              <DropdownContainer>
+                {CurrentDropdown && <CurrentDropdown />}
+              </DropdownContainer>
+            )}
+          </NavbarItem>
+        ))}
+      </NavBar>
       <MobileControls>
-        <Toggle
-          icons={{
-            checked: (
-              <img
-                src='/moon.png'
-                width='16'
-                height='16'
-                role='presentation'
-                style={{ pointerEvents: 'none' }}
-              />
-            ),
-            unchecked: (
-              <img
-                src='/sun.png'
-                width='16'
-                height='16'
-                role='presentation'
-                style={{ pointerEvents: 'none' }}
-              />
-            ),
-          }}
-          checked={theme === 'dark'}
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            window.__setPreferredTheme(e.target.checked ? 'dark' : 'light')
-          }
-        />
+        <DarkModeToggle />
         <MobileMenuToggle variant='outline' onClick={toggleMobileNav}>
           <FaBars />
         </MobileMenuToggle>
