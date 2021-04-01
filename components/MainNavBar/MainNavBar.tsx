@@ -3,22 +3,15 @@ import StyledNextLink from 'components/StyledNextLink';
 import { useUIDispatch } from 'context/ui-context';
 import navLinks, { extraLinks } from 'data/main-navigation';
 import { motion } from 'framer-motion';
-import dynamic from 'next/dynamic';
-import React from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import { FaBars } from 'react-icons/fa';
+import Toggle from 'react-toggle';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import Button from '../Button';
 import MainNavBoxes from './MainNavBoxes';
 import MainNavBoxExtras from './MainNavBoxExtras';
 import MainNavItem, { Wrapper as MainNavItemWrapper } from './MainNavItem';
-
-const ColorModeSwitch = dynamic(
-  () => import('components/ColorModeSwitch/ColorModeSwitch'),
-  {
-    ssr: false,
-  }
-);
 
 const MainNav = styled.nav`
   display: flex;
@@ -32,7 +25,7 @@ const MainNav = styled.nav`
   z-index: 999;
 
   @media (min-width: ${(props) => props.theme.bp.desktop}) {
-    justify-content: flex-start;
+    justify-content: space-between;
     padding: 0 30px;
   }
 `;
@@ -70,8 +63,14 @@ const MainNavContainer = styled.div`
   }
 `;
 
+const MobileControls = styled.div`
+  align-items: center;
+  display: flex;
+`;
+
 const MobileMenuToggle = styled(Button)`
   display: flex;
+  margin-left: 15px;
 
   @media (min-width: ${(props) => props.theme.bp.desktop}) {
     display: none;
@@ -87,14 +86,20 @@ const MainNavBar = () => {
   const dispatch = useUIDispatch();
   const toggleMobileNav = () => dispatch(toggleSidebar());
 
+  const [theme, setTheme] = useState<string>(null!);
+
+  useEffect(() => {
+    setTheme(window.__theme);
+    window.__onThemeChange = () => {
+      setTheme(window.__theme);
+    };
+  }, []);
+
   return (
     <MainNav>
       <NavLogoLink href='/'>
         <img src='https://dummyimage.com/90x30.png?text=LOGO' alt='' />
       </NavLogoLink>
-      <MobileMenuToggle variant='outline' onClick={toggleMobileNav}>
-        <FaBars />
-      </MobileMenuToggle>
       <MainNavContainer>
         <>
           <MainNavItem label='Home' href='/' />
@@ -115,7 +120,37 @@ const MainNavBar = () => {
           ))}
         </>
       </MainNavContainer>
-      <ColorModeSwitch />
+      <MobileControls>
+        <Toggle
+          icons={{
+            checked: (
+              <img
+                src='/moon.png'
+                width='16'
+                height='16'
+                role='presentation'
+                style={{ pointerEvents: 'none' }}
+              />
+            ),
+            unchecked: (
+              <img
+                src='/sun.png'
+                width='16'
+                height='16'
+                role='presentation'
+                style={{ pointerEvents: 'none' }}
+              />
+            ),
+          }}
+          checked={theme === 'dark'}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            window.__setPreferredTheme(e.target.checked ? 'dark' : 'light')
+          }
+        />
+        <MobileMenuToggle variant='outline' onClick={toggleMobileNav}>
+          <FaBars />
+        </MobileMenuToggle>
+      </MobileControls>
     </MainNav>
   );
 };

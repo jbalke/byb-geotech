@@ -23,11 +23,6 @@ const GlobalStyle = createGlobalStyle`
     ${DarkTheme.css.string}
   }
   
-  @media (prefers-color-scheme: dark) {
-    :root {}
-      ${DarkTheme.css.string}
-    }
-  
   *, *::before, *::after {
     box-sizing: inherit
   }
@@ -35,12 +30,10 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background-color: ${Theme.color.black};
     background-image: url('/water.webp');
     background-repeat: repeat;
     background-attachment: fixed;
     background-size: cover;
-    color: ${Theme.color.text};
     font-family: 'Public Sans', sans-serif;
   }
 
