@@ -1,16 +1,12 @@
-import Head from 'next/head';
-import { ReactNode, ReactElement } from 'react';
-import styled from 'styled-components';
 import MainNavBar from 'components/MainNavBar';
-import { Wrapper } from 'components/styled';
-import SkipToMain from 'components/SkipToMain';
 import MobileMainNav from 'components/MobileMainNav';
+import SkipToMain from 'components/SkipToMain';
+import { Wrapper } from 'components/styled';
+import Head from 'next/head';
+import { ReactElement, ReactNode } from 'react';
+import styled from 'styled-components';
 import { Theme } from '../styles/theme';
 
-const StyledWrapper = styled(Wrapper)`
-  color: ${Theme.color.text};
-  background-color: ${Theme.color.textBackground};
-`;
 const StyledMain = styled.main`
   flex: 1;
 `;
@@ -19,7 +15,14 @@ type PageProps = { children: ReactNode };
 
 const SiteLayout = ({ children }: PageProps) => {
   return (
-    <StyledWrapper main>
+    <Wrapper
+      main
+      style={{
+        color: Theme.color.text,
+        backgroundColor: Theme.color.textBackground,
+        transition: 'color 300ms ease-out, background 300ms ease-out',
+      }}
+    >
       <Head>
         <title>Backyard Bores</title>
       </Head>
@@ -35,7 +38,7 @@ const SiteLayout = ({ children }: PageProps) => {
         footer
       </footer>
       <MobileMainNav />
-    </StyledWrapper>
+    </Wrapper>
   );
 };
 
