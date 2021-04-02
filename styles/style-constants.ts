@@ -18,13 +18,17 @@ export const LIGHT_THEME = {
   info: '#33EAE7',
   warning: '#EFE334',
   success: '#22B712',
-  boxShadow: 'rgba(0,0,0,.3)',
+  boxShadow:
+    '0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1)',
+  navDropdownBoxShadow:
+    '0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1)',
   grey: '#f1f4f8b0',
   darkGrey: '#6b7c93',
   green: '#24b47e',
   teal: '#4F96CE',
   blue: '#6772e5',
   darkBlue: '#4F3EF5',
+  transition: 'color 300ms ease-out, background-color 300ms ease-out',
 } as const;
 
 export const DARK_THEME = {
@@ -41,13 +45,15 @@ export const DARK_THEME = {
   info: '#33EAE7',
   warning: '#EFE334',
   success: '#22B712',
-  boxShadow: 'rgba(0,0,0,.3)',
+  boxShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
+  navDropdownBoxShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
   grey: '#f1f4f8b0',
   darkGrey: '#6b7c93',
   green: '#24b47e',
   teal: '#4F96CE',
   blue: '#6772e5',
   darkBlue: '#4F3EF5',
+  transition: 'color 300ms ease-out, background-color 300ms ease-out',
 } as const;
 
 export const SPACING = {

@@ -30,10 +30,12 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background-image: url('/water.webp');
-    background-repeat: repeat;
+    background: #0052D4;  /* fallback for old browsers */
+    background: linear-gradient(to right, #6FB1FC, #4364F7, #0052D4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* background-image: url('/water.webp'); */
+    /* background-repeat: repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover; */
     font-family: 'Public Sans', sans-serif;
   }
 
@@ -41,8 +43,14 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Rubik';
   }
 
+  h1, h2, h3:first-child {
+    margin-top: 0;
+  }
+
   ul {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
   }
 `;
 

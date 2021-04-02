@@ -4,7 +4,7 @@ function Home() {
   return (
     <>
       <h1>Hello World</h1>
-      <span>hello</span>
+      <p>Hello World</p>
       <Button shadow noBorder>
         Test Button
       </Button>

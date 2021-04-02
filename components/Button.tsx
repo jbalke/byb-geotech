@@ -18,7 +18,7 @@ const Button = styled.button<{
   color: ${Theme.color.white};
   background-color: ${Theme.color.primary};
   border: ${({ borderWidth }) =>
-    borderWidth ? '0' : `${borderWidth ?? '1px'} solid ${Theme.color.white}`};
+    borderWidth ? `${borderWidth ?? '1px'} solid ${Theme.color.white}` : '0'};
   margin: ${({ margin }) => margin || '0'};
   transition: background-color 0.25s, color 0.25s;
   cursor: pointer;
@@ -43,8 +43,8 @@ const Button = styled.button<{
     if (variant === 'outline') {
       return css`
         background-color: transparent;
-        color: ${Theme.color.primary};
-        border-color: ${Theme.color.primary};
+        color: ${Theme.color.primaryLight};
+        border-color: ${Theme.color.primaryLight};
       `;
     }
   }}

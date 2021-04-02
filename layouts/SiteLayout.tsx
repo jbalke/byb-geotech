@@ -9,34 +9,42 @@ import { Theme } from '../styles/theme';
 
 const StyledMain = styled.main`
   flex: 1;
+  padding: ${Theme.spacing.l};
+`;
+
+const StyledFooter = styled.footer`
+  min-height: 200px;
 `;
 
 type PageProps = { children: ReactNode };
 
 const SiteLayout = ({ children }: PageProps) => {
   return (
-    <Wrapper
-      main
-      style={{
-        color: Theme.color.text,
-        backgroundColor: Theme.color.textBackground,
-        transition: 'color 300ms ease-out, background 300ms ease-out',
-      }}
-    >
+    <Wrapper main>
       <Head>
         <title>Backyard Bores</title>
       </Head>
       <SkipToMain href='#main-content' />
       <MainNavBar />
-      <StyledMain id='main-content'>{children}</StyledMain>
-      <footer
+      <StyledMain
+        id='main-content'
         style={{
-          backgroundColor: 'black',
-          minHeight: '200px',
+          color: Theme.color.text,
+          backgroundColor: Theme.color.textBackground,
+          transition: Theme.color.transition,
+        }}
+      >
+        {children}
+      </StyledMain>
+      <StyledFooter
+        style={{
+          backgroundColor: Theme.color.black,
+          color: Theme.color.white,
+          transition: Theme.color.transition,
         }}
       >
         footer
-      </footer>
+      </StyledFooter>
       <MobileMainNav />
     </Wrapper>
   );

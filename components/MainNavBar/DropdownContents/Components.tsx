@@ -11,7 +11,7 @@ export const Heading = styled.h3<{ noMarginBottom?: boolean; color?: string }>`
     color
       ? `var(--color-${color})`
       : Theme.color
-          .blue}; //https://dev.to/mapleleaf/indexing-objects-in-typescript-1cgi
+          .primary}; //https://dev.to/mapleleaf/indexing-objects-in-typescript-1cgi
 `;
 
 export const LinkList = styled.ul<{ marginLeft?: string }>`
@@ -30,7 +30,7 @@ export const Icon = styled.div`
   width: 13px;
   height: 13px;
   margin-right: 13px;
-  background-color: var(--blue);
+  background-color: ${Theme.color.primary};
   opacity: 0.8;
   display: inline-block;
 `;

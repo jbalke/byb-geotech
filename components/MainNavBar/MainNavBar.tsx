@@ -2,26 +2,31 @@ import { toggleSidebar } from 'actions/ui-actions';
 import DarkModeToggle from 'components/DarkModeToggle';
 import StyledNextLink from 'components/StyledNextLink';
 import { useUIDispatch } from 'context/ui-context';
-import React, { ReactElement, useState, FC } from 'react';
+import React, { FC, useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import Button from '../Button';
-import ServicesDropdown from './DropdownContents/ServicesDropdown';
-import CompanyDropdown from './DropdownContents/CompanyDropdown';
-import NavBar from './NavBar';
 import DropdownContainer from './DropdownContainer';
+import CompanyDropdown from './DropdownContents/CompanyDropdown';
+import DevelopersDropdown from './DropdownContents/DevelopersDropdown';
+import ServicesDropdown from './DropdownContents/ServicesDropdown';
+import NavBar from './NavBar';
 import NavbarItem from './NavBar/NavbarItem';
 
+const DURATION = 300;
+
 const MainNav = styled.header`
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  background-color: transparent; // ${Theme.color.primary};
+  color: ${Theme.color.darkGrey};
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
   flex-flow: row nowrap;
-  background-color: ${Theme.color.primaryDark};
+  justify-content: space-between;
   padding: 0 10px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
   z-index: 99;
+  transition: ${Theme.color.transition};
 
   @media (min-width: ${(props) => props.theme.bp.desktop}) {
     justify-content: space-between;
@@ -43,16 +48,6 @@ const NavLogoLink = styled(StyledNextLink)`
   }
 `;
 
-// const NavBar = styled.nav`
-//   display: none;
-
-//   @media (min-width: ${(props) => props.theme.bp.desktop}) {
-//     display: flex;
-//     flex-flow: row nowrap;
-//     height: 100%;
-//   }
-// `;
-
 const MobileControls = styled.div`
   align-items: center;
   display: flex;
@@ -69,7 +64,7 @@ const MobileMenuToggle = styled(Button)`
 
 const navbarConfig = [
   { title: 'Services', dropdown: ServicesDropdown },
-  // { title: 'Developers', dropdown: DevelopersDropdown },
+  { title: 'Developers', dropdown: DevelopersDropdown },
   { title: 'Company', dropdown: CompanyDropdown },
 ];
 
@@ -78,23 +73,51 @@ const MainNavBar = () => {
   const toggleMobileNav = () => dispatch(toggleSidebar());
 
   const [activeIndices, setActiveIndices] = useState<number[]>([]);
+  const [isAnimatingOut, setIsAnimatingOut] = useState(false);
+  const [animatingOutTimeout, setAnimatingOutTimeout] = useState<number | null>(
+    null
+  );
+
+  const resetDropdownState = (i: number) => {
+    setActiveIndices([i]);
+    setIsAnimatingOut(false);
+    setAnimatingOutTimeout(null);
+  };
 
   const onMouseEnter = (i: number) => {
+    if (animatingOutTimeout) {
+      clearTimeout(animatingOutTimeout);
+      resetDropdownState(i);
+      return;
+    }
     if (activeIndices[activeIndices.length - 1] === i) return;
 
-    setActiveIndices((old) => old.concat(i));
+    setActiveIndices((old) => [...old, i]);
+    setIsAnimatingOut(false);
   };
 
   const onMouseLeave = () => {
+    setIsAnimatingOut(true);
+    // const timeout = setTimeout(resetDropdownState, DURATION);
+    // setAnimatingOutTimeout(timeout);
     setActiveIndices([]);
   };
 
   let CurrentDropdown: FC;
+  let PrevDropdown: FC;
+  let direction: 'left' | 'right';
 
   const currentIndex = activeIndices[activeIndices.length - 1];
+  const prevIndex =
+    activeIndices.length > 1 && activeIndices[activeIndices.length - 2];
 
   if (typeof currentIndex === 'number') {
-    CurrentDropdown = navbarConfig[currentIndex].dropdown!;
+    CurrentDropdown = navbarConfig[currentIndex].dropdown;
+  }
+
+  if (typeof prevIndex === 'number') {
+    PrevDropdown = navbarConfig[prevIndex].dropdown;
+    direction = currentIndex > prevIndex ? 'right' : 'left';
   }
 
   return (
@@ -111,8 +134,13 @@ const MainNavBar = () => {
             onMouseEnter={onMouseEnter}
           >
             {currentIndex === index && (
-              <DropdownContainer>
+              <DropdownContainer
+                direction={direction}
+                animatingOut={isAnimatingOut}
+                duration={DURATION}
+              >
                 {CurrentDropdown && <CurrentDropdown />}
+                {/* {PrevDropdown && <PrevDropdown />} */}
               </DropdownContainer>
             )}
           </NavbarItem>
@@ -120,7 +148,7 @@ const MainNavBar = () => {
       </NavBar>
       <MobileControls>
         <DarkModeToggle />
-        <MobileMenuToggle variant='outline' onClick={toggleMobileNav}>
+        <MobileMenuToggle onClick={toggleMobileNav}>
           <FaBars />
         </MobileMenuToggle>
       </MobileControls>
