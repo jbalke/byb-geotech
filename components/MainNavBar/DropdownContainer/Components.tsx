@@ -50,13 +50,11 @@ export const Caret = styled.div`
 `;
 
 export const DropdownBackground = styled.div`
-  transform-origin: 0 0;
   background-color: ${Theme.color.textBackground};
   border-radius: 4px;
   overflow: hidden;
   position: relative;
   box-shadow: ${Theme.color.navDropdownBoxShadow};
-  ${promoteLayer}
 `;
 
 export const AltBackground = styled.div<{ duration: number }>`

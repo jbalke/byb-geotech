@@ -12,7 +12,7 @@ type CompanyDropdownProps = {};
 function CompanyDropdown(props: CompanyDropdownProps) {
   return (
     <CompanyDropdownEl>
-      <DropdownSection data-first-dropdown-section>
+      <DropdownSection>
         <ul>
           <Heading as='li'>
             <StyledNextLink href='/'>

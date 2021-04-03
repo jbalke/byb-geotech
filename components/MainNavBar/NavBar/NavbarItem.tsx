@@ -33,7 +33,6 @@ const DropdownSlot = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  perspective: 1500px;
 `;
 
 const TitleTextLineContainer = styled.div`

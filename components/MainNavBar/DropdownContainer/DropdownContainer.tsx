@@ -1,7 +1,7 @@
 // @ts-nocheck
+import { motion, AnimatePresence } from 'framer-motion';
 import React, { ReactNode } from 'react';
 import { Caret, DropdownBackground } from './Components';
-import { AnimatingInfo } from './types';
 
 const getFirstDropdownSectionHeight = (el) => {
   if (
@@ -40,20 +40,27 @@ const updateAltBackground = ({
   }
 };
 
-type Props = { children: ReactNode; withCaret?: boolean } & AnimatingInfo;
+const dropdownVariants = { open: { opacity: 1 }, closed: { opacity: 0 } };
 
-function DropdownContainer({
-  children,
-  withCaret,
-  direction,
-  animatingOut,
-  duration,
-}: Props) {
+type Props = {
+  children: ReactNode;
+  withCaret?: boolean;
+  index: number;
+  prevIndex?: number;
+};
+
+function DropdownContainer({ children, withCaret, index, prevIndex }: Props) {
   return (
-    <div>
+    <motion.div
+      layoutId='dropdown'
+      // key={index}
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: 1 }}
+      // exit={{ opacity: 0 }}
+    >
       {withCaret && <Caret />}
       <DropdownBackground>{children}</DropdownBackground>
-    </div>
+    </motion.div>
   );
 }
 

@@ -13,6 +13,7 @@ import DevelopersDropdown from './DropdownContents/DevelopersDropdown';
 import ServicesDropdown from './DropdownContents/ServicesDropdown';
 import NavBar from './NavBar';
 import NavbarItem from './NavBar/NavbarItem';
+import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
 
 const DURATION = 300;
 
@@ -73,79 +74,64 @@ const MainNavBar = () => {
   const toggleMobileNav = () => dispatch(toggleSidebar());
 
   const [activeIndices, setActiveIndices] = useState<number[]>([]);
-  const [isAnimatingOut, setIsAnimatingOut] = useState(false);
-  const [animatingOutTimeout, setAnimatingOutTimeout] = useState<number | null>(
-    null
-  );
-
-  const resetDropdownState = (i: number) => {
-    setActiveIndices([i]);
-    setIsAnimatingOut(false);
-    setAnimatingOutTimeout(null);
-  };
 
   const onMouseEnter = (i: number) => {
-    if (animatingOutTimeout) {
-      clearTimeout(animatingOutTimeout);
-      resetDropdownState(i);
-      return;
-    }
     if (activeIndices[activeIndices.length - 1] === i) return;
 
     setActiveIndices((old) => [...old, i]);
-    setIsAnimatingOut(false);
   };
 
   const onMouseLeave = () => {
-    setIsAnimatingOut(true);
-    // const timeout = setTimeout(resetDropdownState, DURATION);
-    // setAnimatingOutTimeout(timeout);
     setActiveIndices([]);
   };
 
   let CurrentDropdown: FC;
-  let PrevDropdown: FC;
-  let direction: 'left' | 'right';
+  // let PrevDropdown: FC | null;
 
-  const currentIndex = activeIndices[activeIndices.length - 1];
+  const currentIndex =
+    activeIndices.length > 0
+      ? activeIndices[activeIndices.length - 1]
+      : undefined;
   const prevIndex =
-    activeIndices.length > 1 && activeIndices[activeIndices.length - 2];
+    activeIndices.length > 1
+      ? activeIndices[activeIndices.length - 2]
+      : undefined;
 
   if (typeof currentIndex === 'number') {
     CurrentDropdown = navbarConfig[currentIndex].dropdown;
   }
 
-  if (typeof prevIndex === 'number') {
-    PrevDropdown = navbarConfig[prevIndex].dropdown;
-    direction = currentIndex > prevIndex ? 'right' : 'left';
-  }
+  console.log({ currentIndex, prevIndex });
 
   return (
     <MainNav>
       <NavLogoLink href='/'>
         <img src='https://dummyimage.com/90x30.png?text=LOGO' alt='' />
       </NavLogoLink>
-      <NavBar onMouseLeave={onMouseLeave}>
-        {navbarConfig.map((item, index) => (
-          <NavbarItem
-            key={item.title}
-            title={item.title}
-            index={index}
-            onMouseEnter={onMouseEnter}
-          >
-            {currentIndex === index && (
-              <DropdownContainer
-                direction={direction}
-                animatingOut={isAnimatingOut}
-                duration={DURATION}
-              >
-                {CurrentDropdown && <CurrentDropdown />}
-                {/* {PrevDropdown && <PrevDropdown />} */}
-              </DropdownContainer>
-            )}
-          </NavbarItem>
-        ))}
-      </NavBar>
+      <AnimateSharedLayout>
+        <NavBar onMouseLeave={onMouseLeave}>
+          {navbarConfig.map((item, index) => (
+            <NavbarItem
+              key={item.title}
+              title={item.title}
+              index={index}
+              onMouseEnter={onMouseEnter}
+            >
+              {/* <AnimatePresence> */}
+              {currentIndex === index && (
+                <DropdownContainer index={index} prevIndex={prevIndex}>
+                  {CurrentDropdown && (
+                    <motion.div layout>
+                      <CurrentDropdown />
+                    </motion.div>
+                  )}
+                </DropdownContainer>
+              )}
+              {/* </AnimatePresence> */}
+            </NavbarItem>
+          ))}
+        </NavBar>
+      </AnimateSharedLayout>
       <MobileControls>
         <DarkModeToggle />
         <MobileMenuToggle onClick={toggleMobileNav}>
