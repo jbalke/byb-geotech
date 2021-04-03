@@ -1,36 +1,46 @@
-import {
-  FaCreditCard,
-  FaBook,
-  FaBriefcase,
-  FaHome,
-  FaPhone,
-} from 'react-icons/fa';
+import { FaBook, FaBriefcase, FaCreditCard } from 'react-icons/fa';
 
-const navLinks = [
+export const navLinks = [
   {
     title: 'Services',
     url: '/services',
     links: [
-      { label: 'Drilling', Icon: FaCreditCard, url: '/payment' },
-      { label: 'Prices', Icon: FaCreditCard, url: '/connect' },
+      {
+        label: 'GeoTech Drilling',
+        Icon: FaCreditCard,
+        url: '/services/geotech-drilling',
+      },
+      {
+        label: 'Groundwater Protection',
+        Icon: FaCreditCard,
+        url: '/services/groundwater-protection',
+      },
+      { label: 'Bore Search', Icon: FaCreditCard, url: '/bore-search' },
     ],
   },
   {
-    title: 'Bores',
-    url: '/bores',
+    title: 'Help & Advice',
+    url: '/help',
     links: [
-      { label: 'information', Icon: FaBook, url: '/plugins' },
-      { label: 'regulations', Icon: FaBook, url: '/libraries' },
-      { label: 'search', Icon: FaBook, url: '/bore-search' },
+      { label: 'PFAS Advice', Icon: FaBook, url: '/help' },
+      { label: 'Flooding Advice', Icon: FaBook, url: '/libraries' },
       { label: 'FAQ', Icon: FaBook, url: '/faq' },
     ],
   },
   {
+    title: 'Bore Search',
+    url: '/bore-search',
+  },
+  {
+    title: 'FAQ',
+    url: '/faq',
+  },
+  {
     title: 'About',
-    url: '/about',
+    url: '/our-story',
     links: [
-      { label: 'contact', Icon: FaBriefcase, url: '/contact' },
-      { label: 'our story', Icon: FaBriefcase, url: '/our-story' },
+      { label: 'Contact', Icon: FaBriefcase, url: '/contact' },
+      { label: 'Our Story', Icon: FaBriefcase, url: '/our-story' },
     ],
   },
 ];
@@ -63,4 +73,3 @@ export const extraLinks = [
 export type SubmenuLinks = typeof navLinks[0];
 export type SubLinks = SubmenuLinks['links'];
 export type ExtraLink = typeof extraLinks[0];
-export default navLinks;

@@ -1,7 +1,7 @@
 import { closeSidebar } from 'actions/ui-actions';
 import StyledNextLink from 'components/StyledNextLink';
 import { useUIDispatch, useUIState } from 'context/ui-context';
-import navLinks from 'data/main-navigation';
+import { navLinks } from 'data/main-navigation';
 import { motion } from 'framer-motion';
 import React from 'react';
 import { FaHome, FaTimes } from 'react-icons/fa';
@@ -14,44 +14,45 @@ const MenuCloseBtn = styled(Button)`
 `;
 
 const MenuContainer = styled(motion.div)`
+  background-color: ${Theme.color.textBackground};
+  border-radius: 15px;
+  color: ${Theme.color.text};
   display: flex;
   flex-flow: column nowrap;
-  width: 100%;
-  max-width: ${(props) => props.theme.bp.tablet};
-  margin: 0 auto;
   min-height: calc(100vh - 10px);
-  padding: 10px;
-  border-radius: 15px;
+  margin: 0 auto;
+  max-width: ${(props) => props.theme.bp.tablet};
+  padding: 15px;
   overflow-x: hidden;
-  background-color: ${Theme.color.textBackground};
-  color: ${Theme.color.text};
   overscroll-behavior: contain;
+  width: 100%;
 `;
 
-const Wrapper = styled(motion.div)`
+const Wrapper = styled(motion.nav)`
   align-items: center;
   background-color: rgba(0, 0, 0, 0.8);
   display: none;
   flex-flow: column nowrap;
   height: 100vh;
-  position: fixed;
-  padding: 5px;
-  width: 100vw;
-  top: 0;
   left: 0;
+  padding: 5px;
+  position: fixed;
+  top: 0;
+  width: 100vw;
   z-index: 999;
 
   @supports (backdrop-filter: blur(10px) brightness(0.6)) {
-    background-color: transparent;
     backdrop-filter: blur(10px) brightness(0.6);
+    background-color: transparent;
   }
 `;
 
 const NavLinksContainer = styled.div`
+  align-items: start;
   display: grid;
   flex: 1;
+  gap: 1.5rem 1rem;
   grid-template-columns: 1fr 1fr;
-  align-items: start;
 `;
 
 const PageWrapper = styled.div`
@@ -69,12 +70,11 @@ const LinksWrapper = styled.ul`
   gap: 0.5em 0.25em;
   grid-template-columns: 20px auto;
   justify-content: center;
-  align-items: center;
-  margin: 0;
+  align-items: start;
+  margin: 1em 0 0 0;
   padding: 0;
 
   a {
-    padding: 0.2em;
     color: inherit;
     text-transform: capitalize;
     text-decoration: none;
@@ -84,6 +84,11 @@ const LinksWrapper = styled.ul`
       color: currentColor;
     }
   }
+`;
+
+const PageTitle = styled.h2`
+  font-size: 1.2rem;
+  margin: 0;
 `;
 
 const HomeLinkWrapper = styled.div`
@@ -132,20 +137,25 @@ function MobileMainNav(props: MobileMainNavProps) {
         <NavLinksContainer>
           {navLinks.map((page) => (
             <PageWrapper key={page.title}>
-              <h2>{page.title}</h2>
-              <LinksWrapper>
-                {page.links?.map((link) => {
-                  const { Icon } = link;
-                  return (
-                    <React.Fragment key={link.url}>
-                      <Icon />
-                      <StyledNextLink href={link.url} onClick={closeMobileNav}>
-                        {link.label}
-                      </StyledNextLink>
-                    </React.Fragment>
-                  );
-                })}
-              </LinksWrapper>
+              <PageTitle>{page.title}</PageTitle>
+              {page.links && (
+                <LinksWrapper>
+                  {page.links?.map((link) => {
+                    const { Icon } = link;
+                    return (
+                      <React.Fragment key={link.url}>
+                        <Icon />
+                        <StyledNextLink
+                          href={link.url}
+                          onClick={closeMobileNav}
+                        >
+                          {link.label}
+                        </StyledNextLink>
+                      </React.Fragment>
+                    );
+                  })}
+                </LinksWrapper>
+              )}
             </PageWrapper>
           ))}
         </NavLinksContainer>

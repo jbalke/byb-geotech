@@ -2,6 +2,8 @@ import { toggleSidebar } from 'actions/ui-actions';
 import DarkModeToggle from 'components/DarkModeToggle';
 import StyledNextLink from 'components/StyledNextLink';
 import { useUIDispatch } from 'context/ui-context';
+import { navLinks } from 'data/main-navigation';
+import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
 import React, { FC, useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
@@ -13,23 +15,21 @@ import DevelopersDropdown from './DropdownContents/DevelopersDropdown';
 import ServicesDropdown from './DropdownContents/ServicesDropdown';
 import NavBar from './NavBar';
 import NavbarItem from './NavBar/NavbarItem';
-import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
-
-const DURATION = 300;
 
 const MainNav = styled.header`
   align-items: center;
-  background-color: transparent; // ${Theme.color.primary};
+  background-color: rgba(0, 0, 0, 0.2); // ${Theme.color.primary};
+  backdrop-filter: blur(5px);
   color: ${Theme.color.darkGrey};
   display: flex;
-  font-family: 'Open Sans', sans-serif;
   flex-flow: row nowrap;
+  font-family: 'Open Sans', sans-serif;
   justify-content: space-between;
   padding: 0 10px;
-  z-index: 99;
   transition: ${Theme.color.transition};
+  z-index: 99;
 
-  @media (min-width: ${(props) => props.theme.bp.desktop}) {
+  @media (min-width: ${(props) => props.theme.bp.tablet}) {
     justify-content: space-between;
     padding: 0 30px;
   }
@@ -58,7 +58,7 @@ const MobileMenuToggle = styled(Button)`
   display: flex;
   margin-left: 15px;
 
-  @media (min-width: ${(props) => props.theme.bp.desktop}) {
+  @media (min-width: ${(props) => props.theme.bp.tablet}) {
     display: none;
   }
 `;
@@ -73,61 +73,57 @@ const MainNavBar = () => {
   const dispatch = useUIDispatch();
   const toggleMobileNav = () => dispatch(toggleSidebar());
 
-  const [activeIndices, setActiveIndices] = useState<number[]>([]);
+  const [activeSubmenu, setActiveSubmenu] = useState<number | null>(null);
 
   const onMouseEnter = (i: number) => {
-    if (activeIndices[activeIndices.length - 1] === i) return;
-
-    setActiveIndices((old) => [...old, i]);
+    setActiveSubmenu(i);
   };
 
   const onMouseLeave = () => {
-    setActiveIndices([]);
+    setActiveSubmenu(null);
   };
 
   let CurrentDropdown: FC;
-  // let PrevDropdown: FC | null;
 
-  const currentIndex =
-    activeIndices.length > 0
-      ? activeIndices[activeIndices.length - 1]
-      : undefined;
-  const prevIndex =
-    activeIndices.length > 1
-      ? activeIndices[activeIndices.length - 2]
-      : undefined;
-
-  if (typeof currentIndex === 'number') {
-    CurrentDropdown = navbarConfig[currentIndex].dropdown;
-  }
-
-  console.log({ currentIndex, prevIndex });
+  // if (activeSubmenu !== null) {
+  //   CurrentDropdown = navbarConfig[activeSubmenu].dropdown;
+  // }
 
   return (
     <MainNav>
       <NavLogoLink href='/'>
         <img src='https://dummyimage.com/90x30.png?text=LOGO' alt='' />
       </NavLogoLink>
-      <AnimateSharedLayout>
+      <AnimateSharedLayout type='crossfade'>
         <NavBar onMouseLeave={onMouseLeave}>
-          {navbarConfig.map((item, index) => (
+          {navLinks.map((item, index) => (
             <NavbarItem
               key={item.title}
               title={item.title}
               index={index}
+              href={item.url}
               onMouseEnter={onMouseEnter}
             >
-              {/* <AnimatePresence> */}
-              {currentIndex === index && (
-                <DropdownContainer index={index} prevIndex={prevIndex}>
-                  {CurrentDropdown && (
-                    <motion.div layout>
-                      <CurrentDropdown />
-                    </motion.div>
+              <AnimatePresence>
+                {activeSubmenu === index &&
+                  navLinks[activeSubmenu].links?.length && (
+                    <DropdownContainer>
+                      <motion.div layout>
+                        {navLinks[activeSubmenu].links?.map((link) => {
+                          const { Icon } = link;
+                          return (
+                            <div key={link.label}>
+                              <StyledNextLink href={link.url}>
+                                <Icon />
+                                <span>{link.label}</span>
+                              </StyledNextLink>
+                            </div>
+                          );
+                        })}
+                      </motion.div>
+                    </DropdownContainer>
                   )}
-                </DropdownContainer>
-              )}
-              {/* </AnimatePresence> */}
+              </AnimatePresence>
             </NavbarItem>
           ))}
         </NavBar>

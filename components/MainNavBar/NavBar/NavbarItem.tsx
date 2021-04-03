@@ -1,9 +1,10 @@
+import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 import React, { ReactNode, useState } from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
-import { motion } from 'framer-motion';
 
-const NavbarItemTitle = styled.button`
+const NavbarItemTitle = styled.button<{ link?: boolean }>`
   background: transparent;
   border: 0;
   font-weight: bold;
@@ -15,7 +16,7 @@ const NavbarItemTitle = styled.button`
   display: flex;
   justify-content: center;
   transition: opacity 250ms;
-  cursor: default;
+  cursor: ${({ link }) => (link ? 'pointer' : 'default')};
   /* position above the dropdown, otherwise the dropdown will cover up the bottom sliver of the buttons */
   /* position: relative; */
   z-index: 2;
@@ -24,9 +25,9 @@ const NavbarItemTitle = styled.button`
 const NavbarItemEl = styled.li`
   position: relative;
 
-  & + & {
+  /* & + & {
     margin-left: 20px;
-  }
+  } */
 `;
 
 const DropdownSlot = styled.div`
@@ -60,6 +61,7 @@ type Props = {
   onMouseEnter: (i: number) => void;
   index: number;
   title: string;
+  href?: string;
   children: ReactNode;
 };
 
@@ -69,7 +71,9 @@ const labelVariants = {
   end: { x: [0, 102, -102], opacity: [1, 0, 0], transition: { duration: 0.7 } },
 };
 
-function NavbarItem({ onMouseEnter, index, title, children }: Props) {
+function NavbarItem({ onMouseEnter, index, title, href, children }: Props) {
+  const router = useRouter();
+
   const handleMouseEnter = () => {
     onMouseEnter(index);
     setFocusState('active');
@@ -78,6 +82,11 @@ function NavbarItem({ onMouseEnter, index, title, children }: Props) {
   const [focusState, setFocusState] = useState<'start' | 'active' | 'end'>(
     'start'
   );
+  const handleClick = () => {
+    if (href) {
+      router.push(href);
+    }
+  };
 
   return (
     <NavbarItemEl
@@ -86,7 +95,7 @@ function NavbarItem({ onMouseEnter, index, title, children }: Props) {
       onMouseLeave={handleMouseLeave}
       onBlur={handleMouseLeave}
     >
-      <NavbarItemTitle>
+      <NavbarItemTitle onClick={handleClick} link={!!href}>
         <TitleWrapper>
           <span>{title}</span>
           <TitleTextLineContainer>

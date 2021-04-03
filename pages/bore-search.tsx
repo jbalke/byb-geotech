@@ -1,4 +1,5 @@
 import axios from 'axios';
+import SiteLayout from 'layouts/SiteLayout';
 import debounce from 'lodash/debounce';
 import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
@@ -205,4 +206,5 @@ const BoreSearch = ({ mapCenter, bores }: Props) => {
   );
 };
 
+BoreSearch.layout = SiteLayout;
 export default BoreSearch;

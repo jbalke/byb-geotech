@@ -29,6 +29,7 @@ export const Wrapper = styled.div<{ maxWidth?: string; main?: boolean }>`
   flex-direction: column;
   margin: 0 auto;
   max-width: ${({ maxWidth }) => maxWidth ?? Theme.width.max};
+  position: relative;
   width: 100%;
 
   ${({ main }) =>

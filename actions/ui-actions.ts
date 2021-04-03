@@ -18,16 +18,16 @@ export function toggleSidebar() {
   } as const;
 }
 
-export function openSubmenu(page: string, coordinates: MenuCoords) {
+export function setActiveIndex(index: number) {
   return {
-    type: 'OPEN_SUBMENU',
-    payload: { page, coordinates },
+    type: 'SET_ACTIVE_INDEX',
+    payload: index,
   } as const;
 }
 
-export function closeSubmenu() {
+export function clearActiveIndex() {
   return {
-    type: 'CLOSE_SUBMENU',
+    type: 'CLEAR_ACTIVE_INDEX',
   } as const;
 }
 
@@ -35,6 +35,6 @@ export type Action = ReturnType<
   | typeof openSidebar
   | typeof closeSidebar
   | typeof toggleSidebar
-  | typeof openSubmenu
-  | typeof closeSubmenu
+  | typeof setActiveIndex
+  | typeof clearActiveIndex
 >;

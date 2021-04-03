@@ -5,7 +5,7 @@ import { Theme } from 'styles/theme';
 const NavbarEl = styled.nav`
   display: none;
 
-  @media (min-width: ${(props) => props.theme.bp.desktop}) {
+  @media (min-width: ${(props) => props.theme.bp.tablet}) {
     color: ${Theme.color.primary};
     display: flex;
     flex-flow: row nowrap;
@@ -13,7 +13,7 @@ const NavbarEl = styled.nav`
 
     a:hover,
     a:focus {
-      color: ${Theme.color.primaryDark};
+      color: ${Theme.color.linkHover};
     }
   }
 `;
