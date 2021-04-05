@@ -6,7 +6,18 @@ export const navLinks = [
     url: '/services',
     links: [
       {
-        label: 'GeoTech Drilling',
+        label: 'Geotech Drilling',
+        Icon: FaCreditCard,
+        url: '/services/geotech-drilling',
+      },
+      {
+        label: 'Groundwater Protection',
+        Icon: FaCreditCard,
+        url: '/services/groundwater-protection',
+      },
+      { label: 'Bore Search', Icon: FaCreditCard, url: '/bore-search' },
+      {
+        label: 'Geotech Drilling',
         Icon: FaCreditCard,
         url: '/services/geotech-drilling',
       },

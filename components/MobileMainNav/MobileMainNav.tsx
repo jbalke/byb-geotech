@@ -67,7 +67,7 @@ const PageWrapper = styled.div`
 
 const LinksWrapper = styled.ul`
   display: grid;
-  gap: 0.5em 0.25em;
+  gap: 0.75em 0.25em;
   grid-template-columns: 20px auto;
   justify-content: center;
   align-items: start;

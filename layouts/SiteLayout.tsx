@@ -7,12 +7,18 @@ import styled from 'styled-components';
 import { Theme } from '../styles/theme';
 
 const Hero = styled.section`
+  align-items: center;
   background-image: url('/banner-infinity.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  color: ${Theme.color.white};
+  display: flex;
+  flex-flow: column nowrap;
   height: 50vh;
-  margin-top: -72.19px;
+  justify-content: center;
+  line-height: 1;
+  margin-top: -75px;
   min-height: 375px;
   position: relative;
   width: 100%;
@@ -29,6 +35,51 @@ const Hero = styled.section`
     right: 0;
     bottom: 0;
     left: 0;
+  }
+
+  & > * {
+    z-index: 1;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+    transition: font-size 300ms;
+  }
+
+  @media (min-width: ${(props) => props.theme.bp.desktop}) {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+`;
+
+const HeroPhoneText = styled.p`
+  margin: 2rem 0 0 0;
+  font-size: 2rem;
+  font-weight: 900;
+  transition: font-size 300ms;
+
+  @media (min-width: ${(props) => props.theme.bp.desktop}) {
+    font-size: 3rem;
+  }
+`;
+
+const HeroSubText = styled.p`
+  display: none;
+  font-family: 'Public Sans Italic';
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  margin: 0.5rem 0 0 0;
+  text-align: center;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  width: 70%;
+
+  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+    display: block;
   }
 `;
 
@@ -60,7 +111,14 @@ const SiteLayout = ({ children }: PageProps) => {
       </Head>
       <SkipToMain href='#main-content' />
       <MainNavBar />
-      <Hero />
+      <Hero>
+        <h1>Backyard Bores & Geotech Drilling</h1>
+        <HeroSubText>
+          Your water bore and geotech drilling specialists since 2002. Covering
+          Mackay from Bowen to Rockhampton and west to Clermont.
+        </HeroSubText>
+        <HeroPhoneText>1800 193 194</HeroPhoneText>
+      </Hero>
       <StyledMain id='main-content'>{children}</StyledMain>
       <StyledFooter style={{}}>
         Copyright &copy; 2021 Backyard Bores
