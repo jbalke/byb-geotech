@@ -23,7 +23,7 @@ export const LIGHT_THEME = {
     '0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1)',
   navDropdownBoxShadow:
     '0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1)',
-  grey: '#f1f4f8b0',
+  grey: '#4a4a4a',
   darkGrey: '#6b7c93',
   green: '#24b47e',
   teal: '#4F96CE',

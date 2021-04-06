@@ -7,7 +7,7 @@ const Button = styled.button<{
   variant?: 'outline';
   margin?: string;
   shadow?: boolean;
-  block?: boolean;
+  fullWidth?: boolean;
   borderWidth?: string;
 }>`
   appearance: none;
@@ -29,8 +29,8 @@ const Button = styled.button<{
       box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
     `}
 
-  ${({ block }) =>
-    block
+  ${({ fullWidth }) =>
+    fullWidth
       ? css`
           display: flex;
           width: 100%;
@@ -92,8 +92,12 @@ const Button = styled.button<{
   }}
 
   :hover {
-    background-color: ${Theme.color.white};
-    color: ${Theme.color.primary};
+    background-color: ${Theme.color.primaryDark};
+  }
+
+  :disabled {
+    filter: grayscale(70%);
+    cursor: not-allowed;
   }
 `;
 

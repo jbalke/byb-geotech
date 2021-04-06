@@ -69,6 +69,24 @@ function App({ Component, pageProps, router }: Props) {
           rel='stylesheet'
           href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css'
         />
+        <link
+          rel='apple-touch-icon'
+          sizes='180x180'
+          href='/apple-touch-icon.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='32x32'
+          href='/favicon-32x32.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='16x16'
+          href='/favicon-16x16.png'
+        />
+        <link rel='manifest' href='/site.webmanifest' />
         <title>Backyard Bores</title>
       </Head>
       <GlobalStyle />

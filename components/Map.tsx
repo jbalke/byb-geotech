@@ -95,7 +95,7 @@ const Map = ({ camera, bores }: Props) => {
         setViewport(nextViewport)
       }
       width='100%'
-      height='600px'
+      height='500px'
     >
       <ScaleControl maxWidth={100} unit='metric' style={scaleControlStyle} />
       {/* <GeolocateControl

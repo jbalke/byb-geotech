@@ -15,11 +15,11 @@ const Hero = styled.section`
   color: ${Theme.color.white};
   display: flex;
   flex-flow: column nowrap;
-  height: 50vh;
+  height: 40vh;
   justify-content: center;
   line-height: 1;
   margin-top: -75px;
-  min-height: 375px;
+  min-height: 400px;
   position: relative;
   width: 100%;
 
