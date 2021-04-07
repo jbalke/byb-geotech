@@ -89,7 +89,6 @@ function SearchForm(props: SearchFormProps) {
       name: '',
       email: '',
       phone: '',
-      address: { value: [0, 0], label: '' },
     },
   });
 
@@ -110,14 +109,14 @@ function SearchForm(props: SearchFormProps) {
     []
   );
 
-  const handleChange = (value: Option | null, action: ActionMeta<Option>) => {
-    setValue('address', value ?? { value: [0, 0], label: '' }, {
+  const handleChange = (option: Option | null, action: ActionMeta<Option>) => {
+    setValue('address', option ?? { value: [0, 0], label: '' }, {
       shouldValidate: true,
       shouldDirty: true,
     });
 
-    if (value?.value) {
-      router.push(`?lng=${value.value[0]}&lat=${value.value[1]}`, undefined, {
+    if (option?.value) {
+      router.push(`?lng=${option.value[0]}&lat=${option.value[1]}`, undefined, {
         scroll: false,
       });
     } else {
