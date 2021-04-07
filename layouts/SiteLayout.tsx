@@ -141,7 +141,7 @@ const SiteLayout = ({ children }: PageProps) => {
       </Hero>
       <StyledMain id='main-content'>{children}</StyledMain>
       <StyledFooter style={{}}>
-        Copyright &copy; 2021 Backyard Bores
+        Copyright &copy; 2021 Backyard Bores Pty Ltd
       </StyledFooter>
     </Wrapper>
   );
