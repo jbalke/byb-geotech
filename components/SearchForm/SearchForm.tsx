@@ -29,7 +29,11 @@ const InputSubtext = styled.span`
   color: ${Theme.color.grey};
 `;
 
-const Select = styled(AsyncSelect)``;
+const Select = styled(AsyncSelect)`
+  .select__menu {
+    color: ${Theme.color.dropDownMenuText};
+  }
+`;
 
 const StyledForm = styled.form`
   font-size: 1rem;
@@ -124,6 +128,7 @@ function SearchForm(props: SearchFormProps) {
   const onSubmit = (data: IFormData) => {
     console.log(data);
   };
+
   return (
     <>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
@@ -182,6 +187,7 @@ function SearchForm(props: SearchFormProps) {
               loadOptions={getLocationOptions}
               onChange={handleChange}
               placeholder='Enter address or POI'
+              classNamePrefix='select'
               isClearable
             />
           )}
