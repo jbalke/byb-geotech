@@ -59,7 +59,7 @@ const MainNav = styled.header`
   display: flex;
   flex-flow: row nowrap;
   font-family: 'Open Sans', sans-serif;
-  height: 75px;
+  height: 50px;
   justify-content: space-between;
   padding: 0 10px;
   transition: ${Theme.color.transition};
@@ -67,6 +67,7 @@ const MainNav = styled.header`
   z-index: 99;
 
   @media (min-width: ${(props) => props.theme.bp.desktop}) {
+    height: 75px;
     justify-content: space-between;
     padding: 0 30px;
   }

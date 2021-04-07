@@ -58,11 +58,7 @@ const NavLinksContainer = styled.div`
 const PageWrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
-
-  h2 {
-    text-align: center;
-  }
+  align-items: center;
 `;
 
 const LinksWrapper = styled.ul`
@@ -137,7 +133,13 @@ function MobileMainNav(props: MobileMainNavProps) {
         <NavLinksContainer>
           {navLinks.map((page) => (
             <PageWrapper key={page.title}>
-              <PageTitle>{page.title}</PageTitle>
+              {page.url ? (
+                <StyledNextLink href={page.url} onClick={closeMobileNav}>
+                  <PageTitle>{page.title}</PageTitle>
+                </StyledNextLink>
+              ) : (
+                <PageTitle>{page.title}</PageTitle>
+              )}
               {page.links && (
                 <LinksWrapper>
                   {page.links?.map((link) => {

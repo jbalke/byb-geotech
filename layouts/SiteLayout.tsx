@@ -11,15 +11,14 @@ const Hero = styled.section`
   background-image: url('/banner-infinity.webp');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 50% 70%;
   color: ${Theme.color.white};
   display: flex;
-  flex-flow: column nowrap;
-  height: 40vh;
+  height: 30vh;
   justify-content: center;
   line-height: 1;
   margin-top: -75px;
-  min-height: 400px;
+  min-height: 200px;
   position: relative;
   width: 100%;
 
@@ -49,7 +48,13 @@ const Hero = styled.section`
     transition: font-size 300ms;
   }
 
-  @media (min-width: ${(props) => props.theme.bp.desktop}) {
+  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+    & {
+      height: 40vh;
+      min-height: 400px;
+      background-position: 50% 50%;
+    }
+
     h1 {
       font-size: 3rem;
     }
@@ -57,12 +62,13 @@ const Hero = styled.section`
 `;
 
 const HeroPhoneText = styled.p`
-  margin: 2rem 0 0 0;
   font-size: 2rem;
   font-weight: 900;
+  margin: 1rem 0 0 0;
   transition: font-size 300ms;
 
   @media (min-width: ${(props) => props.theme.bp.desktop}) {
+    margin: 2rem 0 0 0;
     font-size: 3rem;
   }
 `;
@@ -80,6 +86,18 @@ const HeroSubText = styled.p`
 
   @media (min-width: ${(props) => props.theme.bp.tablet}) {
     display: block;
+  }
+`;
+
+const HeroContentWrapper = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+
+  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+    margin: 0;
   }
 `;
 
@@ -112,12 +130,14 @@ const SiteLayout = ({ children }: PageProps) => {
       <SkipToMain href='#main-content' />
       <MainNavBar />
       <Hero>
-        <h1>Backyard Bores & Geotech Drilling</h1>
-        <HeroSubText>
-          Your water bore and geotech drilling specialists since 2002. Covering
-          Mackay from Bowen to Rockhampton and west to Clermont.
-        </HeroSubText>
-        <HeroPhoneText>1800 193 194</HeroPhoneText>
+        <HeroContentWrapper>
+          <h1>Backyard Bores & Geotech Drilling</h1>
+          <HeroSubText>
+            Your water bore and geotech drilling specialists since 2002.
+            Covering Mackay from Bowen to Rockhampton and west to Clermont.
+          </HeroSubText>
+          <HeroPhoneText>1800 193 194</HeroPhoneText>
+        </HeroContentWrapper>
       </Hero>
       <StyledMain id='main-content'>{children}</StyledMain>
       <StyledFooter style={{}}>

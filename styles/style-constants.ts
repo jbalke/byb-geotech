@@ -45,7 +45,7 @@ export const DARK_THEME = {
   highlight: '#E133EA',
   link: '#006EE5',
   linkHover: '#7EAFDD',
-  danger: '#E21616',
+  danger: '#ea4343',
   info: '#33EAE7',
   warning: '#EFE334',
   success: '#22B712',
