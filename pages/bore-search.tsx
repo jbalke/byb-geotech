@@ -1,31 +1,33 @@
-import axios from 'axios';
+import SearchForm from 'components/SearchForm';
 import SiteLayout from 'layouts/SiteLayout';
 import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
-import SearchForm from 'components/SearchForm';
-import { BORE_SEARCH_RADIUS, MAP_CENTER } from '../constants';
 import { Bore } from 'types/bore';
 import { isValidCoordinates, parseCoordinates } from 'utils/geocoding';
+import { MAP_CENTER } from '../constants';
+import { query } from 'models/bore';
 
 //TODO: Use map to confirm provided address, not to show bores (report number of bores found within 1Km of address). Inform user that an email will be sent with bore information.
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const {
-    query: { lng, lat },
+    query: { lng, lat, radius = '500' },
   } = context;
 
   if (lng && lat && isValidCoordinates(lng as string, lat as string)) {
     try {
-      const { data } = await axios.get<Bore[]>(
-        `${process.env.BORE_API_URL}/bores/search?lng=${lng}&lat=${lat}&radius=${BORE_SEARCH_RADIUS}`
-      );
+      const bores = await query.findNearbyBores({
+        radius: radius as string,
+        lat: lat as string,
+        lng: lng as string,
+      });
 
       return {
         props: {
           mapCenter: parseCoordinates(lng as string, lat as string)!,
-          bores: data,
+          bores: JSON.parse(JSON.stringify(bores)), //https://github.com/vercel/next.js/issues/11993
         },
       };
     } catch (error) {
