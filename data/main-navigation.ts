@@ -3,7 +3,7 @@ import { FaBook, FaBriefcase, FaCreditCard } from 'react-icons/fa';
 export const navLinks = [
   {
     title: 'Services',
-    url: '/services',
+    // url: '/services',
     links: [
       {
         label: 'Geotech Drilling',
@@ -19,7 +19,7 @@ export const navLinks = [
   },
   {
     title: 'Help & Advice',
-    url: '/help',
+    // url: '/help',
     links: [
       { label: 'PFAS Advice', Icon: FaBook, url: '/help' },
       { label: 'Flooding Advice', Icon: FaBook, url: '/libraries' },
@@ -36,7 +36,7 @@ export const navLinks = [
   },
   {
     title: 'About',
-    url: '/our-story',
+    // url: '/our-story',
     links: [
       { label: 'Contact', Icon: FaBriefcase, url: '/contact' },
       { label: 'Our Story', Icon: FaBriefcase, url: '/our-story' },
