@@ -1,7 +1,7 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
+import { NextApiRequest, NextApiResponse } from 'next';
 import { query } from 'models/bore';
 
-export default async (req: VercelRequest, res: VercelResponse) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   res.setHeader('Content-Type', 'application/json');
 
   if (req.method === 'GET') {
