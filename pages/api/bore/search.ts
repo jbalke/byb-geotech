@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { findNearbyBores } from 'models/bore';
+import { findNearbyBores } from 'controllers/boreController';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   res.setHeader('Content-Type', 'application/json');

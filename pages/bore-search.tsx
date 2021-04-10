@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { Bore } from 'types/bore';
 import { isValidCoordinates, parseCoordinates } from 'utils/geocoding';
 import { MAP_CENTER } from '../constants';
-import { findNearbyBores } from 'models/bore';
+import { findNearbyBores } from 'controllers/boreController';
 
 //TODO: Use map to confirm provided address, not to show bores (report number of bores found within 1Km of address). Inform user that an email will be sent with bore information.
 
