@@ -166,9 +166,10 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
         {bores?.length ? (
           <>
             <Message type='info'>
-              Would you like additonal information on the {bores.length} bores
-              in your area? Provide your contact details below and we'll email
-              you a report!
+              Would you like additional information on the{' '}
+              <span style={{ fontWeight: 600 }}>{bores.length}</span> bores in
+              your area? Provide your contact details below and we'll email you
+              a report!
             </Message>
             <label htmlFor='name'>Name</label>
             <input
