@@ -5,7 +5,7 @@ import { Theme } from 'styles/theme';
 const WarningContainer = styled.div`
   display: flex;
   align-items: center;
-  color: ${Theme.color.danger};
+  color: ${Theme.color.requiredField};
   font-size: 1rem;
   margin-top: 5px;
 `;

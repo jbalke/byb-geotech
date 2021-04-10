@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { query } from 'models/bore';
+import { findNearbyBores } from 'models/bore';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   res.setHeader('Content-Type', 'application/json');
@@ -12,7 +12,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     try {
-      const bores = await query.findNearbyBores({
+      const bores = await findNearbyBores({
         radius: radius as string,
         lat: lat as string,
         lng: lng as string,

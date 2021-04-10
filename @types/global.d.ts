@@ -1,7 +1,7 @@
 export declare global {
   namespace NodeJS {
     interface Global {
-      mongoose: { conn: any };
+      mongo: { conn: any; promise: any };
     }
   }
   interface Window {

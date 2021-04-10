@@ -1,5 +1,4 @@
-import connectDB from '../../middleware/mongodb';
-import { boreSchema } from './bore';
+import { connectDB } from 'middleware/mongodb';
 
 type Query = {
   radius: string;
@@ -12,13 +11,10 @@ export const findNearbyBores = async ({ radius = '500', lat, lng }: Query) => {
   const _lat = Number(lat);
   const _lng = Number(lng);
 
-  const conn = await connectDB();
-  if (!conn.models.Bore) {
-    conn.model('Bore', boreSchema);
-  }
+  const { client, db } = await connectDB();
+  const bores = db.collection('bores');
 
-  const bores = await conn
-    .model('Bore')
+  const nearbyBores = await bores
     .find({
       location: {
         $near: {
@@ -27,8 +23,7 @@ export const findNearbyBores = async ({ radius = '500', lat, lng }: Query) => {
         },
       },
     })
-    .lean()
-    .exec();
+    .toArray();
 
-  return bores;
+  return nearbyBores;
 };

@@ -13,6 +13,8 @@ import { Theme } from 'styles/theme';
 import { FeatureCollection } from 'types/geojson-types';
 import { geocodeAPI } from 'utils/geocoding';
 import isEmail from 'validator/lib/isEmail';
+import { Bore } from '../../types/bore';
+import { Message } from '../styled';
 
 const SubmitButton = styled(Button).attrs({ type: 'submit' })`
   :active {
@@ -70,11 +72,12 @@ interface IFormData {
   email: string;
   address: NestedValue<Option>;
   phone: string;
+  contactMe: boolean;
 }
 
-type SearchFormProps = {};
+type SearchFormProps = { bores?: Bore[]; query?: boolean };
 
-function SearchForm(props: SearchFormProps) {
+function SearchForm({ bores, query = false }: SearchFormProps) {
   const router = useRouter();
 
   const {
@@ -89,6 +92,7 @@ function SearchForm(props: SearchFormProps) {
       name: '',
       email: '',
       phone: '',
+      contactMe: false,
     },
   });
 
@@ -132,43 +136,6 @@ function SearchForm(props: SearchFormProps) {
     <>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
         <h1>Bore Search</h1>
-        <label htmlFor='name'>Name</label>
-        <input
-          id='name'
-          type='text'
-          placeholder='Your name'
-          {...register('name', { required: 'Required', maxLength: 25 })}
-        />
-        {errors.name && <InputWarning message={errors.name.message!} />}
-        <label htmlFor='email' aria-describedby='emailDescribe'>
-          Email
-        </label>
-        <input
-          id='email'
-          type='email'
-          placeholder='Your email address'
-          {...register('email', {
-            required: 'Required',
-            validate: (value) => isEmail(value) || 'Not a valid emaill address',
-          })}
-        />
-        <InputSubtext id='emailDescribe'>
-          We'll never spam you or share your email address with anyone else.
-        </InputSubtext>
-        {errors.email && <InputWarning message={errors.email.message!} />}
-        <label htmlFor='phone' aria-describedby='phoneDescribe'>
-          Phone (optional)
-        </label>
-        <input
-          id='phone'
-          type='text'
-          placeholder='Your phone number'
-          {...register('phone')}
-        />
-        <InputSubtext id='phoneDescribe'>
-          Provide your phone number if you'd like us to call you to discuss your
-          needs.
-        </InputSubtext>
         <label id='addressLabel'>Address</label>
         <Controller
           name='address'
@@ -195,10 +162,60 @@ function SearchForm(props: SearchFormProps) {
           Search for known bores nearby this address.
         </InputSubtext>
         {errors.address && <InputWarning message={errors.address.message!} />}
-        <SubmitButton fullWidth margin='1rem 0 0 0' disabled={!isValid}>
-          Submit
-        </SubmitButton>
-        {isSubmitSuccessful && <div>DEBUG: Submit Successful</div>}
+
+        {bores?.length ? (
+          <>
+            <Message type='info'>
+              Would you like additonal information on the {bores.length} bores
+              in your area? Provide your contact details below and we'll email
+              you a report!
+            </Message>
+            <label htmlFor='name'>Name</label>
+            <input
+              id='name'
+              type='text'
+              placeholder='Your name'
+              {...register('name', { required: 'Required', maxLength: 25 })}
+            />
+            {errors.name && <InputWarning message={errors.name.message!} />}
+            <label htmlFor='email' aria-describedby='emailDescribe'>
+              Email
+            </label>
+            <input
+              id='email'
+              type='email'
+              placeholder='Your email address'
+              {...register('email', {
+                required: 'Required',
+                validate: (value) =>
+                  isEmail(value) || 'Not a valid emaill address',
+              })}
+            />
+            <InputSubtext id='emailDescribe'>
+              We'll never spam you or share your email address with anyone else.
+            </InputSubtext>
+            {errors.email && <InputWarning message={errors.email.message!} />}
+            <label htmlFor='phone' aria-describedby='phoneDescribe'>
+              Phone (optional)
+            </label>
+            <input
+              id='phone'
+              type='text'
+              placeholder='Your phone number'
+              {...register('phone')}
+            />
+            <InputSubtext id='phoneDescribe'>
+              Provide your phone number if you'd like us to call you to discuss
+              your drilling needs.
+            </InputSubtext>
+            <SubmitButton fullWidth margin='1rem 0 0 0' disabled={!isValid}>
+              Submit
+            </SubmitButton>
+            {isSubmitSuccessful && <div>DEBUG: Submit Successful</div>}
+          </>
+        ) : query ? (
+          <Message type='warning'>No bores found.</Message>
+        ) : null}
       </StyledForm>
       <DevTool control={control} />
     </>

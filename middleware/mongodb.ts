@@ -1,10 +1,16 @@
-import mongoose, { Connection } from 'mongoose';
+import { Db, MongoClient } from 'mongodb';
 
-const { MONGODB_URI } = process.env;
+const { MONGODB_URI, MONGODB_DB } = process.env;
 
 if (!MONGODB_URI) {
   throw new Error(
     'Please define the MONGODB_URI environment variable inside .env.local'
+  );
+}
+
+if (!MONGODB_DB) {
+  throw new Error(
+    'Please define the MONGODB_DB environment variable inside .env.local'
   );
 }
 
@@ -13,34 +19,31 @@ if (!MONGODB_URI) {
  * in development. This prevents connections growing exponentially
  * during API Route usage.
  */
-let cached = global.mongoose;
+let cached = global.mongo;
 
 if (!cached) {
-  cached = global.mongoose = { conn: null };
+  cached = global.mongo = { conn: null, promise: null };
 }
 
-async function connectDB() {
-  if (cached.conn == null) {
+export async function connectDB(): Promise<{ client: MongoClient; db: Db }> {
+  if (cached.conn) {
+    return cached.conn;
+  }
+
+  if (!cached.promise) {
     const opts = {
-      // Buffering means mongoose will queue up operations if it gets
-      // disconnected from MongoDB and send them when it reconnects.
-      // With serverless, better to fail fast if not connected.
-      bufferCommands: false, // Disable mongoose buffering
-      bufferMaxEntries: 0, // and MongoDB driver buffering
       useUnifiedTopology: true,
-      useFindAndModify: false,
-      useCreateIndex: true,
       useNewUrlParser: true,
       maxIdleTimeMS: 10000,
-      serverSelectionTimeoutMS: 10000,
       socketTimeoutMS: 20000,
     };
 
-    cached.conn = mongoose.createConnection(MONGODB_URI!, opts);
-    await cached.conn;
+    cached.promise = await MongoClient.connect(
+      MONGODB_URI!,
+      opts
+    ).then((client) => ({ client, db: client.db(MONGODB_DB) }));
   }
 
-  return cached.conn as Connection;
+  cached.conn = await cached.promise;
+  return cached.conn;
 }
-
-export default connectDB;

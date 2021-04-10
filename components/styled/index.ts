@@ -49,3 +49,40 @@ export const UnstyledLink = styled.a`
     color: inherit;
   }
 `;
+
+export const Message = styled.div<{
+  type?: 'success' | 'danger' | 'info' | 'warning';
+}>`
+  ${({ type }) => {
+    switch (type) {
+      case 'success':
+        return css`
+          color: ${Theme.color.successText};
+          background-color: ${Theme.color.success};
+        `;
+      case 'danger':
+        return css`
+          color: ${Theme.color.dangerText};
+          background-color: ${Theme.color.danger};
+        `;
+      case 'info':
+        return css`
+          color: ${Theme.color.infoText};
+          background-color: ${Theme.color.info};
+        `;
+      case 'warning':
+        return css`
+          color: ${Theme.color.warningText};
+          background-color: ${Theme.color.warning};
+        `;
+      default:
+        return css`
+          color: ${Theme.color.infoText};
+          background-color: ${Theme.color.info};
+        `;
+    }
+  }}
+
+  margin: ${Theme.spacing.m} 0;
+  padding: 1em;
+`;

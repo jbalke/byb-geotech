@@ -9,7 +9,9 @@ import ReactMapGL, {
 import styled from 'styled-components';
 import { Bore } from 'types/bore';
 import BoreImg from '../assets/water-marker.svg'; // must use relative paths
+import LocationImg from '../assets/location-marker.svg';
 import { MAP_CENTER } from '../constants';
+import { useWindowWidth } from '@react-hook/window-size/throttled';
 
 const Button = styled.button`
   display: flex;
@@ -24,24 +26,42 @@ const Button = styled.button`
   }
 `;
 
+const LocationMarker = styled(LocationImg)`
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(3px 3px 2px rgb(0, 0, 0, 0.8));
+`;
+
 const BoreMarker = styled(BoreImg)`
   width: 24px;
   height: 24px;
   filter: drop-shadow(3px 3px 2px rgb(0, 0, 0, 0.8));
 `;
 
-const StyledPopup = styled(Popup)`
-  h2 {
-    font-size: 1.2rem;
+const PopupContent = styled.div`
+  font-size: 1rem;
+`;
+const BoreDepth = styled.p`
+  span {
+    font-weight: 600;
+  }
+`;
+const BoreCoords = styled.p`
+  margin: 0;
+  font-size: 0.75rem;
+
+  span {
+    font-weight: 600;
   }
 `;
 
 type Props = {
   camera: { center: [number, number]; zoom: number } | undefined;
   bores: Bore[];
+  query?: boolean;
 };
 
-const Map = ({ camera, bores }: Props) => {
+const Map = ({ camera, bores, query = false }: Props) => {
   const [viewport, setViewport] = useState({
     longitude: MAP_CENTER[0], //149.1865,
     latitude: MAP_CENTER[1], //-21.142,
@@ -49,6 +69,7 @@ const Map = ({ camera, bores }: Props) => {
   });
 
   const [selectedBore, setSelectedBore] = useState<Bore | null>(null);
+  const windowWidth = useWindowWidth();
 
   useEffect(() => {
     if (camera) {
@@ -94,8 +115,10 @@ const Map = ({ camera, bores }: Props) => {
       onViewportChange={(nextViewport: typeof viewport) =>
         setViewport(nextViewport)
       }
+      dragPan={windowWidth > 800}
+      touchAction={windowWidth <= 800 ? 'pan-y' : 'none'}
       width='100%'
-      height='500px'
+      height='580px'
     >
       <ScaleControl maxWidth={100} unit='metric' style={scaleControlStyle} />
       {/* <GeolocateControl
@@ -121,17 +144,29 @@ const Map = ({ camera, bores }: Props) => {
         </Marker>
       ))}
 
+      {query && camera?.center && (
+        <Marker longitude={camera.center[0]} latitude={camera.center[1]}>
+          <LocationMarker fill={'red'} />
+        </Marker>
+      )}
+
       {selectedBore && (
-        <StyledPopup
+        <Popup
           longitude={selectedBore.location.coordinates[0]}
           latitude={selectedBore.location.coordinates[1]}
           onClose={() => setSelectedBore(null)}
         >
-          <div>
-            <h2>{selectedBore.name}</h2>
-            <p>{selectedBore.description}</p>
-          </div>
-        </StyledPopup>
+          <PopupContent>
+            <BoreDepth>
+              <span>Depth:</span>{' '}
+              {selectedBore.depth ? `${selectedBore.depth}m` : 'unknown'}
+            </BoreDepth>
+            <BoreCoords>
+              <span>lng:</span> {selectedBore.location.coordinates[0]},{' '}
+              <span>lat:</span> {selectedBore.location.coordinates[1]}
+            </BoreCoords>
+          </PopupContent>
+        </Popup>
       )}
     </ReactMapGL>
   );

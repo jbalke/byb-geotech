@@ -2,8 +2,9 @@ import { Point } from './geojson-types';
 
 export interface Bore {
   _id?: string;
-  name: string;
-  description?: string;
-  depth: number;
+  depth?: number;
+  flowRate?: number;
+  waterLevel?: number;
+  salinity?: number;
   location: Point;
 }
