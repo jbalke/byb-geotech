@@ -3,31 +3,10 @@ import { useRouter } from 'next/router';
 import React, { ReactNode, useState } from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
-
-const NavbarItemTitle = styled.button<{ link?: boolean }>`
-  background: transparent;
-  border: 0;
-  font-weight: bold;
-  font-family: inherit;
-  font-size: 18px;
-  letter-spacing: 0.12em;
-  padding: 2rem 1.5rem 1.2rem 1.5rem;
-  color: ${Theme.color.white};
-  display: flex;
-  justify-content: center;
-  transition: opacity 250ms;
-  cursor: ${({ link }) => (link ? 'pointer' : 'default')};
-  /* position above the dropdown, otherwise the dropdown will cover up the bottom sliver of the buttons */
-  /* position: relative; */
-  z-index: 2;
-`;
+import { NavbarItemTitle } from './NavbarItemTitle';
 
 const NavbarItemEl = styled.li`
   position: relative;
-
-  /* & + & {
-    margin-left: 20px;
-  } */
 `;
 
 const DropdownSlot = styled.div`
@@ -82,11 +61,6 @@ function NavbarItem({ onMouseEnter, index, title, href, children }: Props) {
   const [focusState, setFocusState] = useState<'start' | 'active' | 'end'>(
     'start'
   );
-  const handleClick = () => {
-    if (href) {
-      router.push(href);
-    }
-  };
 
   return (
     <NavbarItemEl
@@ -95,7 +69,7 @@ function NavbarItem({ onMouseEnter, index, title, href, children }: Props) {
       onMouseLeave={handleMouseLeave}
       onBlur={handleMouseLeave}
     >
-      <NavbarItemTitle onClick={handleClick} link={!!href}>
+      <NavbarItemTitle href={href}>
         <TitleWrapper>
           <span>{title}</span>
           <TitleTextLineContainer>
@@ -106,7 +80,7 @@ function NavbarItem({ onMouseEnter, index, title, href, children }: Props) {
           </TitleTextLineContainer>
         </TitleWrapper>
       </NavbarItemTitle>
-      <DropdownSlot>{children}</DropdownSlot>
+      {children && <DropdownSlot>{children}</DropdownSlot>}
     </NavbarItemEl>
   );
 }
