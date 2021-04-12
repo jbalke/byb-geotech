@@ -78,7 +78,7 @@ interface IFormData {
 type SearchFormProps = { bores?: Bore[]; query?: boolean };
 
 function SearchForm({ bores, query = false }: SearchFormProps) {
-  const [submitStatus, setSubmitStatus] = useState<
+  const [formStatus, setFormStatus] = useState<
     'idle' | 'pending' | 'success' | 'fail'
   >('idle');
 
@@ -118,7 +118,7 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
   );
 
   const handleChange = (option: Option | null, action: ActionMeta<Option>) => {
-    setSubmitStatus('idle');
+    setFormStatus('idle');
 
     setValue('address', option ?? { value: [0, 0], label: '' }, {
       shouldValidate: true,
@@ -135,12 +135,12 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
   };
 
   const onSubmit = async (data: IFormData) => {
-    setSubmitStatus('pending');
+    setFormStatus('pending');
     try {
       await axios.post('/api/send-mail', { ...data, type: 'search' });
-      setSubmitStatus('success');
+      setFormStatus('success');
     } catch (error) {
-      setSubmitStatus('fail');
+      setFormStatus('fail');
     }
   };
 
@@ -175,7 +175,7 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
         </InputSubtext>
         {errors.address && <InputWarning message={errors.address.message!} />}
 
-        {submitStatus !== 'success' && bores?.length ? (
+        {formStatus !== 'success' && bores?.length ? (
           <>
             <Message type='info'>
               Would you like additional information on the{' '}
@@ -220,17 +220,21 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
               Provide your phone number if you'd like us to call you to discuss
               your drilling needs.
             </InputSubtext>
-            <SubmitButton fullWidth margin='1rem 0 0 0' disabled={!isValid}>
+            <SubmitButton
+              fullWidth
+              margin='1rem 0 0 0'
+              disabled={!isValid || formStatus === 'pending'}
+            >
               Submit
             </SubmitButton>
-            {submitStatus === 'pending' && <div>Sending...</div>}
-            {submitStatus === 'fail' && (
+            {formStatus === 'pending' && <div>Sending...</div>}
+            {formStatus === 'fail' && (
               <div>Form could not be sent, please try again later.</div>
             )}
           </>
-        ) : query && submitStatus === 'idle' ? (
+        ) : query && formStatus === 'idle' ? (
           <Message type='warning'>No bores found.</Message>
-        ) : submitStatus === 'success' ? (
+        ) : formStatus === 'success' ? (
           <Message type='success'>Email has been sent!</Message>
         ) : null}
       </StyledForm>
