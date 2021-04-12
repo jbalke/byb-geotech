@@ -48,6 +48,10 @@ const GlobalStyle = createGlobalStyle`
     margin-top: 0;
   }
 
+  strong {
+    font-weight: 600;
+  }
+
   ul {
     list-style-type: none;
     padding: 0;

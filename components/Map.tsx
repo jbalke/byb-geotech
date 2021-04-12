@@ -12,6 +12,7 @@ import BoreImg from '../assets/water-marker.svg'; // must use relative paths
 import LocationImg from '../assets/location-marker.svg';
 import { MAP_CENTER } from '../constants';
 import { useWindowWidth } from '@react-hook/window-size/throttled';
+import { Theme } from '../styles/theme';
 
 const Button = styled.button`
   display: flex;
@@ -39,13 +40,17 @@ const BoreMarker = styled(BoreImg)`
 `;
 
 const PopupContent = styled.div`
+  color: ${Theme.color.black};
+  background-color: ${Theme.color.white};
   font-size: 1rem;
 `;
+
 const BoreDepth = styled.p`
   span {
     font-weight: 600;
   }
 `;
+
 const BoreCoords = styled.p`
   margin: 0;
   font-size: 0.75rem;

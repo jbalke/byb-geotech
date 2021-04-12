@@ -4,7 +4,7 @@ import Button from 'components/Button';
 import InputWarning from 'components/InputWarning';
 import debounce from 'lodash/debounce';
 import { useRouter } from 'next/router';
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Controller, useForm, NestedValue } from 'react-hook-form';
 import { ActionMeta } from 'react-select';
 import AsyncSelect from 'react-select/async';
@@ -78,6 +78,10 @@ interface IFormData {
 type SearchFormProps = { bores?: Bore[]; query?: boolean };
 
 function SearchForm({ bores, query = false }: SearchFormProps) {
+  const [submitStatus, setSubmitStatus] = useState<
+    'idle' | 'pending' | 'success' | 'fail'
+  >('idle');
+
   const router = useRouter();
 
   const {
@@ -114,6 +118,8 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
   );
 
   const handleChange = (option: Option | null, action: ActionMeta<Option>) => {
+    setSubmitStatus('idle');
+
     setValue('address', option ?? { value: [0, 0], label: '' }, {
       shouldValidate: true,
       shouldDirty: true,
@@ -128,8 +134,14 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
     }
   };
 
-  const onSubmit = (data: IFormData) => {
-    console.log(data);
+  const onSubmit = async (data: IFormData) => {
+    setSubmitStatus('pending');
+    try {
+      await axios.post('/api/send-mail', { ...data, type: 'search' });
+      setSubmitStatus('success');
+    } catch (error) {
+      setSubmitStatus('fail');
+    }
   };
 
   return (
@@ -163,13 +175,12 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
         </InputSubtext>
         {errors.address && <InputWarning message={errors.address.message!} />}
 
-        {bores?.length ? (
+        {submitStatus !== 'success' && bores?.length ? (
           <>
             <Message type='info'>
               Would you like additional information on the{' '}
-              <span style={{ fontWeight: 600 }}>{bores.length}</span> bores in
-              your area? Provide your contact details below and we'll email you
-              a report!
+              <strong>{bores.length} bores</strong> in your area? Provide your
+              contact details below and we'll email you a report!
             </Message>
             <label htmlFor='name'>Name</label>
             <input
@@ -212,10 +223,15 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
             <SubmitButton fullWidth margin='1rem 0 0 0' disabled={!isValid}>
               Submit
             </SubmitButton>
-            {isSubmitSuccessful && <div>DEBUG: Submit Successful</div>}
+            {submitStatus === 'pending' && <div>Sending...</div>}
+            {submitStatus === 'fail' && (
+              <div>Form could not be sent, please try again later.</div>
+            )}
           </>
-        ) : query ? (
+        ) : query && submitStatus === 'idle' ? (
           <Message type='warning'>No bores found.</Message>
+        ) : submitStatus === 'success' ? (
+          <Message type='success'>Email has been sent!</Message>
         ) : null}
       </StyledForm>
       <DevTool control={control} />
