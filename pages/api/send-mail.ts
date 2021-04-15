@@ -1,7 +1,7 @@
+import { reportNearbyBores } from 'controllers/boreController';
 import { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
-import { reportNearbyBores } from 'controllers/boreController';
 import { formatField } from 'utils/strings';
 
 var transporter = nodemailer.createTransport({
@@ -33,15 +33,43 @@ interface Email {
   type: 'search' | 'contact';
 }
 
+function distanceBand(distance: number): string {
+  switch (true) {
+    case distance < 100:
+      return '<100m';
+    case distance < 200:
+      return '100 - 199';
+    case distance < 300:
+      return '200 - 299';
+    case distance < 400:
+      return '300 - 399';
+    case distance < 500:
+      return '400 - 499';
+    case distance < 600:
+      return '500 - 599';
+    case distance < 700:
+      return '600 - 699';
+    case distance < 800:
+      return '700 - 799';
+    case distance < 900:
+      return '800 - 899';
+    case distance < 1000:
+      return '900 - 999';
+    default:
+      return '1000+';
+  }
+}
+
 async function sendBoreSearchEmail({ name, email, address, phone }: Email) {
   const bores = await reportNearbyBores({
     radius: '1000',
     lng: address.value[0],
     lat: address.value[1],
   });
+
   const boresReportLines = bores.map(
     (b) =>
-      `${formatField('distance', Math.round(b.distance))}${formatField(
+      `${formatField('distance', distanceBand(b.distance))}${formatField(
         'depth',
         b.depth
       )}${formatField('waterLevel', b.waterLevel)}${formatField(
@@ -61,7 +89,7 @@ async function sendBoreSearchEmail({ name, email, address, phone }: Email) {
     subject: 'Bore Search Request',
     text: `Bore Search Request\n
 Name: ${name}
-Address: ${address.label} (${address.value[0]}, ${address.value[1]})
+Address: ${address.label}
 Phone: ${phone}\n
 BORES (${bores.length})\n
 ${formatField('distance', 'DISTANCE (m)')}${formatField(

@@ -1,4 +1,5 @@
 import { connectDB } from 'middleware/mongodb';
+import { Bore } from '../types/bore';
 import { parseCoordinates } from '../utils/geocoding';
 
 type Query = {
@@ -7,7 +8,11 @@ type Query = {
   lng: string | number;
 };
 
-export const findNearbyBores = async ({ radius = '500', lat, lng }: Query) => {
+export const findNearbyBores = async ({
+  radius = '500',
+  lat,
+  lng,
+}: Query): Promise<Bore[]> => {
   const _radius = Number(radius);
   const _lat = Number(lat);
   const _lng = Number(lng);
@@ -15,7 +20,7 @@ export const findNearbyBores = async ({ radius = '500', lat, lng }: Query) => {
   const { client, db } = await connectDB();
   const bores = db.collection('bores');
 
-  const nearbyBores = await bores
+  const nearbyBores = (await bores
     .find({
       location: {
         $near: {
@@ -24,16 +29,21 @@ export const findNearbyBores = async ({ radius = '500', lat, lng }: Query) => {
         },
       },
     })
-    .toArray();
+    .toArray()) as Bore[];
 
   return nearbyBores;
+};
+
+type BoreDetail = Bore & {
+  distance: number;
+  distanceBand?: string;
 };
 
 export const reportNearbyBores = async ({
   radius = '500',
   lat,
   lng,
-}: Query) => {
+}: Query): Promise<BoreDetail[]> => {
   const _radius = Number(radius);
   const coords = parseCoordinates(lng, lat);
   if (!coords) {
@@ -45,7 +55,7 @@ export const reportNearbyBores = async ({
   const { client, db } = await connectDB();
   const bores = db.collection('bores');
 
-  const nearbyBores = await bores
+  const nearbyBores = (await bores
     .aggregate([
       {
         $geoNear: {
@@ -56,7 +66,7 @@ export const reportNearbyBores = async ({
         },
       },
     ])
-    .toArray();
+    .toArray()) as BoreDetail[];
 
   return nearbyBores;
 };

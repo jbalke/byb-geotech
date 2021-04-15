@@ -89,6 +89,7 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
     control,
     register,
     setValue,
+    getValues,
     formState: { errors, isValid, isSubmitSuccessful },
   } = useForm<IFormData>({
     mode: 'all',
@@ -140,6 +141,8 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
       await axios.post('/api/send-mail', { ...data, type: 'search' });
       setFormStatus('success');
     } catch (error) {
+      console.error(error.message);
+
       setFormStatus('fail');
     }
   };
@@ -227,15 +230,18 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
             >
               Submit
             </SubmitButton>
-            {formStatus === 'pending' && <div>Sending...</div>}
             {formStatus === 'fail' && (
-              <div>Form could not be sent, please try again later.</div>
+              <Message type='danger'>
+                Report could not be sent, please try again later.
+              </Message>
             )}
           </>
-        ) : query && formStatus === 'idle' ? (
-          <Message type='warning'>No bores found.</Message>
         ) : formStatus === 'success' ? (
-          <Message type='success'>Email has been sent!</Message>
+          <Message type='success'>
+            Bore report has been sent to <strong>{getValues('email')}</strong>!
+          </Message>
+        ) : query ? (
+          <Message type='warning'>No bores found.</Message>
         ) : null}
       </StyledForm>
       <DevTool control={control} />

@@ -1,4 +1,5 @@
 import SearchForm from 'components/SearchForm';
+import { findNearbyBores } from 'controllers/boreController';
 import SiteLayout from 'layouts/SiteLayout';
 import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
@@ -6,8 +7,8 @@ import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { Bore } from 'types/bore';
 import { isValidCoordinates, parseCoordinates } from 'utils/geocoding';
+import { obfuscateLocation } from 'utils/geospatial';
 import { MAP_CENTER } from '../constants';
-import { findNearbyBores } from 'controllers/boreController';
 
 //TODO: Use map to confirm provided address, not to show bores (report number of bores found within 1Km of address). Inform user that an email will be sent with bore information.
 
@@ -57,10 +58,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         lng: lng as string,
       });
 
+      const obfuscatedBores = bores.map((b) => ({
+        ...b,
+        location: obfuscateLocation(b.location),
+      }));
       return {
         props: {
           mapCenter: parseCoordinates(lng as string, lat as string)!,
-          bores: JSON.parse(JSON.stringify(bores)), //https://github.com/vercel/next.js/issues/11993
+          bores: JSON.parse(JSON.stringify(obfuscatedBores)), //https://github.com/vercel/next.js/issues/11993
           query: true,
         },
       };

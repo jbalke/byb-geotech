@@ -10,9 +10,10 @@ import styled from 'styled-components';
 import { Bore } from 'types/bore';
 import BoreImg from '../assets/water-marker.svg'; // must use relative paths
 import LocationImg from '../assets/location-marker.svg';
+import QuestionImg from '../assets/question-mark.svg';
 import { MAP_CENTER } from '../constants';
 import { useWindowWidth } from '@react-hook/window-size/throttled';
-import { Theme } from '../styles/theme';
+import { Theme } from 'styles/theme';
 
 const Button = styled.button`
   display: flex;
@@ -39,25 +40,23 @@ const BoreMarker = styled(BoreImg)`
   filter: drop-shadow(3px 3px 2px rgb(0, 0, 0, 0.8));
 `;
 
+const QuestionMarker = styled(QuestionImg)`
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(3px 3px 2px rgb(0, 0, 0, 0.8));
+`;
+
 const PopupContent = styled.div`
   color: ${Theme.color.black};
   background-color: ${Theme.color.white};
   font-size: 1rem;
 `;
 
-const BoreDepth = styled.p`
-  span {
-    font-weight: 600;
-  }
-`;
+const BoreDepth = styled.p``;
 
 const BoreCoords = styled.p`
   margin: 0;
   font-size: 0.75rem;
-
-  span {
-    font-weight: 600;
-  }
 `;
 
 type Props = {
@@ -133,25 +132,42 @@ const Map = ({ camera, bores, query = false }: Props) => {
         auto
       /> */}
 
-      {bores.map((bore) => (
-        <Marker
-          key={bore._id}
-          longitude={bore.location.coordinates[0]}
-          latitude={bore.location.coordinates[1]}
-        >
-          <Button
-            onClick={(e) => {
-              e.preventDefault(), setSelectedBore(bore);
-            }}
+      {bores.map((bore) => {
+        const { depth, flowRate, waterLevel } = bore;
+        let Icon, iconColor;
+
+        if (
+          [depth, flowRate, waterLevel].every(
+            (value) => typeof value === 'undefined'
+          )
+        ) {
+          Icon = QuestionMarker;
+          iconColor = 'yellow';
+        } else {
+          Icon = BoreMarker;
+          iconColor = 'blue';
+        }
+
+        return (
+          <Marker
+            key={bore._id}
+            longitude={bore.location.coordinates[0]}
+            latitude={bore.location.coordinates[1]}
           >
-            <BoreMarker fill={'blue'} />
-          </Button>
-        </Marker>
-      ))}
+            <Button
+              onClick={(e) => {
+                e.preventDefault(), setSelectedBore(bore);
+              }}
+            >
+              <Icon fill={iconColor} />
+            </Button>
+          </Marker>
+        );
+      })}
 
       {query && camera?.center && (
         <Marker longitude={camera.center[0]} latitude={camera.center[1]}>
-          <LocationMarker fill={'red'} />
+          <LocationMarker fill='red' />
         </Marker>
       )}
 
@@ -163,12 +179,12 @@ const Map = ({ camera, bores, query = false }: Props) => {
         >
           <PopupContent>
             <BoreDepth>
-              <span>Depth:</span>{' '}
+              <strong>Depth:</strong>{' '}
               {selectedBore.depth ? `${selectedBore.depth}m` : 'unknown'}
             </BoreDepth>
             <BoreCoords>
-              <span>lng:</span> {selectedBore.location.coordinates[0]},{' '}
-              <span>lat:</span> {selectedBore.location.coordinates[1]}
+              <strong>lng:</strong> {selectedBore.location.coordinates[0]},{' '}
+              <strong>lat:</strong> {selectedBore.location.coordinates[1]}
             </BoreCoords>
           </PopupContent>
         </Popup>
