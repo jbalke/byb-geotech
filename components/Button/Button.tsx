@@ -1,7 +1,55 @@
+import React from 'react';
 import styled, { css } from 'styled-components';
 import { Theme } from 'styles/theme';
+import Spinner from './three-dots.svg';
 
-const Button = styled.button<{
+const Wrapper = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 1em;
+  line-height: 1em;
+`;
+
+type FormButton = {
+  type?: 'submit' | 'reset';
+  onClick?: never;
+};
+
+type NonFormButton = {
+  type?: 'button';
+  onClick: () => void;
+};
+
+type ButtonProps = {
+  className?: string;
+  isLoading?: boolean;
+  isDisabled?: boolean;
+  children: React.ReactNode;
+} & (FormButton | NonFormButton);
+
+function BaseButton({
+  className,
+  isLoading = false,
+  isDisabled = false,
+  children,
+  onClick,
+  type = 'button',
+}: ButtonProps) {
+  return (
+    <button
+      className={className}
+      disabled={isDisabled || isLoading}
+      onClick={onClick}
+      type={type}
+    >
+      <Wrapper>{isLoading ? <Spinner height='100%' /> : children}</Wrapper>
+    </button>
+  );
+}
+
+const Button = styled(BaseButton)<{
   size?: 'sm' | 'lg';
   rounded?: 'sm' | 'md' | 'lg' | 'full' | 'pill';
   variant?: 'outline';
@@ -11,17 +59,15 @@ const Button = styled.button<{
   borderWidth?: string;
 }>`
   appearance: none;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5em;
-  letter-spacing: 0.08em;
-  color: ${Theme.color.white};
   background-color: ${Theme.color.primary};
   border: ${({ borderWidth }) =>
     borderWidth ? `${borderWidth ?? '1px'} solid ${Theme.color.white}` : '0'};
-  margin: ${({ margin }) => margin || '0'};
-  transition: background-color 0.25s, color 0.25s;
+  color: ${Theme.color.white};
   cursor: pointer;
+  letter-spacing: 0.08em;
+  margin: ${({ margin }) => margin || '0'};
+  padding: 0.5em 1em;
+  transition: background-color 0.25s, color 0.25s;
 
   ${({ shadow }) =>
     shadow &&
@@ -32,11 +78,11 @@ const Button = styled.button<{
   ${({ fullWidth }) =>
     fullWidth
       ? css`
-          display: flex;
+          display: block;
           width: 100%;
         `
       : css`
-          display: inline-flex;
+          display: inline-block;
         `}
 
   ${({ variant }) => {

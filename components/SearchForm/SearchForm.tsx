@@ -1,27 +1,37 @@
 import { DevTool } from '@hookform/devtools';
-import Button from 'components/Button';
+import Button from 'components/Button/Button';
 import InputWarning from 'components/InputWarning';
+import { Message } from 'components/styled';
+import { useUIState } from 'context/ui-context';
 import debounce from 'lodash/debounce';
 import { useRouter } from 'next/router';
-import React, { useCallback, useState, useRef } from 'react';
-import { Controller, useForm, NestedValue } from 'react-hook-form';
+import React, { useCallback, useRef, useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
+import {
+  Controller,
+  NestedValue,
+  SubmitErrorHandler,
+  SubmitHandler,
+  useForm,
+} from 'react-hook-form';
 import { ActionMeta } from 'react-select';
 import AsyncSelect from 'react-select/async';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
+import { Bore } from 'types/bore';
 import { FeatureCollection } from 'types/geojson-types';
+import { client } from 'utils/client';
 import { geocodeAPI } from 'utils/geocoding';
 import isEmail from 'validator/lib/isEmail';
-import { Bore } from 'types/bore';
-import { Message } from 'components/styled';
-import ReCAPTCHA from 'react-google-recaptcha';
-import { client } from 'utils/client';
-import { useUIState } from 'context/ui-context';
 
 const SubmitButton = styled(Button).attrs({ type: 'submit' })`
   :active {
     transform: translateY(1px);
     filter: saturate(150%);
+  }
+
+  &&:disabled {
+    filter: none;
   }
 `;
 
@@ -135,7 +145,7 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
     }
   };
 
-  const onSubmit = async (data: IFormData) => {
+  const onSubmit: SubmitHandler<IFormData> = async (data: IFormData) => {
     setFormStatus('pending');
     const token = await recaptchaRef.current.executeAsync();
 
@@ -154,9 +164,12 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
     }
   };
 
+  const onError: SubmitErrorHandler<IFormData> = (errors, e) =>
+    console.error(errors, e);
+
   return (
     <>
-      <StyledForm onSubmit={handleSubmit(onSubmit)}>
+      <StyledForm onSubmit={handleSubmit(onSubmit, onError)}>
         <h1>Bore Search</h1>
         <label id='addressLabel'>Address</label>
         <Controller
@@ -231,9 +244,12 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
               your drilling needs.
             </InputSubtext>
             <SubmitButton
+              isDisabled={!isValid}
+              isLoading={formStatus === 'pending'}
               fullWidth
               margin='1rem 0 0 0'
-              disabled={!isValid || formStatus === 'pending'}
+              size='lg'
+              type='submit'
             >
               Submit
             </SubmitButton>

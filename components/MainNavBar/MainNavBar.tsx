@@ -10,9 +10,6 @@ import styled, { css } from 'styled-components';
 import { Theme } from 'styles/theme';
 import Button from '../Button';
 import DropdownContainer from './DropdownContainer';
-// import CompanyDropdown from './DropdownContents/CompanyDropdown';
-// import DevelopersDropdown from './DropdownContents/DevelopersDropdown';
-// import ServicesDropdown from './DropdownContents/ServicesDropdown';
 import NavBar from './NavBar';
 import NavbarItem from './NavBar/NavbarItem';
 
