@@ -182,10 +182,10 @@ const Map = ({ camera, bores, query = false }: Props) => {
               <strong>Depth:</strong>{' '}
               {selectedBore.depth ? `${selectedBore.depth}m` : 'unknown'}
             </BoreDepth>
-            <BoreCoords>
+            {/* <BoreCoords>
               <strong>lng:</strong> {selectedBore.location.coordinates[0]},{' '}
               <strong>lat:</strong> {selectedBore.location.coordinates[1]}
-            </BoreCoords>
+            </BoreCoords> */}
           </PopupContent>
         </Popup>
       )}

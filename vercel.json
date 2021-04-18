@@ -1,4 +1,8 @@
 {
   "version": 2,
-  "env": { "MONGODB_URI": "@mongodb-uri", "MAIL_PASSWORD": "@mail_password" }
+  "env": {
+    "MONGODB_URI": "@mongodb-uri",
+    "MAIL_PASSWORD": "@mail_password",
+    "RECAPTCHA_SECRET": "@recaptcha-secret"
+  }
 }

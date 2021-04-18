@@ -3,8 +3,16 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
 import { formatField } from 'utils/strings';
+import { client } from '../../utils/client';
 
-var transporter = nodemailer.createTransport({
+const validateHuman = async (token: string) => {
+  const { data } = await client(
+    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET}&response=${token}`
+  );
+  return data.success;
+};
+
+const transporter = nodemailer.createTransport({
   host: process.env.MAIL_HOST!,
   port: parseInt(process.env.MAIL_PORT!),
   auth: {
@@ -110,6 +118,13 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === 'POST') {
+    const { token } = req.body;
+
+    if (!(await validateHuman(token))) {
+      res.status(400);
+      return res.json({ message: 'recaptcha failed' });
+    }
+
     let emailRes;
     switch (req.body.type) {
       case 'search':

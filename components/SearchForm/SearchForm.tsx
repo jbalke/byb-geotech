@@ -1,10 +1,9 @@
 import { DevTool } from '@hookform/devtools';
-import axios from 'axios';
 import Button from 'components/Button';
 import InputWarning from 'components/InputWarning';
 import debounce from 'lodash/debounce';
 import { useRouter } from 'next/router';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useRef } from 'react';
 import { Controller, useForm, NestedValue } from 'react-hook-form';
 import { ActionMeta } from 'react-select';
 import AsyncSelect from 'react-select/async';
@@ -13,8 +12,10 @@ import { Theme } from 'styles/theme';
 import { FeatureCollection } from 'types/geojson-types';
 import { geocodeAPI } from 'utils/geocoding';
 import isEmail from 'validator/lib/isEmail';
-import { Bore } from '../../types/bore';
-import { Message } from '../styled';
+import { Bore } from 'types/bore';
+import { Message } from 'components/styled';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { client } from 'utils/client';
 
 const SubmitButton = styled(Button).attrs({ type: 'submit' })`
   :active {
@@ -82,6 +83,8 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
     'idle' | 'pending' | 'success' | 'fail'
   >('idle');
 
+  const recaptchaRef = useRef<ReCAPTCHA>(null!);
+
   const router = useRouter();
 
   const {
@@ -103,17 +106,24 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
 
   const getLocationOptions = useCallback(
     debounce((query: string, callback: any) => {
-      axios
-        .get<FeatureCollection>(geocodeAPI(query))
-        .then((response) => {
-          const data = response.data.features.map((feature) => ({
-            value: feature.center,
-            label: feature.place_name,
-          }));
+      client<FeatureCollection>(geocodeAPI(query)).then((data) => {
+        const _data = data.features.map((feature) => ({
+          value: feature.center,
+          label: feature.place_name,
+        }));
+        callback(_data);
+      });
+      // axios
+      //   .get<FeatureCollection>(geocodeAPI(query))
+      //   .then((response) => {
+      //     const data = response.data.features.map((feature) => ({
+      //       value: feature.center,
+      //       label: feature.place_name,
+      //     }));
 
-          callback(data);
-        })
-        .catch((error) => console.error(error));
+      //     callback(data);
+      //   })
+      //   .catch((error) => console.error(error));
     }, 750),
     []
   );
@@ -137,8 +147,15 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
 
   const onSubmit = async (data: IFormData) => {
     setFormStatus('pending');
+    const token = await recaptchaRef.current.executeAsync();
+
+    if (!token) {
+      setFormStatus('fail');
+      return;
+    }
+
     try {
-      await axios.post('/api/send-mail', { ...data, type: 'search' });
+      await client('/api/send-mail', { ...data, token, type: 'search' });
       setFormStatus('success');
     } catch (error) {
       console.error(error.message);
@@ -243,6 +260,11 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
         ) : query ? (
           <Message type='warning'>No bores found.</Message>
         ) : null}
+        <ReCAPTCHA
+          ref={recaptchaRef}
+          size='invisible'
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+        />
       </StyledForm>
       <DevTool control={control} />
     </>

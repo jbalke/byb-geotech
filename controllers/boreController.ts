@@ -1,6 +1,6 @@
 import { connectDB } from 'middleware/mongodb';
-import { Bore } from '../types/bore';
-import { parseCoordinates } from '../utils/geocoding';
+import { Bore } from 'types/bore';
+import { parseCoordinates } from 'utils/geocoding';
 
 type Query = {
   radius: string | number;
