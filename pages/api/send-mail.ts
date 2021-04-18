@@ -3,13 +3,19 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
 import { formatField } from 'utils/strings';
-import { client } from '../../utils/client';
+import fetch from 'node-fetch';
 
 const validateHuman = async (token: string) => {
-  const { data } = await client(
-    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET}&response=${token}`
-  );
-  return data.success;
+  try {
+    const res = await fetch(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET}&response=${token}`
+    );
+    const data = await res.json();
+    return data.success;
+  } catch (error) {
+    console.error(error.message);
+    return false;
+  }
 };
 
 const transporter = nodemailer.createTransport({
