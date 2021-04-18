@@ -1,4 +1,4 @@
-type MenuCoords = { top: number; left: number };
+import { ColorTheme } from 'reducers/ui-reducer';
 
 export function openSidebar() {
   return {
@@ -31,10 +31,18 @@ export function clearActiveIndex() {
   } as const;
 }
 
+export function setColorTheme(colorTheme: ColorTheme) {
+  return {
+    type: 'SET_COLOR_THEME',
+    payload: colorTheme,
+  } as const;
+}
+
 export type Action = ReturnType<
   | typeof openSidebar
   | typeof closeSidebar
   | typeof toggleSidebar
   | typeof setActiveIndex
   | typeof clearActiveIndex
+  | typeof setColorTheme
 >;

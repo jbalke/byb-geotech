@@ -4,7 +4,7 @@ import { Wrapper } from 'components/styled';
 import Head from 'next/head';
 import { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
-import { Theme } from '../styles/theme';
+import { Theme } from 'styles/theme';
 
 const Hero = styled.section`
   align-items: center;

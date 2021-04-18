@@ -101,12 +101,6 @@ const MobileMenuToggle = styled(Button)`
   }
 `;
 
-// const navbarConfig = [
-//   { title: 'Services', dropdown: ServicesDropdown },
-//   { title: 'Developers', dropdown: DevelopersDropdown },
-//   { title: 'Company', dropdown: CompanyDropdown },
-// ];
-
 const MainNavBar = () => {
   const dispatch = useUIDispatch();
   const toggleMobileNav = () => dispatch(toggleSidebar());
@@ -120,12 +114,6 @@ const MainNavBar = () => {
   const onMouseLeave = () => {
     setActiveSubmenu(null);
   };
-
-  // let CurrentDropdown: FC;
-
-  // if (activeSubmenu !== null) {
-  //   CurrentDropdown = navbarConfig[activeSubmenu].dropdown;
-  // }
 
   return (
     <MainNav>

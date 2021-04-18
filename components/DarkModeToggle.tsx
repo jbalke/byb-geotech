@@ -1,15 +1,19 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import { setColorTheme } from 'actions/ui-actions';
+import { useUIDispatch, useUIState } from 'context/ui-context';
+import React, { ChangeEvent, useEffect } from 'react';
 import Toggle from 'react-toggle';
+import { ColorTheme } from 'reducers/ui-reducer';
 
 type DarkModeToggleProps = {};
 
 function DarkModeToggle(props: DarkModeToggleProps) {
-  const [theme, setTheme] = useState<string>(null!);
+  const dispatch = useUIDispatch();
+  const { theme } = useUIState();
 
   useEffect(() => {
-    setTheme(window.__theme);
+    dispatch(setColorTheme(window.__theme as ColorTheme));
     window.__onThemeChange = () => {
-      setTheme(window.__theme);
+      dispatch(setColorTheme(window.__theme as ColorTheme));
     };
   }, []);
 

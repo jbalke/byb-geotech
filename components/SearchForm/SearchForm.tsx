@@ -16,6 +16,7 @@ import { Bore } from 'types/bore';
 import { Message } from 'components/styled';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { client } from 'utils/client';
+import { useUIState } from 'context/ui-context';
 
 const SubmitButton = styled(Button).attrs({ type: 'submit' })`
   :active {
@@ -83,8 +84,8 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
     'idle' | 'pending' | 'success' | 'fail'
   >('idle');
 
+  const { theme } = useUIState();
   const recaptchaRef = useRef<ReCAPTCHA>(null!);
-
   const router = useRouter();
 
   const {
@@ -113,17 +114,6 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
         }));
         callback(_data);
       });
-      // axios
-      //   .get<FeatureCollection>(geocodeAPI(query))
-      //   .then((response) => {
-      //     const data = response.data.features.map((feature) => ({
-      //       value: feature.center,
-      //       label: feature.place_name,
-      //     }));
-
-      //     callback(data);
-      //   })
-      //   .catch((error) => console.error(error));
     }, 750),
     []
   );
@@ -264,6 +254,8 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
           ref={recaptchaRef}
           size='invisible'
           sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+          badge={'bottomleft'}
+          theme={theme}
         />
       </StyledForm>
       <DevTool control={control} />
