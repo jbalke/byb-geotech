@@ -13,7 +13,6 @@ const validateHuman = async (token: string) => {
     const data = await res.json();
     return data.success;
   } catch (error) {
-    console.error(error.message);
     return false;
   }
 };
@@ -99,10 +98,11 @@ async function sendBoreSearchEmail({ name, email, address, phone }: Email) {
   }
 
   const emailOptions: Mail.Options = {
+    from: `sales@backyardbores.com`,
     to: `${name} - ${email}`,
+    bcc: `matthew@vonsnarski.com`,
     subject: 'Bore Search Request',
-    text: `Bore Search Request\n
-Name: ${name}
+    text: `Hi ${name}, here's the report you requested on known bores in your area.\n
 Address: ${address.label}
 Phone: ${phone}\n
 BORES (${bores.length})\n
@@ -113,7 +113,13 @@ ${formatField('distance', 'DISTANCE (m)')}${formatField(
       'flowRate',
       'FLOW RATE (L/Min)'
     )}
-${boresReport}`,
+${boresReport}\n\n
+Call us on 0418 193 194 for your obligation free quote or just to answer any questions you many have.\n
+See our website for information on preparing for a bore.\n
+Backyard Bores
+https://backyardbores.com
+`,
+    html: `Hi ${name}`,
   };
 
   return transporter.sendMail(emailOptions);
