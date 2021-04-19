@@ -4,18 +4,15 @@ import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
 import { formatField } from 'utils/strings';
 import fetch from 'node-fetch';
+import Handlebars from 'handlebars';
+import fs from 'fs';
+import path from 'path';
 
-const validateHuman = async (token: string) => {
-  try {
-    const res = await fetch(
-      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET}&response=${token}`
-    );
-    const data = await res.json();
-    return data.success;
-  } catch (error) {
-    return false;
-  }
-};
+const templateSource = fs.readFileSync(
+  path.resolve(process.cwd(), 'emails/bores', 'bore-search.hbs'),
+  { encoding: 'utf8' }
+);
+const template = Handlebars.compile(templateSource);
 
 const transporter = nodemailer.createTransport({
   host: process.env.MAIL_HOST!,
@@ -28,7 +25,7 @@ const transporter = nodemailer.createTransport({
 
 async function sendEmail({ to, subject, html, text }: Mail.Options) {
   const emailOptions: Mail.Options = {
-    from: `Dev (do not respond) <dev@example.com>`,
+    from: 'dev@example.com',
     to,
     subject,
     html,
@@ -80,9 +77,14 @@ async function sendBoreSearchEmail({ name, email, address, phone }: Email) {
     lat: address.value[1],
   });
 
-  const boresReportLines = bores.map(
+  const obfuscatedBores = bores.map((b) => ({
+    ...b,
+    distanceBand: distanceBand(b.distance),
+  }));
+
+  const boresReportLines = obfuscatedBores.map(
     (b) =>
-      `${formatField('distance', distanceBand(b.distance))}${formatField(
+      `${formatField('distance', b.distanceBand)}${formatField(
         'depth',
         b.depth
       )}${formatField('waterLevel', b.waterLevel)}${formatField(
@@ -98,11 +100,11 @@ async function sendBoreSearchEmail({ name, email, address, phone }: Email) {
   }
 
   const emailOptions: Mail.Options = {
-    from: `sales@backyardbores.com`,
     to: `${name} - ${email}`,
     bcc: `matthew@vonsnarski.com`,
     subject: 'Bore Search Request',
-    text: `Hi ${name}, here's the report you requested on known bores in your area.\n
+    text: `Hi ${name},\n
+Here's the report you requested on known bores in your area.\n
 Address: ${address.label}
 Phone: ${phone}\n
 BORES (${bores.length})\n
@@ -111,7 +113,7 @@ ${formatField('distance', 'DISTANCE (m)')}${formatField(
       'DEPTH (m)'
     )}${formatField('waterLevel', 'WATER LEVEL (m)')}${formatField(
       'flowRate',
-      'FLOW RATE (L/Min)'
+      'FLOW RATE (L/min)'
     )}
 ${boresReport}\n\n
 Call us on 0418 193 194 for your obligation free quote or just to answer any questions you many have.\n
@@ -119,10 +121,27 @@ See our website for information on preparing for a bore.\n
 Backyard Bores
 https://backyardbores.com
 `,
-    html: `Hi ${name}`,
+    html: template({
+      name,
+      address: address.label,
+      phone,
+      bores: obfuscatedBores,
+    }),
   };
 
   return transporter.sendMail(emailOptions);
+}
+
+async function validateHuman(token: string) {
+  try {
+    const res = await fetch(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET}&response=${token}`
+    );
+    const data = await res.json();
+    return data.success;
+  } catch (error) {
+    return false;
+  }
 }
 
 export default async function handler(
