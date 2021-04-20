@@ -155,7 +155,11 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
     }
 
     try {
-      await client('/api/send-mail', { ...data, token, type: 'search' });
+      await client('/api/bores/send-report', {
+        ...data,
+        token,
+        type: 'search',
+      });
       setFormStatus('success');
     } catch (error) {
       console.error(error.message);

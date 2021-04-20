@@ -400,7 +400,7 @@
                         </p>
                         <form
                           method="post"
-                          action="https://backyard-bores-jbalke.vercel.app/api/request-info"
+                          action="https://{{siteUrl}}/api/request-info"
                           class="inline"
                           target="_blank"
                         >
@@ -410,6 +410,7 @@
                             name="address"
                             value="{{address}}"
                           />
+                          <input type="hidden" name="email" value="{{email}}" />
                           <input type="hidden" name="phone" value="{{phone}}" />
                           <button
                             type="submit"

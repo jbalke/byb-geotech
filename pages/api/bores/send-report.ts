@@ -1,11 +1,10 @@
 import { reportNearbyBores } from 'controllers/boreController';
-import { NextApiRequest, NextApiResponse } from 'next';
-import nodemailer from 'nodemailer';
-import Mail from 'nodemailer/lib/mailer';
-import { formatField } from 'utils/strings';
-import fetch from 'node-fetch';
-import Handlebars from 'handlebars';
+import { distanceBand, formatField, validateHuman } from 'emails/bores/utils';
+import { sendEmail } from 'emails/mailer';
 import fs from 'fs';
+import Handlebars from 'handlebars';
+import { NextApiRequest, NextApiResponse } from 'next';
+import Mail from 'nodemailer/lib/mailer';
 import path from 'path';
 
 const templateSource = fs.readFileSync(
@@ -14,63 +13,19 @@ const templateSource = fs.readFileSync(
 );
 const template = Handlebars.compile(templateSource);
 
-const transporter = nodemailer.createTransport({
-  host: process.env.MAIL_HOST!,
-  port: parseInt(process.env.MAIL_PORT!),
-  auth: {
-    user: process.env.MAIL_USER!,
-    pass: process.env.MAIL_PASSWORD!,
-  },
-});
-
-async function sendEmail({ to, subject, html, text }: Mail.Options) {
-  const emailOptions: Mail.Options = {
-    from: 'dev@example.com',
-    to,
-    subject,
-    html,
-    text,
-  };
-
-  return transporter.sendMail(emailOptions);
-}
-
-interface Email {
+interface BoreSearchEmail {
   name: string;
   email: string;
   phone?: string;
   address: { value: number[]; label: string };
-  type: 'search' | 'contact';
 }
 
-function distanceBand(distance: number): string {
-  switch (true) {
-    case distance < 100:
-      return '<100m';
-    case distance < 200:
-      return '100 - 199';
-    case distance < 300:
-      return '200 - 299';
-    case distance < 400:
-      return '300 - 399';
-    case distance < 500:
-      return '400 - 499';
-    case distance < 600:
-      return '500 - 599';
-    case distance < 700:
-      return '600 - 699';
-    case distance < 800:
-      return '700 - 799';
-    case distance < 900:
-      return '800 - 899';
-    case distance < 1000:
-      return '900 - 999';
-    default:
-      return '1000+';
-  }
-}
-
-async function sendBoreSearchEmail({ name, email, address, phone }: Email) {
+async function sendBoreSearchEmail({
+  name,
+  email,
+  address,
+  phone,
+}: BoreSearchEmail) {
   const bores = await reportNearbyBores({
     radius: '1000',
     lng: address.value[0],
@@ -124,24 +79,14 @@ https://backyardbores.com
     html: template({
       name,
       address: address.label,
+      email,
       phone,
       bores: obfuscatedBores,
+      siteUrl: process.env.NEXT_PUBLIC_VERCEL_URL,
     }),
   };
 
-  return transporter.sendMail(emailOptions);
-}
-
-async function validateHuman(token: string) {
-  try {
-    const res = await fetch(
-      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET}&response=${token}`
-    );
-    const data = await res.json();
-    return data.success;
-  } catch (error) {
-    return false;
-  }
+  return sendEmail(emailOptions);
 }
 
 export default async function handler(
@@ -156,16 +101,7 @@ export default async function handler(
       return res.json({ message: 'recaptcha failed' });
     }
 
-    let emailRes;
-    switch (req.body.type) {
-      case 'search':
-        emailRes = await sendBoreSearchEmail(req.body);
-        break;
-      case 'contact':
-        emailRes = await sendEmail(req.body);
-        break;
-    }
-
+    const emailRes = await sendBoreSearchEmail(req.body);
     if (emailRes.messageId) {
       return res.status(200).json({ message: 'Email sent successfully' });
     }

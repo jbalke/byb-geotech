@@ -166,10 +166,10 @@
                         obligation free quote or just to answer any questions
                         you may have.
                       </p>
-                      <form method="post" action="https://backyard-bores-jbalke.vercel.app/api/request-info"
-                        class="inline" target="_blank">
+                      <form method="post" action="https://{{siteUrl}}/api/request-info" class="inline" target="_blank">
                         <input type="hidden" name="name" value="{{name}}">
                         <input type="hidden" name="address" value="{{address}}">
+                        <input type="hidden" name="email" value="{{email}}">
                         <input type="hidden" name="phone" value="{{phone}}">
                         <button type="submit" class="btn btn-primary btn-request-info"
                           style="appearance: none; box-sizing: border-box; padding-bottom: 15px; border: solid 1px #3498db; border-radius: 5px; box-sizing: border-box; cursor: pointer; font-size: 14px; font-weight: bold; padding: 12px 25px; text-decoration: none; text-transform: capitalize; background-color: #3498db; border-color: #3498db; color: #ffffff; display: block; margin: 0 auto;">
