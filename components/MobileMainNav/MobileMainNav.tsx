@@ -9,7 +9,14 @@ import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import Button from '../Button';
 
+const HomeLinkWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+`;
+
 const MenuCloseBtn = styled(Button)`
+  padding: 0.5rem;
   align-self: flex-end;
 `;
 
@@ -84,7 +91,6 @@ const NavSectionContainer = styled.div`
       height: 50%;
       background-color: rgb(204, 204, 204);
     }
-    /* border-left: 1px solid ${Theme.color.grey}; */
   }
 
   ${PageTitle} + & {
@@ -129,12 +135,6 @@ const SectionTitle = styled.h3`
   }
 `;
 
-const HomeLinkWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0;
-`;
-
 const mobileWrapperVariants = {
   open: { display: 'flex', transition: { when: 'beforeChildren' } },
   closed: {
@@ -155,7 +155,6 @@ type MobileMainNavProps = {};
 function MobileMainNav(props: MobileMainNavProps) {
   const dispatch = useUIDispatch();
   const { isSidebarOpen } = useUIState();
-
   const closeMobileNav = () => dispatch(closeSidebar());
 
   return (
@@ -164,7 +163,7 @@ function MobileMainNav(props: MobileMainNavProps) {
       animate={isSidebarOpen ? 'open' : 'closed'}
     >
       <MenuContainer variants={mobileNavVariants}>
-        <MenuCloseBtn onClick={closeMobileNav} variant='outline'>
+        <MenuCloseBtn size='lg' onClick={closeMobileNav} variant='outline'>
           <FaTimes />
         </MenuCloseBtn>
         <HomeLinkWrapper>

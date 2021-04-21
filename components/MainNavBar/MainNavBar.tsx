@@ -92,6 +92,7 @@ const MobileControls = styled.div`
 const MobileMenuToggle = styled(Button)`
   display: flex;
   margin-left: 15px;
+  padding: 0.5rem;
 
   @media (min-width: ${(props) => props.theme.bp.desktop}) {
     display: none;
@@ -175,7 +176,7 @@ const MainNavBar = () => {
       </AnimateSharedLayout>
       <MobileControls>
         <DarkModeToggle />
-        <MobileMenuToggle onClick={toggleMobileNav}>
+        <MobileMenuToggle size='lg' onClick={toggleMobileNav}>
           <FaBars />
         </MobileMenuToggle>
       </MobileControls>
