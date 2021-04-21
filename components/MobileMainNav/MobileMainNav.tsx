@@ -51,11 +51,20 @@ const NavLinksContainer = styled.div`
   align-items: start;
   display: grid;
   flex: 1;
-  gap: 1.5rem 1rem;
+  gap: 5vh 0;
   grid-template-columns: 1fr;
 `;
 
 const NavSection = styled.div``;
+
+const PageTitle = styled.h2`
+  place-content: center;
+  display: grid;
+  font-size: clamp(1.3rem, 3.8vw, 1.9rem);
+  gap: 0.25em;
+  grid-template-columns: auto auto;
+  margin: 0;
+`;
 
 const NavSectionContainer = styled.div`
   display: grid;
@@ -77,6 +86,10 @@ const NavSectionContainer = styled.div`
     }
     /* border-left: 1px solid ${Theme.color.grey}; */
   }
+
+  ${PageTitle} + & {
+    margin-top: 1.5vh;
+  }
 `;
 
 const PageWrapper = styled.div`
@@ -85,7 +98,7 @@ const PageWrapper = styled.div`
   align-items: center;
 `;
 
-const LinksWrapper = styled.ul`
+const LinksWrapper = styled.div`
   align-items: start;
   display: grid;
   font-size: clamp(0.85rem, 2.2vw, 1.15rem);
@@ -108,20 +121,10 @@ const LinksWrapper = styled.ul`
   }
 `;
 
-const PageTitle = styled.h2`
-  place-content: center;
-  display: grid;
-  font-size: clamp(1.2rem, 3.5vw, 1.7rem);
-  gap: 0.25em;
-  grid-template-columns: auto auto;
-  margin: 0;
-`;
-
 const SectionTitle = styled.h3`
   && {
     font-size: clamp(1rem, 3.5vw, 1.4rem);
     margin: 0;
-    margin-top: ${Theme.spacing.m};
     text-align: center;
   }
 `;
