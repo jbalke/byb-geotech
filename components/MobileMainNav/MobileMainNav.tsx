@@ -52,7 +52,31 @@ const NavLinksContainer = styled.div`
   display: grid;
   flex: 1;
   gap: 1.5rem 1rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+`;
+
+const NavSection = styled.div``;
+
+const NavSectionContainer = styled.div`
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  width: 100%;
+
+  ${NavSection} + ${NavSection} {
+    position: relative;
+
+    ::before {
+      content: '';
+      position: absolute;
+      top: 25%;
+      left: 0;
+      width: 1px;
+      height: 50%;
+      background-color: rgb(204, 204, 204);
+    }
+    /* border-left: 1px solid ${Theme.color.grey}; */
+  }
 `;
 
 const PageWrapper = styled.div`
@@ -63,11 +87,12 @@ const PageWrapper = styled.div`
 
 const LinksWrapper = styled.ul`
   display: grid;
-  gap: 0.75em 0.25em;
+  gap: 0.5em 0.25em;
   grid-template-columns: 20px auto;
   justify-content: center;
   align-items: start;
-  margin: 1em 0 0 0;
+  margin: 0;
+  margin-top: ${Theme.spacing.m};
   padding: 0;
 
   a {
@@ -85,6 +110,15 @@ const LinksWrapper = styled.ul`
 const PageTitle = styled.h2`
   font-size: 1.2rem;
   margin: 0;
+`;
+
+const SectionTitle = styled.h3`
+  && {
+    font-size: 1rem;
+    margin: 0;
+    margin-top: ${Theme.spacing.m};
+    text-align: center;
+  }
 `;
 
 const HomeLinkWrapper = styled.div`
@@ -131,32 +165,39 @@ function MobileMainNav(props: MobileMainNavProps) {
           </StyledNextLink>
         </HomeLinkWrapper>
         <NavLinksContainer>
-          {navLinks.map((page) => (
-            <PageWrapper key={page.title}>
-              {page.url ? (
-                <StyledNextLink href={page.url} onClick={closeMobileNav}>
-                  <PageTitle>{page.title}</PageTitle>
+          {navLinks.map((item) => (
+            <PageWrapper key={item.title}>
+              {item.href ? (
+                <StyledNextLink href={item.href} onClick={closeMobileNav}>
+                  <PageTitle>{item.title}</PageTitle>
                 </StyledNextLink>
               ) : (
-                <PageTitle>{page.title}</PageTitle>
+                <PageTitle>{item.title}</PageTitle>
               )}
-              {page.links && (
-                <LinksWrapper>
-                  {page.links?.map((link) => {
-                    const { Icon } = link;
-                    return (
-                      <React.Fragment key={link.url}>
-                        <Icon />
-                        <StyledNextLink
-                          href={link.url}
-                          onClick={closeMobileNav}
-                        >
-                          {link.label}
-                        </StyledNextLink>
-                      </React.Fragment>
-                    );
-                  })}
-                </LinksWrapper>
+              {item.sections && (
+                <NavSectionContainer>
+                  {item.sections?.map((section) => (
+                    <NavSection key={section.title}>
+                      <SectionTitle>{section.title}</SectionTitle>
+                      <LinksWrapper>
+                        {section.pages.map((page) => {
+                          const { Icon } = page;
+                          return (
+                            <React.Fragment key={page.href}>
+                              <Icon />
+                              <StyledNextLink
+                                href={page.href}
+                                onClick={closeMobileNav}
+                              >
+                                {page.title}
+                              </StyledNextLink>
+                            </React.Fragment>
+                          );
+                        })}
+                      </LinksWrapper>
+                    </NavSection>
+                  ))}
+                </NavSectionContainer>
               )}
             </PageWrapper>
           ))}
