@@ -6,6 +6,7 @@ import Handlebars from 'handlebars';
 import { NextApiRequest, NextApiResponse } from 'next';
 import Mail from 'nodemailer/lib/mailer';
 import path from 'path';
+import { EMAIL } from '../../../constants';
 
 const templateSource = fs.readFileSync(
   path.resolve(process.cwd(), 'emails/bores', 'bore-search.hbs'),
@@ -55,8 +56,10 @@ async function sendBoreSearchEmail({
   }
 
   const emailOptions: Mail.Options = {
+    from: `${EMAIL.INFO}`,
     to: `${name} - ${email}`,
-    bcc: `matthew@vonsnarski.com`,
+    replyTo: `${EMAIL.INFO}`,
+    bcc: `${EMAIL.MANAGER}`,
     subject: 'Bore Search Request',
     text: `Hi ${name},\n
 Here's the report you requested on known bores in your area.\n

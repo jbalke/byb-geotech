@@ -1,6 +1,7 @@
 import { sendEmail } from 'emails/mailer';
 import { NextApiRequest, NextApiResponse } from 'next';
 import Mail from 'nodemailer/lib/mailer';
+import { EMAIL } from '../../constants';
 
 interface RequestInfoEmail {
   name: string;
@@ -16,7 +17,7 @@ async function sendRequestInfoEmail({
   phone,
 }: RequestInfoEmail) {
   const emailOptions: Mail.Options = {
-    to: `matthew@vonsnarski.com`,
+    to: `${EMAIL.MANAGER}`,
     subject: 'Bore Request For Information',
     text: `Customer: ${name}
 Email: ${email}
@@ -32,13 +33,13 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === 'POST') {
-    //TODO: redirect to website instead of json response
     const emailRes = await sendRequestInfoEmail(req.body);
+
     if (emailRes.messageId) {
-      return res.status(200).json({ message: 'Email sent successfully' });
+      return res.redirect(303, '/information-request');
     }
 
-    return res.status(400).json({ message: 'Error sending email' });
+    return res.redirect(303, '/contact');
   }
   return res
     .status(400)

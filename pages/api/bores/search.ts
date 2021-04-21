@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { findNearbyBores } from 'controllers/boreController';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+  res.setHeader('Cache-Control', 'max-age=0, s-maxage=86400');
   res.setHeader('Content-Type', 'application/json');
 
   if (req.method === 'GET') {
