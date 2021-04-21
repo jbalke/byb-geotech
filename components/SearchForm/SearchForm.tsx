@@ -47,6 +47,10 @@ const Select = styled(AsyncSelect)`
   .select__menu {
     color: ${Theme.color.dropDownMenuText};
   }
+
+  .select__control-is-focused {
+    border-color: ${Theme.color.primary};
+  }
 `;
 
 const StyledForm = styled.form`
@@ -67,6 +71,16 @@ const StyledForm = styled.form`
     font-size: inherit;
     width: 100%;
     padding: 0.5em;
+    border: solid 1px rgb(204, 204, 204);
+    border-radius: 4px;
+    transition: border-color 0.1s;
+  }
+
+  input:focus {
+    border: solid 1px ${Theme.color.primary};
+    box-shadow: 0 0 0 1px ${Theme.color.primary};
+    transition: border-color 0.3s;
+    outline: none;
   }
 
   input + label {
