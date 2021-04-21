@@ -173,8 +173,7 @@ function MobileMainNav(props: MobileMainNavProps) {
           </StyledNextLink>
         </HomeLinkWrapper>
         <NavLinksContainer>
-          {navLinks.map((page) => {
-            const { title, href, sections, Icon } = page;
+          {navLinks.map(({ title, href, sections, Icon }) => {
             return (
               <PageWrapper key={title}>
                 {href && Icon ? (
@@ -188,9 +187,11 @@ function MobileMainNav(props: MobileMainNavProps) {
                 )}
                 {sections && (
                   <NavSectionContainer>
-                    {sections?.map((section) => (
-                      <NavSection key={section.title}>
-                        <SectionTitle>{section.title}</SectionTitle>
+                    {sections.map((section, index) => (
+                      <NavSection key={index}>
+                        {section.title && (
+                          <SectionTitle>{section.title}</SectionTitle>
+                        )}
                         <LinksWrapper>
                           {section.pages.map((page) => {
                             const { Icon } = page;

@@ -1,18 +1,25 @@
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import React, { ReactNode, useState } from 'react';
+import { IconType } from 'react-icons';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import { NavbarItemTitle } from './NavbarItemTitle';
 
-const NavbarItemEl = styled.li`
-  position: relative;
+const IconWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  margin-right: 0.25em;
 `;
 
 const DropdownSlot = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+`;
+
+const NavbarItemEl = styled.li`
+  position: relative;
 `;
 
 const TitleTextLineContainer = styled.div`
@@ -41,6 +48,7 @@ type Props = {
   index: number;
   title: string;
   href?: string;
+  Icon?: IconType;
   children: ReactNode;
 };
 
@@ -50,9 +58,14 @@ const labelVariants = {
   end: { x: [0, 102, -102], opacity: [1, 0, 0], transition: { duration: 0.7 } },
 };
 
-function NavbarItem({ onMouseEnter, index, title, href, children }: Props) {
-  const router = useRouter();
-
+function NavbarItem({
+  onMouseEnter,
+  index,
+  title,
+  href,
+  Icon,
+  children,
+}: Props) {
   const handleMouseEnter = () => {
     onMouseEnter(index);
     setFocusState('active');
@@ -70,6 +83,11 @@ function NavbarItem({ onMouseEnter, index, title, href, children }: Props) {
       onBlur={handleMouseLeave}
     >
       <NavbarItemTitle href={href}>
+        {Icon && (
+          <IconWrapper>
+            <Icon />
+          </IconWrapper>
+        )}
         <TitleWrapper>
           <span>{title}</span>
           <TitleTextLineContainer>

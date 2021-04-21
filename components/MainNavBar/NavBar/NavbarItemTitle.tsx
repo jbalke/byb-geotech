@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 
 const ItemTitle = styled.button<{ link?: boolean }>`
+  align-items: center;
   appearance: none;
   background: transparent;
   border: 0;

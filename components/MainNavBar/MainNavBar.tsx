@@ -19,14 +19,14 @@ const DropdownContents = styled(motion.div)<{ itemCount?: number }>`
   display: grid;
   gap: 1em;
   grid-template-columns: ${({ itemCount }) =>
-    itemCount ? `repeat(${Math.ceil(itemCount / 4)}, 1fr)` : '1fr'};
+    itemCount ? `repeat(${itemCount}, 1fr)` : '1fr'};
   padding: 1rem;
   transition: ${Theme.color.transition};
 `;
 
 const IconLinkWrapper = styled.div`
   align-items: flex-start;
-  color: ${Theme.color.primaryDark};
+  color: ${Theme.color.link};
   display: flex;
   flex-flow: row nowrap;
 
@@ -98,6 +98,19 @@ const MobileMenuToggle = styled(Button)`
   }
 `;
 
+const SectionContainer = styled.div`
+  h2 {
+    color: ${Theme.color.primaryLight};
+    margin: 0 0 0.7rem 0;
+    text-align: center;
+  }
+`;
+
+const SectionPageContainer = styled.div`
+  display: grid;
+  gap: 0.5rem;
+`;
+
 const MainNavBar = () => {
   const dispatch = useUIDispatch();
   const toggleMobileNav = () => dispatch(toggleSidebar());
@@ -119,36 +132,42 @@ const MainNavBar = () => {
       </NavLogoLink>
       <AnimateSharedLayout type='crossfade'>
         <NavBar onMouseLeave={onMouseLeave}>
-          {navLinks.map((item, index) => (
+          {navLinks.map(({ Icon, title, href, sections }, index) => (
             <NavbarItem
-              key={item.title}
-              title={item.title}
+              key={title}
+              title={title}
               index={index}
-              href={item.url}
+              Icon={Icon}
+              href={href}
               onMouseEnter={onMouseEnter}
             >
               <AnimatePresence>
-                {activeSubmenu === index &&
-                  navLinks[activeSubmenu].links?.length && (
-                    <DropdownContainer>
-                      <DropdownContents
-                        layout
-                        itemCount={navLinks[activeSubmenu].links?.length}
-                      >
-                        {navLinks[activeSubmenu].links?.map((link) => {
-                          const { Icon } = link;
-                          return (
-                            <IconLinkWrapper key={link.label}>
-                              <Icon />
-                              <StyledNextLink href={link.url}>
-                                <span>{link.label}</span>
-                              </StyledNextLink>
-                            </IconLinkWrapper>
-                          );
-                        })}
-                      </DropdownContents>
-                    </DropdownContainer>
-                  )}
+                {activeSubmenu === index && sections && (
+                  <DropdownContainer>
+                    <DropdownContents layout itemCount={sections.length}>
+                      {sections.map((section, index) => {
+                        return (
+                          <SectionContainer key={index}>
+                            {section.title && <h2>{section.title}</h2>}
+                            <SectionPageContainer>
+                              {section.pages.map((page) => {
+                                const { Icon, title, href } = page;
+                                return (
+                                  <IconLinkWrapper key={href}>
+                                    <Icon />
+                                    <StyledNextLink href={href}>
+                                      <span>{title}</span>
+                                    </StyledNextLink>
+                                  </IconLinkWrapper>
+                                );
+                              })}
+                            </SectionPageContainer>
+                          </SectionContainer>
+                        );
+                      })}
+                    </DropdownContents>
+                  </DropdownContainer>
+                )}
               </AnimatePresence>
             </NavbarItem>
           ))}

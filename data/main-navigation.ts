@@ -1,5 +1,11 @@
 import { IconType } from 'react-icons';
-import { FaBook, FaBriefcase, FaCreditCard, FaSearch } from 'react-icons/fa';
+import {
+  FaInfoCircle,
+  FaWater,
+  FaCreditCard,
+  FaSearch,
+  FaQuestionCircle,
+} from 'react-icons/fa';
 
 type PageLink = {
   title: string;
@@ -31,27 +37,27 @@ export const navLinks: MenuItem[] = [
         pages: [
           {
             title: 'Prior to drilling a bore',
-            Icon: FaCreditCard,
+            Icon: FaWater,
             href: '/home-owners/before-drilling',
           },
           {
             title: 'What to expect on drillig day',
-            Icon: FaCreditCard,
+            Icon: FaWater,
             href: '/home-owners/drilling-day',
           },
           {
             title: 'Bore maintenance',
-            Icon: FaCreditCard,
+            Icon: FaWater,
             href: '/home-owners/bore-maintenance',
           },
           {
             title: 'Pump troubleshooting',
-            Icon: FaCreditCard,
+            Icon: FaWater,
             href: '/home-owners/pump-troubleshooting',
           },
           {
             title: 'Flow rate testing for council / DA',
-            Icon: FaCreditCard,
+            Icon: FaWater,
             href: '/home-owners/flow-rate-testing',
           },
         ],
@@ -61,7 +67,7 @@ export const navLinks: MenuItem[] = [
         pages: [
           {
             title: 'Projects',
-            Icon: FaCreditCard,
+            Icon: FaWater,
             href: '/geotech/projects',
           },
         ],
@@ -80,16 +86,20 @@ export const navLinks: MenuItem[] = [
         pages: [
           {
             title: 'Groundwater Protection',
-            Icon: FaBook,
+            Icon: FaQuestionCircle,
             href: '/help/groundwater-protection',
           },
           {
             title: 'Flooding / Cyclones',
-            Icon: FaBook,
+            Icon: FaQuestionCircle,
             href: '/help/flooding',
           },
-          { title: 'PFAS / PFOA', Icon: FaBook, href: '/help/pfas-pfoa' },
-          { title: 'FAQ', Icon: FaBook, href: '/help/faq' },
+          {
+            title: 'PFAS / PFOA',
+            Icon: FaQuestionCircle,
+            href: '/help/pfas-pfoa',
+          },
+          { title: 'FAQ', Icon: FaQuestionCircle, href: '/help/faq' },
         ],
       },
     ],
@@ -99,8 +109,8 @@ export const navLinks: MenuItem[] = [
     sections: [
       {
         pages: [
-          { title: 'Contact', Icon: FaBriefcase, href: '/contact' },
-          { title: 'Our Story', Icon: FaBriefcase, href: '/our-story' },
+          { title: 'Contact', Icon: FaInfoCircle, href: '/contact' },
+          { title: 'Our Story', Icon: FaInfoCircle, href: '/about/our-story' },
         ],
       },
     ],
