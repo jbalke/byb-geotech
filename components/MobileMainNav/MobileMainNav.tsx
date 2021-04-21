@@ -22,7 +22,7 @@ const MenuContainer = styled(motion.div)`
   min-height: calc(100vh - 10px);
   margin: 0 auto;
   max-width: ${(props) => props.theme.bp.tablet};
-  padding: 15px;
+  padding: 15px 15px 10vh 15px;
   overflow-x: hidden;
   overscroll-behavior: contain;
   width: 100%;
@@ -70,7 +70,7 @@ const NavSectionContainer = styled.div`
       content: '';
       position: absolute;
       top: 25%;
-      left: 0;
+      left: -7.5px;
       width: 1px;
       height: 50%;
       background-color: rgb(204, 204, 204);
@@ -86,11 +86,12 @@ const PageWrapper = styled.div`
 `;
 
 const LinksWrapper = styled.ul`
+  align-items: start;
   display: grid;
-  gap: 0.5em 0.25em;
+  font-size: clamp(0.85rem, 2.2vw, 1.15rem);
+  gap: 0.6em 0.25em;
   grid-template-columns: 20px auto;
   justify-content: center;
-  align-items: start;
   margin: 0;
   margin-top: ${Theme.spacing.m};
   padding: 0;
@@ -108,13 +109,17 @@ const LinksWrapper = styled.ul`
 `;
 
 const PageTitle = styled.h2`
-  font-size: 1.2rem;
+  place-content: center;
+  display: grid;
+  font-size: clamp(1.2rem, 3.5vw, 1.7rem);
+  gap: 0.25em;
+  grid-template-columns: auto auto;
   margin: 0;
 `;
 
 const SectionTitle = styled.h3`
   && {
-    font-size: 1rem;
+    font-size: clamp(1rem, 3.5vw, 1.4rem);
     margin: 0;
     margin-top: ${Theme.spacing.m};
     text-align: center;
@@ -165,42 +170,47 @@ function MobileMainNav(props: MobileMainNavProps) {
           </StyledNextLink>
         </HomeLinkWrapper>
         <NavLinksContainer>
-          {navLinks.map((item) => (
-            <PageWrapper key={item.title}>
-              {item.href ? (
-                <StyledNextLink href={item.href} onClick={closeMobileNav}>
-                  <PageTitle>{item.title}</PageTitle>
-                </StyledNextLink>
-              ) : (
-                <PageTitle>{item.title}</PageTitle>
-              )}
-              {item.sections && (
-                <NavSectionContainer>
-                  {item.sections?.map((section) => (
-                    <NavSection key={section.title}>
-                      <SectionTitle>{section.title}</SectionTitle>
-                      <LinksWrapper>
-                        {section.pages.map((page) => {
-                          const { Icon } = page;
-                          return (
-                            <React.Fragment key={page.href}>
-                              <Icon />
-                              <StyledNextLink
-                                href={page.href}
-                                onClick={closeMobileNav}
-                              >
-                                {page.title}
-                              </StyledNextLink>
-                            </React.Fragment>
-                          );
-                        })}
-                      </LinksWrapper>
-                    </NavSection>
-                  ))}
-                </NavSectionContainer>
-              )}
-            </PageWrapper>
-          ))}
+          {navLinks.map((page) => {
+            const { title, href, sections, Icon } = page;
+            return (
+              <PageWrapper key={title}>
+                {href && Icon ? (
+                  <StyledNextLink href={href} onClick={closeMobileNav}>
+                    <PageTitle>
+                      <Icon /> {title}
+                    </PageTitle>
+                  </StyledNextLink>
+                ) : (
+                  <PageTitle>{title}</PageTitle>
+                )}
+                {sections && (
+                  <NavSectionContainer>
+                    {sections?.map((section) => (
+                      <NavSection key={section.title}>
+                        <SectionTitle>{section.title}</SectionTitle>
+                        <LinksWrapper>
+                          {section.pages.map((page) => {
+                            const { Icon } = page;
+                            return (
+                              <React.Fragment key={page.href}>
+                                <Icon />
+                                <StyledNextLink
+                                  href={page.href}
+                                  onClick={closeMobileNav}
+                                >
+                                  {page.title}
+                                </StyledNextLink>
+                              </React.Fragment>
+                            );
+                          })}
+                        </LinksWrapper>
+                      </NavSection>
+                    ))}
+                  </NavSectionContainer>
+                )}
+              </PageWrapper>
+            );
+          })}
         </NavLinksContainer>
       </MenuContainer>
     </Wrapper>

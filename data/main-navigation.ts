@@ -1,17 +1,26 @@
 import { IconType } from 'react-icons';
-import { FaBook, FaBriefcase, FaCreditCard } from 'react-icons/fa';
+import { FaBook, FaBriefcase, FaCreditCard, FaSearch } from 'react-icons/fa';
 
-type MenuSection = { title?: string; pages: PageLink[] };
-type MenuLink = { title: string; href: string; sections?: never };
-type MenuDropdown = { title: string; href?: never; sections: MenuSection[] };
-
-export type PageLink = {
+type PageLink = {
   title: string;
   Icon: IconType;
   href: string;
 };
+type MenuSection = { title?: string; pages: PageLink[] };
+type MenuLink = {
+  title: string;
+  Icon: IconType;
+  href: string;
+  sections?: never;
+};
+type MenuDropdown = {
+  title: string;
+  Icon?: never;
+  href?: never;
+  sections: MenuSection[];
+};
 
-export type MenuItem = MenuLink | MenuDropdown;
+type MenuItem = MenuLink | MenuDropdown;
 
 export const navLinks: MenuItem[] = [
   {
@@ -61,6 +70,7 @@ export const navLinks: MenuItem[] = [
   },
   {
     title: 'Bore Search',
+    Icon: FaSearch,
     href: '/bore-search',
   },
   {
