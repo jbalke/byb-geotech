@@ -1,5 +1,5 @@
 import { UIProvider } from 'context/ui-context';
-import 'font/font.css';
+import '/public/fonts/font.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Fragment, ReactElement } from 'react';
@@ -37,11 +37,23 @@ const GlobalStyle = createGlobalStyle`
     background-repeat: repeat;
     background-attachment: fixed;
     background-size: cover; */
-    font-family: 'Public Sans', sans-serif;
+    font-family: sans-serif;
+  }
+
+  @supports (font-variation-settings: normal) {
+    html {
+      font-family: 'Public Sans', sans-serif;
+    }
   }
 
   h1, h2, h3 {
-    font-family: 'Rubik';
+    font-family: 'Poppins';
+  }
+
+  @supports (font-variation-settings: normal) {
+    h1, h2, h3  {
+      font-family: 'Rubik';
+    }
   }
 
   h1, h2, h3:first-child {

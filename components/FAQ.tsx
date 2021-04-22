@@ -16,7 +16,7 @@ const StyledSummary = styled.summary`
   border-radius: 0.3em;
   color: ${Theme.color.white};
   cursor: pointer;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Poppins';
   font-weight: 600;
   letter-spacing: 0.08em;
   margin-bottom: 1em;
@@ -25,6 +25,10 @@ const StyledSummary = styled.summary`
 
   &:hover {
     filter: brightness(1.2);
+  }
+
+  @supports (font-variation-settings: normal) {
+    font-family: 'Rubik';
   }
 `;
 

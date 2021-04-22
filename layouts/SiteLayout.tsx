@@ -75,14 +75,20 @@ const HeroPhoneText = styled.p`
 
 const HeroSubText = styled.p`
   display: none;
-  font-family: 'Public Sans Italic';
+  font-family: sans-serif;
+  font-style: italic;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.2em;
   margin: 0.5rem 0 0 0;
   text-align: center;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
   width: 70%;
+
+  @supports (font-variation-settings: normal) {
+    font-family: 'Public Sans Italic';
+    font-weight: 600;
+  }
 
   @media (min-width: ${(props) => props.theme.bp.tablet}) {
     display: block;
@@ -125,6 +131,24 @@ const SiteLayout = ({ children }: PageProps) => {
   return (
     <Wrapper main>
       <Head>
+        <link
+          rel='preload'
+          href='/fonts/Rubik-VariableFont_wght.ttf'
+          as='font'
+          crossOrigin=''
+        />
+        <link
+          rel='preload'
+          href='/fonts/PublicSans-VariableFont_wght.ttf'
+          as='font'
+          crossOrigin=''
+        />
+        <link
+          rel='preload'
+          href='/fonts/PublicSans-Italic-VariableFont_wght.ttf'
+          as='font'
+          crossOrigin=''
+        />
         <title>Backyard Bores</title>
       </Head>
       <SkipToMain href='#main-content' />
