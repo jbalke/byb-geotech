@@ -88,28 +88,28 @@ function faq(props: faqProps) {
           <p>
             When considering a location in your yard for a bore , please take
             the following into account:
-            <ol>
-              <li>
-                How easy will it be to get the drilling rig to that location?
-                Please see{' '}
-                <StyledLink href='#drilling-in-my-yard'>
-                  Will the drilling rig fit in my yard?
-                </StyledLink>{' '}
-                below for rig dimensions.
-              </li>
-              <li>
-                How easy (and costly) will it be to get power to the pump?
-                Please keep in mind that the pump does not need to be directly
-                on top of the bore, it can be inside a fence, under your house,
-                in a shed, etc.
-              </li>
-              <li>
-                How easy will it be to distribute the water from the pump
-                outlet? Do you want the pump outlet near the fence so you can
-                run poly around your fence line to have taps every 10m or so?
-              </li>
-            </ol>
           </p>
+          <ol>
+            <li>
+              How easy will it be to get the drilling rig to that location?
+              Please see{' '}
+              <StyledLink href='#drilling-in-my-yard'>
+                Will the drilling rig fit in my yard?
+              </StyledLink>{' '}
+              below for rig dimensions.
+            </li>
+            <li>
+              How easy (and costly) will it be to get power to the pump? Please
+              keep in mind that the pump does not need to be directly on top of
+              the bore, it can be inside a fence, under your house, in a shed,
+              etc.
+            </li>
+            <li>
+              How easy will it be to distribute the water from the pump outlet?
+              Do you want the pump outlet near the fence so you can run poly
+              around your fence line to have taps every 10m or so?
+            </li>
+          </ol>
         </>
       </FAQ>
       <FAQ question='What utilities do I need to search for in preparation for drilling?'>
@@ -145,15 +145,15 @@ function faq(props: faqProps) {
           <p>
             Our rig is mounted on a light truck and is 2.35m wide (at the
             mirrors), 5.7m long and 2.7m high.
-            <p>
-              We need to reverse the truck over the top of the desired drilling
-              location.
-            </p>
-            <p>
-              If you have any concerns, please{' '}
-              <StyledLink href='/contact'>call us</StyledLink> and we can come
-              inspect and do some measurements.
-            </p>
+          </p>
+          <p>
+            We need to reverse the truck over the top of the desired drilling
+            location.
+          </p>
+          <p>
+            If you have any concerns, please{' '}
+            <StyledLink href='/contact'>call us</StyledLink> and we can come
+            inspect and do some measurements.
           </p>
         </>
       </FAQ>
