@@ -17,7 +17,7 @@ const DropdownContents = styled(motion.div)<{ itemCount?: number }>`
   align-content: start;
   color: ${Theme.color.text};
   display: grid;
-  gap: 1em;
+  gap: 1.5rem;
   grid-template-columns: ${({ itemCount }) =>
     itemCount ? `repeat(${itemCount}, 1fr)` : '1fr'};
   padding: 1rem;
@@ -109,7 +109,7 @@ const SectionContainer = styled.div`
 
 const SectionPageContainer = styled.div`
   display: grid;
-  gap: 0.5rem;
+  gap: 0.7rem;
 `;
 
 const MainNavBar = () => {

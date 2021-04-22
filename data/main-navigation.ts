@@ -41,7 +41,7 @@ export const navLinks: MenuItem[] = [
             href: '/home-owners/before-drilling',
           },
           {
-            title: 'What to expect on drillig day',
+            title: 'What to expect on drilling day',
             Icon: FaWater,
             href: '/home-owners/drilling-day',
           },
@@ -63,7 +63,7 @@ export const navLinks: MenuItem[] = [
         ],
       },
       {
-        title: 'Geotechnical',
+        title: 'Geotech Drilling',
         pages: [
           {
             title: 'Projects',
@@ -110,7 +110,7 @@ export const navLinks: MenuItem[] = [
       {
         pages: [
           { title: 'Contact', Icon: FaInfoCircle, href: '/contact' },
-          { title: 'Our Story', Icon: FaInfoCircle, href: '/about/our-story' },
+          { title: 'Our Story', Icon: FaInfoCircle, href: '/our-story' },
         ],
       },
     ],

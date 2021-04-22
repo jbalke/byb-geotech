@@ -29,7 +29,7 @@ const MenuContainer = styled(motion.div)`
   min-height: calc(100vh - 10px);
   margin: 0 auto;
   max-width: ${(props) => props.theme.bp.tablet};
-  padding: 15px 15px 10vh 15px;
+  padding: 15px 15px 15vh 15px;
   overflow-x: hidden;
   overscroll-behavior: contain;
   width: 100%;
@@ -107,12 +107,12 @@ const PageWrapper = styled.div`
 const LinksWrapper = styled.div`
   align-items: start;
   display: grid;
-  font-size: clamp(0.85rem, 2.2vw, 1.15rem);
-  gap: 0.6em 0.25em;
+  font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+  gap: 0.8em 0.25em;
   grid-template-columns: 20px auto;
   justify-content: center;
   margin: 0;
-  margin-top: ${Theme.spacing.m};
+  margin-top: 0.7em;
   padding: 0;
 
   a {
