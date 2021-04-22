@@ -66,7 +66,7 @@ export const navLinks: MenuItem[] = [
         title: 'Geotech Drilling',
         pages: [
           {
-            title: 'Projects',
+            title: 'Details & Projects',
             Icon: FaWater,
             href: '/geotech/projects',
           },
@@ -99,7 +99,7 @@ export const navLinks: MenuItem[] = [
             Icon: FaQuestionCircle,
             href: '/help/pfas-pfoa',
           },
-          { title: 'FAQ', Icon: FaQuestionCircle, href: '/help/faq' },
+          { title: 'FAQ', Icon: FaQuestionCircle, href: '/faq' },
         ],
       },
     ],
