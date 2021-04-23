@@ -1,59 +1,94 @@
 import React from 'react';
-import styled, { css, keyframes } from 'styled-components';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemButton,
+  AccordionItemHeading,
+  AccordionItemPanel,
+} from 'react-accessible-accordion';
+import styled, { keyframes } from 'styled-components';
 import { Theme } from '../styles/theme';
 
-const Sweep = keyframes`
-    from {
-      opacity: 0; margin-top: -5px;
-    }
-    to {
-      opacity: 1; margin-top: 0;
-    }
-`;
-
-const StyledSummary = styled.summary`
+const StyledAccordionButton = styled(AccordionItemButton)`
   background-color: ${Theme.color.primary};
-  border-radius: 0.3em;
   color: ${Theme.color.white};
   cursor: pointer;
   font-family: 'Poppins';
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  margin-bottom: 1em;
-  padding: 1em;
+  letter-spacing: 0.1em;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid ${Theme.color.textBackground};
+  border-radius: 0.3em;
   transition: filter 300ms;
-
-  &:hover {
-    filter: brightness(1.2);
-  }
 
   @supports (font-variation-settings: normal) {
     font-family: 'Rubik';
+    font-weight: 600;
+  }
+
+  ::before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+    transition: transform 300ms;
+  }
+
+  :hover {
+    filter: brightness(1.2);
+  }
+`;
+const StyledAccordionItem = styled(AccordionItem)``;
+export const StyledAccordion = styled(Accordion)`
+  ${StyledAccordionItem} + ${StyledAccordionItem} {
+    margin-top: 0.5rem;
+  }
+
+  ${StyledAccordionButton}[aria-expanded='true']::before,
+  ${StyledAccordionButton}[aria-selected='true']::before {
+    transform: rotate(45deg);
+  }
+
+  [hidden] {
+    display: none;
   }
 `;
 
-const StyledDetails = styled.details`
-  &[open] ${StyledSummary} ~ * {
-    animation: ${Sweep} 0.25s ease-out;
+const FadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 `;
+const StyledAccordionPanel = styled(AccordionItemPanel)`
+  padding: 1em;
+  animation: ${FadeIn} 0.35s ease-in;
+`;
 
-type Question = {
-  answer: string;
-  children?: never;
+type FAQProps = {
+  id?: string;
+  question: string;
+  children: React.ReactNode;
+  isOpen?: boolean | undefined;
+  uuid?: string;
 };
 
-type FAQProps = { id?: string; question: string; isOpen?: boolean } & (
-  | { children: React.ReactNode; answer?: never }
-  | Question
-);
-
-function FAQ({ id, question, answer, children, isOpen = false }: FAQProps) {
+function FAQ({ id, question, children, isOpen = undefined, uuid }: FAQProps) {
   return (
-    <StyledDetails id={id} open={isOpen}>
-      <StyledSummary>{question}</StyledSummary>
-      {children || answer}
-    </StyledDetails>
+    <StyledAccordionItem id={id} uuid={uuid} dangerouslySetExpanded={isOpen}>
+      <AccordionItemHeading aria-level={2}>
+        <StyledAccordionButton>{question}</StyledAccordionButton>
+      </AccordionItemHeading>
+      <StyledAccordionPanel>{children}</StyledAccordionPanel>
+    </StyledAccordionItem>
   );
 }
 

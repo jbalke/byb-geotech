@@ -89,8 +89,8 @@ const Button = styled(BaseButton)<{
     if (variant === 'outline') {
       return css`
         background-color: transparent;
-        color: ${Theme.color.primaryLight};
-        border-color: ${Theme.color.primaryLight};
+        color: ${Theme.color.primary};
+        border-color: ${Theme.color.primary};
       `;
     }
   }}
@@ -138,7 +138,9 @@ const Button = styled(BaseButton)<{
   }}
 
   :hover {
-    background-color: ${Theme.color.primaryDark};
+    background-color: ${({ variant }) =>
+      variant === 'outline' ? Theme.color.primary : Theme.color.primaryDark};
+    color: ${Theme.color.white};
   }
 
   :disabled {
