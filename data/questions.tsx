@@ -1,25 +1,13 @@
 // tslint:disable react-a11y-anchors
 
-import StyledNextLink from 'components/StyledNextLink';
+import StyledNextLink, { StyledLink } from 'components/StyledNextLink';
 import * as React from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import { v4 } from 'uuid';
+import { PHONE } from '../constants';
 
-const StyledLink = styled(StyledNextLink)`
-  &,
-  &:active,
-  &:visited {
-    color: ${Theme.color.link};
-    font-weight: 600;
-    text-decoration: none;
-  }
-
-  &:hover {
-    color: ${Theme.color.linkHover};
-    transition: ${Theme.color.transition};
-  }
-`;
+const Link = styled(StyledLink)``;
 
 export type Question = {
   uuid: string;
@@ -84,9 +72,8 @@ const questions: Question[] = [
         <p>
           They are not expensive at all! We are offering a great price using the
           latest, international best practice standards and equipment for a
-          completed and cased PVC bore,{' '}
-          <StyledLink href='/contact'>contact us</StyledLink> us today for a
-          quote.
+          completed and cased PVC bore, <Link href='/contact'>contact us</Link>{' '}
+          us today for a quote.
         </p>
       </>
     ),
@@ -97,11 +84,10 @@ const questions: Question[] = [
     panel: (
       <>
         <p>
-          No. It doesn't work for us but{' '}
-          <StyledLink href='/contact'>contact us</StyledLink> and we can give
-          you the numbers of several local diviners. We do have a good knowledge
-          of the areas around Mackay that have water and what depth a usable
-          bore will be.
+          No. It doesn't work for us but <Link href='/contact'>contact us</Link>{' '}
+          and we can give you the numbers of several local diviners. We do have
+          a good knowledge of the areas around Mackay that have water and what
+          depth a usable bore will be.
         </p>
         <p>
           When considering a location in your yard for a bore , please take the
@@ -110,10 +96,7 @@ const questions: Question[] = [
         <ol>
           <li>
             How easy will it be to get the drilling rig to that location? Please
-            see{' '}
-            <StyledLink href='#drilling-in-my-yard'>
-              Will the drilling rig fit in my yard?
-            </StyledLink>{' '}
+            see <Link href='#'>Will the drilling rig fit in my yard?</Link>{' '}
             below for rig dimensions.
           </li>
           <li>
@@ -154,9 +137,9 @@ const questions: Question[] = [
         <p>
           It’s <strong>VERY IMPORTANT</strong> for you to locate these services
           as it is your responsibility as the landowner or their authorised
-          representative. <StyledLink href='/contact'>Call us</StyledLink> if
-          you have concerns, we can apply for the plans from council for a $58
-          fee.
+          representative. Call us on{' '}
+          <Link href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</Link> if you have
+          concerns, we can apply for the plans from council for a $58 fee.
         </p>
       </>
     ),
@@ -175,9 +158,91 @@ const questions: Question[] = [
           location.
         </p>
         <p>
-          If you have any concerns, please{' '}
-          <StyledLink href='/contact'>call us</StyledLink> and we can come
+          If you have any concerns, please call us on{' '}
+          <Link href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</Link> and we can come
           inspect and do some measurements.
+        </p>
+      </>
+    ),
+  },
+  {
+    uuid: v4(),
+    heading: 'What do I need to do to prepare the drilling site?',
+    panel: (
+      <>
+        <p>
+          Please clear up the area surrounding the proposed drilling site. We
+          need about a 2m radius of cleared area.
+        </p>
+        <p>
+          If there are trees or stumps, branches or shrubs in the immediate area
+          please trim or remove them.
+        </p>
+        <p>
+          If we need to come in through a fence panel, please make sure it's
+          removed by the time we arrive. If we need to trim trees or remove
+          fence panel we will have to add an hourly surcharge.
+        </p>
+        <p>
+          Please call us on <Link href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</Link>{' '}
+          and we can come inspect and do some measurements.
+        </p>
+      </>
+    ),
+  },
+  {
+    uuid: v4(),
+    heading: 'How can I see what days/times you are available to drill?',
+    panel: (
+      <>
+        <p>
+          Click <Link href='https://backyardbores.youcanbook.me/'>here</Link> to
+          access our online calendar but we operate 7 days a week.
+        </p>
+        <p>
+          Some weeks we can be fully booked with local or out-of-town projects.
+          It’s best to check the calendar to see when we have a free block.
+        </p>
+      </>
+    ),
+  },
+  {
+    uuid: v4(),
+    heading: 'Do you accept credit cards and direct bank transfer?',
+    panel: (
+      <>
+        <p>
+          <strong>YES!</strong> We accept Visa and Mastercard payments or direct
+          bank transfer.
+        </p>
+      </>
+    ),
+  },
+  {
+    uuid: v4(),
+    heading:
+      'Can you drill in South Mackay, East Mackay, Ooralea, Bakers Creek, Walkerston, etc?',
+    panel: (
+      <>
+        <p>
+          Please call us on <Link href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</Link>{' '}
+          to discuss your options but often times <strong>YES!</strong> you can.
+        </p>
+      </>
+    ),
+  },
+  {
+    uuid: v4(),
+    heading: 'Do you drill outside of Mackay area?',
+    panel: (
+      <>
+        <p>
+          <strong>YES!</strong> We can drill all around central Queensland and
+          have drilled from Bowen to Marlborough and west to Moranbah.
+        </p>
+        <p>
+          Mobilisation fees may apply, please call us on{' '}
+          <Link href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</Link> to enquire.
         </p>
       </>
     ),

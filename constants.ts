@@ -14,3 +14,7 @@ export const EMAIL = {
   INFO: `info@${EMAIL_DOMAIN}`,
   MANAGER: `matthew@vonsnarski.com`,
 };
+export const PHONE = {
+  MAIN: '1800193194',
+  MOBILE: '0418 193 194',
+};

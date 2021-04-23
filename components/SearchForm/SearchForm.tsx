@@ -47,10 +47,6 @@ const Select = styled(AsyncSelect)`
   .select__menu {
     color: ${Theme.color.dropDownMenuText};
   }
-
-  .select__control-is-focused {
-    border-color: ${Theme.color.primary};
-  }
 `;
 
 const StyledForm = styled.form`
