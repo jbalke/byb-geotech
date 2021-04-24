@@ -106,30 +106,20 @@ const PageWrapper = styled.div`
 
 const LinksWrapper = styled.div`
   align-items: start;
+  color: ${Theme.color.link};
   display: grid;
-  font-size: clamp(0.9rem, 2.5vw, 1.3rem);
-  gap: 0.8em 0.25em;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  gap: 0.85em 0.25em;
   grid-template-columns: 20px auto;
   justify-content: center;
   margin: 0;
   margin-top: 0.7em;
   padding: 0;
-
-  a {
-    color: inherit;
-    text-transform: capitalize;
-    text-decoration: none;
-
-    :active,
-    :visited {
-      color: currentColor;
-    }
-  }
 `;
 
 const SectionTitle = styled.h3`
   && {
-    font-size: clamp(1rem, 3.5vw, 1.4rem);
+    font-size: clamp(1.1rem, 3.5vw, 1.4rem);
     margin: 0;
     text-align: center;
   }

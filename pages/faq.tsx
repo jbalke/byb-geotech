@@ -29,7 +29,7 @@ function faq(props: faqProps) {
       <ToggleButton
         onClick={() =>
           setExpandAll((expanded) => {
-            // changing key forces remount and restting state
+            // changing key forces remount and resetting state
             if (expanded) {
               questions.forEach((q) => (q.uuid = v4()));
             }

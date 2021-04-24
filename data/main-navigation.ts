@@ -63,7 +63,7 @@ export const navLinks: MenuItem[] = [
         ],
       },
       {
-        title: 'Geotech Drilling',
+        title: 'Geotechnical',
         pages: [
           {
             title: 'Details & Projects',

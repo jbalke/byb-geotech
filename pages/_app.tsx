@@ -1,14 +1,14 @@
+import MobileMainNav from 'components/MobileMainNav';
 import { UIProvider } from 'context/ui-context';
-import '/public/fonts/font.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Fragment, ReactElement } from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { BREAKPOINTS } from 'styles/style-constants';
+import 'styles/styles.css';
 import { DarkTheme, Theme } from 'styles/theme';
 import { Page } from '../@types/page';
-import MobileMainNav from 'components/MobileMainNav';
-import 'styles/styles.css';
+import '/styles/font.css';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -40,8 +40,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: sans-serif;
   }
 
-  @supports (font-variation-settings: normal) {
-    html {
+   @supports (font-variation-settings: normal) {
+    body {
       font-family: 'Public Sans', sans-serif;
     }
   }
