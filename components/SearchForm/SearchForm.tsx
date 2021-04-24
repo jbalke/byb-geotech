@@ -51,35 +51,35 @@ const Select = styled(AsyncSelect)`
 
 const StyledForm = styled.form`
   font-size: 1rem;
+`;
 
-  label:not(:first-of-type) {
+const StyledLabel = styled.label`
+  display: block;
+  font-family: 'Rubik';
+
+  &:not(:first-of-type) {
     margin-top: 1rem;
   }
+`;
 
-  label {
-    display: block;
-    font-family: 'Rubik';
-  }
+const StyledInput = styled.input`
+  display: block;
+  font-family: 'Public Sans';
+  font-size: inherit;
+  width: 100%;
+  padding: 0.5em;
+  border: solid 1px rgb(204, 204, 204);
+  border-radius: 4px;
+  transition: border-color 0.1s;
 
-  input {
-    display: block;
-    font-family: 'Public Sans';
-    font-size: inherit;
-    width: 100%;
-    padding: 0.5em;
-    border: solid 1px rgb(204, 204, 204);
-    border-radius: 4px;
-    transition: border-color 0.1s;
-  }
-
-  input:focus {
+  &:focus {
     border: solid 1px ${Theme.color.primary};
     box-shadow: 0 0 0 1px ${Theme.color.primary};
     transition: border-color 0.3s;
     outline: none;
   }
 
-  input + label {
+  & + & {
     margin-top: 1rem;
   }
 `;
@@ -219,18 +219,18 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
               <strong>{bores.length} bores</strong> in your area? Provide your
               contact details below and we'll email you a report!
             </Message>
-            <label htmlFor='name'>Name</label>
-            <input
+            <StyledLabel htmlFor='name'>Name</StyledLabel>
+            <StyledInput
               id='name'
               type='text'
               placeholder='Your name'
               {...register('name', { required: 'Required', maxLength: 25 })}
             />
             {errors.name && <InputWarning message={errors.name.message!} />}
-            <label htmlFor='email' aria-describedby='emailDescribe'>
+            <StyledLabel htmlFor='email' aria-describedby='emailDescribe'>
               Email
-            </label>
-            <input
+            </StyledLabel>
+            <StyledInput
               id='email'
               type='email'
               placeholder='Your email address'
@@ -244,10 +244,10 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
               We'll never spam you or share your email address with anyone else.
             </InputSubtext>
             {errors.email && <InputWarning message={errors.email.message!} />}
-            <label htmlFor='phone' aria-describedby='phoneDescribe'>
+            <StyledLabel htmlFor='phone' aria-describedby='phoneDescribe'>
               Phone (optional)
-            </label>
-            <input
+            </StyledLabel>
+            <StyledInput
               id='phone'
               type='text'
               placeholder='Your phone number'

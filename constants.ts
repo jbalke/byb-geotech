@@ -16,5 +16,5 @@ export const EMAIL = {
 };
 export const PHONE = {
   MAIN: '1800193194',
-  MOBILE: '0418 193 194',
+  MOBILE: '0418193194',
 };

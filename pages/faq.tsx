@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import FAQ, { StyledAccordion } from 'components/FAQ';
 import { Wrapper } from 'components/styled';
 import SiteLayout from 'layouts/SiteLayout';
@@ -23,19 +23,17 @@ function faq(props: faqProps) {
     setExpandAll(undefined);
   };
 
+  useEffect(() => {
+    if (isExpandAll) {
+      questions.forEach((q) => (q.uuid = v4()));
+    }
+  }, [isExpandAll]);
+
   return (
     <Wrapper maxWidth='80ch'>
       <h1>Frequently Asked Questions</h1>
       <ToggleButton
-        onClick={() =>
-          setExpandAll((expanded) => {
-            // changing key forces remount and resetting state
-            if (expanded) {
-              questions.forEach((q) => (q.uuid = v4()));
-            }
-            return !expanded;
-          })
-        }
+        onClick={() => setExpandAll((expanded) => !expanded)}
         variant='outline'
         borderWidth='1px'
       >
