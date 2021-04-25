@@ -1,4 +1,4 @@
-import { Db, MongoClient } from 'mongodb';
+import { Db, MongoClient, MongoClientOptions } from 'mongodb';
 
 const { MONGODB_URI, MONGODB_DB } = process.env;
 
@@ -31,7 +31,7 @@ export async function connectDB(): Promise<{ client: MongoClient; db: Db }> {
   }
 
   if (!cached.promise) {
-    const opts = {
+    const opts: MongoClientOptions = {
       useUnifiedTopology: true,
       useNewUrlParser: true,
       maxIdleTimeMS: 10000,
