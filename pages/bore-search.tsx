@@ -1,5 +1,5 @@
 import SearchForm from 'components/SearchForm';
-import { findNearbyBores } from 'controllers/boreController';
+import { findNearbyBores } from 'model/boreController';
 import SiteLayout from 'layouts/SiteLayout';
 import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';

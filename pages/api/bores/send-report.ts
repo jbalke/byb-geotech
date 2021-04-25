@@ -1,4 +1,4 @@
-import { reportNearbyBores } from 'controllers/boreController';
+import { reportNearbyBores } from 'model/boreController';
 import { distanceBand, formatField, validateHuman } from 'emails/bores/utils';
 import { sendEmail } from 'emails/mailer';
 import fs from 'fs';
