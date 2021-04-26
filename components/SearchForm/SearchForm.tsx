@@ -214,6 +214,7 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
               Provide your phone number if you'd like us to call you to discuss
               your drilling needs.
             </InputSubtext>
+            {errors.phone && <InputWarning message={errors.phone.message!} />}
             <SubmitButton
               isDisabled={!isValid}
               isLoading={formStatus === 'pending'}
