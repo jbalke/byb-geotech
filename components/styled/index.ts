@@ -1,6 +1,7 @@
 // Misc styled components
 import styled, { keyframes, css } from 'styled-components';
 import { Theme } from 'styles/theme';
+import Button from '../Button';
 
 // KEYFRAMES
 export const FadeIn = keyframes`
@@ -85,4 +86,76 @@ export const Message = styled.div<{
 
   margin: ${Theme.spacing.m} 0;
   padding: 1em;
+`;
+
+export const StyledLabel = styled.label`
+  display: block;
+  font-family: 'Rubik';
+
+  &:not(:first-of-type) {
+    margin-top: 1rem;
+  }
+`;
+
+export const StyledInput = styled.input`
+  display: block;
+  font-family: 'Public Sans';
+  font-size: inherit;
+  width: 100%;
+  padding: 0.5em;
+  border: solid 1px rgb(204, 204, 204);
+  border-radius: 4px;
+  transition: border-color 0.1s;
+
+  &:focus {
+    border: solid 1px ${Theme.color.primary};
+    box-shadow: 0 0 0 1px ${Theme.color.primary};
+    transition: border-color 0.3s;
+    outline: none;
+  }
+
+  & + & {
+    margin-top: 1rem;
+  }
+`;
+
+export const StyledTextarea = styled.textarea`
+  display: block;
+  font-family: 'Public Sans';
+  font-size: inherit;
+  width: 100%;
+  padding: 0.5em;
+  border: solid 1px rgb(204, 204, 204);
+  border-radius: 4px;
+  transition: border-color 0.1s;
+
+  &:focus {
+    border: solid 1px ${Theme.color.primary};
+    box-shadow: 0 0 0 1px ${Theme.color.primary};
+    transition: border-color 0.3s;
+    outline: none;
+  }
+
+  & + & {
+    margin-top: 1rem;
+  }
+`;
+
+export const SubmitButton = styled(Button).attrs({ type: 'submit' })`
+  :active {
+    transform: translateY(1px);
+    filter: saturate(150%);
+  }
+
+  &&:disabled {
+    filter: none;
+  }
+`;
+
+export const InputSubtext = styled.span`
+  display: inline-block;
+  font-family: 'Public Sans Italic';
+  font-size: 0.75em;
+  font-weight: 600;
+  color: ${Theme.color.grey};
 `;

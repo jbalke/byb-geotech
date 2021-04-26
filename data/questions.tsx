@@ -24,13 +24,11 @@ const questions: Question[] = [
         <p>
           If you are getting a quote from any driller, ask for their licence
           number and to see their current Queensland Driller's Licence. You can{' '}
-          <a
+          <ExternalLink
             href='https://www.dnrm.qld.gov.au/__data/assets/pdf_file/0004/99760/drillers-register.pdf'
             target='_blank'
-            rel='noreferrer noopener'
-          >
-            search for their name here on the Qld Registered Drillers List
-          </a>{' '}
+            label='search for their name here on the Qld Registered Drillers List'
+          />{' '}
           before you engage them to drill. If they are{' '}
           <strong>not listed</strong>, they are <strong>not licensed</strong>.
           Chances are, if they don't have a Driller's Licence, they won’t
@@ -200,9 +198,10 @@ const questions: Question[] = [
       <>
         <p>
           Click{' '}
-          <ExternalLink href='https://backyardbores.youcanbook.me/'>
-            here
-          </ExternalLink>{' '}
+          <ExternalLink
+            href='https://backyardbores.youcanbook.me/'
+            label='here'
+          />{' '}
           to access our online calendar but we operate 7 days a week.
         </p>
         <p>

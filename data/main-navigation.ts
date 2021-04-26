@@ -109,7 +109,7 @@ export const navLinks: MenuItem[] = [
     sections: [
       {
         pages: [
-          { title: 'Contact', Icon: FaInfoCircle, href: '/contact' },
+          { title: 'Contact Us', Icon: FaInfoCircle, href: '/contact' },
           { title: 'Our Story', Icon: FaInfoCircle, href: '/our-story' },
         ],
       },

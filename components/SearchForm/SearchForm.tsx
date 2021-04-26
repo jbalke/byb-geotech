@@ -1,7 +1,12 @@
 import { DevTool } from '@hookform/devtools';
-import Button from 'components/Button/Button';
 import InputWarning from 'components/InputWarning';
-import { Message } from 'components/styled';
+import {
+  InputSubtext,
+  Message,
+  StyledInput,
+  StyledLabel,
+  SubmitButton,
+} from 'components/styled';
 import { useUIState } from 'context/ui-context';
 import debounce from 'lodash/debounce';
 import { useRouter } from 'next/router';
@@ -23,25 +28,7 @@ import { FeatureCollection } from 'types/geojson-types';
 import { client } from 'utils/client';
 import { geocodeAPI } from 'utils/geocoding';
 import isEmail from 'validator/lib/isEmail';
-
-const SubmitButton = styled(Button).attrs({ type: 'submit' })`
-  :active {
-    transform: translateY(1px);
-    filter: saturate(150%);
-  }
-
-  &&:disabled {
-    filter: none;
-  }
-`;
-
-const InputSubtext = styled.span`
-  display: inline-block;
-  font-family: 'Public Sans Italic';
-  font-size: 0.75em;
-  font-weight: 600;
-  color: ${Theme.color.grey};
-`;
+import isMobilePhone from 'validator/lib/isMobilePhone';
 
 const Select = styled(AsyncSelect)`
   .select__menu {
@@ -51,37 +38,6 @@ const Select = styled(AsyncSelect)`
 
 const StyledForm = styled.form`
   font-size: 1rem;
-`;
-
-const StyledLabel = styled.label`
-  display: block;
-  font-family: 'Rubik';
-
-  &:not(:first-of-type) {
-    margin-top: 1rem;
-  }
-`;
-
-const StyledInput = styled.input`
-  display: block;
-  font-family: 'Public Sans';
-  font-size: inherit;
-  width: 100%;
-  padding: 0.5em;
-  border: solid 1px rgb(204, 204, 204);
-  border-radius: 4px;
-  transition: border-color 0.1s;
-
-  &:focus {
-    border: solid 1px ${Theme.color.primary};
-    box-shadow: 0 0 0 1px ${Theme.color.primary};
-    transition: border-color 0.3s;
-    outline: none;
-  }
-
-  & + & {
-    margin-top: 1rem;
-  }
 `;
 
 type Option = {
@@ -94,7 +50,6 @@ interface IFormData {
   email: string;
   address: NestedValue<Option>;
   phone: string;
-  contactMe: boolean;
 }
 
 type SearchFormProps = { bores?: Bore[]; query?: boolean };
@@ -121,7 +76,6 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
       name: '',
       email: '',
       phone: '',
-      contactMe: false,
     },
   });
 
@@ -168,7 +122,6 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
       await client('/api/bores/send-report', {
         ...data,
         token,
-        type: 'search',
       });
       setFormStatus('success');
     } catch (error) {
@@ -237,7 +190,7 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
               {...register('email', {
                 required: 'Required',
                 validate: (value) =>
-                  isEmail(value) || 'Not a valid emaill address',
+                  isEmail(value) || 'Not a valid email address',
               })}
             />
             <InputSubtext id='emailDescribe'>
@@ -251,7 +204,11 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
               id='phone'
               type='text'
               placeholder='Your phone number'
-              {...register('phone')}
+              {...register('phone', {
+                validate: (value) =>
+                  isMobilePhone(value, 'en-AU') ||
+                  'Please provide a valid mobile phone number',
+              })}
             />
             <InputSubtext id='phoneDescribe'>
               Provide your phone number if you'd like us to call you to discuss

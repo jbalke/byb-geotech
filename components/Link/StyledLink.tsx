@@ -3,19 +3,18 @@ import { Theme } from 'styles/theme';
 import ExternalLinkSVG from './external-link.svg';
 
 const ExternalLinkImg = styled(ExternalLinkSVG)`
-  align-self: flex-start;
   height: 0.8em;
   width: 0.8em;
   margin-left: 0.1em;
 `;
 
 export const StyledLink = styled.a<{ size?: string }>`
-  align-items: center;
+  /* align-items: center; */
   appearance: none;
   background-color: transparent;
   border: 0;
   cursor: pointer;
-  display: inline-flex;
+  /* display: inline-flex; */
   font-size: ${({ size }) => size || '1em'};
   flex-flow: row nowrap;
   font-family: inherit;
@@ -35,18 +34,27 @@ export const StyledLink = styled.a<{ size?: string }>`
   }
 `;
 
+const LinkLabel = styled.span``;
+
 type ExternalLinkProps = {
-  children: React.ReactNode;
+  label: string;
 } & React.DetailedHTMLProps<
   React.AnchorHTMLAttributes<HTMLAnchorElement>,
   HTMLAnchorElement
 >;
 
-export function ExternalLink({ children, ref, ...props }: ExternalLinkProps) {
+export function ExternalLink({
+  label,
+  ref,
+  rel = 'noreferrer noopener',
+  ...props
+}: ExternalLinkProps) {
   return (
     <StyledLink {...props}>
-      {children}
-      <ExternalLinkImg />
+      <LinkLabel>
+        {label}
+        <ExternalLinkImg />
+      </LinkLabel>
     </StyledLink>
   );
 }
