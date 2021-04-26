@@ -30,6 +30,16 @@ import { geocodeAPI } from 'utils/geocoding';
 import isEmail from 'validator/lib/isEmail';
 import isMobilePhone from 'validator/lib/isMobilePhone';
 
+const FormContainer = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+`;
+
+const RecaptchaContainer = styled.div`
+  margin-top: 1rem;
+  align-self: center;
+`;
+
 const Select = styled(AsyncSelect)`
   .select__menu {
     color: ${Theme.color.dropDownMenuText};
@@ -166,71 +176,83 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
         {errors.address && <InputWarning message={errors.address.message!} />}
 
         {formStatus !== 'success' && bores?.length ? (
-          <>
-            <Message type='info'>
-              Would you like additional information on the{' '}
-              <strong>{bores.length} bores</strong> in your area? Provide your
-              contact details below and we'll email you a report!
-            </Message>
-            <StyledLabel htmlFor='name'>Name</StyledLabel>
-            <StyledInput
-              id='name'
-              type='text'
-              placeholder='Your name'
-              {...register('name', { required: 'Required', maxLength: 25 })}
-            />
-            {errors.name && <InputWarning message={errors.name.message!} />}
-            <StyledLabel htmlFor='email' aria-describedby='emailDescribe'>
-              Email
-            </StyledLabel>
-            <StyledInput
-              id='email'
-              type='email'
-              placeholder='Your email address'
-              {...register('email', {
-                required: 'Required',
-                validate: (value) =>
-                  isEmail(value) || 'Not a valid email address',
-              })}
-            />
-            <InputSubtext id='emailDescribe'>
-              We'll never spam you or share your email address with anyone else.
-            </InputSubtext>
-            {errors.email && <InputWarning message={errors.email.message!} />}
-            <StyledLabel htmlFor='phone' aria-describedby='phoneDescribe'>
-              Phone (optional)
-            </StyledLabel>
-            <StyledInput
-              id='phone'
-              type='text'
-              placeholder='Your phone number'
-              {...register('phone', {
-                validate: (value) =>
-                  isMobilePhone(value, 'en-AU') ||
-                  'Please provide a valid mobile phone number',
-              })}
-            />
-            <InputSubtext id='phoneDescribe'>
-              Provide your phone number if you'd like us to call you to discuss
-              your drilling needs.
-            </InputSubtext>
-            {errors.phone && <InputWarning message={errors.phone.message!} />}
-            <SubmitButton
-              isDisabled={!isValid}
-              isLoading={formStatus === 'pending'}
-              fullWidth
-              margin='1rem 0 0 0'
-              size='lg'
-              type='submit'
-            >
-              Submit
-            </SubmitButton>
-            {formStatus === 'fail' && (
-              <Message type='danger'>
-                Report could not be sent, please try again later.
+          <FormContainer>
+            <div>
+              <Message type='info'>
+                Would you like additional information on the{' '}
+                <strong>{bores.length} bores</strong> in your area? Provide your
+                contact details below and we'll email you a report!
               </Message>
-            )}
-          </>
+              <StyledLabel htmlFor='name'>Name</StyledLabel>
+              <StyledInput
+                id='name'
+                type='text'
+                placeholder='Your name'
+                {...register('name', { required: 'Required', maxLength: 25 })}
+              />
+              {errors.name && <InputWarning message={errors.name.message!} />}
+              <StyledLabel htmlFor='email' aria-describedby='emailDescribe'>
+                Email
+              </StyledLabel>
+              <StyledInput
+                id='email'
+                type='email'
+                placeholder='Your email address'
+                {...register('email', {
+                  required: 'Required',
+                  validate: (value) =>
+                    isEmail(value) || 'Not a valid email address',
+                })}
+              />
+              <InputSubtext id='emailDescribe'>
+                We'll never spam you or share your email address with anyone
+                else.
+              </InputSubtext>
+              {errors.email && <InputWarning message={errors.email.message!} />}
+              <StyledLabel htmlFor='phone' aria-describedby='phoneDescribe'>
+                Phone (optional)
+              </StyledLabel>
+              <StyledInput
+                id='phone'
+                type='text'
+                placeholder='Your phone number'
+                {...register('phone', {
+                  validate: (value) =>
+                    isMobilePhone(value, 'en-AU') ||
+                    'Please provide a valid mobile phone number',
+                })}
+              />
+              <InputSubtext id='phoneDescribe'>
+                Provide your phone number if you'd like us to call you to
+                discuss your drilling needs.
+              </InputSubtext>
+              {errors.phone && <InputWarning message={errors.phone.message!} />}
+              <SubmitButton
+                isDisabled={!isValid}
+                isLoading={formStatus === 'pending'}
+                fullWidth
+                margin='1rem 0 0 0'
+                size='lg'
+                type='submit'
+              >
+                Submit
+              </SubmitButton>
+              {formStatus === 'fail' && (
+                <Message type='danger'>
+                  Report could not be sent, please try again later.
+                </Message>
+              )}
+            </div>
+            <RecaptchaContainer>
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                size='invisible'
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                badge={'inline'}
+                theme={theme}
+              />
+            </RecaptchaContainer>
+          </FormContainer>
         ) : formStatus === 'success' ? (
           <Message type='success'>
             Bore report has been sent to <strong>{getValues('email')}</strong>!
@@ -238,13 +260,6 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
         ) : query ? (
           <Message type='warning'>No bores found.</Message>
         ) : null}
-        <ReCAPTCHA
-          ref={recaptchaRef}
-          size='invisible'
-          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-          badge={'bottomleft'}
-          theme={theme}
-        />
       </StyledForm>
       <DevTool control={control} />
     </>
