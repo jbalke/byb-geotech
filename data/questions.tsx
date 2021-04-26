@@ -1,13 +1,9 @@
 // tslint:disable react-a11y-anchors
 
-import StyledNextLink, { StyledLink } from 'components/StyledNextLink';
 import * as React from 'react';
-import styled from 'styled-components';
-import { Theme } from 'styles/theme';
 import { v4 } from 'uuid';
+import { ExternalLink, StyledLink } from '../components/Link';
 import { PHONE } from '../constants';
-
-const Link = styled(StyledLink)``;
 
 export type Question = {
   uuid: string;
@@ -72,8 +68,9 @@ const questions: Question[] = [
         <p>
           They are not expensive at all! We are offering a great price using the
           latest, international best practice standards and equipment for a
-          completed and cased PVC bore, <Link href='/contact'>contact us</Link>{' '}
-          us today for a quote.
+          completed and cased PVC bore,{' '}
+          <StyledLink href='/contact'>contact us</StyledLink> us today for a
+          quote.
         </p>
       </>
     ),
@@ -84,10 +81,11 @@ const questions: Question[] = [
     panel: (
       <>
         <p>
-          No. It doesn't work for us but <Link href='/contact'>contact us</Link>{' '}
-          and we can give you the numbers of several local diviners. We do have
-          a good knowledge of the areas around Mackay that have water and what
-          depth a usable bore will be.
+          No. It doesn't work for us but{' '}
+          <StyledLink href='/contact'>contact us</StyledLink> and we can give
+          you the numbers of several local diviners. We do have a good knowledge
+          of the areas around Mackay that have water and what depth a usable
+          bore will be.
         </p>
         <p>
           When considering a location in your yard for a bore , please take the
@@ -96,7 +94,10 @@ const questions: Question[] = [
         <ol>
           <li>
             How easy will it be to get the drilling rig to that location? Please
-            see <Link href='#'>Will the drilling rig fit in my yard?</Link>{' '}
+            see{' '}
+            <StyledLink href='#'>
+              Will the drilling rig fit in my yard?
+            </StyledLink>{' '}
             below for rig dimensions.
           </li>
           <li>
@@ -138,8 +139,9 @@ const questions: Question[] = [
           It’s <strong>VERY IMPORTANT</strong> for you to locate these services
           as it is your responsibility as the landowner or their authorised
           representative. Call us on{' '}
-          <Link href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</Link> if you have
-          concerns, we can apply for the plans from council for a $58 fee.
+          <StyledLink href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</StyledLink> if
+          you have concerns, we can apply for the plans from council for a $58
+          fee.
         </p>
       </>
     ),
@@ -159,8 +161,8 @@ const questions: Question[] = [
         </p>
         <p>
           If you have any concerns, please call us on{' '}
-          <Link href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</Link> and we can come
-          inspect and do some measurements.
+          <StyledLink href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</StyledLink> and
+          we can come inspect and do some measurements.
         </p>
       </>
     ),
@@ -184,8 +186,9 @@ const questions: Question[] = [
           fence panel we will have to add an hourly surcharge.
         </p>
         <p>
-          Please call us on <Link href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</Link>{' '}
-          and we can come inspect and do some measurements.
+          Please call us on{' '}
+          <StyledLink href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</StyledLink> and
+          we can come inspect and do some measurements.
         </p>
       </>
     ),
@@ -196,8 +199,11 @@ const questions: Question[] = [
     panel: (
       <>
         <p>
-          Click <Link href='https://backyardbores.youcanbook.me/'>here</Link> to
-          access our online calendar but we operate 7 days a week.
+          Click{' '}
+          <ExternalLink href='https://backyardbores.youcanbook.me/'>
+            here
+          </ExternalLink>{' '}
+          to access our online calendar but we operate 7 days a week.
         </p>
         <p>
           Some weeks we can be fully booked with local or out-of-town projects.
@@ -225,8 +231,9 @@ const questions: Question[] = [
     panel: (
       <>
         <p>
-          Please call us on <Link href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</Link>{' '}
-          to discuss your options but often times <strong>YES!</strong> you can.
+          Please call us on{' '}
+          <StyledLink href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</StyledLink> to
+          discuss your options but often times <strong>YES!</strong> you can.
         </p>
       </>
     ),
@@ -242,7 +249,8 @@ const questions: Question[] = [
         </p>
         <p>
           Mobilisation fees may apply, please call us on{' '}
-          <Link href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</Link> to enquire.
+          <StyledLink href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</StyledLink> to
+          enquire.
         </p>
       </>
     ),

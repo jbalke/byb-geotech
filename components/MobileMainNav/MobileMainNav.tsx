@@ -1,5 +1,5 @@
 import { closeSidebar } from 'actions/ui-actions';
-import StyledNextLink from 'components/StyledNextLink';
+import StyledNextLink from 'components/Link/StyledNextLink';
 import { useUIDispatch, useUIState } from 'context/ui-context';
 import { navLinks } from 'data/main-navigation';
 import { motion } from 'framer-motion';

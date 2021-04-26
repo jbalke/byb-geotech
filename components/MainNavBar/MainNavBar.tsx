@@ -1,12 +1,12 @@
 import { toggleSidebar } from 'actions/ui-actions';
 import DarkModeToggle from 'components/DarkModeToggle';
-import StyledNextLink from 'components/StyledNextLink';
+import StyledNextLink from 'components/Link/StyledNextLink';
 import { useUIDispatch } from 'context/ui-context';
 import { navLinks } from 'data/main-navigation';
 import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import Button from '../Button';
 import DropdownContainer from './DropdownContainer';
