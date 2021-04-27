@@ -112,11 +112,7 @@ const StyledMain = styled.main`
   color: ${Theme.color.text};
   flex: 1;
   padding: ${Theme.spacing.l};
-  padding-bottom: 10vh;
   transition: ${Theme.color.transition};
-
-  /* border-top-left-radius: 15px;
-  border-top-right-radius: 15px; */
 `;
 
 const StyledFooter = styled.footer`
