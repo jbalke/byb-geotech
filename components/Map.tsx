@@ -11,7 +11,7 @@ import { Bore } from 'types/bore';
 import BoreImg from '../assets/water-marker.svg'; // must use relative paths
 import LocationImg from '../assets/location-marker.svg';
 import QuestionImg from '../assets/question-mark.svg';
-import { MAP_CENTER } from '../constants';
+import { BORE_COLOR_SCALE, getBoreColor, MAP_CENTER } from '../constants';
 import { useWindowWidth } from '@react-hook/window-size/throttled';
 import { Theme } from 'styles/theme';
 
@@ -53,11 +53,6 @@ const PopupContent = styled.div`
 `;
 
 const BoreDepth = styled.p``;
-
-const BoreCoords = styled.p`
-  margin: 0;
-  font-size: 0.75rem;
-`;
 
 type Props = {
   camera: { center: [number, number]; zoom: number } | undefined;
@@ -145,7 +140,7 @@ const Map = ({ camera, bores, query = false }: Props) => {
           iconColor = 'yellow';
         } else {
           Icon = BoreMarker;
-          iconColor = 'blue';
+          iconColor = getBoreColor(depth);
         }
 
         return (
@@ -182,10 +177,6 @@ const Map = ({ camera, bores, query = false }: Props) => {
               <strong>Depth:</strong>{' '}
               {selectedBore.depth ? `${selectedBore.depth}m` : 'unknown'}
             </BoreDepth>
-            {/* <BoreCoords>
-              <strong>lng:</strong> {selectedBore.location.coordinates[0]},{' '}
-              <strong>lat:</strong> {selectedBore.location.coordinates[1]}
-            </BoreCoords> */}
           </PopupContent>
         </Popup>
       )}
