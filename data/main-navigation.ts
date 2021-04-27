@@ -110,7 +110,7 @@ export const navLinks: MenuItem[] = [
       {
         pages: [
           { title: 'Contact Us', Icon: FaInfoCircle, href: '/contact' },
-          { title: 'Our Story', Icon: FaInfoCircle, href: '/our-story' },
+          { title: 'Our Story', Icon: FaInfoCircle, href: '/about/our-story' },
         ],
       },
     ],
