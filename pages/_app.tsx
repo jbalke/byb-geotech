@@ -38,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
     background-attachment: fixed;
     background-size: cover; */
     font-family: sans-serif;
+    line-height: 150%;
   }
 
    @supports (font-variation-settings: normal) {
@@ -48,6 +49,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1, h2, h3 {
     font-family: 'Poppins';
+    line-height: 1;
   }
 
   @supports (font-variation-settings: normal) {

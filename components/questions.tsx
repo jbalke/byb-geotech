@@ -16,6 +16,8 @@ const Subtext = styled.p`
   font-family: 'Public Sans Italic';
   font-size: 0.8em;
   margin-top: 2rem;
+  line-height: 130%;
+  letter-spacing: 0.04em;
 `;
 
 const questions: Question[] = [
@@ -80,8 +82,10 @@ const questions: Question[] = [
         </p>
         <p>
           Call us now on{' '}
-          <StyledLink href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</StyledLink> for
-          an obligation free quote!
+          <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
+            {PHONE.MAIN.DISPLAY}
+          </StyledLink>{' '}
+          for an obligation free quote!
         </p>
         <Subtext>
           *Not valid with any other offer. No other offers allowed, discount
@@ -154,9 +158,11 @@ const questions: Question[] = [
           It’s <strong>VERY IMPORTANT</strong> for you to locate these services
           as it is your responsibility as the landowner or their authorised
           representative. Call us on{' '}
-          <StyledLink href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</StyledLink> if
-          you have concerns, we can apply for the plans from council for a $58
-          fee.
+          <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
+            {PHONE.MAIN.DISPLAY}
+          </StyledLink>{' '}
+          if you have concerns, we can apply for the plans from council for a
+          $58 fee.
         </p>
       </>
     ),
@@ -176,8 +182,10 @@ const questions: Question[] = [
         </p>
         <p>
           If you have any concerns, please call us on{' '}
-          <StyledLink href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</StyledLink> and
-          we can come inspect and do some measurements.
+          <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
+            {PHONE.MAIN.DISPLAY}
+          </StyledLink>{' '}
+          and we can come inspect and do some measurements.
         </p>
       </>
     ),
@@ -202,8 +210,10 @@ const questions: Question[] = [
         </p>
         <p>
           Please call us on{' '}
-          <StyledLink href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</StyledLink> and
-          we can come inspect and do some measurements.
+          <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
+            {PHONE.MAIN.DISPLAY}
+          </StyledLink>{' '}
+          and we can come inspect and do some measurements.
         </p>
       </>
     ),
@@ -248,8 +258,10 @@ const questions: Question[] = [
       <>
         <p>
           Please call us on{' '}
-          <StyledLink href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</StyledLink> to
-          discuss your options but often times <strong>YES!</strong> you can.
+          <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
+            {PHONE.MAIN.DISPLAY}
+          </StyledLink>{' '}
+          to discuss your options but often times <strong>YES!</strong> you can.
         </p>
       </>
     ),
@@ -265,8 +277,10 @@ const questions: Question[] = [
         </p>
         <p>
           Mobilisation fees may apply, please call us on{' '}
-          <StyledLink href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</StyledLink> to
-          enquire.
+          <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
+            {PHONE.MAIN.DISPLAY}
+          </StyledLink>{' '}
+          to enquire.
         </p>
       </>
     ),

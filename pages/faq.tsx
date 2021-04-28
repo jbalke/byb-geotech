@@ -30,7 +30,7 @@ function faq(props: faqProps) {
   }, [isExpandAll]);
 
   return (
-    <Wrapper maxWidth='80ch'>
+    <Wrapper maxWidth='70ch'>
       <h1>FAQ</h1>
       <ToggleButton
         onClick={() => setExpandAll((expanded) => !expanded)}

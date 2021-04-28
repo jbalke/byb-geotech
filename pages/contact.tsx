@@ -69,12 +69,14 @@ function Contact(props: Props) {
             <h2>Direct Contact</h2>
             <p>
               <strong>Toll Free:</strong>{' '}
-              <StyledLink href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</StyledLink>
+              <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
+                {PHONE.MAIN.DISPLAY}
+              </StyledLink>
             </p>
             <p>
               <strong>Office:</strong>{' '}
-              <StyledLink href={`tel:${PHONE.MOBILE}`}>
-                {PHONE.MOBILE}
+              <StyledLink href={`tel:${PHONE.MOBILE.NUMBER}`}>
+                {PHONE.MOBILE.DISPLAY}
               </StyledLink>
             </p>
             <p>

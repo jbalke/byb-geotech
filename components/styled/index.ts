@@ -158,4 +158,6 @@ export const InputSubtext = styled.span`
   font-size: 0.75em;
   font-weight: 600;
   color: ${Theme.color.grey};
+  line-height: 130%;
+  letter-spacing: 0.05em;
 `;

@@ -15,8 +15,8 @@ export const EMAIL = {
   MANAGER: `matthew@vonsnarski.com`,
 };
 export const PHONE = {
-  MAIN: '1800193194',
-  MOBILE: '0418193194',
+  MAIN: { NUMBER: '1800193194', DISPLAY: '1800 193 194' },
+  MOBILE: { NUMBER: '0418193194', DISPLAY: '0418 193 194' },
 };
 
 export const BORE_COLOR_SCALE = {

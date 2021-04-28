@@ -1,12 +1,11 @@
-import Button from 'components/Button';
+import StyledNextLink from 'components/Link/StyledNextLink';
+import { Wrapper } from 'components/styled';
 import SiteLayout from 'layouts/SiteLayout';
-import StyledNextLink from '../components/Link/StyledNextLink';
-import { Wrapper } from '../components/styled';
 import { PHONE } from '../constants';
 
 function Home() {
   return (
-    <Wrapper maxWidth='80ch'>
+    <Wrapper maxWidth='70ch'>
       <section>
         <h1>Our Services</h1>
         <ul>
@@ -63,7 +62,9 @@ function Home() {
         <p>
           If you are looking for water to keep the yard green, top up the pool,
           or reduce the high cost of town water, give us a call on{' '}
-          <StyledNextLink href={`${PHONE.MAIN}`}>{PHONE.MAIN}</StyledNextLink>{' '}
+          <StyledNextLink href={`tel:${PHONE.MAIN.NUMBER}`}>
+            {PHONE.MAIN.DISPLAY}
+          </StyledNextLink>{' '}
           and we can come and drill for water in your backyard (or front yard)
           saving you money. You can water any day of the week without
           restrictions. We use the latest techniques and equipment with the best
