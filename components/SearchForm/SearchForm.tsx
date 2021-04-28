@@ -216,11 +216,7 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
                 id='phone'
                 type='text'
                 placeholder='Your phone number'
-                {...register('phone', {
-                  validate: (value) =>
-                    isMobilePhone(value, 'en-AU') ||
-                    'Please provide a valid mobile phone number',
-                })}
+                {...register('phone')}
               />
               <InputSubtext id='phoneDescribe'>
                 Provide your phone number if you'd like us to call you to

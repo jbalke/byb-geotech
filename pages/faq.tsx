@@ -31,7 +31,7 @@ function faq(props: faqProps) {
 
   return (
     <Wrapper maxWidth='80ch'>
-      <h1>Frequently Asked Questions</h1>
+      <h1>FAQ</h1>
       <ToggleButton
         onClick={() => setExpandAll((expanded) => !expanded)}
         variant='outline'

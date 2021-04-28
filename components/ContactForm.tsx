@@ -124,9 +124,9 @@ function ContactForm(props: ContactFormsProps) {
         placeholder='Your phone number'
         {...register('phone', {
           required: 'Required',
-          validate: (value) =>
-            isMobilePhone(value, 'en-AU') ||
-            'Please provide a valid mobile phone number',
+          // validate: (value) =>
+          //   isMobilePhone(value, 'en-AU') ||
+          //   'Please provide a valid mobile phone number',
         })}
       />
       {errors.phone && <InputWarning message={errors.phone.message!} />}

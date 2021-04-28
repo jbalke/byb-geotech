@@ -1,3 +1,4 @@
+import { useWindowWidth } from '@react-hook/window-size/throttled';
 import * as d3 from 'd3-ease';
 import React, { useEffect, useState } from 'react';
 import ReactMapGL, {
@@ -7,13 +8,12 @@ import ReactMapGL, {
   ScaleControl,
 } from 'react-map-gl';
 import styled from 'styled-components';
+import { Theme } from 'styles/theme';
 import { Bore } from 'types/bore';
-import BoreImg from '../assets/water-marker.svg'; // must use relative paths
 import LocationImg from '../assets/location-marker.svg';
 import QuestionImg from '../assets/question-mark.svg';
-import { BORE_COLOR_SCALE, getBoreColor, MAP_CENTER } from '../constants';
-import { useWindowWidth } from '@react-hook/window-size/throttled';
-import { Theme } from 'styles/theme';
+import BoreImg from '../assets/water-marker.svg'; // must use relative paths
+import { getBoreColor, MAP_CENTER } from '../constants';
 
 const Button = styled.button`
   display: flex;
