@@ -1,5 +1,6 @@
 import { closeSidebar } from 'actions/ui-actions';
 import StyledNextLink from 'components/Link/StyledNextLink';
+import { StyledLink } from 'components/Link';
 import { useUIDispatch, useUIState } from 'context/ui-context';
 import { navLinks } from 'data/main-navigation';
 import { motion } from 'framer-motion';
@@ -33,6 +34,11 @@ const MenuContainer = styled(motion.div)`
   overflow-x: hidden;
   overscroll-behavior: contain;
   width: 100%;
+
+  ${StyledLink} {
+    white-space: normal;
+    box-shadow: none;
+  }
 `;
 
 const Wrapper = styled(motion.nav)`

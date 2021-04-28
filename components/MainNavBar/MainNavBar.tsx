@@ -1,6 +1,7 @@
 import { toggleSidebar } from 'actions/ui-actions';
 import DarkModeToggle from 'components/DarkModeToggle';
 import StyledNextLink from 'components/Link/StyledNextLink';
+import { StyledLink } from 'components/Link';
 import { useUIDispatch } from 'context/ui-context';
 import { navLinks } from 'data/main-navigation';
 import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
@@ -30,21 +31,20 @@ const IconLinkWrapper = styled.div`
   display: flex;
   flex-flow: row nowrap;
 
-  a {
+  ${StyledLink} {
     margin-left: 0.5em;
-  }
-
-  a,
-  a:active,
-  a:visited {
-    color: ${Theme.color.link};
-    font-weight: 600;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: ${Theme.color.linkHover};
     transition: ${Theme.color.transition};
+
+    @media (hover: hover) {
+      & {
+        box-shadow: none;
+      }
+
+      &:hover {
+        all: inital;
+        color: ${Theme.color.linkHover};
+      }
+    }
   }
 `;
 
@@ -67,6 +67,20 @@ const MainNav = styled.header`
     height: 75px;
     justify-content: space-between;
     padding: 0 30px;
+  }
+
+  ${StyledLink} {
+    box-shadow: none;
+
+    @media (hover: hover) {
+      & {
+        box-shadow: none;
+      }
+
+      &:hover {
+        all: inital;
+      }
+    }
   }
 `;
 

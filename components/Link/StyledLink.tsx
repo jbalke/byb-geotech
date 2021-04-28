@@ -13,12 +13,15 @@ export const StyledLink = styled.a<{ size?: string }>`
   appearance: none;
   background-color: transparent;
   border: 0;
+  box-shadow: 0px 2px 0px ${Theme.color.link};
   cursor: pointer;
   /* display: inline-flex; */
   font-size: ${({ size }) => size || '1em'};
   flex-flow: row nowrap;
   font-family: inherit;
   line-height: 1;
+  position: relative;
+  white-space: nowrap;
 
   &,
   &:active,
@@ -28,9 +31,16 @@ export const StyledLink = styled.a<{ size?: string }>`
     text-decoration: none;
   }
 
-  &:hover {
-    color: ${Theme.color.linkHover};
-    transition: ${Theme.color.transition};
+  @media (hover: hover) {
+    & {
+      box-shadow: 0px 0px 0px ${Theme.color.link};
+      transition: box-shadow 300ms;
+    }
+
+    &:hover {
+      box-shadow: 0px 2px 0px ${Theme.color.link};
+      transition: box-shadow 100ms;
+    }
   }
 `;
 
