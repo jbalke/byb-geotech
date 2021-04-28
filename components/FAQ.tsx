@@ -71,6 +71,17 @@ const FadeIn = keyframes`
 const StyledAccordionPanel = styled(AccordionItemPanel)`
   padding: 1em;
   animation: ${FadeIn} 0.35s ease-in;
+
+  ol {
+    padding-left: 10px;
+    margin: 0;
+  }
+
+  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+    ol {
+      padding-left: 40px;
+    }
+  }
 `;
 
 type FAQProps = {
