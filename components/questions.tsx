@@ -1,14 +1,15 @@
 // tslint:disable react-a11y-anchors
 
-import * as React from 'react';
-import { v4 } from 'uuid';
-import { ExternalLink, StyledLink } from './Link';
-import { PHONE } from '../constants';
+import React from 'react';
 import styled from 'styled-components';
+import { v4 } from 'uuid';
+import CallLink from './CallLink';
+import { ExternalLink, StyledLink } from './Link';
 
 export type Question = {
   uuid: string;
   heading: string;
+  id?: string;
   panel: JSX.Element;
 };
 
@@ -32,11 +33,13 @@ const questions: Question[] = [
         </p>
         <p>
           If you are getting a quote from any driller, ask for their licence
-          number and to see their current Queensland Driller's Licence. You can{' '}
+          number and to see their current Queensland Driller's Licence. You can
+          search for their name here on the{' '}
+          <strong>Qld Registered Drillers List</strong>{' '}
           <ExternalLink
             href='https://www.dnrm.qld.gov.au/__data/assets/pdf_file/0004/99760/drillers-register.pdf'
             target='_blank'
-            label='search for their name here on the Qld Registered Drillers List'
+            label='here'
           />{' '}
           before you engage them to drill. If they are{' '}
           <strong>not listed</strong>, they are <strong>not licensed</strong>.
@@ -81,11 +84,7 @@ const questions: Question[] = [
           <strong>Seniors and Carers discount available!*</strong>
         </p>
         <p>
-          Call us now on{' '}
-          <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
-            {PHONE.MAIN.DISPLAY}
-          </StyledLink>{' '}
-          for an obligation free quote!
+          Call us now on <CallLink /> for an obligation free quote!
         </p>
         <Subtext>
           *Not valid with any other offer. No other offers allowed, discount
@@ -114,7 +113,7 @@ const questions: Question[] = [
           <li>
             How easy will it be to get the drilling rig to that location? Please
             see{' '}
-            <StyledLink href='#'>
+            <StyledLink href='#drilling-rig'>
               Will the drilling rig fit in my yard?
             </StyledLink>{' '}
             below for rig dimensions.
@@ -157,12 +156,8 @@ const questions: Question[] = [
         <p>
           It’s <strong>VERY IMPORTANT</strong> for you to locate these services
           as it is your responsibility as the landowner or their authorised
-          representative. Call us on{' '}
-          <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
-            {PHONE.MAIN.DISPLAY}
-          </StyledLink>{' '}
-          if you have concerns, we can apply for the plans from council for a
-          $58 fee.
+          representative. Call us on <CallLink /> if you have concerns, we can
+          apply for the plans from council for a $58 fee.
         </p>
       </>
     ),
@@ -170,6 +165,7 @@ const questions: Question[] = [
   {
     uuid: v4(),
     heading: 'Will the drilling rig fit in my yard?',
+    id: 'drilling-rig',
     panel: (
       <>
         <p>
@@ -181,11 +177,8 @@ const questions: Question[] = [
           location.
         </p>
         <p>
-          If you have any concerns, please call us on{' '}
-          <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
-            {PHONE.MAIN.DISPLAY}
-          </StyledLink>{' '}
-          and we can come inspect and do some measurements.
+          If you have any concerns, please call us on <CallLink /> and we can
+          come inspect and do some measurements.
         </p>
       </>
     ),
@@ -209,11 +202,8 @@ const questions: Question[] = [
           fence panel we will have to add an hourly surcharge.
         </p>
         <p>
-          Please call us on{' '}
-          <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
-            {PHONE.MAIN.DISPLAY}
-          </StyledLink>{' '}
-          and we can come inspect and do some measurements.
+          Please call us on <CallLink /> and we can come inspect and do some
+          measurements.
         </p>
       </>
     ),
@@ -257,11 +247,8 @@ const questions: Question[] = [
     panel: (
       <>
         <p>
-          Please call us on{' '}
-          <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
-            {PHONE.MAIN.DISPLAY}
-          </StyledLink>{' '}
-          to discuss your options but often times <strong>YES!</strong> you can.
+          Please call us on <CallLink /> to discuss your options but often times{' '}
+          <strong>YES!</strong> you can.
         </p>
       </>
     ),
@@ -276,11 +263,8 @@ const questions: Question[] = [
           have drilled from Bowen to Marlborough and west to Moranbah.
         </p>
         <p>
-          Mobilisation fees may apply, please call us on{' '}
-          <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
-            {PHONE.MAIN.DISPLAY}
-          </StyledLink>{' '}
-          to enquire.
+          Mobilisation fees may apply, please call us on <CallLink /> to
+          enquire.
         </p>
       </>
     ),

@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import Button from 'components/Button';
 import FAQ, { StyledAccordion } from 'components/FAQ';
+import questions from 'components/questions';
 import { Wrapper } from 'components/styled';
 import SiteLayout from 'layouts/SiteLayout';
-import { EMAIL } from '../constants';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Button from 'components/Button';
-import questions from 'components/questions';
 import { v4 } from 'uuid';
 
 const ToggleButton = styled(Button)`
@@ -49,6 +48,7 @@ function faq(props: faqProps) {
             key={q.uuid}
             uuid={q.uuid}
             question={q.heading}
+            id={q.id}
             isOpen={isExpandAll}
           >
             {q.panel}

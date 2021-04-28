@@ -1,7 +1,8 @@
 import StyledNextLink from 'components/Link/StyledNextLink';
 import { Wrapper } from 'components/styled';
 import SiteLayout from 'layouts/SiteLayout';
-import { PHONE } from '../constants';
+import React from 'react';
+import CallLink from 'components/CallLink';
 
 function Home() {
   return (
@@ -61,10 +62,7 @@ function Home() {
         </ul>
         <p>
           If you are looking for water to keep the yard green, top up the pool,
-          or reduce the high cost of town water, give us a call on{' '}
-          <StyledNextLink href={`tel:${PHONE.MAIN.NUMBER}`}>
-            {PHONE.MAIN.DISPLAY}
-          </StyledNextLink>{' '}
+          or reduce the high cost of town water, give us a call on <CallLink />{' '}
           and we can come and drill for water in your backyard (or front yard)
           saving you money. You can water any day of the week without
           restrictions. We use the latest techniques and equipment with the best

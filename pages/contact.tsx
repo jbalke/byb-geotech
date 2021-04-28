@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import ContactForm from 'components/ContactForm';
 import PrivacyDisclaimer from 'components/PrivacyDisclaimer';
 import { EMAIL, PHONE } from '../constants';
+import CallLink from '../components/CallLink';
 
 const StyledPrivacyDisclaimer = styled(PrivacyDisclaimer)`
   margin-top: 0;
@@ -68,10 +69,7 @@ function Contact(props: Props) {
           <ContactDetails>
             <h2>Direct Contact</h2>
             <p>
-              <strong>Toll Free:</strong>{' '}
-              <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
-                {PHONE.MAIN.DISPLAY}
-              </StyledLink>
+              <strong>Toll Free:</strong> <CallLink />
             </p>
             <p>
               <strong>Office:</strong>{' '}
