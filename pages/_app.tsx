@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
   }
 
   body.light {
