@@ -5,7 +5,7 @@ import SiteLayout from 'layouts/SiteLayout';
 import { EMAIL } from '../constants';
 import styled from 'styled-components';
 import Button from 'components/Button';
-import questions from 'data/questions';
+import questions from 'components/questions';
 import { v4 } from 'uuid';
 
 const ToggleButton = styled(Button)`

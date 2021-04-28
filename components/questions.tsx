@@ -2,14 +2,21 @@
 
 import * as React from 'react';
 import { v4 } from 'uuid';
-import { ExternalLink, StyledLink } from '../components/Link';
+import { ExternalLink, StyledLink } from './Link';
 import { PHONE } from '../constants';
+import styled from 'styled-components';
 
 export type Question = {
   uuid: string;
   heading: string;
   panel: JSX.Element;
 };
+
+const Subtext = styled.p`
+  font-family: 'Public Sans Italic';
+  font-size: 0.8em;
+  margin-top: 2rem;
+`;
 
 const questions: Question[] = [
   {
@@ -66,10 +73,20 @@ const questions: Question[] = [
         <p>
           They are not expensive at all! We are offering a great price using the
           latest, international best practice standards and equipment for a
-          completed and cased PVC bore,{' '}
-          <StyledLink href='/contact'>contact us</StyledLink> us today for a
-          quote.
+          completed and cased PVC bore.
         </p>
+        <p>
+          <strong>Seniors and Carers discount available!*</strong>
+        </p>
+        <p>
+          Call us now on{' '}
+          <StyledLink href={`tel:${PHONE.MAIN}`}>{PHONE.MAIN}</StyledLink> for
+          an obligation free quote!
+        </p>
+        <Subtext>
+          *Not valid with any other offer. No other offers allowed, discount
+          applies to standard drilling rates not to already discounted rates.
+        </Subtext>
       </>
     ),
   },
