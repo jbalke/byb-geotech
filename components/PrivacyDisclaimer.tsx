@@ -5,6 +5,7 @@ import { ExternalLink } from './Link';
 
 const Disclaimer = styled.section`
   border: 1px solid ${Theme.color.primary};
+  color: ${Theme.color.textAside};
   font-size: 0.8rem;
   padding: 1em;
 `;
@@ -22,9 +23,10 @@ function PrivacyDisclaimer({ className }: PrivacyDisclaimerProps) {
       </p>
       <p>
         For more information please see the{' '}
+        <strong>Office of the Australian Information Commissioner</strong>{' '}
         <ExternalLink
           href='https://www.oaic.gov.au/privacy/the-privacy-act/'
-          label='Office of the Australian Information Commissioner'
+          label='here'
           target='_blank'
         />
         .

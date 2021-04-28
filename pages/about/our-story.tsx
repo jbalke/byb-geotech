@@ -7,7 +7,7 @@ type Props = {};
 
 function OurStory(props: Props) {
   return (
-    <Wrapper maxWidth='80ch'>
+    <Wrapper maxWidth='70ch'>
       <h1>Our Story</h1>
       <p>
         With our small drilling rig mounted on the back of a very manoeuvrable
