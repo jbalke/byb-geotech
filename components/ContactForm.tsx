@@ -106,7 +106,7 @@ function ContactForm(props: ContactFormsProps) {
       <StyledInput
         id='email'
         type='email'
-        placeholder='Your email'
+        placeholder='Your email address'
         {...register('email', {
           required: 'Required',
           validate: (value) => isEmail(value) || 'Not a valid emaill address',
@@ -121,7 +121,7 @@ function ContactForm(props: ContactFormsProps) {
       <StyledInput
         id='phone'
         type='text'
-        placeholder='Your phone number'
+        placeholder='The best number to call you back on'
         {...register('phone', {
           required: 'Required',
           // validate: (value) =>
@@ -136,7 +136,7 @@ function ContactForm(props: ContactFormsProps) {
       </StyledLabel>
       <StyledTextarea
         id='message'
-        placeholder='Message'
+        placeholder='Your message'
         rows={5}
         {...register('message', {
           required: 'Required',
