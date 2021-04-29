@@ -23,7 +23,7 @@ export const BORE_COLOR_SCALE = {
   0: '#4d8bff',
   10: '#0054f0',
   20: '#00308a',
-  999: '#0003c2',
+  30: '#0003c2',
 } as const;
 
 type ColorKey = keyof typeof BORE_COLOR_SCALE;
@@ -33,11 +33,11 @@ function getBoreKey(depth: number): ColorKey {
       return 0;
     case depth < 20:
       return 10;
-    case depth < 999:
+    case depth < 30:
       return 20;
 
     default:
-      return 999;
+      return 30;
   }
 }
 export function getBoreColor(depth?: number): string {

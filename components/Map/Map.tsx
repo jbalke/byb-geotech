@@ -10,10 +10,11 @@ import ReactMapGL, {
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import { Bore } from 'types/bore';
-import LocationImg from '../assets/location-marker.svg';
-import QuestionImg from '../assets/question-mark.svg';
-import BoreImg from '../assets/water-marker.svg'; // must use relative paths
-import { getBoreColor, MAP_CENTER } from '../constants';
+import LocationImg from '../../assets/location-marker.svg';
+import QuestionImg from '../../assets/question-mark.svg';
+import BoreImg from '../../assets/water-marker.svg'; // must use relative paths
+import { getBoreColor, MAP_CENTER } from '../../constants';
+import DepthScale from './DepthScale';
 
 const Button = styled.button`
   display: flex;
@@ -26,6 +27,10 @@ const Button = styled.button`
   &:focus {
     outline-color: blue;
   }
+`;
+
+const Container = styled.div`
+  position: relative;
 `;
 
 const LocationMarker = styled(LocationImg)`
@@ -107,80 +112,83 @@ const Map = ({ camera, bores, query = false }: Props) => {
   };
 
   return (
-    <ReactMapGL
-      {...viewport}
-      mapStyle='mapbox://styles/mapbox/streets-v10'
-      mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
-      onViewportChange={(nextViewport: typeof viewport) =>
-        setViewport(nextViewport)
-      }
-      dragPan={windowWidth > 800}
-      touchAction={windowWidth <= 800 ? 'pan-y' : 'none'}
-      width='100%'
-      height='555px'
-    >
-      <ScaleControl maxWidth={100} unit='metric' style={scaleControlStyle} />
-      {/* <GeolocateControl
+    <Container>
+      <ReactMapGL
+        {...viewport}
+        mapStyle='mapbox://styles/mapbox/streets-v10'
+        mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
+        onViewportChange={(nextViewport: typeof viewport) =>
+          setViewport(nextViewport)
+        }
+        dragPan={windowWidth > 800}
+        touchAction={windowWidth <= 800 ? 'pan-y' : 'none'}
+        width='100%'
+        height='555px'
+      >
+        <ScaleControl maxWidth={100} unit='metric' style={scaleControlStyle} />
+        {/* <GeolocateControl
         style={geolocateControlStyle}
         positionOptions={{ enableHighAccuracy: true }}
         trackUserLocation={true}
         auto
       /> */}
 
-      {bores.map((bore) => {
-        const { depth, flowRate, waterLevel } = bore;
-        let Icon, iconColor;
+        {bores.map((bore) => {
+          const { depth, flowRate, waterLevel } = bore;
+          let Icon, iconColor;
 
-        if (
-          [depth, flowRate, waterLevel].every(
-            (value) => typeof value === 'undefined'
-          )
-        ) {
-          Icon = QuestionMarker;
-          iconColor = 'yellow';
-        } else {
-          Icon = BoreMarker;
-          iconColor = getBoreColor(depth);
-        }
+          if (
+            [depth, flowRate, waterLevel].every(
+              (value) => typeof value === 'undefined'
+            )
+          ) {
+            Icon = QuestionMarker;
+            iconColor = 'yellow';
+          } else {
+            Icon = BoreMarker;
+            iconColor = getBoreColor(depth);
+          }
 
-        return (
-          <Marker
-            key={bore._id}
-            longitude={bore.location.coordinates[0]}
-            latitude={bore.location.coordinates[1]}
-          >
-            <Button
-              onClick={(e) => {
-                e.preventDefault(), setSelectedBore(bore);
-              }}
+          return (
+            <Marker
+              key={bore._id}
+              longitude={bore.location.coordinates[0]}
+              latitude={bore.location.coordinates[1]}
             >
-              <Icon fill={iconColor} />
-            </Button>
+              <Button
+                onClick={(e) => {
+                  e.preventDefault(), setSelectedBore(bore);
+                }}
+              >
+                <Icon fill={iconColor} />
+              </Button>
+            </Marker>
+          );
+        })}
+
+        {query && camera?.center && (
+          <Marker longitude={camera.center[0]} latitude={camera.center[1]}>
+            <LocationMarker fill='red' />
           </Marker>
-        );
-      })}
+        )}
 
-      {query && camera?.center && (
-        <Marker longitude={camera.center[0]} latitude={camera.center[1]}>
-          <LocationMarker fill='red' />
-        </Marker>
-      )}
-
-      {selectedBore && (
-        <Popup
-          longitude={selectedBore.location.coordinates[0]}
-          latitude={selectedBore.location.coordinates[1]}
-          onClose={() => setSelectedBore(null)}
-        >
-          <PopupContent>
-            <BoreDepth>
-              <strong>Depth:</strong>{' '}
-              {selectedBore.depth ? `${selectedBore.depth}m` : 'unknown'}
-            </BoreDepth>
-          </PopupContent>
-        </Popup>
-      )}
-    </ReactMapGL>
+        {selectedBore && (
+          <Popup
+            longitude={selectedBore.location.coordinates[0]}
+            latitude={selectedBore.location.coordinates[1]}
+            onClose={() => setSelectedBore(null)}
+          >
+            <PopupContent>
+              <BoreDepth>
+                <strong>Depth:</strong>{' '}
+                {selectedBore.depth ? `${selectedBore.depth}m` : 'unknown'}
+              </BoreDepth>
+            </PopupContent>
+          </Popup>
+        )}
+      </ReactMapGL>
+      <DepthScale show={bores.length > 0} />
+    </Container>
   );
 };
 

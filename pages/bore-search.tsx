@@ -1,6 +1,7 @@
 import SearchForm from 'components/SearchForm';
-import { findNearbyBores } from 'model/boreController';
+import { Wrapper } from 'components/styled';
 import SiteLayout from 'layouts/SiteLayout';
+import { findNearbyBores } from 'model/boreController';
 import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
 import React, { useMemo } from 'react';
@@ -9,7 +10,6 @@ import { Bore } from 'types/bore';
 import { isValidCoordinates, parseCoordinates } from 'utils/geocoding';
 import { obfuscateLocation } from 'utils/geospatial';
 import { MAP_CENTER } from '../constants';
-import { Wrapper } from '../components/styled';
 
 const MapSearchContainer = styled.div`
   display: grid;
@@ -22,7 +22,7 @@ const MapSearchContainer = styled.div`
   }
 `;
 
-const ClientRenderedMap = dynamic(() => import('../components/Map'), {
+const ClientRenderedMap = dynamic(() => import('../components/Map/Map'), {
   ssr: false,
   loading: () => <p>loading map...</p>,
 });
