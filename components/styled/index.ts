@@ -25,9 +25,13 @@ export const FadeOut = keyframes`
 `;
 
 // WRAPPERS
-export const Wrapper = styled.div<{ maxWidth?: string; main?: boolean }>`
+export const Wrapper = styled.div<{
+  row?: boolean;
+  maxWidth?: string;
+  main?: boolean;
+}>`
   display: flex;
-  flex-direction: column;
+  flex-flow: ${({ row }) => (row ? 'row nowrap' : 'column nowrap')};
   margin: 0 auto;
   max-width: ${({ maxWidth }) => maxWidth ?? Theme.width.max};
   position: relative;

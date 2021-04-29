@@ -9,6 +9,7 @@ import { Bore } from 'types/bore';
 import { isValidCoordinates, parseCoordinates } from 'utils/geocoding';
 import { obfuscateLocation } from 'utils/geospatial';
 import { MAP_CENTER } from '../constants';
+import { Wrapper } from '../components/styled';
 
 const MapSearchContainer = styled.div`
   display: grid;
@@ -36,10 +37,12 @@ const BoreSearch = ({ mapCenter, bores, query = false }: Props) => {
   ]);
 
   return (
-    <MapSearchContainer>
-      <SearchForm bores={bores} query={query} />
-      <ClientRenderedMap camera={camera} bores={bores} query={query} />
-    </MapSearchContainer>
+    <Wrapper>
+      <MapSearchContainer>
+        <SearchForm bores={bores} query={query} />
+        <ClientRenderedMap camera={camera} bores={bores} query={query} />
+      </MapSearchContainer>
+    </Wrapper>
   );
 };
 

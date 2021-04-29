@@ -1,7 +1,7 @@
 import { toggleSidebar } from 'actions/ui-actions';
 import DarkModeToggle from 'components/DarkModeToggle';
-import StyledNextLink from 'components/Link/StyledNextLink';
 import { StyledLink } from 'components/Link';
+import StyledNextLink from 'components/Link/StyledNextLink';
 import { useUIDispatch } from 'context/ui-context';
 import { navLinks } from 'data/main-navigation';
 import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
@@ -13,6 +13,16 @@ import Button from '../Button';
 import DropdownContainer from './DropdownContainer';
 import NavBar from './NavBar';
 import NavbarItem from './NavBar/NavbarItem';
+
+const Container = styled.div`
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: ${Theme.width.max};
+  width: 100%;
+`;
 
 const DropdownContents = styled(motion.div)<{ itemCount?: number }>`
   align-content: start;
@@ -49,12 +59,9 @@ const IconLinkWrapper = styled.div`
 `;
 
 const MainNav = styled.header`
-  align-items: center;
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
   color: ${Theme.color.darkGrey};
-  display: flex;
-  flex-flow: row nowrap;
   font-family: 'Open Sans', sans-serif;
   height: 50px;
   justify-content: space-between;
@@ -65,7 +72,6 @@ const MainNav = styled.header`
 
   @media (min-width: ${(props) => props.theme.bp.desktop}) {
     height: 75px;
-    justify-content: space-between;
     padding: 0 30px;
   }
 
@@ -85,7 +91,6 @@ const MainNav = styled.header`
 `;
 
 const NavLogoLink = styled(StyledNextLink)`
-  margin-right: 20px;
   transition: opacity 0.2s ease;
 
   > img {
@@ -142,58 +147,63 @@ const MainNavBar = () => {
 
   return (
     <MainNav>
-      <NavLogoLink href='/'>
-        <img src='https://dummyimage.com/90x30.png?text=LOGO' alt='' />
-      </NavLogoLink>
-      <AnimateSharedLayout type='crossfade'>
-        <NavBar onMouseLeave={onMouseLeave}>
-          {navLinks.map(({ Icon, title, href, sections }, index) => (
-            <NavbarItem
-              key={title}
-              title={title}
-              index={index}
-              Icon={Icon}
-              href={href}
-              onMouseEnter={onMouseEnter}
-            >
-              <AnimatePresence>
-                {activeSubmenu === index && sections && (
-                  <DropdownContainer>
-                    <DropdownContents layout itemCount={sections.length}>
-                      {sections.map((section, index) => {
-                        return (
-                          <SectionContainer key={index}>
-                            {section.title && <h2>{section.title}</h2>}
-                            <SectionPageContainer>
-                              {section.pages.map((page) => {
-                                const { Icon, title, href } = page;
-                                return (
-                                  <IconLinkWrapper key={href}>
-                                    <Icon />
-                                    <StyledNextLink href={href}>
-                                      <span>{title}</span>
-                                    </StyledNextLink>
-                                  </IconLinkWrapper>
-                                );
-                              })}
-                            </SectionPageContainer>
-                          </SectionContainer>
-                        );
-                      })}
-                    </DropdownContents>
-                  </DropdownContainer>
-                )}
-              </AnimatePresence>
-            </NavbarItem>
-          ))}
-        </NavBar>
-      </AnimateSharedLayout>
-      <MobileControls>
-        <DarkModeToggle />
-        <MobileMenuToggle size='lg' onClick={toggleMobileNav}>
-          <FaBars />
-        </MobileMenuToggle>
-      </MobileControls>
+      <Container>
+        <NavLogoLink href='/'>
+          <img
+            src='http://fakeimg.pl/180x40?text=LOGO&font=lobster'
+            alt='LOGO'
+          />
+        </NavLogoLink>
+        <AnimateSharedLayout type='crossfade'>
+          <NavBar onMouseLeave={onMouseLeave}>
+            {navLinks.map(({ Icon, title, href, sections }, index) => (
+              <NavbarItem
+                key={title}
+                title={title}
+                index={index}
+                Icon={Icon}
+                href={href}
+                onMouseEnter={onMouseEnter}
+              >
+                <AnimatePresence>
+                  {activeSubmenu === index && sections && (
+                    <DropdownContainer>
+                      <DropdownContents layout itemCount={sections.length}>
+                        {sections.map((section, index) => {
+                          return (
+                            <SectionContainer key={index}>
+                              {section.title && <h2>{section.title}</h2>}
+                              <SectionPageContainer>
+                                {section.pages.map((page) => {
+                                  const { Icon, title, href } = page;
+                                  return (
+                                    <IconLinkWrapper key={href}>
+                                      <Icon />
+                                      <StyledNextLink href={href}>
+                                        <span>{title}</span>
+                                      </StyledNextLink>
+                                    </IconLinkWrapper>
+                                  );
+                                })}
+                              </SectionPageContainer>
+                            </SectionContainer>
+                          );
+                        })}
+                      </DropdownContents>
+                    </DropdownContainer>
+                  )}
+                </AnimatePresence>
+              </NavbarItem>
+            ))}
+          </NavBar>
+        </AnimateSharedLayout>
+        <MobileControls>
+          <DarkModeToggle />
+          <MobileMenuToggle size='lg' onClick={toggleMobileNav}>
+            <FaBars />
+          </MobileMenuToggle>
+        </MobileControls>
+      </Container>
     </MainNav>
   );
 };

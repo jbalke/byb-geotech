@@ -83,4 +83,4 @@ export const SPACING = {
   spacer: 28,
 } as const;
 
-export const WIDTH = { max: '1200px', mobileMenuMax: '620px' } as const;
+export const WIDTH = { max: '1080px', mobileMenuMax: '620px' } as const;

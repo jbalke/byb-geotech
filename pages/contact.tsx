@@ -25,7 +25,7 @@ const Container = styled.div`
   width: 100%;
 
   @media (min-width: ${(props) => props.theme.bp.tablet}) {
-    grid-template-columns: 1fr 300px;
+    grid-template-columns: 1fr 400px;
   }
 `;
 
@@ -59,7 +59,7 @@ type Props = {};
 
 function Contact(props: Props) {
   return (
-    <Wrapper maxWidth='80ch'>
+    <Wrapper>
       <Container>
         <div>
           <h1>Contact Us</h1>

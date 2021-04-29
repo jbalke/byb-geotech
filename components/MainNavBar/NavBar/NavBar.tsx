@@ -7,8 +7,8 @@ const NavbarEl = styled.nav`
 
   @media (min-width: ${(props) => props.theme.bp.desktop}) {
     color: ${Theme.color.primary};
-    display: flex;
-    flex-flow: row nowrap;
+    display: block;
+    /* flex-flow: row nowrap; */
     height: 100%;
 
     a:hover,
@@ -20,7 +20,7 @@ const NavbarEl = styled.nav`
 
 const NavbarList = styled.ul`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   list-style: none;
   margin: 0;
 `;

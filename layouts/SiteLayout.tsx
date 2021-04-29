@@ -1,10 +1,17 @@
 import MainNavBar from 'components/MainNavBar';
 import SkipToMain from 'components/SkipToMain';
-import { Wrapper } from 'components/styled';
 import Head from 'next/head';
 import { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
+
+const Container = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+`;
 
 const Hero = styled.section`
   align-items: center;
@@ -126,7 +133,7 @@ type PageProps = { children: ReactNode };
 
 const SiteLayout = ({ children }: PageProps) => {
   return (
-    <Wrapper main>
+    <Container>
       <Head>
         <link
           rel='preload'
@@ -161,10 +168,8 @@ const SiteLayout = ({ children }: PageProps) => {
         </HeroContentWrapper>
       </Hero>
       <StyledMain id='main-content'>{children}</StyledMain>
-      <StyledFooter style={{}}>
-        Copyright &copy; 2021 Backyard Bores Pty Ltd
-      </StyledFooter>
-    </Wrapper>
+      <StyledFooter>Copyright &copy; 2021 Backyard Bores Pty Ltd</StyledFooter>
+    </Container>
   );
 };
 
