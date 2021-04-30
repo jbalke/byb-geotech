@@ -34,6 +34,7 @@ export const Wrapper = styled.div<{
   flex-flow: ${({ row }) => (row ? 'row nowrap' : 'column nowrap')};
   margin: 0 auto;
   max-width: ${({ maxWidth }) => maxWidth ?? Theme.width.max};
+  padding: ${Theme.spacing.l};
   position: relative;
   width: 100%;
 

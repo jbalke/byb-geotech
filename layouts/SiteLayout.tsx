@@ -21,7 +21,7 @@ const Hero = styled.section`
   background-position: 50% 70%;
   color: ${Theme.color.white};
   display: flex;
-  height: 30vh;
+  height: 40vh;
   justify-content: center;
   line-height: 1;
   margin-top: -75px;
@@ -29,7 +29,7 @@ const Hero = styled.section`
   position: relative;
   width: 100%;
 
-  &:before {
+  &::before {
     background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.7),
@@ -57,13 +57,13 @@ const Hero = styled.section`
 
   @media (min-width: ${(props) => props.theme.bp.tablet}) {
     & {
-      height: 40vh;
+      height: 50vh;
       min-height: 400px;
       background-position: 50% 50%;
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
     }
   }
 `;
@@ -90,7 +90,8 @@ const HeroSubText = styled.p`
   margin: 0.5rem 0 0 0;
   text-align: center;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
-  width: 70%;
+  width: 65%;
+  min-width: 700px;
 
   @supports (font-variation-settings: normal) {
     font-family: 'Public Sans Italic';
@@ -118,7 +119,7 @@ const StyledMain = styled.main`
   background-color: ${Theme.color.textBackground};
   color: ${Theme.color.text};
   flex: 1;
-  padding: ${Theme.spacing.l};
+  /* padding: ${Theme.spacing.l}; */
   transition: ${Theme.color.transition};
 `;
 
@@ -168,7 +169,9 @@ const SiteLayout = ({ children }: PageProps) => {
         </HeroContentWrapper>
       </Hero>
       <StyledMain id='main-content'>{children}</StyledMain>
-      <StyledFooter>Copyright &copy; 2021 Backyard Bores Pty Ltd</StyledFooter>
+      <StyledFooter>
+        <small>Copyright &copy; 2021 Backyard Bores Pty Ltd</small>
+      </StyledFooter>
     </Container>
   );
 };
