@@ -59,15 +59,15 @@ const IconLinkWrapper = styled.div`
 `;
 
 const MainNav = styled.header`
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
   color: ${Theme.color.darkGrey};
+  display: flex;
   font-family: 'Open Sans', sans-serif;
   height: 50px;
-  justify-content: space-between;
   padding: 0 10px;
   transition: ${Theme.color.transition};
-  white-space: nowrap;
   z-index: 99;
 
   @media (min-width: ${(props) => props.theme.bp.desktop}) {
