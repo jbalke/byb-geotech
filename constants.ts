@@ -12,7 +12,7 @@ export const EMAIL_DOMAIN = 'backyardbores.com';
 export const EMAIL = {
   SALES: `sales@${EMAIL_DOMAIN}`,
   INFO: `info@${EMAIL_DOMAIN}`,
-  MANAGER: `matthew@vonsnarski.com`,
+  MANAGER: `info@${EMAIL_DOMAIN}`,
 };
 export const PHONE = {
   MAIN: { NUMBER: '1800193194', DISPLAY: '1800 193 194' },
