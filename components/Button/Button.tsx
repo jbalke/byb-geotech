@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { Theme } from 'styles/theme';
@@ -49,7 +50,7 @@ function BaseButton({
   );
 }
 
-const Button = styled(BaseButton)<{
+const shared = css<{
   size?: 'sm' | 'lg';
   rounded?: 'sm' | 'md' | 'lg' | 'full' | 'pill';
   variant?: 'outline';
@@ -58,15 +59,18 @@ const Button = styled(BaseButton)<{
   fullWidth?: boolean;
   borderWidth?: string;
 }>`
+  align-items: center;
   appearance: none;
   background-color: ${Theme.color.primary};
   border: ${({ borderWidth }) =>
     borderWidth ? `${borderWidth ?? '1px'} solid ${Theme.color.white}` : '0'};
   color: ${Theme.color.white};
   cursor: pointer;
+  justify-content: center;
   letter-spacing: 0.08em;
   margin: ${({ margin }) => margin || '0'};
   padding: 0.5em 1em;
+  text-decoration: none;
   transition: background-color 0.25s, color 0.25s;
 
   ${({ shadow }) =>
@@ -78,11 +82,11 @@ const Button = styled(BaseButton)<{
   ${({ fullWidth }) =>
     fullWidth
       ? css`
-          display: block;
+          display: flex;
           width: 100%;
         `
       : css`
-          display: inline-block;
+          display: inline-flex;
         `}
 
   ${({ variant }) => {
@@ -147,6 +151,27 @@ const Button = styled(BaseButton)<{
     filter: grayscale(70%);
     cursor: not-allowed;
   }
+`;
+
+type LinkProps = {
+  href: string;
+  children: React.ReactNode;
+};
+
+const StyledLink = styled.a`
+  ${shared}
+`;
+
+export const NextLinkButton = ({ href, children }: LinkProps) => {
+  return (
+    <Link href={href} passHref>
+      <StyledLink>{children}</StyledLink>
+    </Link>
+  );
+};
+
+const Button = styled(BaseButton)`
+  ${shared}
 `;
 
 export default Button;
