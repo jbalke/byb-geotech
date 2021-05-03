@@ -3,8 +3,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { v4 } from 'uuid';
-import CallLink from './CallLink';
-import { ExternalLink, StyledLink } from './Link';
+import CallLink from '../CallLink';
+import { ExternalLink, StyledLink } from '../Link';
 
 export type Question = {
   uuid: string;

@@ -1,6 +1,6 @@
 import Button from 'components/Button';
-import FAQ, { StyledAccordion } from 'components/FAQ';
-import questions from 'components/questions';
+import FAQ, { StyledAccordion } from 'components/FAQ/FAQ';
+import questions from 'components/FAQ/questions';
 import { Wrapper } from 'components/styled';
 import SiteLayout from 'layouts/SiteLayout';
 import React, { useEffect, useState } from 'react';
