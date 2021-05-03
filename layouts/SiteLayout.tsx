@@ -144,7 +144,7 @@ const SiteLayout = ({ children }: PageProps) => {
         />
         <link
           rel='preload'
-          href='/fonts/PublicSans-VariableFont_wght.ttf'
+          href='/fonts/PublicSans-Italic-VariableFont_wght.ttf'
           as='font'
           crossOrigin=''
         />
@@ -154,6 +154,7 @@ const SiteLayout = ({ children }: PageProps) => {
           as='font'
           crossOrigin=''
         />
+        <link rel='preload' href='/banner-infinity.webp' as='image' />
         <title>Backyard Bores</title>
       </Head>
       <SkipToMain href='#main-content' />
