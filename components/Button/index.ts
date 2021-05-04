@@ -1,3 +1,3 @@
-import Button, { NextLinkButton } from './Button';
+import Button, { StyledLinkButton } from './Button';
 
-export { Button as default, NextLinkButton };
+export { Button as default, StyledLinkButton };

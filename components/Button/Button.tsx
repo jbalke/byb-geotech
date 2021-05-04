@@ -156,22 +156,23 @@ const shared = css<{
 type LinkProps = {
   href: string;
   children: React.ReactNode;
+  className?: string;
 };
 
-const StyledLink = styled.a`
-  ${shared}
-`;
-
-export const NextLinkButton = ({ href, children }: LinkProps) => {
+const LinkButton = ({ href, children, className }: LinkProps) => {
   return (
     <Link href={href} passHref>
-      <StyledLink>{children}</StyledLink>
+      <a className={className}>{children}</a>
     </Link>
   );
 };
+
+const StyledLinkButton = styled(LinkButton)`
+  ${shared}
+`;
 
 const Button = styled(BaseButton)`
   ${shared}
 `;
 
-export default Button;
+export { Button as default, StyledLinkButton };
