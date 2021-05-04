@@ -1,5 +1,5 @@
+import { findNearbyBores } from 'model/bore';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { findNearbyBores } from 'model/boreController';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   res.setHeader('Cache-Control', 'max-age=0, s-maxage=86400');

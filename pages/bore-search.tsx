@@ -1,7 +1,7 @@
 import SearchForm from 'components/SearchForm';
 import { Wrapper } from 'components/styled';
 import SiteLayout from 'layouts/SiteLayout';
-import { findNearbyBores } from 'model/boreController';
+import { findNearbyBores } from 'model/bore';
 import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
 import React, { useMemo } from 'react';
@@ -10,6 +10,7 @@ import { Bore } from 'types/bore';
 import { isValidCoordinates, parseCoordinates } from 'utils/geocoding';
 import { obfuscateLocation } from 'utils/geospatial';
 import { MAP_CENTER } from '../constants';
+import { logSearch } from '../model/searchLog';
 
 const MapSearchContainer = styled.div`
   display: grid;
@@ -57,6 +58,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         radius: radius as string,
         lat: lat as string,
         lng: lng as string,
+      });
+
+      await logSearch({
+        IPAddress: context.req.socket.localAddress,
+        location: {
+          type: 'Point',
+          coordinates: [Number(lng as string), Number(lat as string)],
+        },
       });
 
       const obfuscatedBores = bores.map((b) => ({
