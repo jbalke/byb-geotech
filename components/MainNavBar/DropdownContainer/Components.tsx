@@ -9,7 +9,7 @@ export const Caret = styled.div`
   height: 0;
   left: calc(50% - 10px);
   position: absolute;
-  top: -20px;
+  top: -5px;
   width: 0;
   z-index: 1;
 `;

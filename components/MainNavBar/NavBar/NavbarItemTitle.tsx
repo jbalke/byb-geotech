@@ -8,7 +8,7 @@ const ItemTitle = styled.button<{ link?: boolean }>`
   appearance: none;
   background: transparent;
   border: 0;
-  color: ${Theme.color.white};
+  color: ${Theme.color.link};
   cursor: ${({ link }) => (link ? 'pointer' : 'default')};
   display: flex;
   font-weight: bold;
@@ -27,7 +27,7 @@ const ItemTitle = styled.button<{ link?: boolean }>`
   &&:focus,
   &&:active,
   &&:visited {
-    color: ${Theme.color.white};
+    color: ${Theme.color.link};
   }
 `;
 

@@ -20,6 +20,11 @@ function DropdownContainer({ children, withCaret }: Props) {
       initial={dropdownVariants.initial}
       animate={dropdownVariants.active}
       exit={dropdownVariants.exit}
+      style={{
+        position: 'relative',
+        backgroundColor: 'transparent',
+        paddingTop: '15px',
+      }}
     >
       {withCaret && <Caret />}
       <DropdownBackground>{children}</DropdownBackground>

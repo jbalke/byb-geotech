@@ -60,7 +60,7 @@ const IconLinkWrapper = styled.div`
 
 const MainNav = styled.header`
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: ${Theme.color.textBackground}; //rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(5px);
   color: ${Theme.color.darkGrey};
   display: flex;
@@ -91,15 +91,9 @@ const MainNav = styled.header`
 `;
 
 const NavLogoLink = styled(StyledNextLink)`
-  transition: opacity 0.2s ease;
-
   > img {
     margin: auto;
     cursor: pointer;
-  }
-
-  > img:hover {
-    opacity: 0.6;
   }
 `;
 
@@ -149,10 +143,7 @@ const MainNavBar = () => {
     <MainNav>
       <Container>
         <NavLogoLink href='/'>
-          <img
-            src='http://fakeimg.pl/180x40?text=LOGO&font=lobster'
-            alt='LOGO'
-          />
+          <img src='/logo.png' alt='logo' height='50px' width='115.36px' />
         </NavLogoLink>
         <AnimateSharedLayout type='crossfade'>
           <NavBar onMouseLeave={onMouseLeave}>
@@ -167,7 +158,7 @@ const MainNavBar = () => {
               >
                 <AnimatePresence>
                   {activeSubmenu === index && sections && (
-                    <DropdownContainer>
+                    <DropdownContainer withCaret>
                       <DropdownContents layout itemCount={sections.length}>
                         {sections.map((section, index) => {
                           return (

@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { useRouter } from 'next/router';
 import React, { ReactNode, useState } from 'react';
 import { IconType } from 'react-icons';
 import styled from 'styled-components';
@@ -32,7 +31,7 @@ const TitleTextLineContainer = styled.div`
 
 const TitleTextLine = styled(motion.div)`
   position: absolute;
-  background-color: ${Theme.color.white};
+  background-color: ${Theme.color.link};
   width: 100%;
   height: 100%;
   top: 0;
