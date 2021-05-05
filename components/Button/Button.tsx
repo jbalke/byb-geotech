@@ -141,13 +141,14 @@ const shared = css<{
     }
   }}
 
-  :hover {
+  &:focus,
+  &:hover {
     background-color: ${({ variant }) =>
       variant === 'outline' ? Theme.color.primary : Theme.color.primaryDark};
     color: ${Theme.color.white};
   }
 
-  :disabled {
+  &:disabled {
     filter: grayscale(70%);
     cursor: not-allowed;
   }
