@@ -58,8 +58,8 @@ async function sendBoreSearchEmail({
   const emailOptions: Mail.Options = {
     from: `${EMAIL.INFO}`,
     to: `${name} - ${email}`,
-    replyTo: `${EMAIL.INFO}`,
-    bcc: `${EMAIL.MANAGER}`,
+    replyTo: `${EMAIL.SALES}`,
+    bcc: `${EMAIL.INFO}`,
     subject: 'Bore Search Request',
     text: `Hi ${name},\n
 Here's the report you requested on known bores in your area.\n
