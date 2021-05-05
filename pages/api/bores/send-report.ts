@@ -46,7 +46,7 @@ async function sendBoreSearchEmail({
       )}${formatField('waterLevel', b.waterLevel)}${formatField(
         'flowRate',
         b.flowRate
-      )}\n`
+      )}${formatField('salinity', b.salinity)}\n`
   );
 
   let boresReport = '';
@@ -72,7 +72,7 @@ ${formatField('distance', 'DISTANCE (m)')}${formatField(
     )}${formatField('waterLevel', 'WATER LEVEL (m)')}${formatField(
       'flowRate',
       'FLOW RATE (L/min)'
-    )}
+    )}${formatField('salinity', 'SALINITY (PPM)')}
 ${boresReport}\n\n
 Call us on 0418 193 194 for your obligation free quote or just to answer any questions you many have.\n
 See our website for information on preparing for a bore.\n

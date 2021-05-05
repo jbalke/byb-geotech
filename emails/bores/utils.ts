@@ -27,7 +27,7 @@ export function distanceBand(distance: number): string {
   }
 }
 
-type Field = 'distance' | 'depth' | 'waterLevel' | 'flowRate';
+type Field = 'distance' | 'depth' | 'waterLevel' | 'flowRate' | 'salinity';
 type FieldInfo = {
   width: number;
   decimals: number;
@@ -38,6 +38,7 @@ const fieldFormat: Record<Field, FieldInfo> = {
   depth: { width: 12, decimals: 2 },
   waterLevel: { width: 18, decimals: 2 },
   flowRate: { width: 20, decimals: 2 },
+  salinity: { width: 18, decimals: 0 },
 };
 
 export function formatField(
@@ -47,7 +48,7 @@ export function formatField(
   let output: string;
 
   if (typeof value === 'number') {
-    if (field === 'waterLevel') {
+    if (field === 'waterLevel' && value >= 0) {
       value = -value;
     }
     output = value.toFixed(fieldFormat[field].decimals);
