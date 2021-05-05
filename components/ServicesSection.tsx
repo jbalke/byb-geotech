@@ -24,13 +24,17 @@ const SectionBanner = styled.div`
 `;
 
 const SectionTitleContainer = styled.div`
-  margin: ${Theme.spacing.l} 0;
+  margin: ${Theme.spacing.m} 0;
   position: relative;
+
+  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+    margin: ${Theme.spacing.l} 0;
+  }
 `;
 
 const SectionTitle = styled.h2`
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.1em;
   margin: 0;
   text-transform: uppercase;
@@ -67,7 +71,7 @@ function ServicesSection(props: ServicesSectionProps) {
       </SectionBanner>
       <ServiceCards>
         <ServiceCard
-          title='Drilling'
+          title='Bore Drilling & Cleaning'
           href='/services/drilling'
           imageSrc='http://loremflickr.com/500/500/desert'
         >
@@ -78,9 +82,9 @@ function ServicesSection(props: ServicesSectionProps) {
           </p>
         </ServiceCard>
         <ServiceCard
-          title='Water Testing'
+          title='Pump Supply & Repairs'
           href='/services/drilling'
-          imageSrc='http://loremflickr.com/500/500/water'
+          imageSrc='http://loremflickr.com/500/500/pump'
         >
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
@@ -89,9 +93,9 @@ function ServicesSection(props: ServicesSectionProps) {
           </p>
         </ServiceCard>
         <ServiceCard
-          title='Pump Maintenance'
+          title='Geotechnical Drilling & Groundwater Monitoring'
           href='/services/drilling'
-          imageSrc='http://loremflickr.com/500/500/pump'
+          imageSrc='http://loremflickr.com/500/500/water'
         >
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum

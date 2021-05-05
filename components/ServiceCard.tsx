@@ -12,9 +12,7 @@ const Card = styled.article<{ imageSrc: string }>`
   display: flex;
   flex-flow: column nowrap;
   position: relative;
-
-  padding: 5rem 2rem;
-
+  padding: 2rem 1rem;
   min-height: 25vh;
 
   & > * {
@@ -38,11 +36,15 @@ const Card = styled.article<{ imageSrc: string }>`
   :hover::before {
     background-color: rgba(0, 0, 0, 0.4);
   }
+
+  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+    padding: 5rem 2rem;
+  }
 `;
 
 const CardTitle = styled.h3`
   align-self: flex-start;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.2;
   position: relative;
   width: max-content;
@@ -55,15 +57,23 @@ const CardTitle = styled.h3`
     position: absolute;
     top: 100%;
     left: 0;
-
-    transform: scaleX(0);
-    transition: transform 300ms;
-    transform-origin: left;
   }
 
-  ${Card}:focus-within &::after,
-  ${Card}:hover &::after {
-    transform: scaleX(1);
+  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+    font-size: 1.5rem;
+  }
+
+  @media (hover: hover) {
+    &::after {
+      transform: scaleX(0);
+      transition: transform 300ms;
+      transform-origin: left;
+    }
+
+    ${Card}:focus-within &::after,
+    ${Card}:hover &::after {
+      transform: scaleX(1);
+    }
   }
 `;
 
