@@ -29,9 +29,11 @@ export const Wrapper = styled.div<{
   row?: boolean;
   maxWidth?: string;
   main?: boolean;
+  gap?: string;
 }>`
   display: flex;
-  flex-flow: ${({ row }) => (row ? 'row nowrap' : 'column nowrap')};
+  flex-flow: ${({ row }) => (row ? 'row wrap' : 'column')};
+  gap: ${({ gap }) => gap ?? '0'};
   margin: 0 auto;
   max-width: ${({ maxWidth }) => maxWidth ?? Theme.width.max};
   padding: ${Theme.spacing.l};

@@ -1,0 +1,146 @@
+import React from 'react';
+import styled from 'styled-components';
+import { Theme } from 'styles/theme';
+import ActiveLink from './ActiveLink';
+import { StyledLink } from './Link';
+import { Wrapper } from './styled';
+
+const Container = styled.section`
+  background-color: ${Theme.color.grey800};
+  color: ${Theme.color.white};
+  padding: 3rem 0;
+
+  font-size: 0.8rem;
+`;
+
+const CompanyInfo = styled.div`
+  width: 100%;
+
+  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+    width: 30%;
+    min-width: 300px;
+  }
+`;
+
+const Title = styled.span`
+  font-size: 1rem;
+  font-weight: 600;
+  color: ${Theme.color.primaryLight};
+`;
+
+const UsefulLinks = styled.div`
+  width: 100%;
+
+  h3 {
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    position: relative;
+    text-transform: uppercase;
+  }
+
+  h3::after {
+    content: '';
+
+    height: 0;
+    width: 0;
+
+    border-color: ${Theme.color.primary} transparent transparent;
+    border-style: solid;
+    border-width: 10px;
+
+    position: absolute;
+    bottom: 0;
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 1rem;
+  }
+
+  ul li {
+    font-size: 1rem;
+  }
+
+  ul li::marker {
+    color: ${Theme.color.primaryLight};
+  }
+
+  ${StyledLink} {
+    display: block;
+    font-weight: normal;
+    padding: 0.3rem 0.5rem 0.8rem 0;
+    box-shadow: none;
+
+    &,
+    &:visited {
+      color: inherit;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: none;
+        color: ${Theme.color.primaryLight};
+
+        transition: ${Theme.color.transition};
+      }
+    }
+  }
+
+  .active${StyledLink} {
+    color: ${Theme.color.primary};
+  }
+
+  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+    width: auto;
+    min-width: 300px;
+  }
+`;
+
+type ExtrasSectionsProps = {};
+
+function ExtrasSection(props: ExtrasSectionsProps) {
+  return (
+    <Container>
+      <Wrapper row gap='2rem'>
+        <CompanyInfo>
+          <Title>Backyard Bores Pty Ltd</Title>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
+            facere ipsum aut sint velit accusantium enim fuga quam laboriosam
+            magni cumque quod, repellendus maiores mollitia hic, eum qui
+            blanditiis minus eveniet? Ut, possimus ratione, culpa veniam tempore
+            maxime sed accusamus quis aperiam accusantium nihil dolor quasi
+            sequi assumenda eaque tempora.
+          </p>
+        </CompanyInfo>
+        <UsefulLinks>
+          <h3>Useful Links</h3>
+          <ul>
+            <li>
+              <ActiveLink activeClassName='active' href='/contact'>
+                <StyledLink>Contact Us</StyledLink>
+              </ActiveLink>
+            </li>
+            <li>
+              <ActiveLink activeClassName='active' href='/bore-search'>
+                <StyledLink>Bore Search</StyledLink>
+              </ActiveLink>
+            </li>
+            <li>
+              <ActiveLink activeClassName='active' href='/about/our-story'>
+                <StyledLink>Our Story</StyledLink>
+              </ActiveLink>
+            </li>
+            <li>
+              <ActiveLink activeClassName='active' href='/'>
+                <StyledLink>Home</StyledLink>
+              </ActiveLink>
+            </li>
+          </ul>
+        </UsefulLinks>
+      </Wrapper>
+    </Container>
+  );
+}
+
+export default ExtrasSection;

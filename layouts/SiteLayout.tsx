@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
+import ExtrasSection from '../components/ExtrasSection';
 
 const Container = styled.div`
   display: flex;
@@ -21,7 +22,7 @@ const Hero = styled.section`
   background-position: 50% 70%;
   color: ${Theme.color.white};
   display: flex;
-  height: 40vh;
+  height: 60vh;
   justify-content: center;
   line-height: 1;
   margin-top: -75px;
@@ -57,7 +58,7 @@ const Hero = styled.section`
 
   @media (min-width: ${(props) => props.theme.bp.tablet}) {
     & {
-      height: 50vh;
+      height: 80vh;
       min-height: 400px;
       background-position: 50% 50%;
     }
@@ -170,6 +171,7 @@ const SiteLayout = ({ children }: PageProps) => {
         </HeroContentWrapper>
       </Hero>
       <StyledMain id='main-content'>{children}</StyledMain>
+      <ExtrasSection />
       <StyledFooter>
         <small>Copyright &copy; 2021 Backyard Bores Pty Ltd</small>
       </StyledFooter>

@@ -19,6 +19,7 @@ export const StyledLink = styled.a<{ size?: string }>`
   font-size: ${({ size }) => size || '1em'};
   flex-flow: row nowrap;
   font-family: inherit;
+  letter-spacing: 0.05rem;
   line-height: 1;
   position: relative;
   white-space: nowrap;
