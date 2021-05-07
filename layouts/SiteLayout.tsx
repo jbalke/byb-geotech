@@ -16,10 +16,14 @@ const Container = styled.div`
 
 const Hero = styled.section`
   align-items: center;
-  background-image: url('/banner-infinity.webp');
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url('/banner-infinity.webp');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 70%;
   color: ${Theme.color.white};
   display: flex;
   height: 60vh;
@@ -27,26 +31,7 @@ const Hero = styled.section`
   line-height: 1;
   margin-top: -75px;
   min-height: 200px;
-  position: relative;
   width: 100%;
-
-  &::before {
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.3)
-    );
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-
-  & > * {
-    z-index: 1;
-  }
 
   h1 {
     font-size: 2rem;
