@@ -39,7 +39,7 @@ const StyledAside = styled(Aside)`
   }
 `;
 
-const ContactDetails = styled.section`
+const ContactDetails = styled.address`
   font-size: 1rem;
 
   p {

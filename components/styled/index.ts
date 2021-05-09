@@ -36,7 +36,7 @@ export const Wrapper = styled.div<{
   gap: ${({ gap }) => gap ?? '0'};
   margin: 0 auto;
   max-width: ${({ maxWidth }) => maxWidth ?? Theme.width.max};
-  padding: ${Theme.spacing.l};
+  padding: ${Theme.spacing.xl} 0;
   position: relative;
   width: 100%;
 

@@ -49,7 +49,7 @@ const Hero = styled.section`
     }
 
     h1 {
-      font-size: 3.5rem;
+      font-size: 4rem;
     }
   }
 `;
@@ -57,12 +57,12 @@ const Hero = styled.section`
 const HeroPhoneText = styled.p`
   font-size: 2rem;
   font-weight: 900;
-  margin: 1rem 0 0 0;
+  margin: 2rem 0 0 0;
   transition: font-size 300ms;
 
-  @media (min-width: ${(props) => props.theme.bp.desktop}) {
-    margin: 2rem 0 0 0;
-    font-size: 3rem;
+  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+    margin: 4rem 0 0 0;
+    font-size: 4rem;
   }
 `;
 

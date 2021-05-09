@@ -123,7 +123,7 @@ const Map = ({ camera, bores, query = false }: Props) => {
         dragPan={windowWidth > 800}
         touchAction={windowWidth <= 800 ? 'pan-y' : 'none'}
         width='100%'
-        height='555px'
+        height='620px'
       >
         <ScaleControl maxWidth={100} unit='metric' style={scaleControlStyle} />
         {/* <GeolocateControl

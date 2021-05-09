@@ -6,7 +6,7 @@ import { StyledLink } from './Link';
 import { Wrapper } from './styled';
 
 const Container = styled.section`
-  background-color: ${Theme.color.grey800};
+  background-color: #19191e;
   color: ${Theme.color.white};
   padding: 3rem 0;
 
