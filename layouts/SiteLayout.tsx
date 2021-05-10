@@ -5,6 +5,7 @@ import { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import ExtrasSection from '../components/ExtrasSection';
+import PageLoading from '../components/PageLoading';
 
 const Container = styled.div`
   display: flex;
@@ -120,47 +121,50 @@ type PageProps = { children: ReactNode };
 
 const SiteLayout = ({ children }: PageProps) => {
   return (
-    <Container>
-      <Head>
-        <link
-          rel='preload'
-          href='/fonts/Rubik-VariableFont_wght.ttf'
-          as='font'
-          crossOrigin=''
-        />
-        <link
-          rel='preload'
-          href='/fonts/PublicSans-Italic-VariableFont_wght.ttf'
-          as='font'
-          crossOrigin=''
-        />
-        <link
-          rel='preload'
-          href='/fonts/PublicSans-Italic-VariableFont_wght.ttf'
-          as='font'
-          crossOrigin=''
-        />
-        <link rel='preload' href='/banner-infinity.webp' as='image' />
-        <title>Backyard Bores</title>
-      </Head>
-      <SkipToMain href='#main-content' />
-      <MainNavBar />
-      <Hero>
-        <HeroContentWrapper>
-          <h1>Backyard Bores & Geotech Drilling</h1>
-          <HeroSubText>
-            Your water bore and geotech drilling specialists since 2002.
-            Covering Mackay from Bowen to Rockhampton and west to Clermont.
-          </HeroSubText>
-          <HeroPhoneText>1800 193 194</HeroPhoneText>
-        </HeroContentWrapper>
-      </Hero>
-      <StyledMain id='main-content'>{children}</StyledMain>
-      <ExtrasSection />
-      <StyledFooter>
-        <small>Copyright &copy; 2021 Backyard Bores Pty Ltd</small>
-      </StyledFooter>
-    </Container>
+    <>
+      <Container>
+        <Head>
+          <link
+            rel='preload'
+            href='/fonts/Rubik-VariableFont_wght.ttf'
+            as='font'
+            crossOrigin=''
+          />
+          <link
+            rel='preload'
+            href='/fonts/PublicSans-Italic-VariableFont_wght.ttf'
+            as='font'
+            crossOrigin=''
+          />
+          <link
+            rel='preload'
+            href='/fonts/PublicSans-Italic-VariableFont_wght.ttf'
+            as='font'
+            crossOrigin=''
+          />
+          <link rel='preload' href='/banner-infinity.webp' as='image' />
+          <title>Backyard Bores</title>
+        </Head>
+        <SkipToMain href='#main-content' />
+        <MainNavBar />
+        <Hero>
+          <HeroContentWrapper>
+            <h1>Backyard Bores & Geotech Drilling</h1>
+            <HeroSubText>
+              Your water bore and geotech drilling specialists since 2002.
+              Covering Mackay from Bowen to Rockhampton and west to Clermont.
+            </HeroSubText>
+            <HeroPhoneText>1800 193 194</HeroPhoneText>
+          </HeroContentWrapper>
+        </Hero>
+        <StyledMain id='main-content'>{children}</StyledMain>
+        <ExtrasSection />
+        <StyledFooter>
+          <small>Copyright &copy; 2021 Backyard Bores Pty Ltd</small>
+        </StyledFooter>
+      </Container>
+      <PageLoading />
+    </>
   );
 };
 
