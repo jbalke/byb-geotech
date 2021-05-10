@@ -65,7 +65,7 @@ const MainNav = styled.header`
   color: ${Theme.color.darkGrey};
   display: flex;
   font-family: 'Open Sans', sans-serif;
-  height: 50px;
+  height: 60px;
   padding: 0 10px;
   transition: ${Theme.color.transition};
   z-index: 99;
