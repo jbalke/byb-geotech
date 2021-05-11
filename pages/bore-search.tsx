@@ -12,12 +12,12 @@ import { obfuscateLocation } from 'utils/geospatial';
 import Banner from '../components/Banner';
 import { MAP_CENTER } from '../constants';
 import { logSearch } from '../model/searchLog';
-import { Theme } from '../styles/theme';
 
 const MapSearchContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  min-height: 700px;
   width: 100%;
 
   @media (min-width: ${(props) => props.theme.bp.tablet}) {
@@ -25,7 +25,7 @@ const MapSearchContainer = styled.div`
   }
 `;
 
-const ClientRenderedMap = dynamic(() => import('../components/Map/Map'), {
+const ClientRenderedMap = dynamic(() => import('../components/Map'), {
   ssr: false,
   loading: () => <p>loading map...</p>,
 });
