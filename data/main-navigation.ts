@@ -2,7 +2,6 @@ import { IconType } from 'react-icons';
 import {
   FaInfoCircle,
   FaWater,
-  FaCreditCard,
   FaSearch,
   FaQuestionCircle,
 } from 'react-icons/fa';

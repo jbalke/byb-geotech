@@ -4,6 +4,7 @@ import { Theme } from 'styles/theme';
 import ActiveLink from './ActiveLink';
 import { StyledLink } from './Link';
 import { Wrapper } from './styled';
+import { usefulLinks } from '../data/useful-links';
 
 const Container = styled.section`
   background-color: #19191e;
@@ -116,26 +117,13 @@ function ExtrasSection(props: ExtrasSectionsProps) {
         <UsefulLinks>
           <h3>Useful Links</h3>
           <ul>
-            <li>
-              <ActiveLink activeClassName='active' href='/contact'>
-                <StyledLink>Contact Us</StyledLink>
-              </ActiveLink>
-            </li>
-            <li>
-              <ActiveLink activeClassName='active' href='/bore-search'>
-                <StyledLink>Bore Search</StyledLink>
-              </ActiveLink>
-            </li>
-            <li>
-              <ActiveLink activeClassName='active' href='/about/our-story'>
-                <StyledLink>Our Story</StyledLink>
-              </ActiveLink>
-            </li>
-            <li>
-              <ActiveLink activeClassName='active' href='/'>
-                <StyledLink>Home</StyledLink>
-              </ActiveLink>
-            </li>
+            {usefulLinks.map((link, i) => (
+              <li key={i}>
+                <ActiveLink activeClassName='active' href={link.href}>
+                  <StyledLink>{link.label}</StyledLink>
+                </ActiveLink>
+              </li>
+            ))}
           </ul>
         </UsefulLinks>
       </Wrapper>
