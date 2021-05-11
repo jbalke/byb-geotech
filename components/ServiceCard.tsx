@@ -29,6 +29,7 @@ const CardContent = styled.div`
 
   p {
     position: relative;
+    text-shadow: 1px 1px 1px ${Theme.color.black};
   }
 
   ::before {
@@ -55,6 +56,7 @@ const CardTitle = styled.h3`
   line-height: 1.2;
   position: relative;
   width: max-content;
+  text-shadow: 1px 1px 1px ${Theme.color.black};
 
   &::after {
     background-color: ${Theme.color.primary};
