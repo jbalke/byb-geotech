@@ -1,4 +1,3 @@
-import { DevTool } from '@hookform/devtools';
 import InputWarning from 'components/InputWarning';
 import {
   InputSubtext,
@@ -28,7 +27,6 @@ import { FeatureCollection } from 'types/geojson-types';
 import { client } from 'utils/client';
 import { geocodeAPI } from 'utils/geocoding';
 import isEmail from 'validator/lib/isEmail';
-import isMobilePhone from 'validator/lib/isMobilePhone';
 
 const FormContainer = styled.div`
   display: flex;
@@ -262,7 +260,7 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
           <Message type='warning'>No bores found.</Message>
         ) : null}
       </StyledForm>
-      <DevTool control={control} />
+      {/* <DevTool control={control} /> */}
     </>
   );
 }
