@@ -70,6 +70,7 @@ const shared = css<{
   letter-spacing: 0.08em;
   margin: ${({ margin }) => margin || '0'};
   padding: 0.5em 1em;
+  position: relative;
   text-decoration: none;
   transition: background-color 0.25s, color 0.25s;
 

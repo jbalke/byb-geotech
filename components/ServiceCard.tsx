@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import { StyledLinkButton } from './Button';
+import Image from 'next/image';
 
-const Card = styled.article<{ imageSrc: string }>`
-  background-image: url(${({ imageSrc }) => imageSrc});
+const Card = styled.article<{ imageSrc?: string }>`
+  /* background-image: url(${({ imageSrc }) => imageSrc});
   background-position: 50% 100%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 
   display: flex;
   flex-flow: column nowrap;
@@ -15,11 +16,21 @@ const Card = styled.article<{ imageSrc: string }>`
   padding: 2rem 1rem;
   min-height: 25vh;
 
-  & > * {
-    z-index: 1;
+  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+    padding: 5rem 2rem;
+  }
+`;
+
+const CardContent = styled.div`
+  color: ${Theme.color.white};
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  padding: 1.5rem;
+
+  p {
+    position: relative;
   }
 
-  :focus-within::before,
   ::before {
     content: '';
     position: absolute;
@@ -35,10 +46,6 @@ const Card = styled.article<{ imageSrc: string }>`
   :focus-within::before,
   :hover::before {
     background-color: rgba(0, 0, 0, 0.4);
-  }
-
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
-    padding: 5rem 2rem;
   }
 `;
 
@@ -77,14 +84,6 @@ const CardTitle = styled.h3`
   }
 `;
 
-const CardContent = styled.div`
-  --padding: 1.5rem;
-  color: ${Theme.color.white};
-  font-weight: 600;
-  letter-spacing: 0.07em;
-  padding: var(--padding);
-`;
-
 type ServiceCardProps = {
   title: string;
   children: React.ReactNode;
@@ -94,7 +93,14 @@ type ServiceCardProps = {
 
 function ServiceCard({ title, children, href, imageSrc }: ServiceCardProps) {
   return (
-    <Card imageSrc={imageSrc}>
+    <Card>
+      <Image
+        alt={title}
+        src={imageSrc}
+        layout='fill'
+        objectFit='cover'
+        quality={60}
+      />
       <CardContent>
         <CardTitle>{title}</CardTitle>
         {children}
