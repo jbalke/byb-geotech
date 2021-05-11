@@ -9,6 +9,7 @@ import ContactForm from 'components/ContactForm';
 import PrivacyDisclaimer from 'components/PrivacyDisclaimer';
 import { EMAIL, PHONE } from '../constants';
 import CallLink from '../components/CallLink';
+import Banner from '../components/Banner';
 
 const StyledPrivacyDisclaimer = styled(PrivacyDisclaimer)`
   margin-top: 0;
@@ -59,44 +60,47 @@ type Props = {};
 
 function Contact(props: Props) {
   return (
-    <Wrapper>
-      <Container>
-        <div>
-          <h1>Contact Us</h1>
-          <ContactForm />
-        </div>
-        <div>
-          <ContactDetails>
-            <h2>Direct Contact</h2>
-            <p>
-              <strong>Toll Free:</strong> <CallLink />
-            </p>
-            <p>
-              <strong>Office:</strong>{' '}
-              <StyledLink href={`tel:${PHONE.MOBILE.NUMBER}`}>
-                {PHONE.MOBILE.DISPLAY}
-              </StyledLink>
-            </p>
-            <p>
-              <strong>Email:</strong>{' '}
-              <StyledLink href={`mailto:${EMAIL.INFO}`}>
-                {EMAIL.INFO}
-              </StyledLink>
-            </p>
-          </ContactDetails>
-          <StyledAside>
-            <strong>Looking for bores near you?</strong>
-            <p>
-              Try our new{' '}
-              <StyledNextLink href='/bore-search'>Bore Search</StyledNextLink>!
-              Just enter your address to see how many bores are nearby.{' '}
-              <strong>It's free!</strong>
-            </p>
-          </StyledAside>
-        </div>
-      </Container>
-      <StyledPrivacyDisclaimer />
-    </Wrapper>
+    <>
+      <Banner title='Contact Us' />
+      <Wrapper>
+        <Container>
+          <div>
+            <h2>Send Us A Message</h2>
+            <ContactForm />
+          </div>
+          <div>
+            <ContactDetails>
+              <h2>Direct Contact</h2>
+              <p>
+                <strong>Toll Free:</strong> <CallLink />
+              </p>
+              <p>
+                <strong>Office:</strong>{' '}
+                <StyledLink href={`tel:${PHONE.MOBILE.NUMBER}`}>
+                  {PHONE.MOBILE.DISPLAY}
+                </StyledLink>
+              </p>
+              <p>
+                <strong>Email:</strong>{' '}
+                <StyledLink href={`mailto:${EMAIL.INFO}`}>
+                  {EMAIL.INFO}
+                </StyledLink>
+              </p>
+            </ContactDetails>
+            <StyledAside>
+              <strong>Looking for bores near you?</strong>
+              <p>
+                Try our new{' '}
+                <StyledNextLink href='/bore-search'>Bore Search</StyledNextLink>
+                ! Just enter your address to see how many bores are nearby.{' '}
+                <strong>It's free!</strong>
+              </p>
+            </StyledAside>
+          </div>
+        </Container>
+        <StyledPrivacyDisclaimer />
+      </Wrapper>
+    </>
   );
 }
 

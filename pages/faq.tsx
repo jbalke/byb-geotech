@@ -6,6 +6,7 @@ import SiteLayout from 'layouts/SiteLayout';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { v4 } from 'uuid';
+import Banner from '../components/Banner';
 
 const ToggleButton = styled(Button)`
   align-self: flex-end;
@@ -29,33 +30,35 @@ function faq(props: faqProps) {
   }, [isExpandAll]);
 
   return (
-    <Wrapper maxWidth='70ch'>
-      <h1>FAQ</h1>
-      <ToggleButton
-        onClick={() => setExpandAll((expanded) => !expanded)}
-        variant='outline'
-        borderWidth='1px'
-      >
-        Open / Close All
-      </ToggleButton>
-      <StyledAccordion
-        allowMultipleExpanded={true}
-        allowZeroExpanded={true}
-        onChange={handleOnChange}
-      >
-        {questions.map((q) => (
-          <FAQ
-            key={q.uuid}
-            uuid={q.uuid}
-            question={q.heading}
-            id={q.id}
-            isOpen={isExpandAll}
-          >
-            {q.panel}
-          </FAQ>
-        ))}
-      </StyledAccordion>
-    </Wrapper>
+    <>
+      <Banner title='Frequently Asked Questions' />
+      <Wrapper maxWidth='70ch'>
+        <ToggleButton
+          onClick={() => setExpandAll((expanded) => !expanded)}
+          variant='outline'
+          borderWidth='1px'
+        >
+          Open / Close All
+        </ToggleButton>
+        <StyledAccordion
+          allowMultipleExpanded={true}
+          allowZeroExpanded={true}
+          onChange={handleOnChange}
+        >
+          {questions.map((q) => (
+            <FAQ
+              key={q.uuid}
+              uuid={q.uuid}
+              question={q.heading}
+              id={q.id}
+              isOpen={isExpandAll}
+            >
+              {q.panel}
+            </FAQ>
+          ))}
+        </StyledAccordion>
+      </Wrapper>
+    </>
   );
 }
 

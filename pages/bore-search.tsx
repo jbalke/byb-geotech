@@ -9,8 +9,10 @@ import styled from 'styled-components';
 import { Bore } from 'types/bore';
 import { isValidCoordinates, parseCoordinates } from 'utils/geocoding';
 import { obfuscateLocation } from 'utils/geospatial';
+import Banner from '../components/Banner';
 import { MAP_CENTER } from '../constants';
 import { logSearch } from '../model/searchLog';
+import { Theme } from '../styles/theme';
 
 const MapSearchContainer = styled.div`
   display: grid;
@@ -38,12 +40,15 @@ const BoreSearch = ({ mapCenter, bores, query = false }: Props) => {
   ]);
 
   return (
-    <Wrapper>
-      <MapSearchContainer>
-        <SearchForm bores={bores} query={query} />
-        <ClientRenderedMap camera={camera} bores={bores} query={query} />
-      </MapSearchContainer>
-    </Wrapper>
+    <>
+      <Banner title='Bore Search' />
+      <Wrapper>
+        <MapSearchContainer>
+          <SearchForm bores={bores} query={query} />
+          <ClientRenderedMap camera={camera} bores={bores} query={query} />
+        </MapSearchContainer>
+      </Wrapper>
+    </>
   );
 };
 

@@ -15,93 +15,6 @@ const Container = styled.div`
   width: 100%;
 `;
 
-const Hero = styled.section`
-  align-items: center;
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.3)
-    ),
-    url('/banner-infinity.webp');
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: ${Theme.color.white};
-  display: flex;
-  height: 60vh;
-  justify-content: center;
-  line-height: 1;
-  margin-top: -75px;
-  min-height: 200px;
-  width: 100%;
-
-  h1 {
-    font-size: 2rem;
-    font-weight: 500;
-    margin: 0;
-    text-align: center;
-    transition: font-size 300ms;
-  }
-
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
-    & {
-      height: 80vh;
-      min-height: 400px;
-      background-position: 50% 50%;
-    }
-
-    h1 {
-      font-size: 4rem;
-    }
-  }
-`;
-
-const HeroPhoneText = styled.p`
-  font-size: 2rem;
-  font-weight: 900;
-  margin: 2rem 0 0 0;
-  transition: font-size 300ms;
-
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
-    margin: 4rem 0 0 0;
-    font-size: 4rem;
-  }
-`;
-
-const HeroSubText = styled.p`
-  display: none;
-  font-family: sans-serif;
-  font-style: italic;
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  margin: 0.5rem 0 0 0;
-  text-align: center;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
-  width: 65%;
-  min-width: 700px;
-
-  @supports (font-variation-settings: normal) {
-    font-family: 'Public Sans Italic';
-    font-weight: 600;
-  }
-
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
-    display: block;
-  }
-`;
-
-const HeroContentWrapper = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  margin-top: 70px;
-
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
-    margin: 0;
-  }
-`;
-
 const StyledMain = styled.main`
   background-color: ${Theme.color.textBackground};
   color: ${Theme.color.text};
@@ -147,16 +60,6 @@ const SiteLayout = ({ children }: PageProps) => {
         </Head>
         <SkipToMain href='#main-content' />
         <MainNavBar />
-        <Hero>
-          <HeroContentWrapper>
-            <h1>Backyard Bores & Geotech Drilling</h1>
-            <HeroSubText>
-              Your water bore and geotech drilling specialists since 2002.
-              Covering Mackay from Bowen to Rockhampton and west to Clermont.
-            </HeroSubText>
-            <HeroPhoneText>1800 193 194</HeroPhoneText>
-          </HeroContentWrapper>
-        </Hero>
         <StyledMain id='main-content'>{children}</StyledMain>
         <ExtrasSection />
         <StyledFooter>

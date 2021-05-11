@@ -48,6 +48,12 @@ const Select = styled(AsyncSelect)`
 
 const StyledForm = styled.form`
   font-size: 1rem;
+
+  label {
+    font-family: 'Rubik';
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
 `;
 
 type Option = {
@@ -147,7 +153,6 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
   return (
     <>
       <StyledForm onSubmit={handleSubmit(onSubmit, onError)}>
-        <h1>Bore Search</h1>
         <label id='addressLabel'>Address</label>
         <Controller
           name='address'
