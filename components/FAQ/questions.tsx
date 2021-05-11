@@ -34,7 +34,7 @@ const questions: Question[] = [
         <p>
           If you are getting a quote from any driller, ask for their licence
           number and to see their current Queensland Driller's Licence. You can
-          search for their name here on the{' '}
+          search for their name on the{' '}
           <strong>Qld Registered Drillers List</strong>{' '}
           <ExternalLink
             href='https://www.dnrm.qld.gov.au/__data/assets/pdf_file/0004/99760/drillers-register.pdf'
