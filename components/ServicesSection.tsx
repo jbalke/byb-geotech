@@ -1,19 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Theme } from '../styles/theme';
-import { StyledLinkButton } from './Button';
 import ServiceCard from './ServiceCard';
 
-const Container = styled.section`
-  /* display: grid;
-  grid-template-columns: 1fr;
-  padding: ${Theme.spacing.m};
-
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
-    grid-template-columns: 1fr 1fr;
-    padding: ${Theme.spacing.xl};
-  } */
-`;
+const Container = styled.section``;
 
 const SectionBanner = styled.div`
   background-color: ${Theme.color.primaryDark};
@@ -73,7 +63,7 @@ function ServicesSection(props: ServicesSectionProps) {
         <ServiceCard
           title='Bore Drilling & Cleaning'
           href='/services/drilling'
-          imageSrc='http://loremflickr.com/500/500/desert'
+          imageSrc='/images/backyard-bore.webp'
         >
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
@@ -84,7 +74,7 @@ function ServicesSection(props: ServicesSectionProps) {
         <ServiceCard
           title='Pump Supply & Repairs'
           href='/services/drilling'
-          imageSrc='http://loremflickr.com/500/500/pump'
+          imageSrc='/images/pump.webp'
         >
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
@@ -93,9 +83,9 @@ function ServicesSection(props: ServicesSectionProps) {
           </p>
         </ServiceCard>
         <ServiceCard
-          title='Geotechnical Drilling & Groundwater Monitoring'
+          title='Geotechnical Drilling'
           href='/services/drilling'
-          imageSrc='http://loremflickr.com/500/500/water'
+          imageSrc='/images/geotech.webp'
         >
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum

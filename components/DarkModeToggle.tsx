@@ -22,7 +22,7 @@ function DarkModeToggle(props: DarkModeToggleProps) {
       icons={{
         checked: (
           <img
-            src='/moon.png'
+            src='/images/moon.png'
             width='16'
             height='16'
             role='presentation'
@@ -31,7 +31,7 @@ function DarkModeToggle(props: DarkModeToggleProps) {
         ),
         unchecked: (
           <img
-            src='/sun.png'
+            src='/images/sun.png'
             width='16'
             height='16'
             role='presentation'

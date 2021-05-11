@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { Theme } from '../styles/theme';
 
-const StyledBanner = styled.div<{ imageSrc?: string }>`
+const StyledBanner = styled.div<{ imageSrc: string }>`
   align-items: center;
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.7),
       rgba(0, 0, 0, 0.3)
     ),
-    url(${({ imageSrc }) => (imageSrc ? imageSrc : '/banner-infinity.webp')});
+    url(${({ imageSrc }) => imageSrc});
   background-size: cover;
   background-repeat: no-repeat;
   color: ${Theme.color.white};
@@ -47,7 +47,10 @@ type BannerProps = {
   image?: string;
 };
 
-function Banner({ title, image }: BannerProps) {
+function Banner({
+  title,
+  image = '/images/banner-infinity.webp',
+}: BannerProps) {
   return (
     <StyledBanner imageSrc={image}>
       <h1>{title}</h1>

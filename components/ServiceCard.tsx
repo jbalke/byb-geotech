@@ -5,7 +5,7 @@ import { StyledLinkButton } from './Button';
 
 const Card = styled.article<{ imageSrc: string }>`
   background-image: url(${({ imageSrc }) => imageSrc});
-  background-position: center center;
+  background-position: 50% 100%;
   background-repeat: no-repeat;
   background-size: cover;
 
