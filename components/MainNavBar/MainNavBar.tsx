@@ -143,7 +143,7 @@ const MainNavBar = () => {
     <MainNav>
       <Container>
         <NavLogoLink href='/'>
-          <img src='/logo.png' alt='logo' height='50px' width='115.36px' />
+          <img src='/logo.webp' alt='logo' height='50px' width='116px' />
         </NavLogoLink>
         <AnimateSharedLayout type='crossfade'>
           <NavBar onMouseLeave={onMouseLeave}>
