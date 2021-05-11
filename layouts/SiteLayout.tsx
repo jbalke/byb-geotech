@@ -1,6 +1,5 @@
 import MainNavBar from 'components/MainNavBar';
 import SkipToMain from 'components/SkipToMain';
-import Head from 'next/head';
 import { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
@@ -36,28 +35,6 @@ const SiteLayout = ({ children }: PageProps) => {
   return (
     <>
       <Container>
-        <Head>
-          <link
-            rel='preload'
-            href='/fonts/Rubik-VariableFont_wght.ttf'
-            as='font'
-            crossOrigin=''
-          />
-          <link
-            rel='preload'
-            href='/fonts/PublicSans-Italic-VariableFont_wght.ttf'
-            as='font'
-            crossOrigin=''
-          />
-          <link
-            rel='preload'
-            href='/fonts/PublicSans-Italic-VariableFont_wght.ttf'
-            as='font'
-            crossOrigin=''
-          />
-          <link rel='preload' href='/banner-infinity.webp' as='image' />
-          <title>Backyard Bores</title>
-        </Head>
         <SkipToMain href='#main-content' />
         <MainNavBar />
         <StyledMain id='main-content'>{children}</StyledMain>

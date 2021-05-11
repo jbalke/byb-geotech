@@ -95,6 +95,25 @@ function App({ Component, pageProps, router }: Props) {
     <>
       <Head>
         <link
+          rel='preload'
+          href='/fonts/Rubik-VariableFont_wght.ttf'
+          as='font'
+          crossOrigin=''
+        />
+        <link
+          rel='preload'
+          href='/fonts/PublicSans-Italic-VariableFont_wght.ttf'
+          as='font'
+          crossOrigin=''
+        />
+        <link
+          rel='preload'
+          href='/fonts/PublicSans-Italic-VariableFont_wght.ttf'
+          as='font'
+          crossOrigin=''
+        />
+        <link rel='preload' as='image' href='/images/banner-infinity.webp' />
+        <link
           rel='stylesheet'
           href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css'
         />
@@ -184,7 +203,6 @@ function App({ Component, pageProps, router }: Props) {
           name='msapplication-square310x310logo'
           content='mstile-310x310.png'
         />
-
         <title>Backyard Bores</title>
       </Head>
       <GlobalStyle />
