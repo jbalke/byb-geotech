@@ -52,36 +52,31 @@ const CardContent = styled.div`
 
 const CardTitle = styled.h3`
   align-self: flex-start;
+  display: inline;
   font-size: 1.2rem;
   line-height: 1.2;
   position: relative;
-  width: max-content;
   text-shadow: 1px 1px 1px ${Theme.color.black};
+  background: no-repeat 0 100%;
+  background-image: linear-gradient(
+    ${Theme.color.primary},
+    ${Theme.color.primary}
+  );
+  background-size: 100% 3px;
+  transition: background-size 300ms ease;
 
-  &::after {
-    background-color: ${Theme.color.primary};
-    content: '';
-    width: 100%;
-    height: 3px;
-    position: absolute;
-    top: 100%;
-    left: 0;
-  }
-
-  @media (min-width: ${(props) => props.theme.bp.desktopWide}) {
+  @media (min-width: ${(props) => props.theme.bp.desktop}) {
     font-size: 1.5rem;
   }
 
   @media (hover: hover) {
-    &::after {
-      transform: scaleX(0);
-      transition: transform 300ms;
-      transform-origin: left;
+    & {
+      background-size: 0% 3px;
     }
 
-    ${Card}:focus-within &::after,
-    ${Card}:hover &::after {
-      transform: scaleX(1);
+    ${Card}:focus-within &,
+    ${Card}:hover & {
+      background-size: 100% 3px;
     }
   }
 `;
