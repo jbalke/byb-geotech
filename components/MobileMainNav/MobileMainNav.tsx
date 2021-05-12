@@ -159,7 +159,7 @@ function MobileMainNav(props: MobileMainNavProps) {
       animate={isSidebarOpen ? 'open' : 'closed'}
     >
       <MenuContainer variants={mobileNavVariants}>
-        <MenuCloseBtn size='lg' onClick={closeMobileNav} variant='outline'>
+        <MenuCloseBtn onClick={closeMobileNav}>
           <FaTimes />
         </MenuCloseBtn>
         <HomeLinkWrapper>
