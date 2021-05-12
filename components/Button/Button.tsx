@@ -94,8 +94,8 @@ const shared = css<{
     if (variant === 'outline') {
       return css`
         background-color: transparent;
-        color: ${Theme.color.primary};
-        border-color: ${Theme.color.primary};
+        color: ${Theme.color.white};
+        border-color: ${Theme.color.white};
       `;
     }
   }}
@@ -145,8 +145,9 @@ const shared = css<{
   &:focus,
   &:hover {
     background-color: ${({ variant }) =>
-      variant === 'outline' ? Theme.color.primary : Theme.color.primaryDark};
-    color: ${Theme.color.white};
+      variant === 'outline' ? Theme.color.white : Theme.color.primaryDark};
+    color: ${({ variant }) =>
+      variant === 'outline' ? Theme.color.primary : Theme.color.white};
   }
 
   &:disabled {
