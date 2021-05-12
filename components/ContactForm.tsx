@@ -7,15 +7,23 @@ import {
   StyledTextarea,
   SubmitButton,
 } from 'components/styled';
+import { useUIState } from 'context/ui-context';
 import React, { useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
-import isEmail from 'validator/lib/isEmail';
-import isMobilePhone from 'validator/lib/isMobilePhone';
-import { useUIState } from 'context/ui-context';
-import { Theme } from 'styles/theme';
 import { client } from 'utils/client';
+import isEmail from 'validator/lib/isEmail';
+
+const StyledForm = styled.form`
+  font-size: 1rem;
+
+  label {
+    font-family: 'Rubik';
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+`;
 
 const RecaptchaContainer = styled.div`
   display: flex;
@@ -34,9 +42,8 @@ interface IFormData {
 type ContactFormsProps = {};
 
 function ContactForm(props: ContactFormsProps) {
-  const [formStatus, setFormStatus] = useState<
-    'idle' | 'pending' | 'success' | 'fail'
-  >('idle');
+  const [formStatus, setFormStatus] =
+    useState<'idle' | 'pending' | 'success' | 'fail'>('idle');
 
   const { theme } = useUIState();
   const recaptchaRef = useRef<ReCAPTCHA>(null!);
@@ -86,7 +93,7 @@ function ContactForm(props: ContactFormsProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <StyledForm onSubmit={handleSubmit(onSubmit)}>
       <StyledLabel htmlFor='name'>Name</StyledLabel>
       <StyledInput
         id='name'
@@ -176,7 +183,7 @@ function ContactForm(props: ContactFormsProps) {
           theme={theme}
         />
       </RecaptchaContainer>
-    </form>
+    </StyledForm>
   );
 }
 
