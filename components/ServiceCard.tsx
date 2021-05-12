@@ -68,7 +68,7 @@ const CardTitle = styled.h3`
     left: 0;
   }
 
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media (min-width: ${(props) => props.theme.bp.desktop}) {
     font-size: 1.5rem;
   }
 

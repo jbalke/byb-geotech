@@ -14,11 +14,11 @@ const SectionBanner = styled.div`
 `;
 
 const SectionTitleContainer = styled.div`
-  margin: ${Theme.spacing.m} 0;
+  margin: ${Theme.spacing.l} 0;
   position: relative;
 
   @media (min-width: ${(props) => props.theme.bp.tablet}) {
-    margin: ${Theme.spacing.l} 0;
+    margin: ${Theme.spacing.xl} 0;
   }
 `;
 
@@ -45,7 +45,12 @@ const TitleUnderline = styled.div`
 
 const ServiceCards = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  background-color: ${Theme.color.primaryDark};
+  background-image: url('/images/chevron.svg');
+  background-position: 100% 100%;
+  background-size: 43%;
+  background-repeat: no-repeat;
 `;
 
 type ServicesSectionProps = {};
