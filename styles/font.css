@@ -12,7 +12,7 @@
   font-family: 'Public Sans';
   font-display: fallback;
   src: url('/fonts/PublicSans-VariableFont_wght.ttf') format('truetype');
-  font-weight: 400 700;
+  font-weight: 200 700;
   font-display: swap;
 }
 
