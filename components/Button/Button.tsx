@@ -53,7 +53,7 @@ function BaseButton({
 const shared = css<{
   size?: 'sm' | 'lg';
   rounded?: 'sm' | 'md' | 'lg' | 'full' | 'pill';
-  variant?: 'outline';
+  variant?: 'outline' | 'outline-inverse';
   margin?: string;
   shadow?: boolean;
   fullWidth?: boolean;
@@ -61,10 +61,7 @@ const shared = css<{
 }>`
   align-items: center;
   appearance: none;
-  background-color: ${Theme.color.primary};
-  border: ${({ borderWidth }) =>
-    borderWidth ? `${borderWidth ?? '1px'} solid ${Theme.color.white}` : '0'};
-  color: ${Theme.color.white};
+  border-style: solid;
   cursor: pointer;
   justify-content: center;
   letter-spacing: 0.08em;
@@ -90,13 +87,50 @@ const shared = css<{
           display: inline-flex;
         `}
 
-  ${({ variant }) => {
-    if (variant === 'outline') {
-      return css`
-        background-color: transparent;
-        color: ${Theme.color.white};
-        border-color: ${Theme.color.white};
-      `;
+  ${({ variant, borderWidth }) => {
+    switch (variant) {
+      case 'outline-inverse':
+        return css`
+          background-color: transparent;
+          color: ${Theme.color.white};
+          border-color: ${Theme.color.white};
+          border-width: ${borderWidth ? borderWidth : '1px'};
+
+          &:focus,
+          &:hover {
+            background-color: ${Theme.color.white};
+            color: ${Theme.color.primary};
+            border-color: ${Theme.color.primary};
+
+          `;
+
+      case 'outline':
+        return css`
+          background-color: transparent;
+          color: ${Theme.color.primary};
+          border-color: ${Theme.color.primary};
+          border-width: ${borderWidth ? borderWidth : '1px'};
+
+          &:focus,
+          &:hover {
+            background-color: ${Theme.color.white};
+            color: ${Theme.color.primary};
+          }
+        `;
+
+      default:
+        return css`
+          background-color: ${Theme.color.primary};
+          color: ${Theme.color.white};
+          border-color: ${Theme.color.primary};
+          border-width: ${borderWidth ? borderWidth : '0'};
+
+          &:focus,
+          &:hover {
+            background-color: ${Theme.color.primaryDark};
+            color: ${Theme.color.white};
+          }
+        `;
     }
   }}
 
@@ -110,11 +144,11 @@ const shared = css<{
         return css`
           font-size: 1.5rem;
         `;
+      default:
+        return css`
+          font-size: 1.2rem;
+        `;
     }
-
-    return css`
-      font-size: 1.2rem;
-    `;
   }}
 
   ${({ rounded }) => {
@@ -141,14 +175,6 @@ const shared = css<{
         `;
     }
   }}
-
-  &:focus,
-  &:hover {
-    background-color: ${({ variant }) =>
-      variant === 'outline' ? Theme.color.white : Theme.color.primaryDark};
-    color: ${({ variant }) =>
-      variant === 'outline' ? Theme.color.primary : Theme.color.white};
-  }
 
   &:disabled {
     filter: grayscale(70%);
