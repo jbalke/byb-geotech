@@ -106,12 +106,8 @@ function ExtrasSection(props: ExtrasSectionsProps) {
         <CompanyInfo>
           <Title>Backyard Bores Pty Ltd</Title>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
-            facere ipsum aut sint velit accusantium enim fuga quam laboriosam
-            magni cumque quod, repellendus maiores mollitia hic, eum qui
-            blanditiis minus eveniet? Ut, possimus ratione, culpa veniam tempore
-            maxime sed accusamus quis aperiam accusantium nihil dolor quasi
-            sequi assumenda eaque tempora.
+            We have drilled 3x more groundwater monitoring wells in Mackay than
+            any other drilling company.
           </p>
         </CompanyInfo>
         <UsefulLinks>
