@@ -1,7 +1,9 @@
+import Banner from 'components/Banner';
 import SearchForm from 'components/SearchForm';
-import { Wrapper } from 'components/styled';
+import { Disclaimer, Wrapper } from 'components/styled';
 import SiteLayout from 'layouts/SiteLayout';
 import { findNearbyBores } from 'model/bore';
+import { logSearch } from 'model/searchLog';
 import { GetServerSideProps } from 'next';
 import dynamic from 'next/dynamic';
 import React, { useMemo } from 'react';
@@ -9,9 +11,7 @@ import styled from 'styled-components';
 import { Bore } from 'types/bore';
 import { isValidCoordinates, parseCoordinates } from 'utils/geocoding';
 import { obfuscateLocation } from 'utils/geospatial';
-import Banner from '../components/Banner';
 import { MAP_CENTER } from '../constants';
-import { logSearch } from '../model/searchLog';
 
 const MapSearchContainer = styled.div`
   display: grid;
@@ -25,6 +25,10 @@ const MapSearchContainer = styled.div`
   }
 `;
 
+const StyledDisclaimer = styled(Disclaimer)`
+  margin-top: 1rem;
+`;
+
 const ClientRenderedMap = dynamic(() => import('../components/Map'), {
   ssr: false,
   loading: () => <p>loading map...</p>,
@@ -33,11 +37,10 @@ const ClientRenderedMap = dynamic(() => import('../components/Map'), {
 type Props = { mapCenter: [number, number]; bores: Bore[]; query?: boolean };
 
 const BoreSearch = ({ mapCenter, bores, query = false }: Props) => {
-  const camera = useMemo(() => ({ center: mapCenter, zoom: query ? 14 : 11 }), [
-    mapCenter[0],
-    mapCenter[1],
-    bores.length,
-  ]);
+  const camera = useMemo(
+    () => ({ center: mapCenter, zoom: query ? 14 : 11 }),
+    [mapCenter[0], mapCenter[1], bores.length]
+  );
 
   return (
     <>
@@ -47,6 +50,29 @@ const BoreSearch = ({ mapCenter, bores, query = false }: Props) => {
           <SearchForm bores={bores} query={query} />
           <ClientRenderedMap camera={camera} bores={bores} query={query} />
         </MapSearchContainer>
+        <StyledDisclaimer>
+          <h2>Please Note</h2>
+          <p>
+            <strong>Backyard Bores & Drilling respects your privacy</strong> in
+            accordance with the Privacy Act 1998. As such, we have chosen to add
+            a random error to bore locations so that our data can not be used to
+            identify an individual address with a bore.
+          </p>
+          <p>
+            <strong>
+              Search results are based on or contains data provided by the State
+              of Queensland (2021)
+            </strong>
+            . In consideration of the State permitting the use of this data you
+            acknowledge and agree that the State gives no warranty in relation
+            to the data (including accuracy, reliability, completeness,
+            currency, or suitability) and accepts no liability (including
+            without limitation, liability in negligence) for any loss, damage or
+            costs (including consequential damage) relating to any use of the
+            data. Data must not be used for direct marketing or be used in
+            breach of privacy laws.
+          </p>
+        </StyledDisclaimer>
       </Wrapper>
     </>
   );
