@@ -30,16 +30,32 @@ export const Wrapper = styled.div<{
   maxWidth?: string;
   main?: boolean;
   gap?: string;
+  padding?: 'xl' | 'xxl';
 }>`
   display: flex;
   flex-flow: ${({ row }) => (row ? 'row wrap' : 'column')};
   gap: ${({ gap }) => gap ?? '0'};
   margin: 0 auto;
   max-width: ${({ maxWidth }) => maxWidth ?? Theme.width.max};
-  padding: ${Theme.spacing.xl} ${Theme.spacing.l};
   position: relative;
   width: 100%;
 
+  ${({ padding }) => {
+    switch (padding) {
+      case 'xl':
+        return css`
+          padding: ${Theme.spacing.xl} ${Theme.spacing.l};
+        `;
+      case 'xxl':
+        return css`
+          padding: ${Theme.spacing.xxl} ${Theme.spacing.l};
+        `;
+      default:
+        return css`
+          padding: ${Theme.spacing.l} ${Theme.spacing.l};
+        `;
+    }
+  }}
   ${({ main }) =>
     main &&
     css`
