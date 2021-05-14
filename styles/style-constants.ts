@@ -13,6 +13,7 @@ export const LIGHT_THEME = {
   textAside: '#383838',
   primary: '#006EE5',
   primaryLight: '#7EAFDD',
+  primaryLightest: '#cae1f6',
   primaryDark: '#00458a',
   highlight: '#E133EA',
   link: '#006EE5',
@@ -49,6 +50,7 @@ export const DARK_THEME = {
   textAside: '#eee',
   primary: '#006EE5',
   primaryLight: '#7EAFDD',
+  primaryLightest: '#cae1f6',
   primaryDark: '#00458a',
   highlight: '#E133EA',
   link: '#57a8ff',
@@ -80,7 +82,8 @@ export const SPACING = {
   m: 8,
   l: 16,
   xl: 32,
+  xxl: 48,
   spacer: 28,
 } as const;
 
-export const WIDTH = { max: '1080px', mobileMenuMax: '620px' } as const;
+export const WIDTH = { max: '1200px', mobileMenuMax: '620px' } as const;

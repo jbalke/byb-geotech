@@ -12,7 +12,7 @@ const SectionBanner = styled.div`
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
-  padding: ${Theme.spacing.l};
+  padding: ${Theme.spacing.xl};
 `;
 
 const SectionTitleContainer = styled.div`
@@ -40,7 +40,7 @@ const SectionSubText = styled.p`
   padding: 1em;
   border: 1px solid ${Theme.color.white};
   color: ${Theme.color.white};
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 `;
 
 const TitleUnderline = styled.div`
@@ -48,8 +48,6 @@ const TitleUnderline = styled.div`
   height: 2px;
   width: 50%;
   margin: ${Theme.spacing.m} auto 0;
-  top: 100%;
-  left: 50%;
 `;
 
 const ServiceCards = styled.div`
@@ -60,6 +58,10 @@ const ServiceCards = styled.div`
   background-position: 100% 100%;
   background-size: 43%;
   background-repeat: no-repeat;
+
+  @media screen and (min-width: ${(props) => props.theme.bp.tablet}) {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
 `;
 
 type ServicesSectionProps = {};
@@ -72,15 +74,13 @@ function ServicesSection(props: ServicesSectionProps) {
           <SectionTitle>Services</SectionTitle>
           <TitleUnderline />
         </SectionTitleContainer>
-        <SectionSubText>
+        {/* <SectionSubText>
           We understand that you may not have a lot of experience with water
           bores or with troubleshooting pumps and that's why we created the
           individual Learn More pages below and our Help and Advice pages with
           lots of information, pictures, a video, and answers to your common
-          questions. Included on those pages is what is required from you and us
-          prior to, on the day and after drilling or cleaning, click appropriate
-          Learn More below or go straight to our Help & Advice page.
-        </SectionSubText>
+          questions.
+        </SectionSubText> */}
       </SectionBanner>
       <ServiceCards>
         <ServiceCard
@@ -121,6 +121,21 @@ function ServicesSection(props: ServicesSectionProps) {
           <p>
             Learn More for a full list of our Geotech drilling products
             available.
+          </p>
+        </ServiceCard>
+        <ServiceCard
+          title='Help & Advice'
+          href='/help'
+          imageSrc='/images/geotech.webp'
+        >
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
+            assumenda debitis molestiae soluta minus deleniti odit iste suscipit
+            officiis cum.
+          </p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Reprehenderit, cumque.
           </p>
         </ServiceCard>
       </ServiceCards>
