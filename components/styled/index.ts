@@ -168,3 +168,10 @@ export const InputSubtext = styled.span`
   line-height: 130%;
   letter-spacing: 0.05em;
 `;
+
+export const Disclaimer = styled.section`
+  border: 1px solid ${Theme.color.primary};
+  color: ${Theme.color.textAside};
+  font-size: 0.8rem;
+  padding: 1em;
+`;
