@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Theme } from '../styles/theme';
+import { Theme } from 'styles/theme';
+import Head from 'next/head';
 
 const StyledBanner = styled.div<{ imageSrc: string }>`
   align-items: center;
@@ -52,9 +53,14 @@ function Banner({
   image = '/images/banner-infinity.webp',
 }: BannerProps) {
   return (
-    <StyledBanner imageSrc={image}>
-      <h1>{title}</h1>
-    </StyledBanner>
+    <>
+      <Head>
+        <title>{title} | Backyard Bores</title>
+      </Head>
+      <StyledBanner imageSrc={image}>
+        <h1>{title}</h1>
+      </StyledBanner>
+    </>
   );
 }
 
