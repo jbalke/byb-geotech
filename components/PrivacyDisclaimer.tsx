@@ -1,14 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Theme } from 'styles/theme';
 import { ExternalLink } from './Link';
-
-const Disclaimer = styled.section`
-  border: 1px solid ${Theme.color.primary};
-  color: ${Theme.color.textAside};
-  font-size: 0.8rem;
-  padding: 1em;
-`;
+import { Disclaimer } from './styled';
 
 type PrivacyDisclaimerProps = { className?: string };
 

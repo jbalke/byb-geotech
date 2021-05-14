@@ -8,8 +8,8 @@ import styled from 'styled-components';
 import ContactForm from 'components/ContactForm';
 import PrivacyDisclaimer from 'components/PrivacyDisclaimer';
 import { EMAIL, PHONE } from '../constants';
-import CallLink from '../components/CallLink';
-import Banner from '../components/Banner';
+import CallLink from 'components/CallLink';
+import Banner from 'components/Banner';
 
 const StyledPrivacyDisclaimer = styled(PrivacyDisclaimer)`
   margin-top: 0;
