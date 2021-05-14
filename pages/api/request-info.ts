@@ -18,7 +18,7 @@ async function sendRequestInfoEmail({
 }: RequestInfoEmail) {
   const emailOptions: Mail.Options = {
     to: `${EMAIL.MANAGER}`,
-    subject: 'Bore Request For Information',
+    subject: `Backyard Bores Request For Information at ${address}`,
     text: `Customer: ${name}
 Email: ${email}
 Address: ${address}

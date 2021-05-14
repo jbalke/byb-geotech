@@ -56,16 +56,15 @@ async function sendBoreSearchEmail({
   }
 
   const emailOptions: Mail.Options = {
-    from: `${EMAIL.INFO}`,
-    to: `${name} - ${email}`,
+    from: { name: 'Backyard Bores', address: EMAIL.INFO },
+    to: `${email}`,
     replyTo: `${EMAIL.SALES}`,
     bcc: `${EMAIL.INFO}`,
-    subject: 'Bore Search Request',
+    subject: `Backyard Bores Search at ${address.label}`,
     text: `Hi ${name},\n
 Here's the report you requested on known bores in your area.\n
 Address: ${address.label}
 Phone: ${phone}\n
-BORES (${bores.length})\n
 ${formatField('distance', 'DISTANCE (m)')}${formatField(
       'depth',
       'DEPTH (m)'
