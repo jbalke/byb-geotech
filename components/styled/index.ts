@@ -43,7 +43,7 @@ export const Wrapper = styled.div<{
   ${({ main }) =>
     main &&
     css`
-      min-height: 100vh;
+      min-height: 50vh;
     `}
 `;
 
