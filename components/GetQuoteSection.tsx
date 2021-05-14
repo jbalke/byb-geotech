@@ -17,12 +17,25 @@ const Container = styled.section`
 
 const Layout = styled.div`
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto;
   place-items: center;
-  gap: 2rem;
-`;
+  gap: 1rem;
 
-const Underline = styled.span``;
+  h2 {
+    text-align: center;
+  }
+
+  @media screen and (min-width: ${(props) => props.theme.bp.tablet}) {
+    & {
+      grid-template-columns: auto auto;
+      gap: 2rem;
+
+      h2 {
+        text-align: unset;
+      }
+    }
+  }
+`;
 
 type GetQuoteSectionProps = {};
 
@@ -43,8 +56,9 @@ function GetQuoteSection(props: GetQuoteSectionProps) {
           </div>
           <div>
             <StyledLinkButton
-              variant='outline'
-              borderWidth='1px'
+              size='lg'
+              variant='outline-inverse'
+              borderWidth='2px'
               href='/request-a-quote'
             >
               Request A Quote
