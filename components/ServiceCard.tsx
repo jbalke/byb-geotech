@@ -17,12 +17,17 @@ const Card = styled.article<{ imageSrc?: string }>`
   min-height: 25vh;
 
   @media (min-width: ${(props) => props.theme.bp.tablet}) {
-    padding: 5rem 2rem;
+    padding: 3rem 2rem;
   }
 `;
 
 const CardContent = styled.div`
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
   color: ${Theme.color.white};
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.07em;
   padding: 1.5rem;
@@ -40,13 +45,19 @@ const CardContent = styled.div`
     right: 0;
     bottom: 0;
 
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     transition: ${Theme.color.transition};
   }
 
   :focus-within::before,
   :hover::before {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  @media screen and (min-width: ${(props) => props.theme.bp.tablet}) {
+    & {
+      font-size: 1.2rem;
+    }
   }
 `;
 
@@ -81,6 +92,11 @@ const CardTitle = styled.h3`
   }
 `;
 
+const LearnMoreButton = styled(StyledLinkButton)`
+  align-self: flex-start;
+  margin-top: 1rem;
+`;
+
 type ServiceCardProps = {
   title: string;
   children: React.ReactNode;
@@ -96,12 +112,14 @@ function ServiceCard({ title, children, href, imageSrc }: ServiceCardProps) {
         src={imageSrc}
         layout='fill'
         objectFit='cover'
-        quality={60}
+        quality={50}
       />
       <CardContent>
-        <CardTitle>{title}</CardTitle>
-        {children}
-        <StyledLinkButton href={href}>Learn More</StyledLinkButton>
+        <div>
+          <CardTitle>{title}</CardTitle>
+          {children}
+        </div>
+        <LearnMoreButton href={href}>Learn More</LearnMoreButton>
       </CardContent>
     </Card>
   );
