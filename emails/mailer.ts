@@ -11,7 +11,6 @@ if (process.env.NODE_ENV === 'production') {
       user: process.env.MAIL_USER!,
       pass: process.env.MAIL_PASSWORD!,
     },
-    logger: true,
   };
 } else {
   mailConfig = {

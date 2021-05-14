@@ -36,11 +36,13 @@ export default async function handler(
       return res.json({ message: 'recaptcha failed' });
     }
 
-    const emailRes = await sendContactEmail(req.body);
+    try {
+      const emailRes = await sendContactEmail(req.body);
 
-    if (emailRes.messageId) {
-      return res.status(200).json({ message: 'message sent' });
-    }
+      if (emailRes.messageId) {
+        return res.status(200).json({ message: 'message sent' });
+      }
+    } catch (error) {}
 
     return res.status(500).json({ message: 'message not sent' });
   }
