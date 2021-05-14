@@ -42,16 +42,15 @@ type GetQuoteSectionProps = {};
 function GetQuoteSection(props: GetQuoteSectionProps) {
   return (
     <Container>
-      <Wrapper>
+      <Wrapper padding='xxl'>
         <Layout>
           <div>
             <h2>
               Request a <span>FREE Quote</span>!
             </h2>
             <p>
-              If you are looking for water to keep the yard green, top up the
-              pool, or reduce the high cost of town water, contact us today for
-              an obligation-free quote!
+              We can help you with all your drilling needs. We also supply and
+              repair pumps. Contact us today for an obligation-free quote!
             </p>
           </div>
           <div>
