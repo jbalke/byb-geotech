@@ -119,7 +119,7 @@ function ServiceCard({ title, children, href, imageSrc }: ServiceCardProps) {
           <CardTitle>{title}</CardTitle>
           {children}
         </div>
-        <LearnMoreButton href={href}>Learn More</LearnMoreButton>
+        <LearnMoreButton href={href}>Learn more</LearnMoreButton>
       </CardContent>
     </Card>
   );
