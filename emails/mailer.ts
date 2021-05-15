@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer';
 import Mail from 'nodemailer/lib/mailer';
+import { EMAIL } from '../constants';
 
 let mailConfig;
 if (process.env.NODE_ENV === 'production') {
@@ -28,6 +29,7 @@ const transporter = nodemailer.createTransport(mailConfig);
 
 export async function sendEmail(options: Mail.Options) {
   const emailOptions: Mail.Options = {
+    from: { name: 'Website', address: EMAIL.INFO },
     ...options,
   };
 
