@@ -14,7 +14,7 @@ interface ContactEmail {
 async function sendContactEmail({ name, email, message, phone }: ContactEmail) {
   const emailOptions: Mail.Options = {
     to: `${EMAIL.MANAGER}`,
-    subject: 'Contact Form',
+    subject: `Backyard Bores Contact Form from ${name}`,
     text: `Customer: ${name}
 Email: ${email}
 Phone: ${phone}
