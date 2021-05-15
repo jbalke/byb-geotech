@@ -9,7 +9,7 @@ const WarningContainer = styled.div`
   font-size: 1rem;
   margin-top: 5px;
 `;
-const StyledMessage = styled.span`
+const StyledMessage = styled.span.attrs((props) => ({ role: 'alert' }))`
   font-weight: 600;
   margin-left: 5px;
 `;

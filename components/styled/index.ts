@@ -74,7 +74,7 @@ export const UnstyledLink = styled.a`
   }
 `;
 
-export const Message = styled.div<{
+export const Message = styled.div.attrs((props) => ({ role: 'alert' }))<{
   type?: 'success' | 'danger' | 'info' | 'warning';
 }>`
   ${({ type }) => {
