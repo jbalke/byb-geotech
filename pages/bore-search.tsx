@@ -12,6 +12,7 @@ import { Bore } from 'types/bore';
 import { isValidCoordinates, parseCoordinates } from 'utils/geocoding';
 import { obfuscateLocation } from 'utils/geospatial';
 import { MAP_CENTER } from '../constants';
+import { debug } from '../utils';
 
 const MapSearchContainer = styled.div`
   display: grid;
@@ -111,7 +112,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         },
       };
     } catch (error) {
-      console.error(error);
+      debug(error);
     }
   }
 

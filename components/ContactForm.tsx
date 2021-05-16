@@ -14,6 +14,7 @@ import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import { client } from 'utils/client';
 import isEmail from 'validator/lib/isEmail';
+import { debug } from '../utils';
 
 const StyledForm = styled.form`
   font-size: 1rem;
@@ -32,7 +33,7 @@ const RecaptchaContainer = styled.div`
   align-self: center;
 `;
 
-interface IFormData {
+interface FormData {
   name: string;
   email: string;
   phone: string;
@@ -52,7 +53,7 @@ function ContactForm(props: ContactFormsProps) {
     register,
     handleSubmit,
     formState: { errors, isValid },
-  } = useForm<IFormData>({
+  } = useForm<FormData>({
     mode: 'all',
     defaultValues: {
       name: '',
@@ -62,7 +63,7 @@ function ContactForm(props: ContactFormsProps) {
     },
   });
 
-  const onSubmit = async (data: IFormData) => {
+  const onSubmit = async (data: FormData) => {
     setFormStatus('pending');
     const token = await recaptchaRef.current.executeAsync();
 
@@ -78,7 +79,7 @@ function ContactForm(props: ContactFormsProps) {
       });
       setFormStatus('success');
     } catch (error) {
-      console.error(error.message);
+      debug(error.message);
 
       setFormStatus('fail');
     }

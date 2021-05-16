@@ -1,6 +1,7 @@
 import { ObjectId } from 'bson';
 import { connectDB } from 'middleware/mongodb';
 import { Point } from 'types/geojson-types';
+import { debug } from '../utils';
 
 interface SearchMeta {
   IPAddress: string;
@@ -26,6 +27,6 @@ export async function logSearch(data: SearchMeta) {
   try {
     await searchLog.insertOne(document);
   } catch (error) {
-    console.error(error);
+    debug(error);
   }
 }

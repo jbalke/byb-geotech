@@ -27,6 +27,7 @@ import { FeatureCollection } from 'types/geojson-types';
 import { client } from 'utils/client';
 import { geocodeAPI } from 'utils/geocoding';
 import isEmail from 'validator/lib/isEmail';
+import { debug } from '../../utils';
 
 const FormContainer = styled.div`
   display: flex;
@@ -59,7 +60,7 @@ type Option = {
   label: string;
 };
 
-interface IFormData {
+interface FormData {
   name: string;
   email: string;
   address: NestedValue<Option>;
@@ -69,9 +70,8 @@ interface IFormData {
 type SearchFormProps = { bores?: Bore[]; query?: boolean };
 
 function SearchForm({ bores, query = false }: SearchFormProps) {
-  const [formStatus, setFormStatus] = useState<
-    'idle' | 'pending' | 'success' | 'fail'
-  >('idle');
+  const [formStatus, setFormStatus] =
+    useState<'idle' | 'pending' | 'success' | 'fail'>('idle');
 
   const { theme } = useUIState();
   const recaptchaRef = useRef<ReCAPTCHA>(null!);
@@ -84,7 +84,7 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
     setValue,
     getValues,
     formState: { errors, isValid, isSubmitSuccessful },
-  } = useForm<IFormData>({
+  } = useForm<FormData>({
     mode: 'all',
     defaultValues: {
       name: '',
@@ -123,7 +123,7 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
     }
   };
 
-  const onSubmit: SubmitHandler<IFormData> = async (data: IFormData) => {
+  const onSubmit: SubmitHandler<FormData> = async (data: FormData) => {
     setFormStatus('pending');
     const token = await recaptchaRef.current.executeAsync();
 
@@ -139,18 +139,15 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
       });
       setFormStatus('success');
     } catch (error) {
-      console.error(error.message);
+      debug(error.message);
 
       setFormStatus('fail');
     }
   };
 
-  const onError: SubmitErrorHandler<IFormData> = (errors, e) =>
-    console.error(errors, e);
-
   return (
     <>
-      <StyledForm onSubmit={handleSubmit(onSubmit, onError)}>
+      <StyledForm onSubmit={handleSubmit(onSubmit)}>
         <label id='addressLabel'>Address</label>
         <Controller
           name='address'
