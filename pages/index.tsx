@@ -71,7 +71,8 @@ const HeroSubText = styled.p`
   min-width: 700px;
 
   @supports (font-variation-settings: normal) {
-    font-family: 'Public Sans Italic';
+    font-family: 'Public Sans';
+    font-style: italic;
     font-weight: 600;
   }
 

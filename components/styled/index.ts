@@ -177,7 +177,8 @@ export const SubmitButton = styled(Button).attrs({ type: 'submit' })`
 
 export const InputSubtext = styled.span`
   display: inline-block;
-  font-family: 'Public Sans Italic';
+  font-family: 'Public Sans';
+  font-style: italic;
   font-size: 0.75em;
   font-weight: 600;
   color: ${Theme.color.grey};

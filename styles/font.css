@@ -13,14 +13,16 @@
   font-display: fallback;
   src: url('/fonts/PublicSans-VariableFont_wght.ttf') format('truetype');
   font-weight: 200 700;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Public Sans Italic';
+  font-family: 'Public Sans';
   font-display: fallback;
   src: url('/fonts/PublicSans-Italic-VariableFont_wght.ttf') format('truetype');
   font-weight: 400 700;
+  font-style: italic;
   font-display: swap;
 }
 

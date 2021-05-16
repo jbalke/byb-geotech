@@ -14,7 +14,8 @@ export type Question = {
 };
 
 const Subtext = styled.p`
-  font-family: 'Public Sans Italic';
+  font-family: 'Public Sans';
+  font-style: italic;
   font-size: 0.8em;
   margin-top: 2rem;
   line-height: 130%;
