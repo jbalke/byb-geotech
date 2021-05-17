@@ -11,6 +11,7 @@ const Card = styled.article<{ imageSrc?: string }>`
   background-size: cover; */
 
   display: flex;
+  background-color: ${Theme.color.primaryDark};
   flex-flow: column nowrap;
   position: relative;
   padding: 2rem 1rem;
