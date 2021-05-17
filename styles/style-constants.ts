@@ -28,8 +28,8 @@ export const LIGHT_THEME = {
   warningText: '#5c5600',
   success: '#8ef282',
   successText: '#126808',
-  boxShadow: 'none',
-  //'0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1)',
+  boxShadow:
+    '0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1)',
   navDropdownBoxShadow: 'none',
   //'0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1)',
   grey: '#4a4a4a',

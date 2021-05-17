@@ -78,7 +78,7 @@ function ServicesSection(props: ServicesSectionProps) {
       <ServiceCards>
         <ServiceCard
           title='Bore Drilling & Cleaning'
-          href='/services/drilling'
+          href='/bores'
           imageSrc='/images/backyard-bore.webp'
         >
           <p>
