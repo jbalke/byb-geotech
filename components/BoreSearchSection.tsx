@@ -5,7 +5,7 @@ import { StyledLinkButton } from './Button';
 import { Wrapper } from './styled';
 
 const Container = styled.section`
-  background-color: ${Theme.color.primaryDark};
+  background-color: ${Theme.color.darkGrey};
   color: ${Theme.color.white};
   font-size: 24px;
 
@@ -57,6 +57,7 @@ function BoreSearchSection(props: Props) {
             <StyledLinkButton
               size='lg'
               variant='outline-inverse'
+              bgColor={Theme.color.darkGrey}
               borderWidth='2px'
               href='/bore-search'
             >

@@ -57,6 +57,7 @@ function GetQuoteSection(props: GetQuoteSectionProps) {
             <StyledLinkButton
               size='lg'
               variant='outline-inverse'
+              bgColor={Theme.color.primaryDark}
               borderWidth='2px'
               href='/request-a-quote'
             >

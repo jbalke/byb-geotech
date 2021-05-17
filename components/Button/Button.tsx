@@ -54,6 +54,7 @@ const shared = css<{
   size?: 'sm' | 'lg';
   rounded?: 'sm' | 'md' | 'lg' | 'full' | 'pill';
   variant?: 'outline' | 'outline-inverse';
+  bgColor?: string;
   margin?: string;
   shadow?: boolean;
   fullWidth?: boolean;
@@ -87,7 +88,7 @@ const shared = css<{
           display: inline-flex;
         `}
 
-  ${({ variant, borderWidth }) => {
+  ${({ variant, borderWidth, bgColor }) => {
     switch (variant) {
       case 'outline-inverse':
         return css`
@@ -99,8 +100,8 @@ const shared = css<{
           &:focus,
           &:hover {
             background-color: ${Theme.color.white};
-            color: ${Theme.color.primary};
-            border-color: ${Theme.color.primary};
+            color: ${bgColor ? bgColor : Theme.color.primary};
+            border-color: ${Theme.color.white};
 
           `;
 
