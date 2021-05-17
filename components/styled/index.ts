@@ -190,5 +190,6 @@ export const Disclaimer = styled.section`
   border: 1px solid ${Theme.color.primary};
   color: ${Theme.color.textAside};
   font-size: 0.8rem;
+  line-height: 1.2em;
   padding: 1em;
 `;
