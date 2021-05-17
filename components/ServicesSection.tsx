@@ -74,13 +74,6 @@ function ServicesSection(props: ServicesSectionProps) {
           <SectionTitle>Services</SectionTitle>
           <TitleUnderline />
         </SectionTitleContainer>
-        {/* <SectionSubText>
-          We understand that you may not have a lot of experience with water
-          bores or with troubleshooting pumps and that's why we created the
-          individual Learn More pages below and our Help and Advice pages with
-          lots of information, pictures, a video, and answers to your common
-          questions.
-        </SectionSubText> */}
       </SectionBanner>
       <ServiceCards>
         <ServiceCard
@@ -93,6 +86,9 @@ function ServicesSection(props: ServicesSectionProps) {
             pool, or reduce the high cost of town water, we can come and drill
             for water in your backyard (or front yard), saving you money.
           </p>
+          <p>
+            What do you need to prepare before a bore can be drilled or cleaned?
+          </p>
         </ServiceCard>
         <ServiceCard
           title='Pump Supply & Repairs'
@@ -101,13 +97,11 @@ function ServicesSection(props: ServicesSectionProps) {
         >
           <p>
             Do you require a new pump (surface, pressure, jet, submersible,
-            solar)? Has your existing pump lost water pressure, is running but
-            no water is coming out, or it's pumping a lot of sand? We can help.
+            solar)?
           </p>
-          <p>
-            Learn More for some tips and instructions for troubleshooting your
-            pump.
-          </p>
+          <p>Do you need a new pressure tank or pressure switch?</p>
+          <p>Is your pump in need of repairs?</p>
+          <p>We can help.</p>
         </ServiceCard>
         <ServiceCard
           title='Geotechnical Drilling'
@@ -126,17 +120,16 @@ function ServicesSection(props: ServicesSectionProps) {
         <ServiceCard
           title='Help & Advice'
           href='/help'
-          imageSrc='/images/geotech.webp'
+          imageSrc='/images/question.svg'
         >
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            assumenda debitis molestiae soluta minus deleniti odit iste suscipit
-            officiis cum.
+            How to troubleshoot bore and/or pump issues. Are you pumping a lot
+            of fine sand?
           </p>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Reprehenderit, cumque.
-          </p>
+          <p>What is PFAS/PFOA?</p>
+          <p>Flooded pump/bore?</p>
+          <p>Is the council putting meters on your bores? </p>
+          <p>We can help.</p>
         </ServiceCard>
       </ServiceCards>
     </Container>
