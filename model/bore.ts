@@ -63,6 +63,7 @@ export const reportNearbyBores = async ({
           distanceField: 'distance',
           maxDistance: _radius,
           spherical: false,
+          query: { depth: { $exists: true } },
         },
       },
     ])

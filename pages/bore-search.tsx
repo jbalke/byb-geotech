@@ -35,9 +35,19 @@ const ClientRenderedMap = dynamic(() => import('../components/Map'), {
   loading: () => <p>loading map...</p>,
 });
 
-type Props = { mapCenter: [number, number]; bores: Bore[]; query?: boolean };
+type Props = {
+  mapCenter: [number, number];
+  bores: Bore[];
+  knownBoresCount: number;
+  query?: boolean;
+};
 
-const BoreSearch = ({ mapCenter, bores, query = false }: Props) => {
+const BoreSearch = ({
+  mapCenter,
+  bores,
+  knownBoresCount,
+  query = false,
+}: Props) => {
   const camera = useMemo(
     () => ({ center: mapCenter, zoom: query ? 14 : 11 }),
     [mapCenter[0], mapCenter[1], bores.length]
@@ -48,7 +58,11 @@ const BoreSearch = ({ mapCenter, bores, query = false }: Props) => {
       <Banner title='Bore Search' />
       <Wrapper>
         <MapSearchContainer>
-          <SearchForm bores={bores} query={query} />
+          <SearchForm
+            bores={bores}
+            knownBoresCount={knownBoresCount}
+            query={query}
+          />
           <ClientRenderedMap camera={camera} bores={bores} query={query} />
         </MapSearchContainer>
         <StyledDisclaimer>
@@ -104,10 +118,16 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         ...b,
         location: obfuscateLocation(b.location),
       }));
+
+      const knownBoresCount = bores.filter((b) => {
+        return !!b.depth;
+      }).length;
+
       return {
         props: {
           mapCenter: parseCoordinates(lng as string, lat as string)!,
           bores: JSON.parse(JSON.stringify(obfuscatedBores)), //https://github.com/vercel/next.js/issues/11993
+          knownBoresCount,
           query: true,
         },
       };
@@ -120,6 +140,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     props: {
       mapCenter: MAP_CENTER,
       bores: [],
+      knownBoresCount: 0,
       query: false,
     },
   };

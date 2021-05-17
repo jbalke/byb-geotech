@@ -67,9 +67,17 @@ interface FormData {
   phone: string;
 }
 
-type SearchFormProps = { bores?: Bore[]; query?: boolean };
+type SearchFormProps = {
+  bores?: Bore[];
+  knownBoresCount: number;
+  query?: boolean;
+};
 
-function SearchForm({ bores, query = false }: SearchFormProps) {
+function SearchForm({
+  bores,
+  knownBoresCount,
+  query = false,
+}: SearchFormProps) {
   const [formStatus, setFormStatus] =
     useState<'idle' | 'pending' | 'success' | 'fail'>('idle');
 
@@ -180,8 +188,8 @@ function SearchForm({ bores, query = false }: SearchFormProps) {
             <div>
               <Message type='info'>
                 Would you like additional information on the{' '}
-                <strong>{bores.length} bores</strong> in your area? Provide your
-                contact details below and we'll email you a report!
+                <strong>{knownBoresCount} bores</strong> in your area? Provide
+                your contact details below and we'll email you a report!
               </Message>
               <StyledLabel htmlFor='name'>Name</StyledLabel>
               <StyledInput
