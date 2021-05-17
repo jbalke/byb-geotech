@@ -36,7 +36,7 @@ function WhyUsSection(props: WhyUsProps) {
     <Container>
       <Image
         alt='Drilling'
-        src='/images/why-us.jpg'
+        src='/images/why-us.png'
         layout='fill'
         objectFit='cover'
         quality={50}
