@@ -4,9 +4,8 @@ import { Point } from 'types/geojson-types';
 import { debug } from '../utils';
 
 interface SearchMeta {
-  IPAddress: string;
+  IPAddress?: string;
   location: Point;
-  searchAddress?: string;
 }
 
 interface SearchMetaWithTimeStamp extends SearchMeta {
@@ -16,6 +15,10 @@ interface SearchMetaWithTimeStamp extends SearchMeta {
 
 export async function logSearch(data: SearchMeta) {
   const { client, db } = await connectDB();
+
+  if (process.env.NODE_ENV !== 'production') {
+    data.IPAddress = 'dev';
+  }
 
   const searchLog = db.collection<SearchMetaWithTimeStamp>('search_log');
 

@@ -107,7 +107,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       });
 
       await logSearch({
-        IPAddress: context.req.socket.localAddress,
+        IPAddress: context.req.headers['x-forwarded-for'] as string,
         location: {
           type: 'Point',
           coordinates: [Number(lng as string), Number(lat as string)],
