@@ -35,16 +35,6 @@ export const navLinks: MenuItem[] = [
         title: 'Home Owners',
         pages: [
           {
-            title: 'Prior to drilling a bore',
-            Icon: FaWater,
-            href: '/home-owners/before-drilling',
-          },
-          {
-            title: 'What to expect on drilling day',
-            Icon: FaWater,
-            href: '/home-owners/drilling-day',
-          },
-          {
             title: 'Bore maintenance',
             Icon: FaWater,
             href: '/home-owners/bore-maintenance',
