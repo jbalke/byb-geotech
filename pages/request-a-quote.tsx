@@ -26,6 +26,15 @@ import { Theme } from 'styles/theme';
 import { client } from 'utils/client';
 import isEmail from 'validator/lib/isEmail';
 import { debug } from '../utils';
+import PrivacyDisclaimer from 'components/PrivacyDisclaimer';
+
+const StyledPrivacyDisclaimer = styled(PrivacyDisclaimer)`
+  margin-top: 0;
+
+  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+    margin-top: 2rem;
+  }
+`;
 
 type Option = {
   label: string;
@@ -300,6 +309,7 @@ function RequestQuote(props: Props) {
             </StyledForm>
           </>
         )}
+        <StyledPrivacyDisclaimer />
       </Wrapper>
     </>
   );
