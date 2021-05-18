@@ -29,8 +29,8 @@ const questions: Question[] = [
     panel: (
       <>
         <p>
-          Backyard Bores and Geotech Drilling have several licensed drillers and
-          we work to relevant government requirements.
+          <strong>Backyard Bores and Geotech Drilling</strong> have several
+          licensed drillers and we work to relevant government requirements.
         </p>
         <p>
           If you are getting a quote from any driller, ask for their licence
