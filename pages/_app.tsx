@@ -32,12 +32,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background: #0052D4;  /* fallback for old browsers */
-    background: linear-gradient(to right, #6FB1FC, #4364F7, #0052D4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    /* background-image: url('/water.webp');
-    background-repeat: repeat;
-    background-attachment: fixed;
-    background-size: cover; */
     font-family: sans-serif;
     line-height: 150%;
   }
@@ -49,8 +43,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3 {
+    color: ${Theme.color.primary};
     font-family: 'Poppins';
     line-height: 1;
+    margin-bottom: .5em;
   }
 
   @supports (font-variation-settings: normal) {
@@ -71,6 +67,11 @@ const GlobalStyle = createGlobalStyle`
     list-style-type: none;
     padding: 0;
     margin: 0;
+  }
+
+  li::marker {
+    color: ${Theme.color.primary};
+    font-weight: 600;
   }
 
   @media (prefers-reduced-motion: reduce) {
