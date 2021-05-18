@@ -1,4 +1,5 @@
 import AboutSection from 'components/AboutSection';
+import BoreSearchSection from 'components/BoreSearchSection';
 import GetQuoteSection from 'components/GetQuoteSection';
 import ServicesSection from 'components/ServicesSection';
 import WhyUsSection from 'components/WhyUsSection';
@@ -29,6 +30,7 @@ const Hero = styled.section`
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 
   h1 {
+    color: ${Theme.color.white};
     font-size: 2rem;
     font-weight: 500;
     margin: 0;
@@ -108,6 +110,7 @@ function Home() {
       <ServicesSection />
       <GetQuoteSection />
       <WhyUsSection />
+      <BoreSearchSection />
     </>
   );
 }
