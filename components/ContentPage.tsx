@@ -105,7 +105,7 @@ function ContentPage({ title, relatedPages, children }: indexProps) {
   return (
     <>
       <Banner title={title} />
-      <Wrapper main>
+      <Wrapper main padding='xl'>
         <ContentLayout>
           <PageContent>{children}</PageContent>
           <RelatedPages>
