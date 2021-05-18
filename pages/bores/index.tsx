@@ -1,172 +1,103 @@
+import ContentPage from 'components/ContentPage';
+import { StyledLink } from 'components/Link';
+import StyledNextLink from 'components/Link/StyledNextLink';
+import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 import styled from 'styled-components';
-import Banner from '../../components/Banner';
-import StyledNextLink from '../../components/Link/StyledNextLink';
-import { Wrapper } from '../../components/styled';
-import SiteLayout from '../../layouts/SiteLayout';
-import { Theme } from '../../styles/theme';
+import { StyledLinkButton } from '../../components/Button';
+import { PHONE } from '../../constants';
 
-const ContentLayout = styled.div`
-  display: block;
-  width: 100%;
+const PageSection = styled.section``;
 
-  @media screen and (min-width: ${(props) => props.theme.bp.tablet}) {
-    & {
-      display: grid;
-      grid-template-columns: 3fr 1fr;
-      gap: 1.5rem;
-    }
-  }
-`;
+type Props = {};
 
-const PageContent = styled.article`
-  display: grid;
-  grid-template-columns: 1fr min(65ch, 100%) 1fr;
-
-  & > * {
-    grid-column: 2;
-  }
-`;
-
-const RelatedPages = styled.aside`
-  border: 2px solid ${Theme.color.primaryLight};
-  color: ${Theme.color.textAside};
-  font-size: 12px;
-  margin-top: 2rem;
-  padding: ${Theme.spacing.l};
-
-  h2 {
-    color: ${Theme.color.link};
-    font-weight: 200;
-    margin-bottom: 0.5em;
-  }
-
-  ul {
-    display: flex;
-    justify-content: center;
-  }
-
-  li {
-    margin-left: 1em;
-  }
-
-  li::after {
-    content: ', ';
-  }
-
-  li:last-of-type::after {
-    content: '';
-  }
-
-  @media screen and (min-width: ${(props) => props.theme.bp.tablet}) {
-    & {
-      align-self: start;
-      box-shadow: ${Theme.color.boxShadow};
-      margin-right: auto;
-      position: sticky;
-      margin-top: 0;
-      top: ${Theme.spacing.l};
-    }
-
-    ul {
-      display: block;
-      list-style: disc;
-      padding-left: 1em;
-    }
-
-    li::marker {
-      color: ${Theme.color.link};
-      font-size: 1.2em;
-    }
-
-    li::after {
-      content: '';
-    }
-  }
-`;
-
-type indexProps = {};
-
-function index(props: indexProps) {
+function index(props: Props) {
   return (
-    <>
-      <Banner title='Bores' />
-      <Wrapper main>
-        <ContentLayout>
-          <PageContent>
-            <h2>Title</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-              ullam amet asperiores libero corrupti sapiente, recusandae eos,
-              neque fugiat assumenda nostrum id repellat, nobis dolor officia
-              accusamus quidem placeat temporibus! Quisquam harum consequatur
-              corrupti? Quas, velit porro? Veniam possimus quibusdam sapiente
-              enim ut esse blanditiis hic eaque eveniet distinctio consectetur,
-              ducimus nostrum asperiores? Harum magni distinctio, cum
-              perferendis molestiae accusantium. Tenetur fugiat fugit et error
-              quae consequuntur natus sequi ullam aliquid corrupti accusamus
-              expedita ut ratione sit non officia, mollitia obcaecati velit
-              voluptates distinctio aliquam vero? Quam enim obcaecati modi.
-              Quidem cupiditate fugit, officiis mollitia quia impedit animi
-              porro neque, quaerat repellat architecto blanditiis, perferendis
-              minima. Maxime ipsum nihil exercitationem iste dolorum expedita,
-              culpa quaerat enim tempora accusantium aspernatur aliquid?
-              Voluptate, ratione. Nam, tempore repellat. Assumenda doloribus
-              obcaecati officiis, sunt cum enim modi totam, itaque vitae,
-              eligendi fugiat commodi. Eveniet ratione consequatur quos
-              exercitationem expedita quam explicabo unde sint necessitatibus.
-            </p>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. A
-              tempora repudiandae quis alias ipsam natus eos, animi sequi dicta
-              quos quasi vel est velit. Dolorum aliquam iste sit debitis
-              blanditiis? Voluptate autem beatae ad aut delectus, esse, officiis
-              fuga similique aspernatur quia quos assumenda magnam cum.
-              Voluptate minus, aspernatur perspiciatis porro ab accusantium
-              possimus atque praesentium? Voluptatibus laudantium iusto
-              cupiditate.
-            </p>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. A
-              tempora repudiandae quis alias ipsam natus eos, animi sequi dicta
-              quos quasi vel est velit. Dolorum aliquam iste sit debitis
-              blanditiis? Voluptate autem beatae ad aut delectus, esse, officiis
-              fuga similique aspernatur quia quos assumenda magnam cum.
-              Voluptate minus, aspernatur perspiciatis porro ab accusantium
-              possimus atque praesentium? Voluptatibus laudantium iusto
-              cupiditate.
-            </p>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. A
-              tempora repudiandae quis alias ipsam natus eos, animi sequi dicta
-              quos quasi vel est velit. Dolorum aliquam iste sit debitis
-              blanditiis? Voluptate autem beatae ad aut delectus, esse, officiis
-              fuga similique aspernatur quia quos assumenda magnam cum.
-              Voluptate minus, aspernatur perspiciatis porro ab accusantium
-              possimus atque praesentium? Voluptatibus laudantium iusto
-              cupiditate.
-            </p>
-          </PageContent>
-          <RelatedPages>
-            <h2>Related Pages</h2>
-            <ul>
-              <li>
-                <StyledNextLink href='/'>Page</StyledNextLink>
-              </li>
-              <li>
-                <StyledNextLink href='/'>Page</StyledNextLink>
-              </li>
-              <li>
-                <StyledNextLink href='/'>Page</StyledNextLink>
-              </li>
-              <li>
-                <StyledNextLink href='/'>Page</StyledNextLink>
-              </li>
-            </ul>
-          </RelatedPages>
-        </ContentLayout>
-      </Wrapper>
-    </>
+    <ContentPage
+      title='Water Bore Drilling'
+      relatedPages={
+        <ul>
+          <li>
+            <StyledNextLink href='/faq'>FAQ</StyledNextLink>
+          </li>
+          <li>
+            <StyledNextLink href='/request-a-quote'>
+              Request a Quote
+            </StyledNextLink>
+          </li>
+          <li>
+            <StyledNextLink href='/bore-search'>Bore Search</StyledNextLink>
+          </li>
+          <li>
+            <StyledNextLink href='/bores/new-install'>
+              New Bore & Pump Tips
+            </StyledNextLink>
+          </li>
+        </ul>
+      }
+    >
+      <PageSection>
+        <h2>What to expect on drilling day</h2>
+        <h3>How long does it take?</h3>
+        <p>
+          Drilling and casing can take 4-6 hours depending on the material being
+          drilled and the depth.
+          <br />
+          It's a four step process:
+          <ol>
+            <li>Drilling</li>
+            <li>Installing casing</li>
+            <li>
+              Cleaning out the inside of the casing to remove damaging sands,
+              muds and clay
+            </li>
+            <li>Flow rate, salt, iron, PH, testing (if required).</li>
+          </ol>
+        </p>
+        <h3>Will there be a lot of soil/clay/sand to dispose of?</h3>
+        <p>
+          Usually there are 3 - 5 wheelbarrow loads of material that you need to
+          find a place for. If you have any holes in your yard or low points,
+          now is a great time to fill them. We cannot take it with us.
+        </p>
+        <h3>What size casing is supplied?</h3>
+        <p>
+          100mm diameter casing with factory cut fine slots (0.4 - 0.5mm) is
+          used in the majority of bores, some locations need 0.8mm. We can
+          install 5”, 125mm casing or 80mm casing as required, surcharges may
+          apply.
+        </p>
+        <h3>
+          Do I need a driller to come over and look at the site and provide a
+          quote?
+        </h3>
+        <p>
+          No, unless the location you are thinking of is in a difficult place to
+          access or needs fence sections removed or trees cut back. Please call
+          us on{' '}
+          <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
+            {PHONE.MAIN.DISPLAY}
+          </StyledLink>{' '}
+          and discuss if you have any concerns.
+        </p>
+        <h3>Do I need to be home while drilling takes place?</h3>
+        <p>
+          No, but please indicate the location of the drilling site with a photo
+          or stake. We will require access to working town water and an active
+          power point to complete the process as well.
+        </p>
+        <h3>Can you supply and fit a pump for me?</h3>
+        <p>
+          We would be happy to provide a price for a supplied, installed and
+          configured pump to suit your needs. We could even bring one on
+          drilling day and you can be watering your lawn before we drive out the
+          driveway.
+        </p>
+      </PageSection>
+      <StyledLinkButton href='/bores/new-install' fullWidth margin='1rem auto'>
+        Learn how to maintain a new bore and/or pump &rarr;
+      </StyledLinkButton>
+    </ContentPage>
   );
 }
 
