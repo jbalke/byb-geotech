@@ -25,6 +25,7 @@ const SectionTitleContainer = styled.div`
 `;
 
 const SectionTitle = styled.h2`
+  color: ${Theme.color.white};
   font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 0.1em;

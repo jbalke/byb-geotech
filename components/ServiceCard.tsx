@@ -64,6 +64,7 @@ const CardContent = styled.div`
 
 const CardTitle = styled.h3`
   align-self: flex-start;
+  color: ${Theme.color.white};
   display: inline;
   font-size: 1.2rem;
   line-height: 1.2;

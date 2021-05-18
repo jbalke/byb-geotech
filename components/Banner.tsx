@@ -22,6 +22,7 @@ const StyledBanner = styled.div<{ imageSrc: string }>`
   width: 100%;
 
   h1 {
+    color: ${Theme.color.white};
     font-size: 2rem;
     font-weight: 500;
     margin: 0;

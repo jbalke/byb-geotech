@@ -22,6 +22,7 @@ const Layout = styled.div`
   gap: 1rem;
 
   h2 {
+    color: ${Theme.color.white};
     text-align: center;
   }
 

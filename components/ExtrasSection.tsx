@@ -10,7 +10,6 @@ const Container = styled.section`
   background-color: #19191e;
   color: ${Theme.color.white};
   padding: 3rem 0;
-
   font-size: 0.8rem;
 `;
 
@@ -33,6 +32,7 @@ const UsefulLinks = styled.div`
   width: 100%;
 
   h3 {
+    color: ${Theme.color.white};
     font-size: 1.5rem;
     letter-spacing: 0.1em;
     position: relative;
