@@ -25,8 +25,6 @@ async function sendQuoteEmail({
   service,
   comments,
 }: Data) {
-  console.log({ otherSuburb });
-
   const emailOptions: Mail.Options = {
     to: `${EMAIL.MANAGER}`,
     subject: `Backyard Bores Request for Quote from ${name}`,
