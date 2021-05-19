@@ -10,7 +10,7 @@ export const LIGHT_THEME = {
   text: '#222',
   dropDownMenuText: '#222',
   textBackground: '#fff',
-  textAside: '#383838',
+  textAside: '#333',
   primary: '#006EE5',
   primaryLight: '#7EAFDD',
   primaryLightest: '#cae1f6',
