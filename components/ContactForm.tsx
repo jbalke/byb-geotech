@@ -129,7 +129,7 @@ function ContactForm(props: ContactFormsProps) {
       <StyledInput
         id='phone'
         type='text'
-        placeholder='The best number to call you back on'
+        placeholder='The best number to call you on'
         {...register('phone', {
           required: 'Required',
           // validate: (value) =>

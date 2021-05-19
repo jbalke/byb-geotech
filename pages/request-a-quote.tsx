@@ -78,12 +78,10 @@ function RequestQuote(props: Props) {
 
   const {
     register,
-    unregister,
-    getValues,
     handleSubmit,
     watch,
     control,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm<FormData>({
     mode: 'all',
     defaultValues: {
@@ -97,7 +95,6 @@ function RequestQuote(props: Props) {
   });
   const watchSuburb = watch('suburb');
   const watchService = watch('service');
-
   const { theme } = useUIState();
   const recaptchaRef = useRef<ReCAPTCHA>(null!);
 
@@ -106,8 +103,6 @@ function RequestQuote(props: Props) {
     service,
     ...rest
   }: FormData) => {
-    console.log(rest);
-
     setFormStatus('pending');
     const token = await recaptchaRef.current.executeAsync();
 
@@ -157,6 +152,7 @@ function RequestQuote(props: Props) {
               <StyledInput
                 type='text'
                 id='name'
+                placeholder='Your name'
                 {...register('name', {
                   required: 'Required',
                   minLength: { value: 3, message: 'Too short' },
@@ -171,6 +167,7 @@ function RequestQuote(props: Props) {
               <StyledInput
                 type='email'
                 id='email'
+                placeholder='Your email address'
                 {...register('email', {
                   required: 'Required',
                   validate: (value) =>
@@ -184,7 +181,12 @@ function RequestQuote(props: Props) {
               {errors.email && <InputWarning message={errors.email.message!} />}
 
               <StyledLabel htmlFor='phone'>Phone</StyledLabel>
-              <StyledInput type='text' id='phone' {...register('phone')} />
+              <StyledInput
+                type='text'
+                id='phone'
+                placeholder='The best number to call you on'
+                {...register('phone')}
+              />
               {errors.phone && <InputWarning message={errors.phone.message!} />}
 
               <StyledLabel htmlFor='street'>Street</StyledLabel>
