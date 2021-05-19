@@ -32,7 +32,7 @@ function faq(props: faqProps) {
   return (
     <>
       <Banner title='Frequently Asked Questions' />
-      <Wrapper maxWidth='70ch'>
+      <Wrapper maxWidth='70ch' padding='xl'>
         <ToggleButton
           onClick={() => setExpandAll((expanded) => !expanded)}
           variant='outline'
