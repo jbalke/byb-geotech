@@ -70,7 +70,6 @@ const shared = css<{
   padding: 0.7em 1em;
   position: relative;
   text-decoration: none;
-  text-shadow: 1px 1px 1px ${Theme.color.black};
   font-weight: 600;
   transition: background-color 0.25s, color 0.25s;
 
@@ -98,6 +97,7 @@ const shared = css<{
           color: ${Theme.color.white};
           border-color: ${Theme.color.white};
           border-width: ${borderWidth ? borderWidth : '1px'};
+          text-shadow: 1px 1px 1px ${Theme.color.black};
 
           &:focus,
           &:hover {
@@ -118,9 +118,8 @@ const shared = css<{
 
           &:focus,
           &:hover {
-            background-color: ${Theme.color.white};
-            color: ${Theme.color.primary};
-            text-shadow: none;
+            background-color: ${Theme.color.primary};
+            color: ${Theme.color.white};
           }
         `;
 
@@ -130,6 +129,7 @@ const shared = css<{
           color: ${Theme.color.white};
           border-color: ${Theme.color.primary};
           border-width: ${borderWidth ? borderWidth : '0'};
+          text-shadow: 1px 1px 1px ${Theme.color.black};
 
           &:focus,
           &:hover {
