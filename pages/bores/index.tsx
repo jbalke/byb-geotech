@@ -95,7 +95,7 @@ function index(props: Props) {
         </p>
       </PageSection>
       <StyledLinkButton href='/bores/new-install' fullWidth margin='1rem auto'>
-        Learn how to maintain a new bore and/or pump &rarr;
+        Learn how to maintain a new bore and/or pump.
       </StyledLinkButton>
     </ContentPage>
   );
