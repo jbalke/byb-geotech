@@ -67,7 +67,7 @@ const shared = css<{
   justify-content: center;
   letter-spacing: 0.08em;
   margin: ${({ margin }) => margin || '0'};
-  padding: 0.7em 1em;
+  padding: 1em 1em;
   position: relative;
   text-decoration: none;
   font-weight: 600;
