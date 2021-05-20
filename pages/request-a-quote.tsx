@@ -33,6 +33,7 @@ type Option = {
 };
 
 const StyledForm = styled.form`
+  margin-top: 2rem;
   font-size: 1rem;
 
   label {
@@ -136,7 +137,7 @@ function RequestQuote(props: Props) {
   return (
     <>
       <Banner title='Request a Quote' />
-      <Wrapper maxWidth='70ch'>
+      <Wrapper maxWidth='70ch' padding='xl'>
         {formStatus === 'success' ? (
           <Message type='success'>
             We've recieved your request and will be in touch soon! Thank you.
