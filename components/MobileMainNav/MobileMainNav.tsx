@@ -82,10 +82,10 @@ const PageTitle = styled.h2`
 const NavSectionContainer = styled.div`
   display: grid;
   gap: 15px;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   width: 100%;
 
-  ${NavSection} + ${NavSection} {
+  ${NavSection}:nth-of-type(2) {
     position: relative;
 
     ::before {
