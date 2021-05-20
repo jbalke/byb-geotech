@@ -4,6 +4,7 @@ import {
   FaWater,
   FaSearch,
   FaQuestionCircle,
+  FaCommentDollar,
 } from 'react-icons/fa';
 
 type PageLink = {
@@ -35,9 +36,9 @@ export const navLinks: MenuItem[] = [
         title: 'Home Owners',
         pages: [
           {
-            title: 'Bore maintenance',
+            title: 'Water Bore Drilling',
             Icon: FaWater,
-            href: '/home-owners/bore-maintenance',
+            href: '/bores',
           },
           {
             title: 'Pump troubleshooting',
@@ -58,6 +59,15 @@ export const navLinks: MenuItem[] = [
             title: 'Details & Projects',
             Icon: FaWater,
             href: '/geotech/projects',
+          },
+        ],
+      },
+      {
+        pages: [
+          {
+            title: 'Request a Quote',
+            Icon: FaCommentDollar,
+            href: '/request-a-quote',
           },
         ],
       },
