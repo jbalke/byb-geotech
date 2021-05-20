@@ -8,6 +8,20 @@ import { PHONE } from '../../constants';
 
 const PageSection = styled.section``;
 
+const VideoContainer = styled.div`
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+
+  iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+
 type Props = {};
 
 function index(props: Props) {
@@ -36,8 +50,10 @@ function index(props: Props) {
       <PageSection>
         <h2>New Bore Only</h2>
         <p>
-          In the first 2 months of your new bore being drilled, please do the
-          following:
+          <strong>
+            In the first 2 months of your new bore being drilled, please do the
+            following:
+          </strong>
           <ol>
             <li>
               Equip the bore with a pump <strong>ASAP</strong>.
@@ -61,7 +77,7 @@ function index(props: Props) {
           PVC cap over the poly then secure the poly fitting.
         </p>
         <p>
-          In the first 2 months after your pump installation:
+          <strong>In the first 2 months after your pump installation:</strong>
           <ol>
             <li>
               Run your pump often for at least 20 mins (every second day at
@@ -92,7 +108,9 @@ function index(props: Props) {
             </li>
           </ol>
         </p>
-        <p>For the rest of the pump's life:</p>
+        <p>
+          <strong>For the rest of the pump's life:</strong>
+        </p>
         <ul>
           <li>
             If the pump starts making new noises, check our website for details,
@@ -125,7 +143,18 @@ function index(props: Props) {
             short hoses and sprinklers.
           </li>
         </ul>
-        <p>To easily prime a pump, watch our video...</p>
+        <p>
+          <strong>To easily prime a pump, watch our video.</strong>
+        </p>
+        <VideoContainer>
+          <iframe
+            src='https://www.youtube-nocookie.com/embed/DWHvp_fWmXM'
+            title='YouTube video player'
+            frameBorder='0'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+            allowFullScreen
+          ></iframe>
+        </VideoContainer>
       </PageSection>
     </ContentPage>
   );
