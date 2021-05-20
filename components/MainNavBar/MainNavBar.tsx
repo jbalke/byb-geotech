@@ -159,7 +159,12 @@ const MainNavBar = () => {
                 <AnimatePresence>
                   {activeSubmenu === index && sections && (
                     <DropdownContainer withCaret>
-                      <DropdownContents layout itemCount={sections.length}>
+                      <DropdownContents
+                        layout
+                        itemCount={
+                          sections.filter((s) => Boolean(s.title)).length
+                        }
+                      >
                         {sections.map((section, index) => {
                           return (
                             <SectionContainer key={index}>
