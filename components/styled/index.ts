@@ -1,28 +1,7 @@
 // Misc styled components
-import styled, { keyframes, css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Theme } from 'styles/theme';
 import Button from '../Button';
-
-// KEYFRAMES
-export const FadeIn = keyframes`
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-`;
-
-export const FadeOut = keyframes`
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-`;
 
 // WRAPPERS
 export const Wrapper = styled.div<{
@@ -192,4 +171,17 @@ export const Disclaimer = styled.section`
   font-size: 0.8rem;
   line-height: 1.2em;
   padding: 1em;
+`;
+
+export const VideoContainer = styled.div`
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+
+  iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
 `;

@@ -4,23 +4,10 @@ import StyledNextLink from 'components/Link/StyledNextLink';
 import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 import styled from 'styled-components';
+import { VideoContainer } from 'components/styled';
 import { PHONE } from '../../constants';
 
 const PageSection = styled.section``;
-
-const VideoContainer = styled.div`
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
-  position: relative;
-
-  iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-`;
-
 
 type Props = {};
 
