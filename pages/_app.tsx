@@ -103,7 +103,7 @@ function App({ Component, pageProps, router }: Props) {
         />
         <link
           rel='preload'
-          href='/fonts/PublicSans-Italic-VariableFont_wght.ttf'
+          href='/fonts/PublicSans-VariableFont_wght.ttf'
           as='font'
           crossOrigin=''
         />
