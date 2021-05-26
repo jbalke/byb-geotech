@@ -23,14 +23,10 @@ import {
 import Select from 'react-select';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
+import { Option } from 'types/form';
 import { client } from 'utils/client';
 import isEmail from 'validator/lib/isEmail';
 import { debug } from '../utils';
-
-type Option = {
-  label: string;
-  value: string;
-};
 
 const StyledForm = styled.form`
   margin-top: 2rem;

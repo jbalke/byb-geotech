@@ -5,15 +5,19 @@ import {
   StyledInput,
   StyledLabel,
   StyledTextarea,
-  SubmitButton,
+  SubmitButton
 } from 'components/styled';
 import { useUIState } from 'context/ui-context';
 import React, { useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { useForm } from 'react-hook-form';
+import { Controller, NestedValue, useForm } from 'react-hook-form';
+import Select from 'react-select';
 import styled from 'styled-components';
+import { Option } from 'types/form';
 import { client } from 'utils/client';
 import isEmail from 'validator/lib/isEmail';
+import { ContactCategories } from '../data/contact-form';
+import { Theme } from '../styles/theme';
 import { debug } from '../utils';
 
 const StyledForm = styled.form`
@@ -23,6 +27,12 @@ const StyledForm = styled.form`
     font-family: 'Rubik';
     font-size: 1.2rem;
     font-weight: 600;
+  }
+`;
+
+const StyledSelect = styled(Select)`
+  .select__menu {
+    color: ${Theme.color.dropDownMenuText};
   }
 `;
 
@@ -37,6 +47,7 @@ interface FormData {
   name: string;
   email: string;
   phone: string;
+  category: NestedValue<Option>;
   message: string;
 }
 
@@ -50,6 +61,7 @@ function ContactForm(props: ContactFormsProps) {
   const recaptchaRef = useRef<ReCAPTCHA>(null!);
 
   const {
+    control,
     register,
     handleSubmit,
     formState: { errors, isValid },
@@ -59,11 +71,12 @@ function ContactForm(props: ContactFormsProps) {
       name: '',
       email: '',
       phone: '',
+      category: ContactCategories[0],
       message: '',
     },
   });
 
-  const onSubmit = async (data: FormData) => {
+  const onSubmit = async ({ category: { label }, ...rest }: FormData) => {
     setFormStatus('pending');
     const token = await recaptchaRef.current.executeAsync();
 
@@ -74,7 +87,8 @@ function ContactForm(props: ContactFormsProps) {
 
     try {
       await client('/api/contact', {
-        ...data,
+        ...rest,
+        category: label,
         token,
       });
       setFormStatus('success');
@@ -139,6 +153,23 @@ function ContactForm(props: ContactFormsProps) {
       />
       {errors.phone && <InputWarning message={errors.phone.message!} />}
 
+      <StyledLabel htmlFor='category'>Reason for Contact</StyledLabel>
+      <Controller
+        name='category'
+        control={control}
+        rules={{
+          required: 'Required',
+        }}
+        render={({ field }) => (
+          <StyledSelect
+            {...field}
+            options={ContactCategories}
+            classNamePrefix='select'
+          />
+        )}
+      />
+      {errors.category && <InputWarning message={errors.category.message!} />}
+
       <StyledLabel htmlFor='message' aria-describedby='messageDescribe'>
         Message
       </StyledLabel>
@@ -150,7 +181,9 @@ function ContactForm(props: ContactFormsProps) {
           required: 'Required',
           minLength: {
             value: 25,
-            message: 'Please tell us more about your requirements',
+            message:
+             
+              'Please tell us more about your reason for contacting us today',
           },
           maxLength: { value: 500, message: 'Too long' },
         })}

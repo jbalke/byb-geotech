@@ -8,16 +8,24 @@ interface ContactEmail {
   name: string;
   email: string;
   phone: string;
+  category: string;
   message: string;
 }
 
-async function sendContactEmail({ name, email, message, phone }: ContactEmail) {
+async function sendContactEmail({
+  name,
+  email,
+  message,
+  phone,
+  category,
+}: ContactEmail) {
   const emailOptions: Mail.Options = {
     to: `${EMAIL.MANAGER}`,
     subject: `Backyard Bores Contact Form from ${name}`,
     text: `Customer: ${name}
 Email: ${email}
 Phone: ${phone}
+Reason: ${category}
 Message: ${message}`,
   };
 
