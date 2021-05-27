@@ -56,14 +56,15 @@ const StyledSelect = styled(Select)`
   }
 `;
 
+type StringOption = Option<string>;
 interface FormData {
   name: string;
   email: string;
   phone: string;
   street: string;
   otherSuburb?: string;
-  suburb: NestedValue<Option>;
-  service: NestedValue<Option>;
+  suburb: NestedValue<StringOption>;
+  service: NestedValue<StringOption>;
   comments: string;
 }
 

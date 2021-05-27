@@ -27,6 +27,7 @@ import { FeatureCollection } from 'types/geojson-types';
 import { client } from 'utils/client';
 import { geocodeAPI } from 'utils/geocoding';
 import isEmail from 'validator/lib/isEmail';
+import { Option } from '../../types/form';
 import { debug } from '../../utils';
 
 const FormContainer = styled.div`
@@ -55,15 +56,12 @@ const StyledForm = styled.form`
   }
 `;
 
-type Option = {
-  value: [number, number];
-  label: string;
-};
+type LocationOption = Option<[number, number]>;
 
 interface FormData {
   name: string;
   email: string;
-  address: NestedValue<Option>;
+  address: NestedValue<LocationOption>;
   phone: string;
 }
 
@@ -114,7 +112,10 @@ function SearchForm({
     []
   );
 
-  const handleChange = (option: Option | null, action: ActionMeta<Option>) => {
+  const handleChange = (
+    option: LocationOption | null,
+    action: ActionMeta<LocationOption>
+  ) => {
     setFormStatus('idle');
 
     setValue('address', option ?? { value: [0, 0], label: '' }, {
@@ -161,7 +162,7 @@ function SearchForm({
           name='address'
           control={control}
           rules={{
-            validate: (value: Option | null) => {
+            validate: (value: LocationOption | null) => {
               return (value && value.label.length > 0) || 'Required';
             },
           }}
