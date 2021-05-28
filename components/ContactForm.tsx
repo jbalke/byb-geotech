@@ -146,6 +146,7 @@ function ContactForm(props: ContactFormsProps) {
         placeholder='The best number to call you on'
         {...register('phone', {
           required: 'Required',
+          maxLength: { value: 25, message: '25 character limit' },
           // validate: (value) =>
           //   isMobilePhone(value, 'en-AU') ||
           //   'Please provide a valid mobile phone number',
@@ -182,7 +183,6 @@ function ContactForm(props: ContactFormsProps) {
           minLength: {
             value: 25,
             message:
-             
               'Please tell us more about your reason for contacting us today',
           },
           maxLength: { value: 500, message: 'Too long' },

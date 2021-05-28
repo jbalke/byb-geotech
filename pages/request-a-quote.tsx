@@ -183,7 +183,11 @@ function RequestQuote(props: Props) {
                 type='text'
                 id='phone'
                 placeholder='The best number to call you on'
-                {...register('phone')}
+                {...(register('phone',
+                {
+                  required: 'Required',
+                  maxLength: { value: 25, message: '25 character limit' },
+                }))}
               />
               {errors.phone && <InputWarning message={errors.phone.message!} />}
 
@@ -192,7 +196,10 @@ function RequestQuote(props: Props) {
                 type='text'
                 id='street'
                 placeholder='The address the service is to be supplied'
-                {...register('street', { required: 'Required' })}
+                {...register('street', {
+                  required: 'Required',
+                  maxLength: { value: 100, message: '100 character limit' },
+                })}
               />
               {errors.street && (
                 <InputWarning message={errors.street.message!} />
@@ -224,7 +231,10 @@ function RequestQuote(props: Props) {
                     id='otherSuburb'
                     placeholder='Please enter your suburb'
                     aria-label='Other Suburb'
-                    {...register('otherSuburb', { required: 'Required' })}
+                    {...register('otherSuburb', {
+                      required: 'Required',
+                      maxLength: { value: 50, message: '50 character limit' },
+                    })}
                   />
                   {errors.otherSuburb && (
                     <InputWarning message={errors.otherSuburb.message!} />
@@ -267,7 +277,9 @@ function RequestQuote(props: Props) {
                 id='comments'
                 placeholder='Any additional information you want us to know'
                 rows={8}
-                {...register('comments')}
+                {...register('comments', {
+                  maxLength: { value: 500, message: '500 character limit' },
+                })}
               />
               <InputSubtext id='commentDescribe'>
                 Additional information may be specific timeframe requirements or
