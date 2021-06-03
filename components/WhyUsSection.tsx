@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { Theme } from '../styles/theme';
 
 const Container = styled.section`
+  background-color: ${Theme.color.black};
   display: flex;
   flex-flow: row-reverse nowrap;
   position: relative;
