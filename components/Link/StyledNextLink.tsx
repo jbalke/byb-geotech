@@ -6,22 +6,23 @@ type NextLinkButtonProps = {
   tag?: 'a' | 'button';
   href: string;
   children: React.ReactNode;
-  className?: string;
   size?: string;
-  [x: string]: any; // typing rest/spread
-};
+} & Omit<
+  React.DetailedHTMLProps<
+      React.AnchorHTMLAttributes<HTMLAnchorElement>,
+      HTMLAnchorElement
+    >, 'href' | 'ref'>;
 
 function StyledNextLink({
   tag = 'a',
   href,
   children,
-  className,
   size,
   ...props
 }: NextLinkButtonProps) {
   return (
     <Link href={href} passHref>
-      <StyledLink as={tag} className={className} size={size} {...props}>
+      <StyledLink as={tag} size={size} {...props} >
         {children}
       </StyledLink>
     </Link>

@@ -49,14 +49,14 @@ const LinkLabel = styled.span``;
 
 type ExternalLinkProps = {
   label: string;
-} & React.DetailedHTMLProps<
-  React.AnchorHTMLAttributes<HTMLAnchorElement>,
-  HTMLAnchorElement
->;
+} & Omit<
+  React.DetailedHTMLProps<
+      React.AnchorHTMLAttributes<HTMLAnchorElement>,
+      HTMLAnchorElement
+    >, 'ref'>;
 
 export function ExternalLink({
   label,
-  ref,
   rel = 'noreferrer noopener',
   ...props
 }: ExternalLinkProps) {
