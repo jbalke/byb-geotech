@@ -27,6 +27,7 @@ const StyledBanner = styled.div<{ imageSrc: string }>`
     font-weight: 500;
     margin: 0;
     text-align: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
     text-transform: capitalize;
     transition: font-size 300ms;
   }
