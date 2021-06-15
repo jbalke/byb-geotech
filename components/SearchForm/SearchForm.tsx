@@ -206,6 +206,7 @@ function SearchForm({
               <StyledInput
                 id='email'
                 type='email'
+                inputMode='email'
                 placeholder='Your email address'
                 {...register('email', {
                   required: 'Required',
@@ -224,6 +225,7 @@ function SearchForm({
               <StyledInput
                 id='phone'
                 type='text'
+                inputMode='tel'
                 placeholder='Your phone number'
                 {...register('phone')}
               />

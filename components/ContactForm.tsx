@@ -128,6 +128,7 @@ function ContactForm(props: ContactFormsProps) {
       <StyledInput
         id='email'
         type='email'
+        inputMode="email"
         placeholder='Your email address'
         {...register('email', {
           required: 'Required',
@@ -142,7 +143,7 @@ function ContactForm(props: ContactFormsProps) {
       <StyledLabel htmlFor='phone'>Phone</StyledLabel>
       <StyledInput
         id='phone'
-        type='text'
+        type='tel'
         placeholder='The best number to call you on'
         {...register('phone', {
           required: 'Required',
@@ -177,7 +178,7 @@ function ContactForm(props: ContactFormsProps) {
       <StyledTextarea
         id='message'
         placeholder='Your message'
-        rows={5}
+        rows={8}
         {...register('message', {
           required: 'Required',
           minLength: {

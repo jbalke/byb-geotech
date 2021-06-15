@@ -165,6 +165,7 @@ function RequestQuote(props: Props) {
               <StyledInput
                 type='email'
                 id='email'
+                inputMode="email"
                 placeholder='Your email address'
                 {...register('email', {
                   required: 'Required',
@@ -180,14 +181,13 @@ function RequestQuote(props: Props) {
 
               <StyledLabel htmlFor='phone'>Phone</StyledLabel>
               <StyledInput
-                type='text'
+                type='tel'
                 id='phone'
                 placeholder='The best number to call you on'
-                {...(register('phone',
-                {
+                {...register('phone', {
                   required: 'Required',
                   maxLength: { value: 25, message: '25 character limit' },
-                }))}
+                })}
               />
               {errors.phone && <InputWarning message={errors.phone.message!} />}
 
