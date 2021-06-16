@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { Theme } from '../styles/theme';
+import backgroundImage from '../public/images/why-us.png';
 
 const Container = styled.section`
   background-color: ${Theme.color.black};
@@ -37,10 +38,10 @@ function WhyUsSection(props: WhyUsProps) {
     <Container>
       <Image
         alt='Drilling'
-        src='/images/why-us.png'
+        src={backgroundImage}
         layout='fill'
         objectFit='cover'
-        quality={50}
+        placeholder='blur'
       />
       {/* <Content>
         <h2>Why Choose Us</h2>

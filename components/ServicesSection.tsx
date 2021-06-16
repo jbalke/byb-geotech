@@ -2,6 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import ServiceCard from './ServiceCard';
+import drillingImg from '../public/images/backyard-bore.webp';
+import pumpImg from '../public/images/pump.webp';
+import geotechImg from '../public/images/geotech.webp';
+import helpImg from '../public/images/question-mark.png';
 
 const Container = styled.section``;
 
@@ -80,7 +84,7 @@ function ServicesSection(props: ServicesSectionProps) {
         <ServiceCard
           title='Bore Drilling & Cleaning'
           href='/bores'
-          imageSrc='/images/backyard-bore.webp'
+          imageSrc={drillingImg}
         >
           <p>
             If you are looking for water to keep the yard green, top up the
@@ -94,7 +98,7 @@ function ServicesSection(props: ServicesSectionProps) {
         <ServiceCard
           title='Pump Supply & Repairs'
           href='/services/drilling'
-          imageSrc='/images/pump.webp'
+          imageSrc={pumpImg}
         >
           <p>
             Do you require a new pump (surface, pressure, jet, submersible,
@@ -107,7 +111,7 @@ function ServicesSection(props: ServicesSectionProps) {
         <ServiceCard
           title='Geotechnical Drilling'
           href='/services/drilling'
-          imageSrc='/images/geotech.webp'
+          imageSrc={geotechImg}
         >
           <p>
             Environmental, Geotech & soil sampling drilling (NDD, SPT, DCP,
@@ -121,7 +125,7 @@ function ServicesSection(props: ServicesSectionProps) {
         <ServiceCard
           title='Help & Advice'
           href='/help'
-          imageSrc='/images/question.svg'
+          imageSrc={helpImg}
         >
           <p>
             How to troubleshoot bore and/or pump issues. Are you pumping a lot

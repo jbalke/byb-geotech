@@ -137,7 +137,8 @@ function RequestQuote(props: Props) {
       <Wrapper maxWidth='70ch' padding='xl'>
         {formStatus === 'success' ? (
           <Message type='success'>
-            We've recieved your request and will be in touch soon! Thank you.
+            We&apos;ve recieved your request and will be in touch soon! Thank
+            you.
           </Message>
         ) : (
           <>
@@ -165,7 +166,7 @@ function RequestQuote(props: Props) {
               <StyledInput
                 type='email'
                 id='email'
-                inputMode="email"
+                inputMode='email'
                 placeholder='Your email address'
                 {...register('email', {
                   required: 'Required',
@@ -174,8 +175,8 @@ function RequestQuote(props: Props) {
                 })}
               />
               <InputSubtext id='emailDescribe'>
-                We'll never spam you or share your email address with anyone
-                else.
+                We&apos;ll never spam you or share your email address with
+                anyone else.
               </InputSubtext>
               {errors.email && <InputWarning message={errors.email.message!} />}
 

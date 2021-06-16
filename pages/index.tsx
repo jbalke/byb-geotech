@@ -7,25 +7,18 @@ import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
+import Image from 'next/image';
+import heroBgImage from '../public/images/banner-infinity.webp';
 
 const Hero = styled.section`
   align-items: center;
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.3)
-    ),
-    url('/images/banner-infinity.webp');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-
   color: ${Theme.color.white};
   display: flex;
   height: 80vh;
   min-height: 350px;
   justify-content: center;
   line-height: 1;
+  position: relative;
   width: 100%;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 
@@ -89,6 +82,20 @@ const HeroContentWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
+  & > * {
+    position: relative;
+  }
+
+  ::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
   @media (min-width: ${(props) => props.theme.bp.tablet}) {
     margin: 0;
   }
@@ -97,6 +104,13 @@ function Home() {
   return (
     <>
       <Hero>
+        <Image
+          alt='Backyard Bores & Geotech Drilling'
+          src={heroBgImage}
+          layout='fill'
+          objectFit='cover'
+          placeholder='blur'
+        />
         <HeroContentWrapper>
           <h1>Backyard Bores & Geotech Drilling</h1>
           <HeroSubText>

@@ -4,12 +4,7 @@ import { Theme } from 'styles/theme';
 import { StyledLinkButton } from './Button';
 import Image from 'next/image';
 
-const Card = styled.article<{ imageSrc?: string }>`
-  /* background-image: url(${({ imageSrc }) => imageSrc});
-  background-position: 50% 100%;
-  background-repeat: no-repeat;
-  background-size: cover; */
-
+const Card = styled.div<{ imageSrc?: string }>`
   display: flex;
   background-color: ${Theme.color.primaryDark};
   flex-flow: column nowrap;
@@ -103,10 +98,17 @@ type ServiceCardProps = {
   title: string;
   children: React.ReactNode;
   href: string;
-  imageSrc: string;
+  imageSrc: StaticImageData;
+  placeholder?: 'blur' | 'empty';
 };
 
-function ServiceCard({ title, children, href, imageSrc }: ServiceCardProps) {
+function ServiceCard({
+  title,
+  children,
+  href,
+  imageSrc,
+  placeholder = 'empty',
+}: ServiceCardProps) {
   return (
     <Card>
       <Image
@@ -115,6 +117,7 @@ function ServiceCard({ title, children, href, imageSrc }: ServiceCardProps) {
         layout='fill'
         objectFit='cover'
         quality={50}
+        placeholder={placeholder}
       />
       <CardContent>
         <div>
