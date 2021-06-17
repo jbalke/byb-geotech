@@ -109,6 +109,7 @@ function Home() {
           src={heroBgImage}
           layout='fill'
           objectFit='cover'
+          placeholder='blur'
         />
         <HeroContentWrapper>
           <h1>Backyard Bores & Geotech Drilling</h1>
