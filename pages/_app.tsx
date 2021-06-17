@@ -113,7 +113,6 @@ function App({ Component, pageProps, router }: Props) {
           as='font'
           crossOrigin=''
         />
-        <link rel='preload' as='image' href='/images/banner-infinity.webp' />
         <link
           rel='stylesheet'
           href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css'
