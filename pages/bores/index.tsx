@@ -43,7 +43,7 @@ function index(props: Props) {
           Drilling and casing can take 4-6 hours depending on the material being
           drilled and the depth.
           <br />
-          It's a four step process:
+          It&apos;s a four step process:
           <ol>
             <li>Drilling</li>
             <li>Installing casing</li>

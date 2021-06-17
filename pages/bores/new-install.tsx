@@ -72,8 +72,8 @@ function index(props: Props) {
             </li>
             <li>
               DO NOT trust the automatic pressure switch. At night, turn the
-              pump off at the powerpoint. If you are going away for a weekend or
-              for more than 4 hours, turn the pump off at the powerpoint.
+              pump off at the power point. If you are going away for a weekend
+              or for more than 4 hours, turn the pump off at the power point.
             </li>
             <li>
               Test fill a bucket with bore water once a week and carefully tip
@@ -85,7 +85,7 @@ function index(props: Props) {
             <li>
               You may see some discoloured water when the pump is first turned
               on. This is normal if it goes away after 10L has passed through
-              the pump. If after 2 minutes of running the water is still "dirty,
+              the pump. If after 2 minutes of running the water is still dirty,
               call us.{' '}
             </li>
             <li>
@@ -96,7 +96,7 @@ function index(props: Props) {
           </ol>
         </p>
         <p>
-          <strong>For the rest of the pump's life:</strong>
+          <strong>For the rest of the pump&quot;s life:</strong>
         </p>
         <ul>
           <li>
@@ -125,9 +125,9 @@ function index(props: Props) {
             drought, some fine sand may be noticed.
           </li>
           <li>
-            For hose distances longer than 10m, we recommend using a 19mm (3/4")
-            hose to maximise your flow. This can then be split into 2 smaller,
-            short hoses and sprinklers.
+            For hose distances longer than 10m, we recommend using a 19mm
+            (3/4&quot;) hose to maximise your flow. This can then be split into
+            2 smaller, short hoses and sprinklers.
           </li>
         </ul>
         <p>

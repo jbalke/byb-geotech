@@ -32,25 +32,29 @@ const StyledDisclaimer = styled(Disclaimer)`
 
 const ClientRenderedMap = dynamic(() => import('../components/Map'), {
   ssr: false,
-  loading: () => <p>loading map...</p>,
+  loading: function Loading() {
+    return <p>loading map...</p>;
+  },
 });
 
+type coords = [number, number];
+
 type Props = {
-  mapCenter: [number, number];
+  mapCenter: coords;
   bores: Bore[];
   knownBoresCount: number;
   query?: boolean;
 };
 
 const BoreSearch = ({
-  mapCenter,
+  mapCenter: [mapX, mapY],
   bores,
   knownBoresCount,
   query = false,
 }: Props) => {
   const camera = useMemo(
-    () => ({ center: mapCenter, zoom: query ? 14 : 11 }),
-    [mapCenter[0], mapCenter[1], bores.length]
+    () => ({ center: [mapX, mapY] as coords, zoom: query ? 14 : 11 }),
+    [mapX, mapY, query]
   );
 
   return (

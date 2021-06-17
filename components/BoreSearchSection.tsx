@@ -16,8 +16,8 @@ function BoreSearchSection(props: Props) {
           Search for <span>Bores Near You!</span>
         </h2>
         <p>
-          Want your own bore but have no idea whether you'll strike water? Try
-          our FREE Bore Search to locate bores near you!
+          Want your own bore but have no idea whether you&apos;ll strike water?
+          Try our FREE Bore Search to locate bores near you!
         </p>
       </div>
     </PromotionSection>

@@ -190,7 +190,7 @@ function SearchForm({
               <Message type='info'>
                 Would you like additional information on the{' '}
                 <strong>{knownBoresCount} bores</strong> in your area? Provide
-                your contact details below and we'll email you a report!
+                your contact details below and we&apos;ll email you a report!
               </Message>
               <StyledLabel htmlFor='name'>Name</StyledLabel>
               <StyledInput
@@ -215,8 +215,8 @@ function SearchForm({
                 })}
               />
               <InputSubtext id='emailDescribe'>
-                We'll never spam you or share your email address with anyone
-                else.
+                We&apos;ll never spam you or share your email address with
+                anyone else.
               </InputSubtext>
               {errors.email && <InputWarning message={errors.email.message!} />}
               <StyledLabel htmlFor='phone' aria-describedby='phoneDescribe'>
@@ -230,7 +230,7 @@ function SearchForm({
                 {...register('phone')}
               />
               <InputSubtext id='phoneDescribe'>
-                Provide your phone number if you'd like us to call you to
+                Provide your phone number if you&apos;d like us to call you to
                 discuss your drilling needs.
               </InputSubtext>
               {errors.phone && <InputWarning message={errors.phone.message!} />}

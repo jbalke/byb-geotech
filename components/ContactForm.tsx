@@ -102,7 +102,7 @@ function ContactForm(props: ContactFormsProps) {
   if (formStatus === 'success') {
     return (
       <Message type='success'>
-        Thank you for your message, we'll be in touch as soon as possible!
+        Thank you for your message, we&apos;ll be in touch as soon as possible!
       </Message>
     );
   }
@@ -128,7 +128,7 @@ function ContactForm(props: ContactFormsProps) {
       <StyledInput
         id='email'
         type='email'
-        inputMode="email"
+        inputMode='email'
         placeholder='Your email address'
         {...register('email', {
           required: 'Required',
@@ -136,7 +136,7 @@ function ContactForm(props: ContactFormsProps) {
         })}
       />
       <InputSubtext id='emailDescribe'>
-        We'll never spam you or share your email address with anyone else.
+        We&apos;ll never spam you or share your email address with anyone else.
       </InputSubtext>
       {errors.email && <InputWarning message={errors.email.message!} />}
 

@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import { setColorTheme } from 'actions/ui-actions';
 import { useUIDispatch, useUIState } from 'context/ui-context';
 import React, { ChangeEvent, useEffect } from 'react';
@@ -15,13 +17,14 @@ function DarkModeToggle(props: DarkModeToggleProps) {
     window.__onThemeChange = () => {
       dispatch(setColorTheme(window.__theme as ColorTheme));
     };
-  }, []);
+  }, [dispatch]);
 
   return (
     <Toggle
       icons={{
         checked: (
           <img
+            alt='moon'
             src='/images/moon.png'
             width='16'
             height='16'
@@ -31,6 +34,7 @@ function DarkModeToggle(props: DarkModeToggleProps) {
         ),
         unchecked: (
           <img
+            alt='sun'
             src='/images/sun.png'
             width='16'
             height='16'

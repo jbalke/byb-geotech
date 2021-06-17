@@ -5,6 +5,8 @@ import StyledNextLink from 'components/Link/StyledNextLink';
 import { useUIDispatch } from 'context/ui-context';
 import { navLinks } from 'data/main-navigation';
 import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
+import Image from 'next/image';
+import LogoImg from 'assets/logo.webp';
 import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
@@ -143,7 +145,7 @@ const MainNavBar = () => {
     <MainNav>
       <Container>
         <NavLogoLink href='/'>
-          <img src='/images/logo.webp' alt='logo' height='50px' width='116px' />
+          <Image src={LogoImg} alt='logo' height='50px' width='116px' />
         </NavLogoLink>
         <AnimateSharedLayout type='crossfade'>
           <NavBar onMouseLeave={onMouseLeave}>

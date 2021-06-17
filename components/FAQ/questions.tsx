@@ -34,8 +34,8 @@ const questions: Question[] = [
         </p>
         <p>
           If you are getting a quote from any driller, ask for their licence
-          number and to see their current Queensland Driller's Licence. You can
-          search for their name on the{' '}
+          number and to see their current Queensland Driller&apos;s Licence. You
+          can search for their name on the{' '}
           <strong>Qld Registered Drillers List</strong>{' '}
           <ExternalLink
             href='https://www.dnrm.qld.gov.au/__data/assets/pdf_file/0004/99760/drillers-register.pdf'
@@ -44,11 +44,11 @@ const questions: Question[] = [
           />{' '}
           before you engage them to drill. If they are{' '}
           <strong>not listed</strong>, they are <strong>not licensed</strong>.
-          Chances are, if they don't have a Driller's Licence, they won’t
-          construct the bore to ensure the best long-term performance as per
-          industry international best practices. They probably won't have{' '}
-          <strong>public liability insurance</strong> either. If they damage
-          anything at your property, YOU will have to foot the bill.
+          Chances are, if they don&apos;t have a Driller&apos;s Licence, they
+          won’t construct the bore to ensure the best long-term performance as
+          per industry international best practices. They probably won&apos;t
+          have <strong>public liability insurance</strong> either. If they
+          damage anything at your property, YOU will have to foot the bill.
         </p>
         <p>
           Use a licensed driller who has all relevant insurances, why risk it to
@@ -100,7 +100,7 @@ const questions: Question[] = [
     panel: (
       <>
         <p>
-          No. It doesn't work for us but{' '}
+          No. It doesn&apos;t work for us but{' '}
           <StyledLink href='/contact'>contact us</StyledLink> and we can give
           you the numbers of several local diviners. We do have a good knowledge
           of the areas around Mackay that have water and what depth a usable
@@ -198,9 +198,9 @@ const questions: Question[] = [
           please trim or remove them.
         </p>
         <p>
-          If we need to come in through a fence panel, please make sure it's
-          removed by the time we arrive. If we need to trim trees or remove
-          fence panel we will have to add an hourly surcharge.
+          If we need to come in through a fence panel, please make sure
+          it&apos;s removed by the time we arrive. If we need to trim trees or
+          remove fence panel we will have to add an hourly surcharge.
         </p>
         <p>
           Please call us on <CallLink /> and we can come inspect and do some

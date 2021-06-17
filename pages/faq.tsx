@@ -14,9 +14,9 @@ const ToggleButton = styled(Button)`
   margin-bottom: 1rem;
 `;
 
-type faqProps = {};
+type Props = {};
 
-function faq(props: faqProps) {
+function FAQPage(props: Props) {
   const [isExpandAll, setExpandAll] = useState<boolean | undefined>(false);
 
   const handleOnChange = () => {
@@ -62,5 +62,5 @@ function faq(props: faqProps) {
   );
 }
 
-faq.layout = SiteLayout;
-export default faq;
+FAQPage.layout = SiteLayout;
+export default FAQPage;

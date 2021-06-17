@@ -27,7 +27,7 @@ function InformationRequest(props: InformationRequestProps) {
         <div>
           <Welcome>Hello!</Welcome>
           <SubText>
-            Want more information about bore drilling? We've recieved your
+            Want more information about bore drilling? We&apos;ve received your
             request and one of our drillers will contact you soon to answer any
             questions you may have and offer an obligation free quote!
           </SubText>
