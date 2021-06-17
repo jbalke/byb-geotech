@@ -72,7 +72,13 @@ function Banner({ title, image }: BannerProps) {
         <title>{title} | Backyard Bores</title>
       </Head>
       <StyledBanner>
-        <Image alt='Banner' src={imageSrc} layout='fill' objectFit='cover' />
+        <Image
+          alt='Banner'
+          src={imageSrc}
+          layout='fill'
+          objectFit='cover'
+          placeholder='blur'
+        />
         <BannerContent>
           <h1>{title}</h1>
         </BannerContent>
