@@ -10,9 +10,9 @@ import ReactMapGL, {
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import { Bore } from 'types/bore';
-import LocationImg from '../../assets/location-marker.svg';
-import QuestionImg from '../../assets/question-mark.svg';
-import BoreImg from '../../assets/water-marker.svg'; // must use relative paths
+import LocationImg from './LocationMarker';
+import QuestionImg from './QuestionMarker';
+import BoreImg from './BoreMarker';
 import { getBoreColor, MAP_CENTER } from '../../constants';
 import DepthScale from './DepthScale';
 

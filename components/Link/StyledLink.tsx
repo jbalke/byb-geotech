@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
-import ExternalLinkSVG from './external-link.svg';
+import ExternalLinkIcon from './ExternalLinkIcon';
 
-const ExternalLinkImg = styled(ExternalLinkSVG)`
+const ExternalLinkImg = styled(ExternalLinkIcon)`
   height: 0.8em;
   width: 0.8em;
   margin-left: 0.1em;
+  stroke: currentColor;
 `;
 
 export const StyledLink = styled.a<{ size?: string }>`

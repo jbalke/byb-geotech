@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { Theme } from 'styles/theme';
-import Spinner from './three-dots.svg';
+import Spinner from './Spinner';
 
 const Wrapper = styled.div`
   display: flex;
@@ -45,7 +45,9 @@ function BaseButton({
       onClick={onClick}
       type={type}
     >
-      <Wrapper>{isLoading ? <Spinner height='100%' /> : children}</Wrapper>
+      <Wrapper>
+        {isLoading ? <Spinner height='100%' fill='#fff' /> : children}
+      </Wrapper>
     </button>
   );
 }
