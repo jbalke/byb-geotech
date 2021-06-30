@@ -203,6 +203,7 @@ function App({ Component, pageProps, router }: Props) {
           name='msapplication-square310x310logo'
           content='mstile-310x310.png'
         />
+        <meta name='theme-color' content='#006EE5' />
         <title>Backyard Bores</title>
       </Head>
       <GlobalStyle />
