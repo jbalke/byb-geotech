@@ -53,7 +53,7 @@ function PageLoading() {
   if (!loading) return null;
 
   return (
-    <Modal aria-live='polite' aria-busy='true'>
+    <Modal aria-live='polite' aria-busy='true' aria-label='loading'>
       <svg
         version='1.1'
         id='dc-spinner'
