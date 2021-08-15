@@ -18,7 +18,7 @@ const ContentLayout = styled.div`
   }
 `;
 
-const PageContent = styled.article`
+const PageContent = styled.section`
   display: grid;
   grid-template-columns: 1fr min(65ch, 100%) 1fr;
 
@@ -30,6 +30,11 @@ const PageContent = styled.article`
     list-style: disc;
     padding-left: 2.5em;
     margin-top: 1rem;
+  }
+
+  ul > ul {
+    list-style: circle;
+    margin: 0.5em 0;
   }
 
   & > * {
@@ -80,7 +85,6 @@ const RelatedPages = styled.aside`
 
     ul {
       display: block;
-      list-style: disc;
       padding-left: 1em;
     }
 
@@ -118,5 +122,4 @@ function ContentPage({ title, relatedPages, children }: indexProps) {
   );
 }
 
-ContentPage.layout = SiteLayout;
 export default ContentPage;

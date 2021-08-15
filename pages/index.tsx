@@ -77,10 +77,11 @@ const HeroSubText = styled.p`
 `;
 
 const HeroContentWrapper = styled.div`
+  align-items: center;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: center;
+  padding: 10px;
 
   & > * {
     position: relative;

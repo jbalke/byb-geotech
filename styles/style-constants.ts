@@ -48,7 +48,7 @@ export const DARK_THEME = {
   dropDownMenuText: '#222',
   textBackground: '#222',
   textAside: '#eee',
-  primary: '#006EE5',
+  primary: '#248eff',
   primaryLight: '#7EAFDD',
   primaryLightest: '#cae1f6',
   primaryDark: '#00458a',
