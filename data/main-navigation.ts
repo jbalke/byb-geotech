@@ -83,6 +83,7 @@ export const navLinks: MenuItem[] = [
     sections: [
       {
         pages: [
+          { title: 'FAQ', Icon: FaQuestionCircle, href: '/faq' },
           {
             title: 'Groundwater Protection',
             Icon: FaQuestionCircle,
@@ -98,7 +99,6 @@ export const navLinks: MenuItem[] = [
             Icon: FaQuestionCircle,
             href: '/help/pfas-pfoa',
           },
-          { title: 'FAQ', Icon: FaQuestionCircle, href: '/faq' },
         ],
       },
     ],
