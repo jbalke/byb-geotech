@@ -14,7 +14,6 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import {
   Controller,
   NestedValue,
-  SubmitErrorHandler,
   SubmitHandler,
   useForm,
 } from 'react-hook-form';
@@ -71,13 +70,24 @@ type SearchFormProps = {
   query?: boolean;
 };
 
+const getLocationOptions = debounce((query: string, callback: any) => {
+  client<FeatureCollection>(geocodeAPI(query)).then(data => {
+    const _data = data.features.map(feature => ({
+      value: feature.center,
+      label: feature.place_name,
+    }));
+    callback(_data);
+  });
+}, 750);
+
 function SearchForm({
   bores,
   knownBoresCount,
   query = false,
 }: SearchFormProps) {
-  const [formStatus, setFormStatus] =
-    useState<'idle' | 'pending' | 'success' | 'fail'>('idle');
+  const [formStatus, setFormStatus] = useState<
+    'idle' | 'pending' | 'success' | 'fail'
+  >('idle');
 
   const { theme } = useUIState();
   const recaptchaRef = useRef<ReCAPTCHA>(null!);
@@ -99,22 +109,9 @@ function SearchForm({
     },
   });
 
-  const getLocationOptions = useCallback(
-    debounce((query: string, callback: any) => {
-      client<FeatureCollection>(geocodeAPI(query)).then((data) => {
-        const _data = data.features.map((feature) => ({
-          value: feature.center,
-          label: feature.place_name,
-        }));
-        callback(_data);
-      });
-    }, 750),
-    []
-  );
-
   const handleChange = (
     option: LocationOption | null,
-    action: ActionMeta<LocationOption>
+    action: ActionMeta<LocationOption>,
   ) => {
     setFormStatus('idle');
 
@@ -157,9 +154,9 @@ function SearchForm({
   return (
     <>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
-        <label id='addressLabel'>Address</label>
+        <label id="addressLabel">Address</label>
         <Controller
-          name='address'
+          name="address"
           control={control}
           rules={{
             validate: (value: LocationOption | null) => {
@@ -169,17 +166,17 @@ function SearchForm({
           render={({ field }) => (
             <Select
               {...field}
-              aria-labelledby='addressLabel'
-              aria-describedby='addressDescribe'
+              aria-labelledby="addressLabel"
+              aria-describedby="addressDescribe"
               loadOptions={getLocationOptions}
               onChange={handleChange}
-              placeholder='Enter address or POI'
-              classNamePrefix='select'
+              placeholder="Enter address or POI"
+              classNamePrefix="select"
               isClearable
             />
           )}
         />
-        <InputSubtext id='addressDescribe'>
+        <InputSubtext id="addressDescribe">
           Search for known bores nearby this address.
         </InputSubtext>
         {errors.address && <InputWarning message={errors.address.message!} />}
@@ -187,49 +184,49 @@ function SearchForm({
         {formStatus !== 'success' && bores?.length ? (
           <FormContainer>
             <div>
-              <Message type='info'>
+              <Message type="info">
                 Would you like additional information on the{' '}
                 <strong>{knownBoresCount} bores</strong> in your area? Provide
                 your contact details below and we&apos;ll email you a report!
               </Message>
-              <StyledLabel htmlFor='name'>Name</StyledLabel>
+              <StyledLabel htmlFor="name">Name</StyledLabel>
               <StyledInput
-                id='name'
-                type='text'
-                placeholder='Your name'
+                id="name"
+                type="text"
+                placeholder="Your name"
                 {...register('name', { required: 'Required', maxLength: 25 })}
               />
               {errors.name && <InputWarning message={errors.name.message!} />}
-              <StyledLabel htmlFor='email' aria-describedby='emailDescribe'>
+              <StyledLabel htmlFor="email" aria-describedby="emailDescribe">
                 Email
               </StyledLabel>
               <StyledInput
-                id='email'
-                type='email'
-                inputMode='email'
-                placeholder='Your email address'
+                id="email"
+                type="email"
+                inputMode="email"
+                placeholder="Your email address"
                 {...register('email', {
                   required: 'Required',
-                  validate: (value) =>
+                  validate: value =>
                     isEmail(value) || 'Not a valid email address',
                 })}
               />
-              <InputSubtext id='emailDescribe'>
+              <InputSubtext id="emailDescribe">
                 We&apos;ll never spam you or share your email address with
                 anyone else.
               </InputSubtext>
               {errors.email && <InputWarning message={errors.email.message!} />}
-              <StyledLabel htmlFor='phone' aria-describedby='phoneDescribe'>
+              <StyledLabel htmlFor="phone" aria-describedby="phoneDescribe">
                 Phone (optional)
               </StyledLabel>
               <StyledInput
-                id='phone'
-                type='text'
-                inputMode='tel'
-                placeholder='Your phone number'
+                id="phone"
+                type="text"
+                inputMode="tel"
+                placeholder="Your phone number"
                 {...register('phone')}
               />
-              <InputSubtext id='phoneDescribe'>
+              <InputSubtext id="phoneDescribe">
                 Provide your phone number if you&apos;d like us to call you to
                 discuss your drilling needs.
               </InputSubtext>
@@ -238,14 +235,14 @@ function SearchForm({
                 isDisabled={!isValid}
                 isLoading={formStatus === 'pending'}
                 fullWidth
-                margin='1rem 0 0 0'
-                size='lg'
-                type='submit'
+                margin="1rem 0 0 0"
+                size="lg"
+                type="submit"
               >
                 Submit
               </SubmitButton>
               {formStatus === 'fail' && (
-                <Message type='danger'>
+                <Message type="danger">
                   Report could not be sent, please try again later.
                 </Message>
               )}
@@ -253,7 +250,7 @@ function SearchForm({
             <RecaptchaContainer>
               <ReCAPTCHA
                 ref={recaptchaRef}
-                size='invisible'
+                size="invisible"
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
                 badge={'inline'}
                 theme={theme}
@@ -261,11 +258,11 @@ function SearchForm({
             </RecaptchaContainer>
           </FormContainer>
         ) : formStatus === 'success' ? (
-          <Message type='success'>
+          <Message type="success">
             Bore report has been sent to <strong>{getValues('email')}</strong>!
           </Message>
         ) : query ? (
-          <Message type='warning'>No bores found.</Message>
+          <Message type="warning">No bores found.</Message>
         ) : null}
       </StyledForm>
       {/* <DevTool control={control} /> */}
