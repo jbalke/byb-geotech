@@ -173,12 +173,6 @@ export const Disclaimer = styled.section`
   padding: 1em;
 `;
 
-export const Emphasis = styled.span`
-  color: ${Theme.color.primary};
-  font-size: 1.2em;
-  font-weight: 500;
-`;
-
 export const VideoContainer = styled.div`
   width: 100%;
   height: 0;

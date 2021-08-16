@@ -1,5 +1,5 @@
 import Banner from 'components/Banner';
-import { Emphasis, Wrapper } from 'components/styled';
+import { Wrapper } from 'components/styled';
 import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 
@@ -8,13 +8,11 @@ type Props = {};
 function OurStory(props: Props) {
   return (
     <>
-      <Banner title='Our Story' />
-      <Wrapper maxWidth='70ch' main>
+      <Banner title="Our Story" />
+      <Wrapper maxWidth="70ch" main>
         <div>
           <p>
-            <Emphasis>
-              We are a proudly Australian and family-owned small business
-            </Emphasis>
+            <em>We are a proudly Australian and family-owned small business</em>
             , Mackay born and raised, with a drilling rig 100% built and
             maintained in a Mackay engineering workshop.
           </p>
