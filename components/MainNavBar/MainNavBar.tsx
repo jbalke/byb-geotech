@@ -72,7 +72,7 @@ const MainNav = styled.header`
   transition: ${Theme.color.transition};
   z-index: 99;
 
-  @media (min-width: ${(props) => props.theme.bp.desktop}) {
+  @media (min-width: ${props => props.theme.bp.desktop}) {
     height: 75px;
     padding: 0 30px;
   }
@@ -86,7 +86,7 @@ const MainNav = styled.header`
       }
 
       &:hover {
-        all: inital;
+        all: initial;
       }
     }
   }
@@ -109,7 +109,7 @@ const MobileMenuToggle = styled(Button)`
   margin-left: 15px;
   padding: 0.5rem;
 
-  @media (min-width: ${(props) => props.theme.bp.desktop}) {
+  @media (min-width: ${props => props.theme.bp.desktop}) {
     display: none;
   }
 `;
@@ -144,10 +144,10 @@ const MainNavBar = () => {
   return (
     <MainNav>
       <Container>
-        <NavLogoLink href='/'>
-          <Image src={LogoImg} alt='logo' height='50px' width='116px' />
+        <NavLogoLink href="/" aria-label="backyard bores home page">
+          <Image src={LogoImg} alt="logo" height="50px" width="116px" />
         </NavLogoLink>
-        <AnimateSharedLayout type='crossfade'>
+        <AnimateSharedLayout type="crossfade">
           <NavBar onMouseLeave={onMouseLeave}>
             {navLinks.map(({ Icon, title, href, sections }, index) => (
               <NavbarItem
@@ -164,7 +164,7 @@ const MainNavBar = () => {
                       <DropdownContents
                         layout
                         itemCount={
-                          sections.filter((s) => Boolean(s.title)).length
+                          sections.filter(s => Boolean(s.title)).length
                         }
                       >
                         {sections.map((section, index) => {
@@ -172,7 +172,7 @@ const MainNavBar = () => {
                             <SectionContainer key={index}>
                               {section.title && <h2>{section.title}</h2>}
                               <SectionPageContainer>
-                                {section.pages.map((page) => {
+                                {section.pages.map(page => {
                                   const { Icon, title, href } = page;
                                   return (
                                     <IconLinkWrapper key={href}>
@@ -197,7 +197,7 @@ const MainNavBar = () => {
         </AnimateSharedLayout>
         <MobileControls>
           <DarkModeToggle />
-          <MobileMenuToggle size='lg' onClick={toggleMobileNav}>
+          <MobileMenuToggle size="lg" onClick={toggleMobileNav}>
             <FaBars />
           </MobileMenuToggle>
         </MobileControls>
