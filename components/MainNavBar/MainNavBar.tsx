@@ -84,10 +84,6 @@ const MainNav = styled.header`
       & {
         box-shadow: none;
       }
-
-      &:hover {
-        all: initial;
-      }
     }
   }
 `;
