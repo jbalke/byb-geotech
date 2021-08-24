@@ -10,13 +10,15 @@ const Container = styled.section`
   background-color: #19191e;
   color: ${Theme.color.white};
   padding: 3rem 0;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 200;
+  letter-spacing: 0.06em;
 `;
 
 const CompanyInfo = styled.div`
   width: 100%;
 
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media (min-width: ${props => props.theme.bp.tablet}) {
     width: 30%;
     min-width: 300px;
   }
@@ -31,15 +33,19 @@ const Title = styled.span`
 const UsefulLinks = styled.div`
   width: 100%;
 
-  h3 {
-    color: ${Theme.color.white};
+  dl {
+    margin: 0;
+  }
+
+  dt {
+    color: inherit;
     font-size: 1.5rem;
     letter-spacing: 0.1em;
     position: relative;
     text-transform: uppercase;
   }
 
-  h3::after {
+  dt::after {
     content: '';
 
     height: 0;
@@ -53,29 +59,17 @@ const UsefulLinks = styled.div`
     bottom: 0;
   }
 
-  ul {
-    list-style-type: disc;
-    padding-left: 1rem;
-  }
-
-  ul li {
+  dd {
     font-size: 1rem;
-  }
-
-  ul li::marker {
-    color: ${Theme.color.primaryLight};
+    margin-inline-start: 0.5em;
   }
 
   ${StyledLink} {
-    display: block;
+    display: inline-block;
     font-weight: normal;
-    padding: 0.3rem 0.5rem 0.8rem 0;
+    padding: 0.5em 0;
+    color: inherit;
     box-shadow: none;
-
-    &,
-    &:visited {
-      color: inherit;
-    }
 
     @media (hover: hover) {
       &:hover {
@@ -91,7 +85,7 @@ const UsefulLinks = styled.div`
     color: ${Theme.color.primary};
   }
 
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media (min-width: ${props => props.theme.bp.tablet}) {
     width: auto;
     min-width: 300px;
   }
@@ -102,7 +96,7 @@ type ExtrasSectionsProps = {};
 function ExtrasSection(props: ExtrasSectionsProps) {
   return (
     <Container>
-      <Wrapper row gap='2rem'>
+      <Wrapper row gap="2rem">
         <CompanyInfo>
           <Title>Backyard Bores Pty Ltd</Title>
           <p>
@@ -115,16 +109,16 @@ function ExtrasSection(props: ExtrasSectionsProps) {
           </p>
         </CompanyInfo>
         <UsefulLinks>
-          <h3>Useful Links</h3>
-          <ul>
+          <dl>
+            <dt>Useful Links</dt>
             {usefulLinks.map((link, i) => (
-              <li key={i}>
-                <ActiveLink activeClassName='active' href={link.href}>
+              <dd key={i}>
+                <ActiveLink activeClassName="active" href={link.href}>
                   <StyledLink>{link.label}</StyledLink>
                 </ActiveLink>
-              </li>
+              </dd>
             ))}
-          </ul>
+          </dl>
         </UsefulLinks>
       </Wrapper>
     </Container>

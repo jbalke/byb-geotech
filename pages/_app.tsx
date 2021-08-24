@@ -42,15 +42,16 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  h1, h2, h3 {
+  h1, h2, h3, dt {
     color: ${Theme.color.primary};
     font-family: 'Poppins';
+    font-weight: 700;
     line-height: 1;
     margin-bottom: .5em;
   }
 
   @supports (font-variation-settings: normal) {
-    h1, h2, h3  {
+    h1, h2, h3, dt  {
       font-family: 'Rubik';
     }
   }
@@ -69,7 +70,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 600;
   }
 
-  ol, ul {
+  ol, ul, dl {
     margin:0
   }
 
