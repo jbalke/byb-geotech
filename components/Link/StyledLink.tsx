@@ -10,28 +10,19 @@ const ExternalLinkImg = styled(ExternalLinkIcon)`
 `;
 
 export const StyledLink = styled.a<{ size?: string }>`
-  /* align-items: center; */
-  appearance: none;
+  position: relative;
+  /* display: inline-block; */
   background-color: transparent;
   border: 0;
   box-shadow: 0px 2px 0px ${Theme.color.link};
-  cursor: pointer;
-  /* display: inline-flex; */
   font-size: ${({ size }) => size || '1em'};
-  flex-flow: row nowrap;
-  font-family: inherit;
+  font-weight: 600;
   letter-spacing: 0.05rem;
   line-height: 1;
-  position: relative;
+  color: ${Theme.color.link};
   white-space: nowrap;
-
-  &,
-  &:active,
-  &:visited {
-    color: ${Theme.color.link};
-    font-weight: 600;
-    text-decoration: none;
-  }
+  text-decoration: none;
+  cursor: pointer;
 
   @media (hover: hover) {
     & {
