@@ -11,6 +11,9 @@ import { Page } from '../@types/page';
 import '/styles/font.css';
 
 const GlobalStyle = createGlobalStyle`
+
+  :focus:not(:focus-visible) { outline: none }
+
   html {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
