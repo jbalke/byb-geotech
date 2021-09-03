@@ -77,9 +77,10 @@ const GlobalStyle = createGlobalStyle`
     margin:0
   }
 
-  ul {
+  :where(ul[class], ol[class]) {
     list-style-type: none;
     padding: 0;
+    margin: 0;
   }
 
   li::marker {
