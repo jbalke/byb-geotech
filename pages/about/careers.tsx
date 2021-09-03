@@ -14,14 +14,14 @@ type Props = {};
 function OurStory(props: Props) {
   return (
     <ContentPage
-      title='Careers'
+      title="Careers"
       relatedPages={
         <ul>
           <li>
-            <StyledNextLink href='/contact'>Contact Us</StyledNextLink>
+            <StyledNextLink href="/contact">Contact Us</StyledNextLink>
           </li>
           <li>
-            <StyledNextLink href='/about/our-story'>Our Story</StyledNextLink>
+            <StyledNextLink href="/about/our-story">Our Story</StyledNextLink>
           </li>
         </ul>
       }
@@ -73,29 +73,30 @@ function OurStory(props: Props) {
             <li>
               A trainee driller or offsider&apos;s duties include but not
               limited to:
+              <ul>
+                <li>
+                  Loading casing, drilling stems and equipment on trucks, utes
+                  and trailers
+                </li>
+                <li>Driving trucks (LR) or utes with or without a trailer</li>
+                <li>
+                  Discussing options/locations/issues and proposed solutions
+                  with clients
+                </li>
+                <li>
+                  Setting up and packing down the drilling rig and equipment
+                </li>
+                <li>
+                  Working together with the driller or offsider to share the
+                  workload
+                </li>
+                <li>
+                  Perform pre-starts and minor servicing and emergency repairs
+                  of equipment and vehicles.
+                </li>
+              </ul>
             </li>
-            <ul>
-              <li>
-                Loading casing, drilling stems and equipment on trucks, utes and
-                trailers
-              </li>
-              <li>Driving trucks (LR) or utes with or without a trailer</li>
-              <li>
-                Discussing options/locations/issues and proposed solutions with
-                clients
-              </li>
-              <li>
-                Setting up and packing down the drilling rig and equipment
-              </li>
-              <li>
-                Working together with the driller or offsider to share the
-                workload
-              </li>
-              <li>
-                Perform pre-starts and minor servicing and emergency repairs of
-                equipment and vehicles.
-              </li>
-            </ul>
+
             <li>At all times work in a low risk and professional manner</li>
             <li>
               Adhere to company WH&R policies and guidelines, Environmental
@@ -114,7 +115,7 @@ function OurStory(props: Props) {
           Send us an email (four paragraphs or less, please) telling us why this
           type of ad hoc casual role would suit your circumstances and why you
           would excel in this role to{' '}
-          <StyledLink href='mailto:careers@backyardbores.com'>
+          <StyledLink href="mailto:careers@backyardbores.com">
             careers@backyardbores.com
           </StyledLink>
           . Our admin staff will evaluate your response and may ask to learn
