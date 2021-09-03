@@ -25,6 +25,91 @@ const Subtext = styled.p`
 const questions: Question[] = [
   {
     uuid: v4(),
+    heading: 'What is a bore?',
+    panel: (
+      <>
+        <p>
+          A bore is a means to take water from the underground aquifer and this
+          water brought to the surface by an electric or solar pump or by a
+          mechanical windmill.
+        </p>
+        <p>
+          The most common type of modern bore is made from PVC and is 100mm –
+          150mm diameter with an electric pump attached.
+        </p>
+        <p>
+          There are other types of “bores” and they all differ slightly in their
+          construction and appearance.
+        </p>
+        <p>
+          A steel or PVC pipe 25 – 50mm diameter coming out of the ground is
+          likely to be a spear.
+        </p>
+        <p>
+          A water well approx. 900mm to 1800mm diameter is also a means to
+          extract ground water using a pump or windmill.
+        </p>
+        <p>
+          Water bores can be made from steel or PVC and can vary from 75mm to
+          350mm diameter.
+        </p>
+        <p>Flow rates can vary from 5L/min to 50 L/s.</p>
+      </>
+    ),
+  },
+  {
+    uuid: v4(),
+    heading: 'How much does it cost? I thought bores were expensive!',
+    panel: (
+      <>
+        <p>
+          They are not expensive at all! We are offering a great price using the
+          latest, international best practice standards and equipment for a
+          completed and cased PVC bore.
+        </p>
+        <p>
+          Most areas can have a bore drilled and a pump equipped for less than
+          $2900.
+        </p>
+        <p>
+          <strong>Seniors and Carers discount available!*</strong>
+        </p>
+        <p>
+          Call us now on <CallLink /> for an obligation free quote!
+        </p>
+        <Subtext>
+          *Not valid with any other offer. No other offers allowed, discount
+          applies to standard drilling rates not to already discounted rates.
+        </Subtext>
+      </>
+    ),
+  },
+  {
+    uuid: v4(),
+    heading: 'Do I need a permit / licence / permission before drilling?',
+    panel: (
+      <>
+        <p>
+          <strong>No</strong>. If you are a homeowner and intend to use the
+          water for non-commercial purposes (yards, pool, gardens, lawns) there
+          is <strong>no restriction</strong> drilling for water.
+        </p>
+        <p>
+          There are some small areas south of the river that are sensitive and
+          it’s best to contact us so we can discuss the limited requirements in
+          these small areas.
+        </p>
+        <p>
+          If you are a commercial enterprise or intend to use the water for a
+          commercial purpose,{' '}
+          <StyledLink href="/contact">contact us</StyledLink> and we can advise
+          the best contact at DNRME for your Development Permit application.
+        </p>
+      </>
+    ),
+  },
+  {
+    uuid: v4(),
     heading: 'Why should I use a licensed driller?',
     panel: (
       <>
@@ -38,9 +123,9 @@ const questions: Question[] = [
           can search for their name on the{' '}
           <strong>Qld Registered Drillers List</strong>{' '}
           <ExternalLink
-            href='https://www.dnrm.qld.gov.au/__data/assets/pdf_file/0004/99760/drillers-register.pdf'
-            target='_blank'
-            label='here'
+            href="https://www.dnrm.qld.gov.au/__data/assets/pdf_file/0004/99760/drillers-register.pdf"
+            target="_blank"
+            label="here"
           />{' '}
           before you engage them to drill. If they are{' '}
           <strong>not listed</strong>, they are <strong>not licensed</strong>.
@@ -59,65 +144,17 @@ const questions: Question[] = [
   },
   {
     uuid: v4(),
-    heading: 'Do I need council approval to get a bore?',
+    heading: 'Where can I put a bore in my yard?',
     panel: (
       <>
         <p>
-          <strong>NO!</strong> Local councils{' '}
-          <strong>are not and should not</strong> be involved in the process of
-          drilling for water on your private property. The resource you are
-          tapping into is a federal reserve owned by the people of Australia.
-        </p>
-      </>
-    ),
-  },
-  {
-    uuid: v4(),
-    heading: 'How much does it cost? I thought bores were expensive!',
-    panel: (
-      <>
-        <p>
-          They are not expensive at all! We are offering a great price using the
-          latest, international best practice standards and equipment for a
-          completed and cased PVC bore.
-        </p>
-        <p>
-          <strong>Seniors and Carers discount available!*</strong>
-        </p>
-        <p>
-          Call us now on <CallLink /> for an obligation free quote!
-        </p>
-        <Subtext>
-          *Not valid with any other offer. No other offers allowed, discount
-          applies to standard drilling rates not to already discounted rates.
-        </Subtext>
-      </>
-    ),
-  },
-  {
-    uuid: v4(),
-    heading: 'Does Backyard Bores do divining (dowsing) for water?',
-    panel: (
-      <>
-        <p>
-          No. It doesn&apos;t work for us but{' '}
-          <StyledLink href='/contact'>contact us</StyledLink> and we can give
-          you the numbers of several local diviners. We do have a good knowledge
-          of the areas around Mackay that have water and what depth a usable
-          bore will be.
-        </p>
-        <p>
-          When considering a location in your yard for a bore , please take the
+          When considering a location in your yard for a bore, please take the
           following into account:
         </p>
-        <ol>
+        <ul>
           <li>
             How easy will it be to get the drilling rig to that location? Please
-            see{' '}
-            <StyledLink href='#drilling-rig'>
-              Will the drilling rig fit in my yard?
-            </StyledLink>{' '}
-            below for rig dimensions.
+            see below for rig dimensions.
           </li>
           <li>
             How easy (and costly) will it be to get power to the pump? Please
@@ -130,7 +167,7 @@ const questions: Question[] = [
             you want the pump outlet near the fence so you can run poly around
             your fence line to have taps every 10m or so?
           </li>
-        </ol>
+        </ul>
       </>
     ),
   },
@@ -157,8 +194,11 @@ const questions: Question[] = [
         <p>
           It’s <strong>VERY IMPORTANT</strong> for you to locate these services
           as it is your responsibility as the landowner or their authorised
-          representative. Call us on <CallLink /> if you have concerns, we can
-          apply for the plans from council for a $58 fee.
+          representative.
+        </p>
+        <p>
+          Call us on <CallLink /> if you have concerns, we can apply for the
+          plans from council for a $58 fee.
         </p>
       </>
     ),
@@ -186,7 +226,7 @@ const questions: Question[] = [
   },
   {
     uuid: v4(),
-    heading: 'What do I need to do to prepare the drilling site?',
+    heading: 'What does the homeowner need to do to prepare the drilling site?',
     panel: (
       <>
         <p>
@@ -203,8 +243,9 @@ const questions: Question[] = [
           remove fence panel we will have to add an hourly surcharge.
         </p>
         <p>
-          Please call us on <CallLink /> and we can come inspect and do some
-          measurements.
+          Please call us on <CallLink /> and notify our staff if you have a
+          fence that needs removing or the area needs trees and branches cut
+          down.
         </p>
       </>
     ),
@@ -217,8 +258,8 @@ const questions: Question[] = [
         <p>
           Click{' '}
           <ExternalLink
-            href='https://backyardbores.youcanbook.me/'
-            label='here'
+            href="https://backyardbores.youcanbook.me/"
+            label="here"
           />{' '}
           to access our online calendar but we operate 7 days a week.
         </p>
@@ -249,7 +290,7 @@ const questions: Question[] = [
       <>
         <p>
           Please call us on <CallLink /> to discuss your options but often times{' '}
-          <strong>YES!</strong> you can.
+          <strong>YES</strong> you can.
         </p>
       </>
     ),
@@ -266,6 +307,21 @@ const questions: Question[] = [
         <p>
           Mobilisation fees may apply, please call us on <CallLink /> to
           enquire.
+        </p>
+      </>
+    ),
+  },
+  {
+    uuid: v4(),
+    heading: 'Does Backyard Bores do divining (dowsing) for water?',
+    panel: (
+      <>
+        <p>
+          No. It doesn&apos;t work for us but{' '}
+          <StyledLink href="/contact">contact us</StyledLink> and we can give
+          you the numbers of several local diviners. We do have a good knowledge
+          of the areas around Mackay that have water and what depth a usable
+          bore will be.
         </p>
       </>
     ),
