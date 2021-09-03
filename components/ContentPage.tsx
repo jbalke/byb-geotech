@@ -32,7 +32,7 @@ const PageContent = styled.section`
     margin-top: 1rem;
   }
 
-  ul > ul {
+  li > ul {
     list-style: circle;
     margin: 0.5em 0;
   }
