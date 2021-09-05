@@ -61,7 +61,7 @@ type Props = {};
 function Contact(props: Props) {
   return (
     <>
-      <Banner title='Contact Us' />
+      <Banner title="Contact Us" />
       <Wrapper>
         <Container>
           <div>
@@ -87,11 +87,11 @@ function Contact(props: Props) {
                 </StyledLink>
               </p>
             </ContactDetails>
-            <StyledAside>
+            <StyledAside type="question">
               <strong>Looking for bores near you?</strong>
               <p>
                 Try our new{' '}
-                <StyledNextLink href='/bore-search'>Bore Search</StyledNextLink>
+                <StyledNextLink href="/bore-search">Bore Search</StyledNextLink>
                 ! Just enter your address to see how many bores are nearby.{' '}
                 <strong>It&apos;s free!</strong>
               </p>
