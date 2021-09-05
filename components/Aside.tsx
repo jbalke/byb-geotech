@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BsInfoCircle } from 'react-icons/bs';
+import { BsInfoCircle, BsQuestionCircle } from 'react-icons/bs';
 import { Theme } from 'styles/theme';
 import { StyledLink } from './Link';
 
@@ -53,17 +53,21 @@ const IconWrapper = styled.div`
   transition: ${Theme.color.transition};
 `;
 
+const Icons = {
+  info: <BsInfoCircle />,
+  question: <BsQuestionCircle />,
+};
+
 type AsideProps = {
   children: React.ReactNode;
   className?: string;
+  type?: keyof typeof Icons;
 };
 
-function Aside({ children, className }: AsideProps) {
+function Aside({ children, className, type = 'info' }: AsideProps) {
   return (
     <Container className={className}>
-      <IconWrapper>
-        <BsInfoCircle />
-      </IconWrapper>
+      <IconWrapper>{Icons[type]}</IconWrapper>
       {children}
     </Container>
   );
