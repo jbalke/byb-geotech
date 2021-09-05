@@ -4,7 +4,7 @@ import StyledNextLink from 'components/Link/StyledNextLink';
 import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 import styled from 'styled-components';
-import { StyledLinkButton } from '../../components/Button';
+import { StyledLinkButton } from 'components/Button';
 import { PHONE } from '../../constants';
 
 const PageSection = styled.section``;
@@ -14,22 +14,22 @@ type Props = {};
 function index(props: Props) {
   return (
     <ContentPage
-      title='Water Bore Drilling'
+      title="Water Bore Drilling"
       relatedPages={
         <ul>
           <li>
-            <StyledNextLink href='/faq'>FAQ</StyledNextLink>
+            <StyledNextLink href="/faq">FAQ</StyledNextLink>
           </li>
           <li>
-            <StyledNextLink href='/request-a-quote'>
+            <StyledNextLink href="/request-a-quote">
               Request a Quote
             </StyledNextLink>
           </li>
           <li>
-            <StyledNextLink href='/bore-search'>Bore Search</StyledNextLink>
+            <StyledNextLink href="/bore-search">Bore Search</StyledNextLink>
           </li>
           <li>
-            <StyledNextLink href='/bores/new-install'>
+            <StyledNextLink href="/bores/new-install">
               New Bore & Pump Tips
             </StyledNextLink>
           </li>
@@ -44,16 +44,16 @@ function index(props: Props) {
           drilled and the depth.
           <br />
           It&apos;s a four step process:
-          <ol>
-            <li>Drilling</li>
-            <li>Installing casing</li>
-            <li>
-              Cleaning out the inside of the casing to remove damaging sands,
-              muds and clay
-            </li>
-            <li>Flow rate, salt, iron, PH, testing (if required).</li>
-          </ol>
         </p>
+        <ol>
+          <li>Drilling</li>
+          <li>Installing casing</li>
+          <li>
+            Cleaning out the inside of the casing to remove damaging sands, muds
+            and clay
+          </li>
+          <li>Flow rate, salt, iron, PH, testing (if required).</li>
+        </ol>
         <h3>Will there be a lot of soil/clay/sand to dispose of?</h3>
         <p>
           Usually there are 3 - 5 wheelbarrow loads of material that you need to
@@ -94,7 +94,7 @@ function index(props: Props) {
           driveway.
         </p>
       </PageSection>
-      <StyledLinkButton href='/bores/new-install' fullWidth margin='1rem auto'>
+      <StyledLinkButton href="/bores/new-install" fullWidth margin="1rem auto">
         Learn how to maintain a new bore and/or pump.
       </StyledLinkButton>
     </ContentPage>
