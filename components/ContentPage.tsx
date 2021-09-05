@@ -51,9 +51,9 @@ const RelatedPages = styled.div`
   dt {
     color: ${Theme.color.link};
     margin-bottom: 0;
-    font-weight: 200;
-    font-family: Rubik;
-    font-size: 1.5em;
+    line-height: unset;
+    font-weight: 400;
+    font-size: 1.1rem;
   }
 
   dt::after {
@@ -81,12 +81,8 @@ const RelatedPages = styled.div`
   }
 
   @media screen and (min-width: ${props => props.theme.bp.tablet}) {
-    & {
-      /* align-self: start; */
-      /* margin-right: auto; */
-    }
-
     dt {
+      font-size: 1.5em;
       margin-bottom: 0.5em;
     }
 
