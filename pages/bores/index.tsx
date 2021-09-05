@@ -1,10 +1,11 @@
+import Aside from 'components/Aside';
+import { StyledLinkButton } from 'components/Button';
 import ContentPage from 'components/ContentPage';
 import { StyledLink } from 'components/Link';
 import StyledNextLink from 'components/Link/StyledNextLink';
 import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 import styled from 'styled-components';
-import { StyledLinkButton } from 'components/Button';
 import { PHONE } from '../../constants';
 
 const PageSection = styled.section``;
@@ -16,24 +17,34 @@ function index(props: Props) {
     <ContentPage
       title="Water Bore Drilling"
       relatedPages={
-        <ul>
-          <li>
+        <dl>
+          <dt>Related Pages</dt>
+          <dd>
             <StyledNextLink href="/faq">FAQ</StyledNextLink>
-          </li>
-          <li>
+          </dd>
+          <dd>
             <StyledNextLink href="/request-a-quote">
               Request a Quote
             </StyledNextLink>
-          </li>
-          <li>
+          </dd>
+          <dd>
             <StyledNextLink href="/bore-search">Bore Search</StyledNextLink>
-          </li>
-          <li>
+          </dd>
+          <dd>
             <StyledNextLink href="/bores/new-install">
               New Bore & Pump Tips
             </StyledNextLink>
-          </li>
-        </ul>
+          </dd>
+        </dl>
+      }
+      aside={
+        <Aside type="question">
+          <strong>Got more questions?</strong>
+          <p>
+            You might find the answer over at our{' '}
+            <StyledNextLink href="/faq">FAQ</StyledNextLink>!
+          </p>
+        </Aside>
       }
     >
       <PageSection>
