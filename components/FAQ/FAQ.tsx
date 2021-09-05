@@ -69,7 +69,8 @@ const FadeIn = keyframes`
   }
 `;
 const StyledAccordionPanel = styled(AccordionItemPanel)`
-  padding: 1em;
+  padding-inline-start: 1em;
+  padding-block-end: 1em;
   animation: ${FadeIn} 0.35s ease-in;
 
   ol {
@@ -77,7 +78,7 @@ const StyledAccordionPanel = styled(AccordionItemPanel)`
     margin: 0;
   }
 
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media (min-width: ${props => props.theme.bp.tablet}) {
     ol {
       padding-left: 40px;
     }
