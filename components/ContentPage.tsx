@@ -9,10 +9,10 @@ const ContentLayout = styled.div`
   display: block;
   width: 100%;
 
-  @media screen and (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media screen and (min-width: ${props => props.theme.bp.tablet}) {
     & {
       display: grid;
-      grid-template-columns: 4fr 1fr;
+      grid-template-columns: 3fr 1fr;
       gap: 1.5rem;
     }
   }
@@ -20,7 +20,7 @@ const ContentLayout = styled.div`
 
 const PageContent = styled.section`
   display: grid;
-  grid-template-columns: 1fr min(65ch, 100%) 1fr;
+  grid-template-columns: 1fr min(65ch, 100%) fr;
 
   h2 {
     font-size: 2rem;
@@ -82,8 +82,8 @@ const RelatedPages = styled.div`
 
   @media screen and (min-width: ${props => props.theme.bp.tablet}) {
     & {
-      align-self: start;
-      margin-right: auto;
+      /* align-self: start; */
+      /* margin-right: auto; */
     }
 
     dt {
