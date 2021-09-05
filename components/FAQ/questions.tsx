@@ -17,8 +17,7 @@ const Subtext = styled.p`
   font-family: 'Public Sans';
   font-style: italic;
   font-size: 0.8em;
-  margin-top: 2rem;
-  line-height: 130%;
+  line-height: 1.3;
   letter-spacing: 0.04em;
 `;
 
@@ -38,7 +37,7 @@ const questions: Question[] = [
           150mm diameter with an electric pump attached.
         </p>
         <p>
-          There are other types of “bores” and they all differ slightly in their
+          There are other types of bores and they all differ slightly in their
           construction and appearance.
         </p>
         <p>
