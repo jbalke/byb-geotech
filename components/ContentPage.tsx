@@ -42,80 +42,114 @@ const PageContent = styled.section`
   }
 `;
 
-const RelatedPages = styled.aside`
+const RelatedPages = styled.div`
+  padding: ${Theme.spacing.l};
+  font-size: 14px;
   border: 2px solid ${Theme.color.primaryLight};
   color: ${Theme.color.textAside};
-  font-size: 14px;
-  margin-top: 2rem;
-  padding: ${Theme.spacing.l};
 
-  h2 {
+  dt {
     color: ${Theme.color.link};
+    margin-bottom: 0;
     font-weight: 200;
-    margin-bottom: 0.5em;
+    font-family: Rubik;
+    font-size: 1.5em;
   }
 
-  ul {
+  dt::after {
+    content: ':';
+  }
+
+  dl {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
+    list-style: none;
+    padding: 0;
   }
 
-  li {
+  dd {
     margin-left: 1em;
   }
 
-  li::after {
+  dd::after {
     content: ', ';
   }
 
-  li:last-of-type::after {
+  dd:last-of-type::after {
     content: '';
   }
 
-  @media screen and (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media screen and (min-width: ${props => props.theme.bp.tablet}) {
     & {
       align-self: start;
-      box-shadow: ${Theme.color.boxShadow};
       margin-right: auto;
-      position: sticky;
-      margin-top: 0;
-      top: ${Theme.spacing.l};
     }
 
-    ul {
+    dt {
+      margin-bottom: 0.5em;
+    }
+
+    dt::after {
+      content: '';
+    }
+
+    dl {
       display: block;
       padding-left: 1em;
     }
 
-    li::marker {
+    dd::marker {
       color: ${Theme.color.link};
       font-size: 1.2em;
     }
 
-    li::after {
+    dd::after {
       content: '';
     }
   }
 `;
 
+const AsideLayout = styled.div`
+  display: flex;
+  margin-top: 2rem;
+  flex-flow: column nowrap;
+  gap: 2rem;
+
+  @media screen and (min-width: ${props => props.theme.bp.tablet}) {
+    & {
+      align-self: start;
+      margin-right: auto;
+      position: sticky;
+      margin-top: 0;
+      top: ${Theme.spacing.l};
+    }
+  }
+`;
+
+const AsideContainer = styled.div`
+  align-self: center;
+  width: fit-content;
+`;
+
 type indexProps = {
   title: string;
   relatedPages: React.ReactNode;
+  aside?: React.ReactNode;
   children: React.ReactNode;
 };
 
-function ContentPage({ title, relatedPages, children }: indexProps) {
+function ContentPage({ title, relatedPages, aside, children }: indexProps) {
   return (
     <>
       <Banner title={title} />
-      <Wrapper main padding='xl'>
+      <Wrapper main padding="xl">
         <ContentLayout>
           <PageContent>{children}</PageContent>
-          <RelatedPages>
-            <h2>Related Pages</h2>
-            {relatedPages}
-          </RelatedPages>
+          <AsideLayout>
+            <RelatedPages>{relatedPages}</RelatedPages>
+            <AsideContainer>{aside}</AsideContainer>
+          </AsideLayout>
         </ContentLayout>
       </Wrapper>
     </>
