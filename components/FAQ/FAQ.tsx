@@ -7,7 +7,7 @@ import {
   AccordionItemPanel,
 } from 'react-accessible-accordion';
 import styled, { keyframes } from 'styled-components';
-import { Theme } from '../../styles/theme';
+import { Theme } from 'styles/theme';
 
 const StyledAccordionButton = styled(AccordionItemButton)`
   background-color: ${Theme.color.primary};
