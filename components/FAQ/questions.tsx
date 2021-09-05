@@ -198,7 +198,7 @@ const questions: Question[] = [
         </p>
         <p>
           Call us on <CallLink /> if you have concerns, we can apply for the
-          plans from council for a $58 fee.
+          plans from council for a $85 fee.
         </p>
       </>
     ),
