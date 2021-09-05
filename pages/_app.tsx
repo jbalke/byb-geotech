@@ -9,6 +9,7 @@ import 'styles/styles.css';
 import { DarkTheme, Theme } from 'styles/theme';
 import { Page } from '../@types/page';
 import '/styles/font.css';
+import * as types from 'styled-components/cssprop';
 
 const GlobalStyle = createGlobalStyle`
 
