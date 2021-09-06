@@ -53,7 +53,6 @@ const IconLinkWrapper = styled.div`
       }
 
       &:hover {
-        all: inital;
         color: ${Theme.color.linkHover};
       }
     }
