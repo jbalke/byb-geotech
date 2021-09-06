@@ -1,9 +1,11 @@
 import Banner from 'components/Banner';
 import { Wrapper } from 'components/styled';
 import SiteLayout from 'layouts/SiteLayout';
+import { padEnd } from 'lodash';
 import React from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
+import StyledNextLink from './Link/StyledNextLink';
 
 const ContentLayout = styled.div`
   display: block;
@@ -12,15 +14,15 @@ const ContentLayout = styled.div`
   @media screen and (min-width: ${props => props.theme.bp.tablet}) {
     & {
       display: grid;
-      grid-template-columns: 3fr 1fr;
+      grid-template-columns: auto 250px;
       gap: 1.5rem;
     }
   }
 `;
 
-const PageContent = styled.section`
+const PageContent = styled.div`
   display: grid;
-  grid-template-columns: 1fr min(65ch, 100%) fr;
+  grid-template-columns: 1fr min(65ch, 100%) 1fr;
 
   h2 {
     font-size: 2rem;
@@ -40,13 +42,48 @@ const PageContent = styled.section`
   & > * {
     grid-column: 2;
   }
+
+  section + section {
+    margin-top: 1em;
+  }
+`;
+
+const AsideLayout = styled.div`
+  display: flex;
+  width: 100%;
+  margin-top: 2rem;
+  flex-flow: column nowrap;
+  gap: 2rem;
+
+  @media screen and (min-width: ${props => props.theme.bp.tablet}) {
+    & {
+      position: sticky;
+      margin-top: 0;
+      top: ${Theme.spacing.l};
+    }
+  }
+`;
+
+const AsideContainer = styled.div`
+  align-self: center;
+  width: fit-content;
 `;
 
 const RelatedPages = styled.div`
+  width: fit-content;
+  margin-inline: auto;
   padding: ${Theme.spacing.l};
-  font-size: 14px;
+  font-size: 0.875rem;
   border: 2px solid ${Theme.color.primaryLight};
   color: ${Theme.color.textAside};
+
+  dl {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0;
+  }
 
   dt {
     color: ${Theme.color.link};
@@ -58,14 +95,6 @@ const RelatedPages = styled.div`
 
   dt::after {
     content: ':';
-  }
-
-  dl {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    list-style: none;
-    padding: 0;
   }
 
   dd {
@@ -81,6 +110,14 @@ const RelatedPages = styled.div`
   }
 
   @media screen and (min-width: ${props => props.theme.bp.tablet}) {
+    & {
+      width: 100%;
+    }
+
+    dl {
+      display: block;
+    }
+
     dt {
       font-size: 1.5em;
       margin-bottom: 0.5em;
@@ -88,11 +125,6 @@ const RelatedPages = styled.div`
 
     dt::after {
       content: '';
-    }
-
-    dl {
-      display: block;
-      padding-left: 1em;
     }
 
     dd::marker {
@@ -106,31 +138,14 @@ const RelatedPages = styled.div`
   }
 `;
 
-const AsideLayout = styled.div`
-  display: flex;
-  margin-top: 2rem;
-  flex-flow: column nowrap;
-  gap: 2rem;
-
-  @media screen and (min-width: ${props => props.theme.bp.tablet}) {
-    & {
-      align-self: start;
-      margin-right: auto;
-      position: sticky;
-      margin-top: 0;
-      top: ${Theme.spacing.l};
-    }
-  }
-`;
-
-const AsideContainer = styled.div`
-  align-self: center;
-  width: fit-content;
-`;
+export interface RelatedPage {
+  label: string;
+  href: string;
+}
 
 type indexProps = {
   title: string;
-  relatedPages: React.ReactNode;
+  relatedPages: RelatedPage[];
   aside?: React.ReactNode;
   children: React.ReactNode;
 };
@@ -143,7 +158,18 @@ function ContentPage({ title, relatedPages, aside, children }: indexProps) {
         <ContentLayout>
           <PageContent>{children}</PageContent>
           <AsideLayout>
-            <RelatedPages>{relatedPages}</RelatedPages>
+            <RelatedPages>
+              <dl>
+                <dt>Related Pages</dt>
+                {relatedPages.map(page => (
+                  <dd key={page.label}>
+                    <StyledNextLink href={page.href}>
+                      {page.label}
+                    </StyledNextLink>
+                  </dd>
+                ))}
+              </dl>
+            </RelatedPages>
             <AsideContainer>{aside}</AsideContainer>
           </AsideLayout>
         </ContentLayout>

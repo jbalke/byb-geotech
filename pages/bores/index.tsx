@@ -1,6 +1,6 @@
 import Aside from 'components/Aside';
 import { StyledLinkButton } from 'components/Button';
-import ContentPage from 'components/ContentPage';
+import ContentPage, { RelatedPage } from 'components/ContentPage';
 import { StyledLink } from 'components/Link';
 import StyledNextLink from 'components/Link/StyledNextLink';
 import SiteLayout from 'layouts/SiteLayout';
@@ -10,33 +10,19 @@ import { PHONE } from '../../constants';
 
 const PageSection = styled.section``;
 
-type Props = {};
+const relatedPages: RelatedPage[] = [
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Request a Quote', href: '/request-a-quote' },
+  { label: 'Bore Search', href: '/bore-search' },
+  { label: 'New Bore & Pump Tips', href: '/bores/new-install' },
+];
 
+type Props = {};
 function index(props: Props) {
   return (
     <ContentPage
       title="Water Bore Drilling"
-      relatedPages={
-        <dl>
-          <dt>Related Pages</dt>
-          <dd>
-            <StyledNextLink href="/faq">FAQ</StyledNextLink>
-          </dd>
-          <dd>
-            <StyledNextLink href="/request-a-quote">
-              Request a Quote
-            </StyledNextLink>
-          </dd>
-          <dd>
-            <StyledNextLink href="/bore-search">Bore Search</StyledNextLink>
-          </dd>
-          <dd>
-            <StyledNextLink href="/bores/new-install">
-              New Bore & Pump Tips
-            </StyledNextLink>
-          </dd>
-        </dl>
-      }
+      relatedPages={relatedPages}
       aside={
         <Aside type="question">
           <strong>Got more questions?</strong>

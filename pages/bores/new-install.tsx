@@ -1,4 +1,4 @@
-import ContentPage from 'components/ContentPage';
+import ContentPage, { RelatedPage } from 'components/ContentPage';
 import { StyledLink } from 'components/Link';
 import StyledNextLink from 'components/Link/StyledNextLink';
 import SiteLayout from 'layouts/SiteLayout';
@@ -9,31 +9,18 @@ import { PHONE } from '../../constants';
 
 const PageSection = styled.section``;
 
+const relatedPages: RelatedPage[] = [
+  { label: 'Water Bore Drilling', href: '/bores' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Request a Quote', href: '/request-a-quote' },
+  { label: 'Bore Search', href: '/bore-search' },
+];
+
 type Props = {};
 
 function index(props: Props) {
   return (
-    <ContentPage
-      title='New Bore & Pump Tips'
-      relatedPages={
-        <ul>
-          <li>
-            <StyledNextLink href='/bores'>Water Bore Drilling</StyledNextLink>
-          </li>
-          <li>
-            <StyledNextLink href='/faq'>FAQ</StyledNextLink>
-          </li>
-          <li>
-            <StyledNextLink href='/request-a-quote'>
-              Request a Quote
-            </StyledNextLink>
-          </li>
-          <li>
-            <StyledNextLink href='/bore-search'>Bore Search</StyledNextLink>
-          </li>
-        </ul>
-      }
-    >
+    <ContentPage title="New Bore & Pump Tips" relatedPages={relatedPages}>
       <PageSection>
         <h2>New Bore Only</h2>
         <p>
@@ -135,10 +122,10 @@ function index(props: Props) {
         </p>
         <VideoContainer>
           <iframe
-            src='https://www.youtube-nocookie.com/embed/DWHvp_fWmXM'
-            title='YouTube video player'
-            frameBorder='0'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+            src="https://www.youtube-nocookie.com/embed/DWHvp_fWmXM"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
         </VideoContainer>

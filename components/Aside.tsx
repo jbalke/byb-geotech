@@ -20,6 +20,10 @@ const Container = styled.aside`
     margin-top: 0;
   }
 
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
   ${StyledLink} {
     color: ${Theme.color.link};
     box-shadow: 0px 1px 0px ${Theme.color.link};

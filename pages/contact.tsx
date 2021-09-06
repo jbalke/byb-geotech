@@ -12,29 +12,25 @@ import CallLink from 'components/CallLink';
 import Banner from 'components/Banner';
 
 const StyledPrivacyDisclaimer = styled(PrivacyDisclaimer)`
-  margin-top: 0;
-
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
-    margin-top: 2rem;
-  }
+  margin-top: 3rem;
 `;
 
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem;
+  gap: 3rem;
   width: 100%;
 
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
-    grid-template-columns: 1fr 400px;
+  @media (min-width: ${props => props.theme.bp.tablet}) {
+    grid-template-columns: auto 300px;
   }
 `;
 
 const StyledAside = styled(Aside)`
-  margin: 3rem auto;
+  margin: 0 auto;
   width: 80%;
 
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media (min-width: ${props => props.theme.bp.tablet}) {
     margin: 3rem 0;
     width: 100%;
   }
@@ -68,7 +64,13 @@ function Contact(props: Props) {
             <h2>Send Us A Message</h2>
             <ContactForm />
           </div>
-          <div>
+          <div
+            css={`
+              display: flex;
+              flex-flow: column nowrap;
+              gap: 2rem;
+            `}
+          >
             <ContactDetails>
               <h2>Direct Contact</h2>
               <p>
