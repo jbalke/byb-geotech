@@ -14,7 +14,7 @@ const IconWrapper = styled.div`
 const DropdownSlot = styled.div`
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 5px);
 `;
 
 const NavbarItemEl = styled.li`
