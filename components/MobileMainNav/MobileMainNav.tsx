@@ -9,6 +9,7 @@ import { FaHome, FaTimes } from 'react-icons/fa';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import Button from '../Button';
+import FocusLock from 'react-focus-lock';
 
 const HomeLinkWrapper = styled.div`
   display: flex;
@@ -29,7 +30,7 @@ const MenuContainer = styled(motion.div)`
   flex-flow: column nowrap;
   min-height: calc(100vh - 10px);
   margin: 0 auto;
-  max-width: ${(props) => props.theme.bp.tablet};
+  max-width: ${props => props.theme.bp.tablet};
   padding: 15px 15px 15vh 15px;
   overflow-x: hidden;
   overscroll-behavior: contain;
@@ -158,64 +159,71 @@ function MobileMainNav(props: MobileMainNavProps) {
       variants={mobileWrapperVariants}
       animate={isSidebarOpen ? 'open' : 'closed'}
     >
-      <MenuContainer variants={mobileNavVariants}>
-        <MenuCloseBtn
-          variant="outline"
-          onClick={closeMobileNav}
-          ariaLabel="close mobile menu"
-        >
-          <FaTimes />
-        </MenuCloseBtn>
-        <HomeLinkWrapper>
-          <StyledNextLink size="3rem" onClick={closeMobileNav} href="/">
-            <FaHome />
-          </StyledNextLink>
-        </HomeLinkWrapper>
-        <NavLinksContainer>
-          {navLinks.map(({ title, href, sections, Icon }) => {
-            return (
-              <PageWrapper key={title}>
-                {href && Icon ? (
-                  <StyledNextLink href={href} onClick={closeMobileNav}>
-                    <PageTitle>
-                      <Icon /> {title}
-                    </PageTitle>
-                  </StyledNextLink>
-                ) : (
-                  <PageTitle>{title}</PageTitle>
-                )}
-                {sections && (
-                  <NavSectionContainer>
-                    {sections.map((section, index) => (
-                      <NavSection key={index}>
-                        {section.title && (
-                          <SectionTitle>{section.title}</SectionTitle>
-                        )}
-                        <LinksWrapper>
-                          {section.pages.map(page => {
-                            const { Icon } = page;
-                            return (
-                              <React.Fragment key={page.href}>
-                                <Icon />
-                                <StyledNextLink
-                                  href={page.href}
-                                  onClick={closeMobileNav}
-                                >
-                                  {page.title}
-                                </StyledNextLink>
-                              </React.Fragment>
-                            );
-                          })}
-                        </LinksWrapper>
-                      </NavSection>
-                    ))}
-                  </NavSectionContainer>
-                )}
-              </PageWrapper>
-            );
-          })}
-        </NavLinksContainer>
-      </MenuContainer>
+      <FocusLock
+        disabled={!isSidebarOpen}
+        css={`
+          width: 100%;
+        `}
+      >
+        <MenuContainer variants={mobileNavVariants} id="main-menu">
+          <MenuCloseBtn
+            variant="outline"
+            onClick={closeMobileNav}
+            aria-label="close mobile menu"
+          >
+            <FaTimes />
+          </MenuCloseBtn>
+          <HomeLinkWrapper>
+            <StyledNextLink size="3rem" onClick={closeMobileNav} href="/">
+              <FaHome />
+            </StyledNextLink>
+          </HomeLinkWrapper>
+          <NavLinksContainer>
+            {navLinks.map(({ title, href, sections, Icon }) => {
+              return (
+                <PageWrapper key={title}>
+                  {href && Icon ? (
+                    <StyledNextLink href={href} onClick={closeMobileNav}>
+                      <PageTitle>
+                        <Icon /> {title}
+                      </PageTitle>
+                    </StyledNextLink>
+                  ) : (
+                    <PageTitle>{title}</PageTitle>
+                  )}
+                  {sections && (
+                    <NavSectionContainer>
+                      {sections.map((section, index) => (
+                        <NavSection key={index}>
+                          {section.title && (
+                            <SectionTitle>{section.title}</SectionTitle>
+                          )}
+                          <LinksWrapper>
+                            {section.pages.map(page => {
+                              const { Icon } = page;
+                              return (
+                                <React.Fragment key={page.href}>
+                                  <Icon />
+                                  <StyledNextLink
+                                    href={page.href}
+                                    onClick={closeMobileNav}
+                                  >
+                                    {page.title}
+                                  </StyledNextLink>
+                                </React.Fragment>
+                              );
+                            })}
+                          </LinksWrapper>
+                        </NavSection>
+                      ))}
+                    </NavSectionContainer>
+                  )}
+                </PageWrapper>
+              );
+            })}
+          </NavLinksContainer>
+        </MenuContainer>
+      </FocusLock>
     </Wrapper>
   );
 }

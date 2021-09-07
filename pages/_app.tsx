@@ -1,5 +1,5 @@
 import MobileMainNav from 'components/MobileMainNav';
-import { UIProvider } from 'context/ui-context';
+import { UIProvider, useUIState } from 'context/ui-context';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Fragment, ReactElement } from 'react';
@@ -9,6 +9,7 @@ import 'styles/styles.css';
 import { DarkTheme, Theme } from 'styles/theme';
 import { Page } from '../@types/page';
 import '/styles/font.css';
+import FocusLock from 'react-focus-lock';
 import * as types from 'styled-components/cssprop';
 
 const GlobalStyle = createGlobalStyle`
@@ -106,6 +107,8 @@ function App({ Component, pageProps, router }: Props) {
   // adjust accordingly if you disabled a layout rendering option
   const getLayout = Component.getLayout ?? ((page: ReactElement) => page);
   const Layout = Component.layout ?? Fragment;
+
+  const { isSidebarOpen } = useUIState();
 
   return (
     <>
@@ -228,9 +231,11 @@ function App({ Component, pageProps, router }: Props) {
         }}
       >
         <UIProvider>
-          <Layout>
-            {getLayout(<Component {...pageProps} key={router.route} />)}
-          </Layout>
+          <FocusLock disabled={isSidebarOpen}>
+            <Layout>
+              {getLayout(<Component {...pageProps} key={router.route} />)}
+            </Layout>
+          </FocusLock>
           <MobileMainNav />
         </UIProvider>
       </ThemeProvider>

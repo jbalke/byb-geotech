@@ -1,4 +1,4 @@
-import { toggleSidebar } from 'actions/ui-actions';
+import { openSidebar } from 'actions/ui-actions';
 import LogoImg from 'assets/logo.webp';
 import Button, { StyledLinkButton } from 'components/Button';
 import CallLink from 'components/CallLink';
@@ -177,7 +177,7 @@ const PhoneQuote = styled.div`
 
 const MainNavBar = () => {
   const dispatch = useUIDispatch();
-  const toggleMobileNav = () => dispatch(toggleSidebar());
+  const toggleMobileNav = () => dispatch(openSidebar());
 
   const [activeSubmenu, setActiveSubmenu] = useState<number | null>(null);
 
@@ -248,7 +248,8 @@ const MainNavBar = () => {
           <MobileMenuToggle
             size="lg"
             onClick={toggleMobileNav}
-            ariaLabel="open mobile menu"
+            aria-label="open mobile menu"
+            aria-controls="main-menu"
           >
             <FaBars />
           </MobileMenuToggle>

@@ -28,8 +28,11 @@ type ButtonProps = {
   isLoading?: boolean;
   isDisabled?: boolean;
   children: React.ReactNode;
-  ariaLabel?: string;
-} & (FormButton | NonFormButton);
+} & (FormButton | NonFormButton) &
+  React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >;
 
 function BaseButton({
   className,
@@ -38,7 +41,7 @@ function BaseButton({
   children,
   onClick,
   type = 'button',
-  ariaLabel,
+  ...buttonProps
 }: ButtonProps) {
   return (
     <button
@@ -46,7 +49,7 @@ function BaseButton({
       disabled={isDisabled || isLoading}
       onClick={onClick}
       type={type}
-      aria-label={ariaLabel}
+      {...buttonProps}
     >
       <Wrapper>
         {isLoading ? <Spinner height="100%" fill="#fff" /> : children}
