@@ -29,9 +29,9 @@ export const LIGHT_THEME = {
   success: '#8ef282',
   successText: '#126808',
   boxShadow:
-    '0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1)',
-  navDropdownBoxShadow: 'none',
-  //'0 50px 100px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1)',
+    '0px 2px 3px 3px rgba(0,0,0,0.14) , 0px 1px 10px 0px rgba(0,0,0,0.12) , 0px 2px 4px -1px rgba(0,0,0,0.2) ',
+  navDropdownBoxShadow:
+    '0px 0px 5px 5px rgba(0,0,0,0.14) , 0px 1px 10px 0px rgba(0,0,0,0.12) , 0px 2px 4px -1px rgba(0,0,0,0.2)',
   grey: '#4a4a4a',
   darkGrey: '#3d3d3d',
   green: '#24b47e',
