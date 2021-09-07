@@ -11,27 +11,26 @@ const ExternalLinkImg = styled(ExternalLinkIcon)`
 
 export const StyledLink = styled.a<{ size?: string }>`
   position: relative;
-  /* display: inline-block; */
   background-color: transparent;
+  color: var(--link-color, ${Theme.color.link});
   border: 0;
-  box-shadow: 0px 2px 0px ${Theme.color.link};
+  box-shadow: 0px 2px 0px var(--link-color, ${Theme.color.link});
   font-size: ${({ size }) => size || '1em'};
   font-weight: 600;
   letter-spacing: 0.05rem;
   line-height: 1;
-  color: ${Theme.color.link};
   white-space: nowrap;
   text-decoration: none;
   cursor: pointer;
 
   @media (hover: hover) {
     & {
-      box-shadow: 0px 0px 0px ${Theme.color.link};
+      box-shadow: 0px 0px 0px var(--link-color, ${Theme.color.link});
       transition: box-shadow 300ms;
     }
 
     &:hover {
-      box-shadow: 0px 2px 0px ${Theme.color.link};
+      box-shadow: 0px 2px 0px var(--link-color, ${Theme.color.link});
       transition: box-shadow 100ms;
     }
   }

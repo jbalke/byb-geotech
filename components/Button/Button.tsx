@@ -62,18 +62,15 @@ const shared = css<{
   fullWidth?: boolean;
   borderWidth?: string;
 }>`
-  align-items: center;
-  appearance: none;
-  border-style: solid;
-  cursor: pointer;
-  justify-content: center;
-  letter-spacing: 0.08em;
-  margin: ${({ margin }) => margin || '0'};
-  padding: 1em 1em;
   position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: ${({ margin }) => margin || '0'};
+  letter-spacing: 0.08em;
   text-decoration: none;
-  font-weight: 600;
+  border-style: solid;
   transition: background-color 0.25s, color 0.25s;
+  cursor: pointer;
 
   ${({ shadow }) =>
     shadow &&
@@ -96,31 +93,30 @@ const shared = css<{
       case 'outline-inverse':
         return css`
           background-color: transparent;
-          color: ${Theme.color.white};
-          border-color: ${Theme.color.white};
+          color: var(--fg, ${Theme.color.white});
+          border-color: var(--fg, ${Theme.color.white});
           border-width: ${borderWidth ? borderWidth : '1px'};
-          text-shadow: 1px 1px 1px ${Theme.color.black};
+          text-shadow: 1px 1px 2px rgb(0 0 0 / 50%);
 
           &:focus,
           &:hover {
-            background-color: ${Theme.color.white};
-            color: ${bgColor ? bgColor : Theme.color.primary};
-            border-color: ${Theme.color.white};
+            background-color: var(--fg, ${Theme.color.white});
+            color: var(--focus-fg, ${bgColor ? bgColor : Theme.color.primary});
+            border-color: var(--fg, ${Theme.color.white});
             text-shadow: none;
-
-
-          `;
+          }
+        `;
 
       case 'outline':
         return css`
           background-color: transparent;
-          color: ${Theme.color.primary};
-          border-color: ${Theme.color.primary};
+          color: var(--fg, ${Theme.color.primary});
+          border-color: var(--fg, ${Theme.color.primary});
           border-width: ${borderWidth ? borderWidth : '1px'};
 
           &:focus,
           &:hover {
-            background-color: ${Theme.color.primary};
+            background-color: var(--fg, ${Theme.color.primary});
             color: ${Theme.color.white};
           }
         `;
@@ -131,7 +127,7 @@ const shared = css<{
           color: ${Theme.color.white};
           border-color: ${Theme.color.primary};
           border-width: ${borderWidth ? borderWidth : '0'};
-          text-shadow: 1px 1px 1px ${Theme.color.black};
+          text-shadow: 1px 1px 2px rgb(0 0 0 / 50%);
 
           &:focus,
           &:hover {
@@ -146,15 +142,21 @@ const shared = css<{
     switch (size) {
       case 'sm':
         return css`
-          font-size: 0.75rem;
+          padding: 0.5em 1em;
+          font-size: 1rem;
+          font-weight: 600;
         `;
       case 'lg':
         return css`
+          padding: 1em 1.25em;
           font-size: 1.5rem;
+          font-weight: 600;
         `;
       default:
         return css`
+          padding: 1em 1.25em;
           font-size: 1.2rem;
+          font-weight: 600;
         `;
     }
   }}
