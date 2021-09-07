@@ -5,10 +5,9 @@ import { Theme } from 'styles/theme';
 const NavbarEl = styled.nav`
   display: none;
 
-  @media (min-width: ${(props) => props.theme.bp.desktop}) {
+  @media (min-width: ${props => props.theme.bp.desktop}) {
     color: ${Theme.color.primary};
     display: block;
-    /* flex-flow: row nowrap; */
     height: 100%;
 
     a:hover,
