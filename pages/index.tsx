@@ -14,7 +14,7 @@ const Hero = styled.section`
   align-items: center;
   color: ${Theme.color.white};
   display: flex;
-  height: 80vh;
+  height: 60vh;
   min-height: 350px;
   justify-content: center;
   line-height: 1;
@@ -32,23 +32,10 @@ const Hero = styled.section`
     text-shadow: inherit;
   }
 
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media (min-width: ${props => props.theme.bp.tablet}) {
     h1 {
       font-size: 4rem;
     }
-  }
-`;
-
-const HeroPhoneText = styled.p`
-  font-size: 2rem;
-  font-weight: 900;
-  margin: 2rem 0 0 0;
-  transition: font-size 300ms;
-  text-shadow: inherit;
-
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
-    margin: 3rem 0 0 0;
-    font-size: 4rem;
   }
 `;
 
@@ -71,7 +58,7 @@ const HeroSubText = styled.p`
     font-weight: 600;
   }
 
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media (min-width: ${props => props.theme.bp.tablet}) {
     display: block;
   }
 `;
@@ -97,7 +84,7 @@ const HeroContentWrapper = styled.div`
     background: rgba(0, 0, 0, 0.5);
   }
 
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media (min-width: ${props => props.theme.bp.tablet}) {
     margin: 0;
   }
 `;
@@ -106,11 +93,11 @@ function Home() {
     <>
       <Hero>
         <Image
-          alt='Backyard Bores & Geotech Drilling'
+          alt="Backyard Bores & Geotech Drilling"
           src={heroBgImage}
-          layout='fill'
-          objectFit='cover'
-          placeholder='blur'
+          layout="fill"
+          objectFit="cover"
+          placeholder="blur"
         />
         <HeroContentWrapper>
           <h1>Backyard Bores & Geotech Drilling</h1>
@@ -118,7 +105,6 @@ function Home() {
             Your water bore and geotech drilling specialists since 2002.
             Covering Mackay from Bowen to Rockhampton and west to Clermont.
           </HeroSubText>
-          <HeroPhoneText>1800 193 194</HeroPhoneText>
         </HeroContentWrapper>
       </Hero>
       <AboutSection />
