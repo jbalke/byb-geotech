@@ -15,16 +15,10 @@ function OurStory(props: Props) {
   return (
     <ContentPage
       title="Careers"
-      relatedPages={
-        <ul>
-          <li>
-            <StyledNextLink href="/contact">Contact Us</StyledNextLink>
-          </li>
-          <li>
-            <StyledNextLink href="/about/our-story">Our Story</StyledNextLink>
-          </li>
-        </ul>
-      }
+      relatedPages={[
+        { label: 'Contact Us', href: '/contact' },
+        { label: 'Our Story', href: '/about/our-story' },
+      ]}
     >
       <PageSection>
         <h2>Thinking about a career in drilling?</h2>
