@@ -245,7 +245,11 @@ const MainNavBar = () => {
         </AnimateSharedLayout>
         <MobileControls>
           <DarkModeToggle />
-          <MobileMenuToggle size="lg" onClick={toggleMobileNav}>
+          <MobileMenuToggle
+            size="lg"
+            onClick={toggleMobileNav}
+            ariaLabel="open mobile menu"
+          >
             <FaBars />
           </MobileMenuToggle>
         </MobileControls>

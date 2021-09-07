@@ -28,6 +28,7 @@ type ButtonProps = {
   isLoading?: boolean;
   isDisabled?: boolean;
   children: React.ReactNode;
+  ariaLabel?: string;
 } & (FormButton | NonFormButton);
 
 function BaseButton({
@@ -37,6 +38,7 @@ function BaseButton({
   children,
   onClick,
   type = 'button',
+  ariaLabel,
 }: ButtonProps) {
   return (
     <button
@@ -44,9 +46,10 @@ function BaseButton({
       disabled={isDisabled || isLoading}
       onClick={onClick}
       type={type}
+      aria-label={ariaLabel}
     >
       <Wrapper>
-        {isLoading ? <Spinner height='100%' fill='#fff' /> : children}
+        {isLoading ? <Spinner height="100%" fill="#fff" /> : children}
       </Wrapper>
     </button>
   );

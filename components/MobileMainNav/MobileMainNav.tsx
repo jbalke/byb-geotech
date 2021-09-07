@@ -159,11 +159,15 @@ function MobileMainNav(props: MobileMainNavProps) {
       animate={isSidebarOpen ? 'open' : 'closed'}
     >
       <MenuContainer variants={mobileNavVariants}>
-        <MenuCloseBtn variant='outline' onClick={closeMobileNav}>
+        <MenuCloseBtn
+          variant="outline"
+          onClick={closeMobileNav}
+          ariaLabel="close mobile menu"
+        >
           <FaTimes />
         </MenuCloseBtn>
         <HomeLinkWrapper>
-          <StyledNextLink size='3rem' onClick={closeMobileNav} href='/'>
+          <StyledNextLink size="3rem" onClick={closeMobileNav} href="/">
             <FaHome />
           </StyledNextLink>
         </HomeLinkWrapper>
@@ -188,7 +192,7 @@ function MobileMainNav(props: MobileMainNavProps) {
                           <SectionTitle>{section.title}</SectionTitle>
                         )}
                         <LinksWrapper>
-                          {section.pages.map((page) => {
+                          {section.pages.map(page => {
                             const { Icon } = page;
                             return (
                               <React.Fragment key={page.href}>
