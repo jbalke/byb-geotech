@@ -1,3 +1,4 @@
+import { RefObject } from 'react';
 import { ColorTheme } from 'reducers/ui-reducer';
 
 export function openSidebar() {
@@ -38,6 +39,13 @@ export function setColorTheme(colorTheme: ColorTheme) {
   } as const;
 }
 
+export function setHamburgerRef(ref: RefObject<HTMLButtonElement>) {
+  return {
+    type: 'SET_HAMBURGER_REF',
+    payload: ref,
+  };
+}
+
 export type Action = ReturnType<
   | typeof openSidebar
   | typeof closeSidebar
@@ -45,4 +53,5 @@ export type Action = ReturnType<
   | typeof setActiveIndex
   | typeof clearActiveIndex
   | typeof setColorTheme
+  | typeof setHamburgerRef
 >;

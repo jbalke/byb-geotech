@@ -5,11 +5,11 @@ import CallLink from 'components/CallLink';
 import DarkModeToggle from 'components/DarkModeToggle';
 import { StyledLink } from 'components/Link';
 import StyledNextLink from 'components/Link/StyledNextLink';
-import { useUIDispatch } from 'context/ui-context';
+import { useUIDispatch, useUIState } from 'context/ui-context';
 import { navLinks } from 'data/main-navigation';
 import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
@@ -179,6 +179,8 @@ const MainNavBar = () => {
   const dispatch = useUIDispatch();
   const toggleMobileNav = () => dispatch(openSidebar());
 
+  const { hamburgerRef } = useUIState();
+
   const [activeSubmenu, setActiveSubmenu] = useState<number | null>(null);
 
   const onMouseEnter = (i: number) => {
@@ -250,6 +252,7 @@ const MainNavBar = () => {
             onClick={toggleMobileNav}
             aria-label="open mobile menu"
             aria-controls="main-menu"
+            ref={hamburgerRef}
           >
             <FaBars />
           </MobileMenuToggle>

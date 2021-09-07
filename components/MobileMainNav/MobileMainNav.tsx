@@ -151,7 +151,7 @@ type MobileMainNavProps = {};
 
 function MobileMainNav(props: MobileMainNavProps) {
   const dispatch = useUIDispatch();
-  const { isSidebarOpen } = useUIState();
+  const { isSidebarOpen, hamburgerRef } = useUIState();
   const closeMobileNav = () => dispatch(closeSidebar());
 
   return (
@@ -161,6 +161,9 @@ function MobileMainNav(props: MobileMainNavProps) {
     >
       <FocusLock
         disabled={!isSidebarOpen}
+        onDeactivation={() => {
+          window.setTimeout(() => hamburgerRef?.current?.focus(), 0);
+        }}
         css={`
           width: 100%;
         `}

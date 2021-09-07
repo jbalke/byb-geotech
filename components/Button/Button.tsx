@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { RefObject } from 'react';
 import styled, { css } from 'styled-components';
 import { Theme } from 'styles/theme';
 import Spinner from './Spinner';
@@ -34,17 +34,22 @@ type ButtonProps = {
     HTMLButtonElement
   >;
 
-function BaseButton({
-  className,
-  isLoading = false,
-  isDisabled = false,
-  children,
-  onClick,
-  type = 'button',
-  ...buttonProps
-}: ButtonProps) {
-  return (
+// eslint-disable-next-line react/display-name
+const BaseButton = React.forwardRef(
+  (
+    {
+      className,
+      isLoading = false,
+      isDisabled = false,
+      children,
+      onClick,
+      type = 'button',
+      ...buttonProps
+    }: ButtonProps,
+    ref,
+  ) => (
     <button
+      ref={ref as RefObject<HTMLButtonElement>}
       className={className}
       disabled={isDisabled || isLoading}
       onClick={onClick}
@@ -55,8 +60,8 @@ function BaseButton({
         {isLoading ? <Spinner height="100%" fill="#fff" /> : children}
       </Wrapper>
     </button>
-  );
-}
+  ),
+);
 
 const shared = css<{
   size?: 'sm' | 'lg';

@@ -1,4 +1,10 @@
-import React, { useReducer, useContext, Dispatch, createContext } from 'react';
+import React, {
+  useReducer,
+  useContext,
+  Dispatch,
+  createContext,
+  useRef,
+} from 'react';
 import { Action } from '../actions/ui-actions';
 import { initialState, State, UIReducer } from '../reducers/ui-reducer';
 
@@ -9,9 +15,10 @@ type ProviderProps = { children: React.ReactNode };
 
 function UIProvider({ children }: ProviderProps) {
   const [state, dispatch] = useReducer(UIReducer, initialState);
+  const ref = useRef<HTMLButtonElement>(null);
 
   return (
-    <UIStateContext.Provider value={state}>
+    <UIStateContext.Provider value={{ ...state, hamburgerRef: ref }}>
       <UIDispatchContext.Provider value={dispatch}>
         {children}
       </UIDispatchContext.Provider>
