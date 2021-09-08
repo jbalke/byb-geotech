@@ -42,7 +42,7 @@ const MenuContainer = styled(motion.div)`
   }
 `;
 
-const Wrapper = styled(motion.nav)`
+const Wrapper = styled(motion.div)`
   align-items: center;
   background-color: rgba(0, 0, 0, 0.8);
   display: none;
@@ -61,7 +61,7 @@ const Wrapper = styled(motion.nav)`
   }
 `;
 
-const NavLinksContainer = styled.div`
+const NavLinksContainer = styled.nav`
   align-items: start;
   display: grid;
   flex: 1;
@@ -181,7 +181,7 @@ function MobileMainNav(props: MobileMainNavProps) {
               <FaHome />
             </StyledNextLink>
           </HomeLinkWrapper>
-          <NavLinksContainer>
+          <NavLinksContainer aria-label="mobile menu">
             {navLinks.map(({ title, href, sections, Icon }) => {
               return (
                 <PageWrapper key={title}>

@@ -31,7 +31,7 @@ type Props = {
 
 function Navbar({ children, onMouseLeave }: Props) {
   return (
-    <NavbarEl onMouseLeave={onMouseLeave}>
+    <NavbarEl onMouseLeave={onMouseLeave} aria-label="primary menu">
       <NavbarList>{children}</NavbarList>
     </NavbarEl>
   );
