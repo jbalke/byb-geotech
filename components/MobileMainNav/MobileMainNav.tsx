@@ -43,16 +43,16 @@ const MenuContainer = styled(motion.div)`
 `;
 
 const Wrapper = styled(motion.div)`
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
   display: none;
   flex-flow: column nowrap;
-  height: 100vh;
-  left: 0;
+  align-items: center;
   padding: 5px;
-  position: fixed;
-  top: 0;
   width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 999;
 
   @supports (backdrop-filter: blur(10px) brightness(0.6)) {
@@ -166,6 +166,7 @@ function MobileMainNav(props: MobileMainNavProps) {
         }}
         css={`
           width: 100%;
+          overflow-y: scroll;
         `}
       >
         <MenuContainer variants={mobileNavVariants} id="main-menu">
