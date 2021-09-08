@@ -86,20 +86,6 @@ const NavSectionContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   width: 100%;
 
-  ${NavSection}:nth-of-type(2) {
-    position: relative;
-
-    ::before {
-      content: '';
-      position: absolute;
-      top: 25%;
-      left: -7.5px;
-      width: 1px;
-      height: 50%;
-      background-color: rgb(204, 204, 204);
-    }
-  }
-
   ${PageTitle} + & {
     margin-top: 1.5vh;
   }
