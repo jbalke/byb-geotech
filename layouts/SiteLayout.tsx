@@ -35,9 +35,8 @@ const SiteLayout = ({ children }: PageProps) => {
   return (
     <>
       <Container>
-        <SkipToMain href='#main-content' />
         <MainNavBar />
-        <StyledMain id='main-content'>{children}</StyledMain>
+        <StyledMain id="main-content">{children}</StyledMain>
         <ExtrasSection />
         <StyledFooter>
           <small>Copyright &copy; 2021 Backyard Bores Pty Ltd</small>
