@@ -7,6 +7,7 @@ const Container = styled.section`
   background-color: ${Theme.color.textBackground};
   color: ${Theme.color.text};
   font-size: 12px;
+  padding-block: min(10vh, 5rem);
 
   h2 {
     font-size: 3em;
@@ -30,7 +31,7 @@ const Container = styled.section`
     margin: 0;
   }
 
-  @media screen and (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media screen and (min-width: ${props => props.theme.bp.tablet}) {
     & {
       font-size: 16px;
     }
@@ -42,7 +43,7 @@ type AboutSectionProps = {};
 function AboutSection(props: AboutSectionProps) {
   return (
     <Container>
-      <Wrapper maxWidth='1400px' padding='xxl'>
+      <Wrapper maxWidth="1400px">
         <h2>
           Water Bore <span>Drilling</span>
         </h2>

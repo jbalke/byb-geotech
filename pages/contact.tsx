@@ -58,7 +58,7 @@ function Contact(props: Props) {
   return (
     <>
       <Banner title="Contact Us" />
-      <Wrapper>
+      <Wrapper padding="xl">
         <Container>
           <div>
             <h2>Send Us A Message</h2>

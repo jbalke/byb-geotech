@@ -93,7 +93,7 @@ function ContactForm(props: ContactFormsProps) {
       });
       setFormStatus('success');
     } catch (error) {
-      debug(error.message);
+      debug(error);
 
       setFormStatus('fail');
     }

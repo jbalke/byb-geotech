@@ -1,7 +1,5 @@
 import Banner from 'components/Banner';
 import { Wrapper } from 'components/styled';
-import SiteLayout from 'layouts/SiteLayout';
-import { padEnd } from 'lodash';
 import React from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';

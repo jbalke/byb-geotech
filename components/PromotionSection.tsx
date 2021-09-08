@@ -8,6 +8,7 @@ const Container = styled.section<{ bgColor: string }>`
   background-color: ${({ bgColor }) => bgColor};
   color: ${Theme.color.white};
   font-size: 24px;
+  padding-block: min(10vh, 5rem);
 
   p {
     font-weight: 200;
@@ -26,7 +27,7 @@ const Layout = styled.div`
     text-align: center;
   }
 
-  @media screen and (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media screen and (min-width: ${props => props.theme.bp.tablet}) {
     & {
       grid-template-columns: auto auto;
       gap: 2rem;
@@ -48,14 +49,14 @@ type Props = {
 function PromotionSection({ children, href, label, bgColor }: Props) {
   return (
     <Container bgColor={bgColor}>
-      <Wrapper padding='xxl'>
+      <Wrapper>
         <Layout>
           {children}
           <StyledLinkButton
-            size='lg'
-            variant='outline-inverse'
+            size="lg"
+            variant="outline-inverse"
             bgColor={bgColor}
-            borderWidth='2px'
+            borderWidth="2px"
             href={href}
           >
             {label}

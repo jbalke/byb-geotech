@@ -9,7 +9,7 @@ function OurStory(props: Props) {
   return (
     <>
       <Banner title="Our Story" />
-      <Wrapper maxWidth="70ch" main>
+      <Wrapper maxWidth="70ch" padding="xl" main>
         <div>
           <p>
             <em>We are a proudly Australian and family-owned small business</em>

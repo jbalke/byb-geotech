@@ -59,8 +59,8 @@ const BoreSearch = ({
 
   return (
     <>
-      <Banner title='Bore Search' />
-      <Wrapper>
+      <Banner title="Bore Search" />
+      <Wrapper padding="xl">
         <MapSearchContainer>
           <SearchForm
             bores={bores}

@@ -117,8 +117,8 @@ function RequestQuote(props: Props) {
         token,
       });
       setFormStatus('success');
-    } catch (error) {
-      debug(error.message);
+    } catch (error: any) {
+      debug(error);
 
       setFormStatus('fail');
     }
