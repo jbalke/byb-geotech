@@ -9,7 +9,6 @@ import 'styles/styles.css';
 import { DarkTheme, Theme } from 'styles/theme';
 import { Page } from '../@types/page';
 import '/styles/font.css';
-import FocusLock from 'react-focus-lock';
 import * as types from 'styled-components/cssprop';
 
 const GlobalStyle = createGlobalStyle`
@@ -231,11 +230,9 @@ function App({ Component, pageProps, router }: Props) {
         }}
       >
         <UIProvider>
-          <FocusLock disabled={isSidebarOpen}>
-            <Layout>
-              {getLayout(<Component {...pageProps} key={router.route} />)}
-            </Layout>
-          </FocusLock>
+          <Layout>
+            {getLayout(<Component {...pageProps} key={router.route} />)}
+          </Layout>
           <MobileMainNav />
         </UIProvider>
       </ThemeProvider>
