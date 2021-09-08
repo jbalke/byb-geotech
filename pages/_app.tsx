@@ -89,6 +89,10 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 600;
   }
 
+  p:last-child {
+    margin-bottom: 0;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
