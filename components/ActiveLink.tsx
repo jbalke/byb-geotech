@@ -18,15 +18,16 @@ const ActiveLink = ({ children, activeClassName, ...props }: Props) => {
   // pages/index.js will be matched via props.href
   // pages/about.js will be matched via props.href
   // pages/[slug].js will be matched via props.as
-  const className =
-    asPath === props.href || asPath === props.as
-      ? `${childClassName} ${activeClassName}`.trim()
-      : childClassName;
+  const currentPage = asPath === props.href || asPath === props.as;
+  const className = currentPage
+    ? `${childClassName} ${activeClassName}`.trim()
+    : childClassName;
 
   return (
     <Link {...props} passHref>
       {React.cloneElement(children, {
-        className: className ?? null,
+        className: className || undefined,
+        'aria-current': currentPage ? 'page' : undefined,
       })}
     </Link>
   );
