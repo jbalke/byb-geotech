@@ -6,12 +6,14 @@ import StyledNextLink from 'components/Link/StyledNextLink';
 import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 import styled from 'styled-components';
+import CallLink from '../../components/CallLink';
 import { PHONE } from '../../constants';
 
 const PageSection = styled.section``;
 
 const relatedPages: RelatedPage[] = [
   { label: 'FAQ', href: '/faq' },
+  { label: 'Before getting a bore', href: '/bores/before-getting-a-bore' },
   { label: 'Request a Quote', href: '/request-a-quote' },
   { label: 'Bore Search', href: '/bore-search' },
   { label: 'New Bore & Pump Tips', href: '/bores/new-install' },
@@ -34,66 +36,96 @@ function index(props: Props) {
       }
     >
       <PageSection>
-        <h2>What to expect on drilling day</h2>
-        <h3>How long does it take?</h3>
+        <h2>Why get a bore?</h2>
         <p>
-          Drilling and casing can take 4-6 hours depending on the material being
-          drilled and the depth.
-          <br />
-          It&apos;s a four step process:
+          Save lots of money on your water rates! A single bore can save you
+          thousands of dollars over its life.
         </p>
-        <ol>
-          <li>Drilling</li>
-          <li>Installing casing</li>
-          <li>
-            Cleaning out the inside of the casing to remove damaging sands, muds
-            and clay
-          </li>
-          <li>Flow rate, salt, iron, PH, testing (if required).</li>
-        </ol>
-        <h3>Will there be a lot of soil/clay/sand to dispose of?</h3>
         <p>
-          Usually there are 3 - 5 wheelbarrow loads of material that you need to
-          find a place for. If you have any holes in your yard or low points,
-          now is a great time to fill them. We cannot take it with us.
+          We can have a new bore drilled (with pump) within a morning or
+          afternoon and you can be watering your lawn before we drive away. You
+          don&apos;t even have to be home at the time!
         </p>
-        <h3>What size casing is supplied?</h3>
         <p>
-          100mm diameter casing with factory cut fine slots (0.4 - 0.5mm) is
-          used in the majority of bores, some locations need 0.8mm. We can
-          install 5”, 125mm casing or 80mm casing as required, surcharges may
-          apply.
+          There are a few things we need your help with to ensure we can get the
+          job done as quickly and smoothly as possible, see{' '}
+          <StyledNextLink href="/bores/before-getting-a-bore">
+            here
+          </StyledNextLink>{' '}
+          for more information.
         </p>
-        <h3>
-          Do I need a driller to come over and look at the site and provide a
-          quote?
-        </h3>
+        <h2>But, aren&apos;t bores expensive?</h2>
         <p>
-          No, unless the location you are thinking of is in a difficult place to
-          access or needs fence sections removed or trees cut back. Please call
-          us on{' '}
+          They are not expensive at all! We are offering a great price using the
+          latest, international best practice standards and equipment for a
+          completed and cased PVC bore.
+        </p>
+        <p>
+          Most areas can have a bore drilled and a pump equipped for{' '}
+          <em>less than $2900!</em>
+        </p>
+        <p>We also offer a Seniors and Carers discount!</p>
+        <h2>
+          OK, so what else do I need to consider before having a bore drilled?
+        </h2>
+        <p>
+          While we try our best to make the whole process as simple and
+          hassle-free as possible, here&apos;s a few things you should consider
+          before deciding to have a bore drilled.
+        </p>
+        <h3>Where to put the bore</h3>
+        <p>
+          Our drilling rig is mounted on a light truck which will need access to
+          the location you&apos;d like the bore drilled. See the{' '}
+          <StyledNextLink href="/faq">FAQ</StyledNextLink> for truck dimensions
+          and more.
+        </p>
+        <p>
+          Is there power nearby for the pump and, if not, how costly it might be
+          to install? While the pump does not need to be directly on the bore
+          (under the house, in a shed, etc), please consider how easy it will be
+          to distribute the water from the pump outlet to where you will need
+          it.
+        </p>
+        <p>
+          If you think your preferred location might be difficult to access or
+          needs fence sections removed or trees cut back, call us on{' '}
           <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
             {PHONE.MAIN.DISPLAY}
           </StyledLink>{' '}
-          and discuss if you have any concerns.
+          to discuss your options.
         </p>
-        <h3>Do I need to be home while drilling takes place?</h3>
+        <h3>Location of utilities</h3>
         <p>
-          No, but please indicate the location of the drilling site with a photo
-          or stake. We will require access to working town water and an active
-          power point to complete the process as well.
+          Please try to locate the underground services on your property,
+          especially the pipe to the sewer mains.
         </p>
-        <h3>Can you supply and fit a pump for me?</h3>
         <p>
-          We would be happy to provide a price for a supplied, installed and
-          configured pump to suit your needs. We could even bring one on
-          drilling day and you can be watering your lawn before we drive out the
-          driveway.
+          If you&apos;re not sure where any services are on your property, we
+          can contact the council for this information but for an additional
+          fee. See the <StyledNextLink href="/faq">FAQ</StyledNextLink> for more
+          information.
+        </p>
+        <h3>Disposal of soil</h3>
+        <p>
+          Usually there are 3 - 5 wheelbarrow loads of material that you need to
+          find a place for as we cannot take this with us. If you have any holes
+          or low points in your yard, this will a great time to fill them.
+        </p>
+        <h2>I&apos;ve decided I want a bore, what next?</h2>
+        <p>
+          You can call us on <CallLink /> for a free quote but why not try our{' '}
+          <StyledNextLink href="/request-a-quote">
+            online quote form
+          </StyledNextLink>
+          ? It&apos;s quick and easy and we&apos;ll typically contact you with a
+          quote in less than an hour (during normal business hours)!
         </p>
       </PageSection>
-      <StyledLinkButton href="/bores/new-install" fullWidth margin="1rem auto">
+
+      {/* <StyledLinkButton href="/bores/new-install" fullWidth margin="1rem auto">
         Learn how to maintain a new bore and/or pump.
-      </StyledLinkButton>
+      </StyledLinkButton> */}
     </ContentPage>
   );
 }
