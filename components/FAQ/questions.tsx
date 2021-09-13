@@ -58,11 +58,11 @@ const questions: Question[] = [
   },
   {
     uuid: v4(),
-    heading: 'How much does it cost? I thought bores were expensive!',
+    heading: 'How much does drilling a bore typically cost?',
     panel: (
       <>
         <p>
-          They are not expensive at all! We are offering a great price using the
+          Cheaper than you might think! We are offering a great price using the
           latest, international best practice standards and equipment for a
           completed and cased PVC bore.
         </p>
@@ -143,6 +143,43 @@ const questions: Question[] = [
   },
   {
     uuid: v4(),
+    heading: 'How long does it typically take to drill a bore?',
+    panel: (
+      <>
+        <p>
+          Drilling and casing can take 4-6 hours depending on the material being
+          drilled and the depth.
+          <br />
+          It&apos;s a four step process:
+        </p>
+        <ol>
+          <li>Drilling</li>
+          <li>Installing casing</li>
+          <li>
+            Cleaning out the inside of the casing to remove damaging sands, muds
+            and clay
+          </li>
+          <li>Flow rate, salt, iron, PH, testing (if required).</li>
+        </ol>
+      </>
+    ),
+  },
+  {
+    uuid: v4(),
+    heading: 'What size casing is supplied?',
+    panel: (
+      <>
+        <p>
+          100mm diameter casing with factory cut fine slots (0.4 - 0.5mm) is
+          used in the majority of bores, some locations need 0.8mm. We can
+          install 5”, 125mm casing or 80mm casing as required, surcharges may
+          apply.
+        </p>
+      </>
+    ),
+  },
+  {
+    uuid: v4(),
     heading: 'Where can I put a bore in my yard?',
     panel: (
       <>
@@ -204,27 +241,6 @@ const questions: Question[] = [
   },
   {
     uuid: v4(),
-    heading: 'Will the drilling rig fit in my yard?',
-    id: 'drilling-rig',
-    panel: (
-      <>
-        <p>
-          Our rig is mounted on a light truck and is 2.35m wide (at the
-          mirrors), 5.7m long and 2.7m high.
-        </p>
-        <p>
-          We need to reverse the truck over the top of the desired drilling
-          location.
-        </p>
-        <p>
-          If you have any concerns, please call us on <CallLink /> and we can
-          come inspect and do some measurements.
-        </p>
-      </>
-    ),
-  },
-  {
-    uuid: v4(),
     heading: 'What does the homeowner need to do to prepare the drilling site?',
     panel: (
       <>
@@ -245,6 +261,27 @@ const questions: Question[] = [
           Please call us on <CallLink /> and notify our staff if you have a
           fence that needs removing or the area needs trees and branches cut
           down.
+        </p>
+      </>
+    ),
+  },
+  {
+    uuid: v4(),
+    heading: 'Will the drilling rig fit in my yard?',
+    id: 'drilling-rig',
+    panel: (
+      <>
+        <p>
+          Our rig is mounted on a light truck and is 2.35m wide (at the
+          mirrors), 5.7m long and 2.7m high.
+        </p>
+        <p>
+          We need to reverse the truck over the top of the desired drilling
+          location.
+        </p>
+        <p>
+          If you have any concerns, please call us on <CallLink /> and we can
+          come inspect and do some measurements.
         </p>
       </>
     ),
