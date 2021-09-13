@@ -37,7 +37,14 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    line-height: 150%;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+  
+  @media screen and (min-width: ${BREAKPOINTS.tablet}) {
+    body {
+      font-size: 1.2rem;
+    }
   }
 
    @supports (font-variation-settings: normal) {
