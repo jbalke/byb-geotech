@@ -23,12 +23,24 @@ type NonFormButton = {
   onClick: () => void;
 };
 
+type ButtonStyleProps = {
+  size?: 'sm' | 'lg';
+  rounded?: 'sm' | 'md' | 'lg' | 'full' | 'pill';
+  variant?: 'outline' | 'outline-inverse';
+  bgColor?: string;
+  margin?: string;
+  shadow?: boolean;
+  fullWidth?: boolean;
+  borderWidth?: string;
+};
+
 type ButtonProps = {
   className?: string;
   isLoading?: boolean;
   isDisabled?: boolean;
   children: React.ReactNode;
-} & (FormButton | NonFormButton) &
+} & ButtonStyleProps &
+  (FormButton | NonFormButton) &
   React.DetailedHTMLProps<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
@@ -44,6 +56,9 @@ const BaseButton = React.forwardRef(
       children,
       onClick,
       type = 'button',
+      fullWidth,
+      borderWidth,
+      margin,
       ...buttonProps
     }: ButtonProps,
     ref,
@@ -63,16 +78,7 @@ const BaseButton = React.forwardRef(
   ),
 );
 
-const shared = css<{
-  size?: 'sm' | 'lg';
-  rounded?: 'sm' | 'md' | 'lg' | 'full' | 'pill';
-  variant?: 'outline' | 'outline-inverse';
-  bgColor?: string;
-  margin?: string;
-  shadow?: boolean;
-  fullWidth?: boolean;
-  borderWidth?: string;
-}>`
+const shared = css<ButtonStyleProps>`
   position: relative;
   justify-content: center;
   align-items: center;
