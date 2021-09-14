@@ -37,13 +37,14 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    font-size: 1rem;
-    line-height: 1.3;
+    font-size: 1.2rem;
+    line-height: 1.5;
   }
   
   @media screen and (min-width: ${BREAKPOINTS.tablet}) {
     body {
-      font-size: 1.2rem;
+      font-size: 1rem;
+      line-height: 1.3;
     }
   }
 
@@ -53,7 +54,7 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  h1, h2, h3, dt {
+  h1, .h1, h2, .h2, h3, .h3, dt {
     color: ${Theme.color.primary};
     font-family: 'Poppins';
     font-weight: 700;
@@ -62,12 +63,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @supports (font-variation-settings: normal) {
-    h1, h2, h3, dt  {
+    h1, .h1, h2, .h2, h3, .h3, dt  {
       font-family: 'Rubik';
     }
   }
 
-  h1, h2, h3:first-child {
+  :is(h1, .h1, h2, .h2, h3, .h3):first-child {
     margin-top: 0;
   }
 
@@ -89,6 +90,13 @@ const GlobalStyle = createGlobalStyle`
     list-style-type: none;
     padding: 0;
     margin: 0;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
   }
 
   li::marker {
