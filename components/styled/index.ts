@@ -23,11 +23,13 @@ export const Wrapper = styled.div<{
     switch (padding) {
       case 'xl':
         return css`
-          padding: ${Theme.spacing.xl} ${Theme.spacing.l};
+          padding: ${Theme.spacing.xl} ${Theme.spacing.l}
+            calc(${Theme.spacing.xl} * 2) ${Theme.spacing.l};
         `;
       case 'xxl':
         return css`
-          padding: ${Theme.spacing.xxl} ${Theme.spacing.l};
+          padding: ${Theme.spacing.xxl} ${Theme.spacing.l}
+            calc(${Theme.spacing.xxl} * 2) ${Theme.spacing.l};
         `;
       default:
         return css`
