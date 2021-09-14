@@ -38,16 +38,9 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: sans-serif;
     font-size: 1.2rem;
-    line-height: 1.5;
+    line-height: 1.3;
   }
   
-  @media screen and (min-width: ${BREAKPOINTS.tablet}) {
-    body {
-      font-size: 1rem;
-      line-height: 1.3;
-    }
-  }
-
    @supports (font-variation-settings: normal) {
     body {
       font-family: 'Public Sans', sans-serif;
@@ -68,13 +61,20 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  @media screen and (min-width: ${BREAKPOINTS.desktop}) {
+    body {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+
   :is(h1, .h1, h2, .h2, h3, .h3):first-child {
     margin-top: 0;
   }
 
   em {
     color: ${Theme.color.primary};
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 500;
   }
   

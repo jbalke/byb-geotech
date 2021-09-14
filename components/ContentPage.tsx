@@ -3,6 +3,7 @@ import { Wrapper } from 'components/styled';
 import React from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
+import { BREAKPOINTS } from '../styles/style-constants';
 import StyledNextLink from './Link/StyledNextLink';
 
 const ContentLayout = styled.div`
@@ -23,11 +24,21 @@ const PageContent = styled.div`
   grid-template-columns: 1fr min(65ch, 100%) 1fr;
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  @media screen and (min-width: ${BREAKPOINTS.desktop}) {
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
   }
 
   ul {
