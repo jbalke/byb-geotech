@@ -26,6 +26,10 @@ const PageContent = styled.div`
     font-size: 2rem;
   }
 
+  h3 {
+    font-size: 1.5rem;
+  }
+
   ul {
     list-style: disc;
     padding-left: 2.5em;
@@ -132,6 +136,10 @@ const RelatedPages = styled.div`
 
     dd::after {
       content: '';
+    }
+
+    dd + dd {
+      margin-top: 0.4em;
     }
   }
 `;
