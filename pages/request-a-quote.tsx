@@ -133,10 +133,10 @@ function RequestQuote(props: Props) {
 
   return (
     <>
-      <Banner title='Request a Quote' />
-      <Wrapper maxWidth='70ch' padding='xl'>
+      <Banner title="Request a Quote" />
+      <Wrapper maxWidth="70ch" padding="xl">
         {formStatus === 'success' ? (
-          <Message type='success'>
+          <Message type="success">
             We&apos;ve recieved your request and will be in touch soon! Thank
             you.
           </Message>
@@ -147,11 +147,11 @@ function RequestQuote(props: Props) {
               quote.
             </h2>
             <StyledForm onSubmit={handleSubmit(onSubmit)}>
-              <StyledLabel htmlFor='name'>Name</StyledLabel>
+              <StyledLabel htmlFor="name">Name</StyledLabel>
               <StyledInput
-                type='text'
-                id='name'
-                placeholder='Your name'
+                type="text"
+                id="name"
+                placeholder="Your name"
                 {...register('name', {
                   required: 'Required',
                   minLength: { value: 3, message: 'Too short' },
@@ -160,31 +160,31 @@ function RequestQuote(props: Props) {
               />
               {errors.name && <InputWarning message={errors.name.message!} />}
 
-              <StyledLabel htmlFor='email' aria-describedby='emailDescribe'>
+              <StyledLabel htmlFor="email" aria-describedby="emailDescribe">
                 Email
               </StyledLabel>
               <StyledInput
-                type='email'
-                id='email'
-                inputMode='email'
-                placeholder='Your email address'
+                type="email"
+                id="email"
+                inputMode="email"
+                placeholder="Your email address"
                 {...register('email', {
                   required: 'Required',
-                  validate: (value) =>
+                  validate: value =>
                     isEmail(value) || 'Not a valid emaill address',
                 })}
               />
-              <InputSubtext id='emailDescribe'>
+              <InputSubtext id="emailDescribe">
                 We&apos;ll never spam you or share your email address with
                 anyone else.
               </InputSubtext>
               {errors.email && <InputWarning message={errors.email.message!} />}
 
-              <StyledLabel htmlFor='phone'>Phone</StyledLabel>
+              <StyledLabel htmlFor="phone">Phone</StyledLabel>
               <StyledInput
-                type='tel'
-                id='phone'
-                placeholder='The best number to call you on'
+                type="tel"
+                id="phone"
+                placeholder="The best number to call you on"
                 {...register('phone', {
                   required: 'Required',
                   maxLength: { value: 25, message: '25 character limit' },
@@ -192,11 +192,11 @@ function RequestQuote(props: Props) {
               />
               {errors.phone && <InputWarning message={errors.phone.message!} />}
 
-              <StyledLabel htmlFor='street'>Street</StyledLabel>
+              <StyledLabel htmlFor="street">Street</StyledLabel>
               <StyledInput
-                type='text'
-                id='street'
-                placeholder='The address the service is to be supplied'
+                type="text"
+                id="street"
+                placeholder="The address the service is to be supplied"
                 {...register('street', {
                   required: 'Required',
                   maxLength: { value: 100, message: '100 character limit' },
@@ -206,9 +206,9 @@ function RequestQuote(props: Props) {
                 <InputWarning message={errors.street.message!} />
               )}
 
-              <StyledLabel htmlFor='suburb'>Suburb</StyledLabel>
+              <StyledLabel htmlFor="suburb">Suburb</StyledLabel>
               <Controller
-                name='suburb'
+                name="suburb"
                 control={control}
                 rules={{
                   required: 'please select your suburb',
@@ -217,7 +217,7 @@ function RequestQuote(props: Props) {
                   <StyledSelect
                     {...field}
                     options={sortedSuburbs}
-                    classNamePrefix='select'
+                    classNamePrefix="select"
                   />
                 )}
               />
@@ -228,10 +228,10 @@ function RequestQuote(props: Props) {
               {watchSuburb?.value === 'other' && (
                 <>
                   <OtherSuburbInput
-                    type='text'
-                    id='otherSuburb'
-                    placeholder='Please enter your suburb'
-                    aria-label='Other Suburb'
+                    type="text"
+                    id="otherSuburb"
+                    placeholder="Please enter your suburb"
+                    aria-label="Other Suburb"
                     {...register('otherSuburb', {
                       required: 'Required',
                       maxLength: { value: 50, message: '50 character limit' },
@@ -243,16 +243,16 @@ function RequestQuote(props: Props) {
                 </>
               )}
 
-              <StyledLabel htmlFor='service'>Service</StyledLabel>
+              <StyledLabel htmlFor="service">Service</StyledLabel>
               <Controller
-                name='service'
+                name="service"
                 control={control}
                 rules={{ required: 'please select the service' }}
                 render={({ field }) => (
                   <StyledSelect
                     {...field}
                     options={jobTypes}
-                    classNamePrefix='select'
+                    classNamePrefix="select"
                   />
                 )}
               />
@@ -261,7 +261,7 @@ function RequestQuote(props: Props) {
               )}
               {watchSuburb?.value === 'other' &&
                 watchService?.value == 'newbore' && (
-                  <Message type='warning'>
+                  <Message type="warning">
                     We may not be able to service your area, please submit your
                     request and we will investigate and recommend the most
                     suitable local driller for you.
@@ -269,42 +269,41 @@ function RequestQuote(props: Props) {
                 )}
 
               <StyledLabel
-                htmlFor='comments'
-                aria-describedby='commentDescribe'
+                htmlFor="comments"
+                aria-describedby="commentDescribe"
               >
                 Comments
               </StyledLabel>
               <StyledTextarea
-                id='comments'
-                placeholder='Any additional information you want us to know'
+                id="comments"
+                placeholder="Any additional information you want us to know"
                 rows={8}
                 {...register('comments', {
                   maxLength: { value: 500, message: '500 character limit' },
                 })}
               />
-              <InputSubtext id='commentDescribe'>
+              <InputSubtext id="commentDescribe">
                 Additional information may be specific timeframe requirements or
                 ease of access to the site.
               </InputSubtext>
 
               <SubmitButton
                 isLoading={formStatus === 'pending'}
-                fullWidth
-                margin='1rem 0 0 0'
-                size='lg'
-                type='submit'
+                $fullWidth
+                $margin="1rem 0 0 0"
+                size="lg"
               >
                 Submit
               </SubmitButton>
               {formStatus === 'fail' && (
-                <Message type='danger'>
+                <Message type="danger">
                   Request could not be sent, please try again later.
                 </Message>
               )}
               <RecaptchaContainer>
                 <ReCAPTCHA
                   ref={recaptchaRef}
-                  size='invisible'
+                  size="invisible"
                   sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
                   badge={'inline'}
                   theme={theme}
