@@ -19,7 +19,6 @@ export const StyledLink = styled.a<{ size?: string }>`
   font-weight: 600;
   letter-spacing: 0.05rem;
   line-height: 1;
-  white-space: nowrap;
   text-decoration: none;
   cursor: pointer;
 
