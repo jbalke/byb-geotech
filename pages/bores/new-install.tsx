@@ -28,17 +28,16 @@ function index(props: Props) {
             In the first 2 months of your new bore being drilled, please do the
             following:
           </strong>
-          <ol>
-            <li>
-              Equip the bore with a pump <strong>ASAP</strong>.
-            </li>
-            <li>Run the pump every other day for a minimum of 10-30 mins.</li>
-            <li>
-              Keep the cap on the bore at all times when not equipped with a
-              pump.
-            </li>
-          </ol>
         </p>
+        <ol>
+          <li>
+            Equip the bore with a pump <strong>ASAP</strong>.
+          </li>
+          <li>Run the pump every other day for a minimum of 10-30 mins.</li>
+          <li>
+            Keep the cap on the bore at all times when not equipped with a pump.
+          </li>
+        </ol>
       </PageSection>
       <PageSection>
         <h2>New Pump Only</h2>
@@ -52,38 +51,38 @@ function index(props: Props) {
         </p>
         <p>
           <strong>In the first 2 months after your pump installation:</strong>
-          <ol>
-            <li>
-              Run your pump often for at least 20 mins (every second day at
-              least).
-            </li>
-            <li>
-              DO NOT trust the automatic pressure switch. At night, turn the
-              pump off at the power point. If you are going away for a weekend
-              or for more than 4 hours, turn the pump off at the power point.
-            </li>
-            <li>
-              Test fill a bucket with bore water once a week and carefully tip
-              out to see how much sand is in the bucket. 1-2 teaspoons in a 20L
-              bucket is within the operating range of the pump. Check that the
-              sand is fine (&lt;0.5mm) and not coarse granules. If you see 2mm
-              granules please call us.
-            </li>
-            <li>
-              You may see some discoloured water when the pump is first turned
-              on. This is normal if it goes away after 10L has passed through
-              the pump. If after 2 minutes of running the water is still dirty,
-              call us.{' '}
-            </li>
-            <li>
-              Do not put the hose outlet through anything with a fine nozzle
-              like: hand triggers; soaker hoses; or pop up sprinklers. These
-              will block up initially.
-            </li>
-          </ol>
         </p>
+        <ol>
+          <li>
+            Run your pump often for at least 20 mins (every second day at
+            least).
+          </li>
+          <li>
+            DO NOT trust the automatic pressure switch. At night, turn the pump
+            off at the power point. If you are going away for a weekend or for
+            more than 4 hours, turn the pump off at the power point.
+          </li>
+          <li>
+            Test fill a bucket with bore water once a week and carefully tip out
+            to see how much sand is in the bucket. 1-2 teaspoons in a 20L bucket
+            is within the operating range of the pump. Check that the sand is
+            fine (&lt;0.5mm) and not coarse granules. If you see 2mm granules
+            please call us.
+          </li>
+          <li>
+            You may see some discoloured water when the pump is first turned on.
+            This is normal if it goes away after 10L has passed through the
+            pump. If after 2 minutes of running the water is still dirty, call
+            us.{' '}
+          </li>
+          <li>
+            Do not put the hose outlet through anything with a fine nozzle like:
+            hand triggers; soaker hoses; or pop up sprinklers. These will block
+            up initially.
+          </li>
+        </ol>
         <p>
-          <strong>For the rest of the pump&quot;s life:</strong>
+          <strong>For the rest of the pump&apos;s life:</strong>
         </p>
         <ul>
           <li>
