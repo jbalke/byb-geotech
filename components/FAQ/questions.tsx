@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { v4 } from 'uuid';
 import CallLink from '../CallLink';
 import { ExternalLink, StyledLink } from '../Link';
+import StyledNextLink from '../Link/StyledNextLink';
 
 export type Question = {
   uuid: string;
@@ -71,10 +72,14 @@ const questions: Question[] = [
           $2900.
         </p>
         <p>
-          <strong>Seniors and Carers discount available!*</strong>
+          <em>Seniors and Carers discount available!*</em>
         </p>
         <p>
-          Call us now on <CallLink /> for an obligation free quote!
+          Call us now on <CallLink /> or use our{' '}
+          <StyledNextLink href="/request-a-quote">
+            online quote form
+          </StyledNextLink>{' '}
+          for an obligation free quote!
         </p>
         <Subtext>
           *Not valid with any other offer. No other offers allowed, discount
@@ -89,9 +94,9 @@ const questions: Question[] = [
     panel: (
       <>
         <p>
-          <strong>No</strong>. If you are a homeowner and intend to use the
-          water for non-commercial purposes (yards, pool, gardens, lawns) there
-          is <strong>no restriction</strong> drilling for water.
+          <em>No</em>. If you are a homeowner and intend to use the water for
+          non-commercial purposes (yards, pool, gardens, lawns) there is{' '}
+          <em>no restriction</em> drilling for water.
         </p>
         <p>
           There are some small areas south of the river that are sensitive and
@@ -228,8 +233,8 @@ const questions: Question[] = [
           your property.
         </p>
         <p>
-          It’s <strong>VERY IMPORTANT</strong> for you to locate these services
-          as it is your responsibility as the landowner or their authorised
+          It’s <em>VERY IMPORTANT</em> for you to locate these services as it is
+          your responsibility as the landowner or their authorised
           representative.
         </p>
         <p>
@@ -312,8 +317,8 @@ const questions: Question[] = [
     panel: (
       <>
         <p>
-          <strong>YES!</strong> We accept Visa and Mastercard payments or direct
-          bank transfer.
+          <em>YES!</em> We accept Visa and Mastercard payments or direct bank
+          transfer.
         </p>
       </>
     ),
@@ -326,7 +331,7 @@ const questions: Question[] = [
       <>
         <p>
           Please call us on <CallLink /> to discuss your options but often times{' '}
-          <strong>YES</strong> you can.
+          <em>YES</em> you can.
         </p>
       </>
     ),
@@ -337,8 +342,8 @@ const questions: Question[] = [
     panel: (
       <>
         <p>
-          <strong>YES!</strong> We can drill all around central Queensland and
-          have drilled from Bowen to Marlborough and west to Moranbah.
+          <em>YES!</em> We can drill all around central Queensland and have
+          drilled from Bowen to Marlborough and west to Moranbah.
         </p>
         <p>
           Mobilisation fees may apply, please call us on <CallLink /> to
