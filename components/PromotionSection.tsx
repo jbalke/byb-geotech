@@ -56,7 +56,7 @@ function PromotionSection({ children, href, label, bgColor }: Props) {
             size="lg"
             variant="outline-inverse"
             bgColor={bgColor}
-            borderWidth="2px"
+            $borderWidth="2px"
             href={href}
           >
             {label}

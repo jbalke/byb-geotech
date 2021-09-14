@@ -31,12 +31,12 @@ function FAQPage(props: Props) {
 
   return (
     <>
-      <Banner title='Frequently Asked Questions' />
-      <Wrapper maxWidth='70ch' padding='xl'>
+      <Banner title="Frequently Asked Questions" />
+      <Wrapper maxWidth="70ch" padding="xl">
         <ToggleButton
-          onClick={() => setExpandAll((expanded) => !expanded)}
-          variant='outline'
-          borderWidth='1px'
+          onClick={() => setExpandAll(expanded => !expanded)}
+          variant="outline"
+          $borderWidth="1px"
         >
           Open / Close All
         </ToggleButton>
@@ -45,7 +45,7 @@ function FAQPage(props: Props) {
           allowZeroExpanded={true}
           onChange={handleOnChange}
         >
-          {questions.map((q) => (
+          {questions.map(q => (
             <FAQ
               key={q.uuid}
               uuid={q.uuid}

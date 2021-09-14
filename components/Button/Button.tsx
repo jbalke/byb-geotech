@@ -28,10 +28,10 @@ type ButtonStyleProps = {
   rounded?: 'sm' | 'md' | 'lg' | 'full' | 'pill';
   variant?: 'outline' | 'outline-inverse';
   bgColor?: string;
-  margin?: string;
   shadow?: boolean;
-  fullWidth?: boolean;
-  borderWidth?: string;
+  $margin?: string;
+  $fullWidth?: boolean;
+  $borderWidth?: string;
 };
 
 type ButtonProps = {
@@ -56,9 +56,6 @@ const BaseButton = React.forwardRef(
       children,
       onClick,
       type = 'button',
-      fullWidth,
-      borderWidth,
-      margin,
       ...buttonProps
     }: ButtonProps,
     ref,
@@ -82,7 +79,7 @@ const shared = css<ButtonStyleProps>`
   position: relative;
   justify-content: center;
   align-items: center;
-  margin: ${({ margin }) => margin || '0'};
+  margin: ${({ $margin }) => $margin || '0'};
   letter-spacing: 0.08em;
   text-decoration: none;
   border-style: solid;
@@ -95,8 +92,8 @@ const shared = css<ButtonStyleProps>`
       box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
     `}
 
-  ${({ fullWidth }) =>
-    fullWidth
+  ${({ $fullWidth }) =>
+    $fullWidth
       ? css`
           display: flex;
           width: 100%;
@@ -105,14 +102,14 @@ const shared = css<ButtonStyleProps>`
           display: inline-flex;
         `}
 
-  ${({ variant, borderWidth, bgColor }) => {
+  ${({ variant, $borderWidth, bgColor }) => {
     switch (variant) {
       case 'outline-inverse':
         return css`
           background-color: transparent;
           color: var(--fg, ${Theme.color.white});
           border-color: var(--fg, ${Theme.color.white});
-          border-width: ${borderWidth ? borderWidth : '1px'};
+          border-width: ${$borderWidth ? $borderWidth : '1px'};
           text-shadow: 1px 1px 2px rgb(0 0 0 / 50%);
 
           &:focus,
@@ -129,7 +126,7 @@ const shared = css<ButtonStyleProps>`
           background-color: transparent;
           color: var(--fg, ${Theme.color.primary});
           border-color: var(--fg, ${Theme.color.primary});
-          border-width: ${borderWidth ? borderWidth : '1px'};
+          border-width: ${$borderWidth ? $borderWidth : '1px'};
 
           &:focus,
           &:hover {
@@ -143,7 +140,7 @@ const shared = css<ButtonStyleProps>`
           background-color: ${Theme.color.primary};
           color: ${Theme.color.white};
           border-color: ${Theme.color.primary};
-          border-width: ${borderWidth ? borderWidth : '0'};
+          border-width: ${$borderWidth ? $borderWidth : '0'};
           text-shadow: 1px 1px 2px rgb(0 0 0 / 50%);
 
           &:focus,
