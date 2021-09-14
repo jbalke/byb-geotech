@@ -109,11 +109,11 @@ function ContactForm(props: ContactFormsProps) {
 
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
-      <StyledLabel htmlFor='name'>Name</StyledLabel>
+      <StyledLabel htmlFor="name">Name</StyledLabel>
       <StyledInput
-        id='name'
-        type='text'
-        placeholder='Your name'
+        id="name"
+        type="text"
+        placeholder="Your name"
         {...register('name', {
           required: 'Required',
           minLength: { value: 3, message: 'Too short' },
@@ -122,29 +122,29 @@ function ContactForm(props: ContactFormsProps) {
       />
       {errors.name && <InputWarning message={errors.name.message!} />}
 
-      <StyledLabel htmlFor='email' aria-describedby='emailDescribe'>
+      <StyledLabel htmlFor="email" aria-describedby="emailDescribe">
         Email
       </StyledLabel>
       <StyledInput
-        id='email'
-        type='email'
-        inputMode='email'
-        placeholder='Your email address'
+        id="email"
+        type="email"
+        inputMode="email"
+        placeholder="Your email address"
         {...register('email', {
           required: 'Required',
-          validate: (value) => isEmail(value) || 'Not a valid emaill address',
+          validate: value => isEmail(value) || 'Not a valid emaill address',
         })}
       />
-      <InputSubtext id='emailDescribe'>
+      <InputSubtext id="emailDescribe">
         We&apos;ll never spam you or share your email address with anyone else.
       </InputSubtext>
       {errors.email && <InputWarning message={errors.email.message!} />}
 
-      <StyledLabel htmlFor='phone'>Phone</StyledLabel>
+      <StyledLabel htmlFor="phone">Phone</StyledLabel>
       <StyledInput
-        id='phone'
-        type='tel'
-        placeholder='The best number to call you on'
+        id="phone"
+        type="tel"
+        placeholder="The best number to call you on"
         {...register('phone', {
           required: 'Required',
           maxLength: { value: 25, message: '25 character limit' },
@@ -155,9 +155,9 @@ function ContactForm(props: ContactFormsProps) {
       />
       {errors.phone && <InputWarning message={errors.phone.message!} />}
 
-      <StyledLabel htmlFor='category'>Reason for Contact</StyledLabel>
+      <StyledLabel htmlFor="category">Reason for Contact</StyledLabel>
       <Controller
-        name='category'
+        name="category"
         control={control}
         rules={{
           required: 'Required',
@@ -166,18 +166,18 @@ function ContactForm(props: ContactFormsProps) {
           <StyledSelect
             {...field}
             options={ContactCategories}
-            classNamePrefix='select'
+            classNamePrefix="select"
           />
         )}
       />
       {errors.category && <InputWarning message={errors.category.message!} />}
 
-      <StyledLabel htmlFor='message' aria-describedby='messageDescribe'>
+      <StyledLabel htmlFor="message" aria-describedby="messageDescribe">
         Message
       </StyledLabel>
       <StyledTextarea
-        id='message'
-        placeholder='Your message'
+        id="message"
+        placeholder="Your message"
         rows={8}
         {...register('message', {
           required: 'Required',
@@ -189,7 +189,7 @@ function ContactForm(props: ContactFormsProps) {
           maxLength: { value: 500, message: 'Too long' },
         })}
       />
-      <InputSubtext id='messageDescribe'>
+      <InputSubtext id="messageDescribe">
         Please include your street and suburb if your enquiry is about any of
         our services.
       </InputSubtext>
@@ -198,21 +198,20 @@ function ContactForm(props: ContactFormsProps) {
         isDisabled={!isValid}
         isLoading={formStatus === 'pending'}
         fullWidth
-        margin='1rem 0 0 0'
-        size='lg'
-        type='submit'
+        margin="1rem 0 0 0"
+        size="lg"
       >
         Submit
       </SubmitButton>
       {formStatus === 'fail' && (
-        <Message type='danger'>
+        <Message type="danger">
           Message could not be sent, please try again later.
         </Message>
       )}
       <RecaptchaContainer>
         <ReCAPTCHA
           ref={recaptchaRef}
-          size='invisible'
+          size="invisible"
           sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
           badge={'inline'}
           theme={theme}
