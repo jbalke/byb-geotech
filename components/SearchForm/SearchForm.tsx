@@ -234,8 +234,8 @@ function SearchForm({
               <SubmitButton
                 isDisabled={!isValid}
                 isLoading={formStatus === 'pending'}
-                fullWidth
-                margin="1rem 0 0 0"
+                $fullWidth
+                $margin="1rem 0 0 0"
                 size="lg"
                 type="submit"
               >
