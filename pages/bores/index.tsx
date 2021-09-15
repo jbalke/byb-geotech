@@ -38,8 +38,8 @@ function index(props: Props) {
       <PageSection>
         <h2>Why get a bore?</h2>
         <p>
-          Save lots of money on your water rates! A single bore can save you
-          thousands of dollars over its life.
+          You can save lots of money on your water bills! A single bore can save
+          you thousands of dollars over its life.
         </p>
         <p>
           We can have a new bore drilled (with pump) within a morning or
@@ -110,7 +110,7 @@ function index(props: Props) {
         <p>
           Usually there are 3 - 5 wheelbarrow loads of material that you need to
           find a place for as we cannot take this with us. If you have any holes
-          or low points in your yard, this will a great time to fill them.
+          or low points in your yard, this will be a great time to fill them.
         </p>
         <h2>I&apos;ve decided I want a bore, what next?</h2>
         <p>
