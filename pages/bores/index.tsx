@@ -12,7 +12,7 @@ const PageSection = styled.section``;
 
 const relatedPages: RelatedPage[] = [
   { label: 'FAQ', href: '/faq' },
-  { label: 'Before getting a bore', href: '/bores/before-getting-a-bore' },
+  { label: 'New Bore Checklist', href: '/bores/checklist' },
   { label: 'Request a Quote', href: '/request-a-quote' },
   { label: 'Bore Search', href: '/bore-search' },
   { label: 'New Bore & Pump Tips', href: '/bores/new-install' },
@@ -47,10 +47,8 @@ function index(props: Props) {
         <p>
           There are a few things we need your help with to ensure we can get the
           job done as quickly and smoothly as possible, see{' '}
-          <StyledNextLink href="/bores/before-getting-a-bore">
-            here
-          </StyledNextLink>{' '}
-          for more information.
+          <StyledNextLink href="/bores/checklist">here</StyledNextLink> for a
+          handy checklist.
         </p>
         <h2>But, aren&apos;t bores expensive?</h2>
         <p>

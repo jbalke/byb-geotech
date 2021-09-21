@@ -5,7 +5,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import { BsCheckBox } from 'react-icons/bs';
-import CallLink from '../../components/CallLink';
+import CallLink from 'components/CallLink';
 
 const PageSection = styled.section``;
 
@@ -61,9 +61,9 @@ type Props = {};
 function index(props: Props) {
   return (
     <ContentPage
-      title="Preparing for a new bore"
+      title="New bore checklist"
       relatedPages={[
-        { label: 'Water bore drilling', href: '/bores' },
+        { label: 'Water Bore Drilling', href: '/bores' },
         { label: 'FAQ', href: '/faq' },
       ]}
     >
