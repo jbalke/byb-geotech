@@ -1,12 +1,11 @@
 import Aside from 'components/Aside';
-import { StyledLinkButton } from 'components/Button';
+import CallLink from 'components/CallLink';
 import ContentPage, { RelatedPage } from 'components/ContentPage';
 import { StyledLink } from 'components/Link';
 import StyledNextLink from 'components/Link/StyledNextLink';
 import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 import styled from 'styled-components';
-import CallLink from '../../components/CallLink';
 import { PHONE } from '../../constants';
 
 const PageSection = styled.section``;
@@ -26,8 +25,7 @@ function index(props: Props) {
       title="Water Bore Drilling"
       relatedPages={relatedPages}
       aside={
-        <Aside type="question">
-          <strong>Got more questions?</strong>
+        <Aside type="question" title="Got more questions?">
           <p>
             You might find the answer over at our{' '}
             <StyledNextLink href="/faq">FAQ</StyledNextLink>!

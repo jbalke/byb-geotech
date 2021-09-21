@@ -24,20 +24,16 @@ const PageContent = styled.div`
   grid-template-columns: 1fr min(65ch, 100%) 1fr;
 
   h2 {
-    font-size: 1.5rem;
+    font-size: ${Theme.font.fs600};
   }
 
   h3 {
-    font-size: 1.2rem;
+    font-size: ${Theme.font.fs500};
   }
 
   @media screen and (min-width: ${BREAKPOINTS.desktop}) {
     h2 {
-      font-size: 2rem;
-    }
-
-    h3 {
-      font-size: 1.5rem;
+      font-size: ${Theme.font.fs700};
     }
   }
 

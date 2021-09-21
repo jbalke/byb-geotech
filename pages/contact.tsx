@@ -90,8 +90,7 @@ function Contact(props: Props) {
                 </StyledLink>
               </p>
             </ContactDetails>
-            <StyledAside type="question">
-              <strong>Looking for bores near you?</strong>
+            <StyledAside type="question" title="Looking for bores near you?">
               <p>
                 Try our new{' '}
                 <StyledNextLink href="/bore-search">Bore Search</StyledNextLink>

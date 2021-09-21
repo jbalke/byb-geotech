@@ -8,9 +8,9 @@ const Container = styled.aside`
   color: ${Theme.color.textAside};
   background-color: ${Theme.color.asideBackground};
   border-left: 3px solid ${Theme.color.primary};
-  font-family: 'Rubik', sans-serif;
+  font-size: ${Theme.font.fs300};
   margin-top: 1em;
-  padding: 1em 2em;
+  padding: 1.25em;
   position: relative;
   transition: ${Theme.color.transition};
 
@@ -57,6 +57,14 @@ const IconWrapper = styled.div`
   transition: ${Theme.color.transition};
 `;
 
+const Title = styled.h2`
+  color: ${Theme.color.primary};
+  font-family: ${Theme.font.display};
+  font-size: ${Theme.font.fs400};
+  font-weight: ${Theme.font.fw700};
+  line-height: 1;
+`;
+
 type Icons = { readonly [key: string]: JSX.Element };
 
 const icons: Icons = {
@@ -65,15 +73,17 @@ const icons: Icons = {
 };
 
 type AsideProps = {
+  title: string;
   children: React.ReactNode;
   className?: string;
   type?: keyof typeof icons;
 };
 
-function Aside({ children, className, type = 'info' }: AsideProps) {
+function Aside({ title, children, className, type = 'info' }: AsideProps) {
   return (
     <Container className={className}>
       <IconWrapper>{icons[type]}</IconWrapper>
+      <Title>{title}</Title>
       {children}
     </Container>
   );
