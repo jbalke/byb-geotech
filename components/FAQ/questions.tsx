@@ -171,6 +171,20 @@ const questions: Question[] = [
   },
   {
     uuid: v4(),
+    heading:
+      'Do I need a driller to come over and look at the site and provide a quote?',
+    panel: (
+      <>
+        <p>
+          No, unless the location you are thinking of is in a difficult place to
+          access or needs fence sections removed or trees cut back. Please call
+          us on <CallLink /> and discuss if you have any concerns.
+        </p>
+      </>
+    ),
+  },
+  {
+    uuid: v4(),
     heading: 'What size casing is supplied?',
     panel: (
       <>
@@ -354,15 +368,17 @@ const questions: Question[] = [
   },
   {
     uuid: v4(),
-    heading: 'Does Backyard Bores do divining (dowsing) for water?',
+    heading: 'Does backyard bores do divining, witching or dowsing for water?',
     panel: (
       <>
         <p>
           No. It doesn&apos;t work for us but{' '}
           <StyledLink href="/contact">contact us</StyledLink> and we can give
-          you the numbers of several local diviners. We do have a good knowledge
-          of the areas around Mackay that have water and what depth a usable
-          bore will be.
+          you the numbers of several local diviners.
+        </p>
+        <p>
+          We do have a good knowledge of the areas around Mackay that have water
+          and what depth a usable bore will be.
         </p>
       </>
     ),
