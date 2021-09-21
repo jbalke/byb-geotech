@@ -85,6 +85,7 @@ const RelatedPages = styled.div`
   font-size: ${Theme.font.fs300};
   border: 2px solid ${Theme.color.primaryLight};
   color: ${Theme.color.textAside};
+  text-transform: uppercase;
 
   dl {
     display: flex;
