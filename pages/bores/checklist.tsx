@@ -86,9 +86,9 @@ function index(props: Props) {
               We need about a 2m radius of cleared area.
             </p>
             <p>
-              Call us on <CallLink /> if there are any obstacles that that we
-              may need to navigate/remove that you&apos;re unable to remove
-              before we arrive to drill.
+              Call us on <CallLink /> if there are any obstacles that we may
+              need to navigate/remove, that you&apos;re unable to remove, before
+              we arrive to drill.
             </p>
           </CheckItem>
           <CheckItem title="Convenient to use?">
