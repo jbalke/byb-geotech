@@ -1,94 +1,133 @@
 import ContentPage from 'components/ContentPage';
-import { StyledLink } from 'components/Link';
 import StyledNextLink from 'components/Link/StyledNextLink';
 import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 import styled from 'styled-components';
-import { StyledLinkButton } from '../../components/Button';
-import { PHONE } from '../../constants';
+import { Theme } from 'styles/theme';
+import { BsCheckBox } from 'react-icons/bs';
+import CallLink from '../../components/CallLink';
 
 const PageSection = styled.section``;
+
+const CheckList = styled.section`
+  display: grid;
+  row-gap: 1rem;
+`;
+
+const CheckItemHeading = styled.h2`
+  margin: 0;
+  border-bottom: 2px solid ${Theme.color.primary};
+`;
+
+const StyledCheckItem = styled.div`
+  display: grid;
+  grid-template-columns: 3fr auto;
+  column-gap: 1.25rem;
+
+  p {
+    margin: 0;
+    margin-top: 1em;
+  }
+`;
+
+const CheckItem = ({
+  title,
+  children,
+}: {
+  title: string;
+  children?: React.ReactNode;
+}) => (
+  <StyledCheckItem>
+    <div>
+      <h3>{title}</h3>
+      {children ? children : null}
+    </div>
+    <div
+      css={`
+        align-self: start;
+        padding: 0 1em;
+        font-size: 2rem;
+        line-height: 1;
+        color: ${Theme.color.grey};
+      `}
+    >
+      <BsCheckBox />
+    </div>
+  </StyledCheckItem>
+);
 
 type Props = {};
 
 function index(props: Props) {
   return (
-    <ContentPage title="Preparing for a new bore" relatedPages={[]}>
+    <ContentPage
+      title="Preparing for a new bore"
+      relatedPages={[
+        { label: 'Water bore drilling', href: '/bores' },
+        { label: 'FAQ', href: '/faq' },
+      ]}
+    >
       <PageSection>
-        <h2>Need a bore? You&apos;re in the right place!</h2>
-        <p>
-          Bores are a means to take water from the underground aquifer and this
-          water brought to the surface by an electric or solar pump or by a
-          mechanical windmill.
-        </p>
-        <p>
-          The most common type of modern bore is made from PVC and is 100mm –
-          150mm diameter with an electric pump attached.
-        </p>
-        <p>
-          Water bores can be made from steel or PVC and can vary from 75mm to
-          350mm diameter.
-        </p>
-        <p>Flow rates can vary from 5L/min to 50 L/s.</p>
-        <h3>How long does it take to install a new bore?</h3>
-        <p>
-          Drilling and casing can take 4-6 hours depending on the material being
-          drilled and the depth.
-          <br />
-          It&apos;s a four step process:
-          <ol>
-            <li>Drilling</li>
-            <li>Installing casing</li>
-            <li>
-              Cleaning out the inside of the casing to remove damaging sands,
-              muds and clay
-            </li>
-            <li>Flow rate, salt, iron, PH, testing (if required).</li>
-          </ol>
-        </p>
-        <h3>Will there be a lot of soil/clay/sand to dispose of?</h3>
-        <p>
-          Usually there are 3 - 5 wheelbarrow loads of material that you need to
-          find a place for. If you have any holes in your yard or low points,
-          now is a great time to fill them. We cannot take it with us.
-        </p>
-        <h3>What size casing is supplied?</h3>
-        <p>
-          100mm diameter casing with factory cut fine slots (0.4 - 0.5mm) is
-          used in the majority of bores, some locations need 0.8mm. We can
-          install 5”, 125mm casing or 80mm casing as required, surcharges may
-          apply.
-        </p>
-        <h3>
-          Do I need a driller to come over and look at the site and provide a
-          quote?
-        </h3>
-        <p>
-          No, unless the location you are thinking of is in a difficult place to
-          access or needs fence sections removed or trees cut back. Please call
-          us on{' '}
-          <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
-            {PHONE.MAIN.DISPLAY}
-          </StyledLink>{' '}
-          and discuss if you have any concerns.
-        </p>
-        <h3>Do I need to be home while drilling takes place?</h3>
-        <p>
-          No, but please indicate the location of the drilling site with a photo
-          or stake. We will require access to working town water and an active
-          power point to complete the process as well.
-        </p>
-        <h3>Can you supply and fit a pump for me?</h3>
-        <p>
-          We would be happy to provide a price for a supplied, installed and
-          configured pump to suit your needs. We could even bring one on
-          drilling day and you can be watering your lawn before we drive out the
-          driveway.
-        </p>
+        <CheckList>
+          <CheckItemHeading>Choose the bore location</CheckItemHeading>
+          <CheckItem title="Easy to access?">
+            <ul>
+              <li>
+                Is the location accessible by our light truck? See our{' '}
+                <StyledNextLink href="/faq">FAQ</StyledNextLink> for dimensions.
+              </li>
+              <li>
+                Are there trees, branches or other obstacles (such as fence
+                panels) that need removing in advance?
+              </li>
+            </ul>
+            <p>
+              Please clear up the area surrounding the proposed drilling site.
+              We need about a 2m radius of cleared area.
+            </p>
+            <p>
+              Call us on <CallLink /> if there are any obstacles that that we
+              may need to navigate/remove that you&apos;re unable to remove
+              before we arrive to drill.
+            </p>
+          </CheckItem>
+          <CheckItem title="Convenient to use?">
+            <p>
+              How easy will it be to distribute the water from the pump outlet?
+              Do you want the pump outlet near the fence so you can run poly
+              around your fence line to have taps every 10m or so?
+            </p>
+          </CheckItem>
+          <CheckItem title="Power?">
+            <p>
+              How easy (and costly) will it be to get power to the pump? Please
+              keep in mind that the pump does not need to be directly on top of
+              the bore, it can be inside a fence, under your house, in a shed,
+              etc.
+            </p>
+          </CheckItem>
+        </CheckList>
+        <CheckList>
+          <CheckItemHeading>Locate Utilities</CheckItemHeading>
+          <div>
+            <p>
+              Please try to locate the underground services on your property,
+              the hardest one to find is the pipe from your house to the sewer
+              mains.
+            </p>
+            <p>
+              Call us if you have concerns, we can apply for the plans from
+              council for a $85 fee.
+            </p>
+          </div>
+          <CheckItem title="Sewer mains" />
+          <CheckItem title="House drainage" />
+          <CheckItem title="Town/storm water" />
+          <CheckItem title="Down pipes" />
+          <CheckItem title="Phone" />
+          <CheckItem title="Power" />
+        </CheckList>
       </PageSection>
-      <StyledLinkButton href="/bores/new-install" fullWidth margin="1rem auto">
-        Learn how to maintain a new bore and/or pump.
-      </StyledLinkButton>
     </ContentPage>
   );
 }
