@@ -82,7 +82,7 @@ const RelatedPages = styled.div`
   width: fit-content;
   margin-inline: auto;
   padding: ${Theme.spacing.l};
-  font-size: 0.875rem;
+  font-size: ${Theme.font.fs300};
   border: 2px solid ${Theme.color.primaryLight};
   color: ${Theme.color.textAside};
 
