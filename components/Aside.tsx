@@ -1,9 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import { BsInfoCircle, BsQuestionCircle } from 'react-icons/bs';
+import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import { StyledLink } from './Link';
-import { IconType } from 'react-icons';
 
 const Container = styled.aside`
   color: ${Theme.color.textAside};
