@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { BREAKPOINTS } from '../styles/style-constants';
 import { Theme } from '../styles/theme';
 import { Wrapper } from './styled';
 
@@ -31,7 +32,7 @@ const Container = styled.section`
     margin: 0;
   }
 
-  @media screen and (min-width: ${props => props.theme.bp.tablet}) {
+  @media screen and (min-width: ${BREAKPOINTS.tablet}) {
     & {
       font-size: 16px;
     }

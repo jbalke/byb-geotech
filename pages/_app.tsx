@@ -3,7 +3,7 @@ import { UIProvider, useUIState } from 'context/ui-context';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Fragment, ReactElement } from 'react';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import { BREAKPOINTS } from 'styles/style-constants';
 import 'styles/styles.css';
 import { DarkTheme, Theme } from 'styles/theme';
@@ -243,18 +243,12 @@ function App({ Component, pageProps, router }: Props) {
         <title>Backyard Bores</title>
       </Head>
       <GlobalStyle />
-      <ThemeProvider
-        theme={{
-          bp: BREAKPOINTS,
-        }}
-      >
-        <UIProvider>
-          <Layout>
-            {getLayout(<Component {...pageProps} key={router.route} />)}
-          </Layout>
-          <MobileMainNav />
-        </UIProvider>
-      </ThemeProvider>
+      <UIProvider>
+        <Layout>
+          {getLayout(<Component {...pageProps} key={router.route} />)}
+        </Layout>
+        <MobileMainNav />
+      </UIProvider>
     </>
   );
 }

@@ -3,14 +3,14 @@ import { Wrapper } from 'components/styled';
 import React from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
-import { BREAKPOINTS } from '../styles/style-constants';
+import { BREAKPOINTS } from 'styles/style-constants';
 import StyledNextLink from './Link/StyledNextLink';
 
 const ContentLayout = styled.div`
   display: block;
   width: 100%;
 
-  @media screen and (min-width: ${props => props.theme.bp.tablet}) {
+  @media screen and (min-width: ${BREAKPOINTS.tablet}) {
     & {
       display: grid;
       grid-template-columns: auto 250px;
@@ -68,7 +68,7 @@ const AsideLayout = styled.div`
   flex-flow: column nowrap;
   gap: 2rem;
 
-  @media screen and (min-width: ${props => props.theme.bp.tablet}) {
+  @media screen and (min-width: ${BREAKPOINTS.tablet}) {
     & {
       position: sticky;
       margin-top: 0;
@@ -122,7 +122,7 @@ const RelatedPages = styled.div`
     content: '';
   }
 
-  @media screen and (min-width: ${props => props.theme.bp.tablet}) {
+  @media screen and (min-width: ${BREAKPOINTS.tablet}) {
     & {
       width: 100%;
     }

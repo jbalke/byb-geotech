@@ -1,8 +1,9 @@
+import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
-import { Theme } from '../styles/theme';
 import backgroundImage from '../public/images/why-us.png';
+import { BREAKPOINTS } from 'styles/style-constants';
+import { Theme } from 'styles/theme';
 
 const Container = styled.section`
   background-color: ${Theme.color.black};
@@ -12,7 +13,7 @@ const Container = styled.section`
   height: 40vh;
   min-height: 300px;
 
-  @media screen and (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media screen and (min-width: ${BREAKPOINTS.tablet}) {
     height: 40vh;
     min-height: 500px;
   }
@@ -26,7 +27,7 @@ const Content = styled.div`
   width: 100%;
   padding: 5rem 2rem;
 
-  @media screen and (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media screen and (min-width: ${BREAKPOINTS.tablet}) {
     width: 40%;
   }
 `;
@@ -37,11 +38,11 @@ function WhyUsSection(props: WhyUsProps) {
   return (
     <Container>
       <Image
-        alt='Drilling'
+        alt="Drilling"
         src={backgroundImage}
-        layout='fill'
-        objectFit='cover'
-        placeholder='blur'
+        layout="fill"
+        objectFit="cover"
+        placeholder="blur"
       />
       {/* <Content>
         <h2>Why Choose Us</h2>

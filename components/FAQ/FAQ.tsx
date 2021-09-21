@@ -8,6 +8,7 @@ import {
 } from 'react-accessible-accordion';
 import styled, { keyframes } from 'styled-components';
 import { Theme } from 'styles/theme';
+import { BREAKPOINTS } from 'styles/style-constants';
 
 const StyledAccordionButton = styled(AccordionItemButton)`
   background-color: ${Theme.color.primary};
@@ -78,7 +79,7 @@ const StyledAccordionPanel = styled(AccordionItemPanel)`
     margin: 0;
   }
 
-  @media (min-width: ${props => props.theme.bp.tablet}) {
+  @media (min-width: ${BREAKPOINTS.tablet}) {
     ol {
       padding-left: 40px;
     }

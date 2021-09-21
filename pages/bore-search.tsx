@@ -12,6 +12,7 @@ import { Bore } from 'types/bore';
 import { isValidCoordinates, parseCoordinates } from 'utils/geocoding';
 import { obfuscateLocation } from 'utils/geospatial';
 import { MAP_CENTER } from '../constants';
+import { BREAKPOINTS } from 'styles/style-constants';
 import { debug } from '../utils';
 
 const MapSearchContainer = styled.div`
@@ -21,7 +22,7 @@ const MapSearchContainer = styled.div`
   min-height: 700px;
   width: 100%;
 
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media (min-width: ${BREAKPOINTS.tablet}) {
     grid-template-columns: 400px auto;
   }
 `;

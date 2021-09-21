@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { BREAKPOINTS } from 'styles/style-constants';
 import { Theme } from 'styles/theme';
+import { usefulLinks } from '../data/useful-links';
 import ActiveLink from './ActiveLink';
 import { StyledLink } from './Link';
 import { Wrapper } from './styled';
-import { usefulLinks } from '../data/useful-links';
 
 const Container = styled.section`
   background-color: #19191e;
@@ -18,7 +19,7 @@ const Container = styled.section`
 const CompanyInfo = styled.div`
   width: 100%;
 
-  @media (min-width: ${props => props.theme.bp.tablet}) {
+  @media (min-width: ${BREAKPOINTS.tablet}) {
     width: 30%;
     min-width: 300px;
   }
@@ -85,7 +86,7 @@ const UsefulLinks = styled.div`
     color: ${Theme.color.primary};
   }
 
-  @media (min-width: ${props => props.theme.bp.tablet}) {
+  @media (min-width: ${BREAKPOINTS.tablet}) {
     width: auto;
     min-width: 300px;
   }

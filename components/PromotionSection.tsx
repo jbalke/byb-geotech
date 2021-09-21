@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
+import { BREAKPOINTS } from 'styles/style-constants';
 import { StyledLinkButton } from './Button';
 import { Wrapper } from './styled';
 
@@ -27,7 +28,7 @@ const Layout = styled.div`
     text-align: center;
   }
 
-  @media screen and (min-width: ${props => props.theme.bp.tablet}) {
+  @media screen and (min-width: ${BREAKPOINTS.tablet}) {
     & {
       grid-template-columns: auto auto;
       gap: 2rem;

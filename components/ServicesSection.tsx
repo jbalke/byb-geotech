@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
-import ServiceCard from './ServiceCard';
 import drillingImg from '../public/images/backyard-bore.webp';
-import pumpImg from '../public/images/pump.webp';
 import geotechImg from '../public/images/geotech.webp';
+import pumpImg from '../public/images/pump.webp';
 import helpImg from '../public/images/question-mark.png';
+import { BREAKPOINTS } from 'styles/style-constants';
+import ServiceCard from './ServiceCard';
 
 const Container = styled.section``;
 
@@ -22,10 +23,6 @@ const SectionBanner = styled.div`
 const SectionTitleContainer = styled.div`
   margin: 0;
   position: relative;
-
-  /* @media (min-width: ${(props) => props.theme.bp.tablet}) {
-    margin: 0;
-  } */
 `;
 
 const SectionTitle = styled.h2`
@@ -36,7 +33,7 @@ const SectionTitle = styled.h2`
   margin: 0;
   text-transform: uppercase;
 
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media (min-width: ${BREAKPOINTS.tablet}) {
     font-size: 2.5rem;
   }
 `;
@@ -64,7 +61,7 @@ const ServiceCards = styled.div`
   background-size: 43%;
   background-repeat: no-repeat;
 
-  @media screen and (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media screen and (min-width: ${BREAKPOINTS.tablet}) {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
 `;

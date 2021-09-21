@@ -1,8 +1,9 @@
+import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
+import { BREAKPOINTS } from 'styles/style-constants';
 import { StyledLinkButton } from './Button';
-import Image from 'next/image';
 
 const Card = styled.div<{ imageSrc?: string }>`
   display: flex;
@@ -12,7 +13,7 @@ const Card = styled.div<{ imageSrc?: string }>`
   padding: 2rem 1rem;
   min-height: 25vh;
 
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media (min-width: ${BREAKPOINTS.tablet}) {
     padding: 3rem 2rem;
   }
 `;
@@ -50,7 +51,7 @@ const CardContent = styled.div`
     background-color: rgba(0, 0, 0, 0.5);
   }
 
-  @media screen and (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media screen and (min-width: ${BREAKPOINTS.tablet}) {
     & {
       font-size: 1.2rem;
     }
@@ -73,7 +74,7 @@ const CardTitle = styled.h3`
   background-size: 100% 3px;
   transition: background-size 300ms ease;
 
-  @media (min-width: ${(props) => props.theme.bp.desktop}) {
+  @media (min-width: ${BREAKPOINTS.desktop}) {
     font-size: 1.5rem;
   }
 
@@ -114,8 +115,8 @@ function ServiceCard({
       <Image
         alt={title}
         src={imageSrc}
-        layout='fill'
-        objectFit='cover'
+        layout="fill"
+        objectFit="cover"
         quality={50}
         placeholder={placeholder}
       />

@@ -9,9 +9,10 @@ import { useUIDispatch, useUIState } from 'context/ui-context';
 import { navLinks } from 'data/main-navigation';
 import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
 import Image from 'next/image';
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
+import { BREAKPOINTS } from 'styles/style-constants';
 import { Theme } from 'styles/theme';
 import DropdownContainer from './DropdownContainer';
 import NavBar from './NavBar';
@@ -92,7 +93,7 @@ const MobileMenuToggle = styled(Button)`
   margin-left: 15px;
   padding: 0.5rem;
 
-  @media (min-width: ${props => props.theme.bp.desktop}) {
+  @media (min-width: ${BREAKPOINTS.desktop}) {
     display: none;
   }
 `;

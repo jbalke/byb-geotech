@@ -1,15 +1,16 @@
 import Aside from 'components/Aside';
+import Banner from 'components/Banner';
+import CallLink from 'components/CallLink';
+import ContactForm from 'components/ContactForm';
 import { StyledLink } from 'components/Link';
 import StyledNextLink from 'components/Link/StyledNextLink';
+import PrivacyDisclaimer from 'components/PrivacyDisclaimer';
 import { Wrapper } from 'components/styled';
 import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 import styled from 'styled-components';
-import ContactForm from 'components/ContactForm';
-import PrivacyDisclaimer from 'components/PrivacyDisclaimer';
+import { BREAKPOINTS } from 'styles/style-constants';
 import { EMAIL, PHONE } from '../constants';
-import CallLink from 'components/CallLink';
-import Banner from 'components/Banner';
 
 const StyledPrivacyDisclaimer = styled(PrivacyDisclaimer)`
   margin-top: 3rem;
@@ -21,7 +22,7 @@ const Container = styled.div`
   gap: 3rem;
   width: 100%;
 
-  @media (min-width: ${props => props.theme.bp.tablet}) {
+  @media (min-width: ${BREAKPOINTS.tablet}) {
     grid-template-columns: auto 300px;
   }
 `;
@@ -30,7 +31,7 @@ const StyledAside = styled(Aside)`
   margin: 0 auto;
   width: 80%;
 
-  @media (min-width: ${props => props.theme.bp.tablet}) {
+  @media (min-width: ${BREAKPOINTS.tablet}) {
     margin: 3rem 0;
     width: 100%;
   }
@@ -47,7 +48,7 @@ const ContactDetails = styled.address`
     font-size: 1.5em;
   }
 
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media (min-width: ${BREAKPOINTS.tablet}) {
     font-size: 1rem;
   }
 `;

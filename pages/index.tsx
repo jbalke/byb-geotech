@@ -4,10 +4,11 @@ import GetQuoteSection from 'components/GetQuoteSection';
 import ServicesSection from 'components/ServicesSection';
 import WhyUsSection from 'components/WhyUsSection';
 import SiteLayout from 'layouts/SiteLayout';
+import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
+import { BREAKPOINTS } from 'styles/style-constants';
 import { Theme } from 'styles/theme';
-import Image from 'next/image';
 import heroBgImage from '../public/images/banner-infinity.webp';
 
 const Hero = styled.section`
@@ -32,7 +33,7 @@ const Hero = styled.section`
     text-shadow: inherit;
   }
 
-  @media (min-width: ${props => props.theme.bp.tablet}) {
+  @media (min-width: ${BREAKPOINTS.tablet}) {
     h1 {
       font-size: 4rem;
     }
@@ -58,7 +59,7 @@ const HeroSubText = styled.p`
     font-weight: 600;
   }
 
-  @media (min-width: ${props => props.theme.bp.tablet}) {
+  @media (min-width: ${BREAKPOINTS.tablet}) {
     display: block;
   }
 `;
@@ -84,7 +85,7 @@ const HeroContentWrapper = styled.div`
     background: rgba(0, 0, 0, 0.5);
   }
 
-  @media (min-width: ${props => props.theme.bp.tablet}) {
+  @media (min-width: ${BREAKPOINTS.tablet}) {
     margin: 0;
   }
 `;

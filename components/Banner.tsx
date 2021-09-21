@@ -1,8 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Theme } from 'styles/theme';
 import Head from 'next/head';
 import Image from 'next/image';
+import React from 'react';
+import styled from 'styled-components';
+import { BREAKPOINTS } from 'styles/style-constants';
+import { Theme } from 'styles/theme';
 import defaultBgImage from '../public/images/banner-infinity.webp';
 
 const StyledBanner = styled.div`
@@ -18,7 +19,7 @@ const StyledBanner = styled.div`
   min-height: 150px;
   width: 100%;
 
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media (min-width: ${BREAKPOINTS.tablet}) {
     & {
       height: 20vh;
       min-height: 250px;
@@ -53,7 +54,7 @@ const BannerContent = styled.div`
     background: rgba(0, 0, 0, 0.5);
   }
 
-  @media (min-width: ${(props) => props.theme.bp.tablet}) {
+  @media (min-width: ${BREAKPOINTS.tablet}) {
     h1 {
       font-size: 4rem;
     }
@@ -73,11 +74,11 @@ function Banner({ title, image }: BannerProps) {
       </Head>
       <StyledBanner>
         <Image
-          alt='Banner'
+          alt="Banner"
           src={imageSrc}
-          layout='fill'
-          objectFit='cover'
-          placeholder='blur'
+          layout="fill"
+          objectFit="cover"
+          placeholder="blur"
         />
         <BannerContent>
           <h1>{title}</h1>

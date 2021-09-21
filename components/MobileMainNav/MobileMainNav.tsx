@@ -1,15 +1,16 @@
 import { closeSidebar } from 'actions/ui-actions';
-import StyledNextLink from 'components/Link/StyledNextLink';
 import { StyledLink } from 'components/Link';
+import StyledNextLink from 'components/Link/StyledNextLink';
 import { useUIDispatch, useUIState } from 'context/ui-context';
 import { navLinks } from 'data/main-navigation';
 import { motion } from 'framer-motion';
 import React from 'react';
+import FocusLock from 'react-focus-lock';
 import { FaHome, FaTimes } from 'react-icons/fa';
 import styled from 'styled-components';
+import { BREAKPOINTS } from 'styles/style-constants';
 import { Theme } from 'styles/theme';
 import Button from '../Button';
-import FocusLock from 'react-focus-lock';
 
 const HomeLinkWrapper = styled.div`
   display: flex;
@@ -30,7 +31,7 @@ const MenuContainer = styled(motion.div)`
   flex-flow: column nowrap;
   min-height: calc(100vh - 10px);
   margin: 0 auto;
-  max-width: ${props => props.theme.bp.tablet};
+  max-width: ${BREAKPOINTS.tablet};
   padding: 15px 15px 15vh 15px;
   overflow-x: hidden;
   overscroll-behavior: contain;

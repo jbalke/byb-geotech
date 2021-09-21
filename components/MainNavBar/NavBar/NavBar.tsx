@@ -1,11 +1,12 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
+import { BREAKPOINTS } from 'styles/style-constants';
 import { Theme } from 'styles/theme';
 
 const NavbarEl = styled.nav`
   display: none;
 
-  @media (min-width: ${props => props.theme.bp.desktop}) {
+  @media (min-width: ${BREAKPOINTS.desktop}) {
     color: ${Theme.color.primary};
     display: block;
     height: 100%;
