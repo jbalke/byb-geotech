@@ -37,20 +37,20 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    font-size: 1.2rem;
+    font-size: ${Theme.font.fs400};
     line-height: 1.3;
   }
   
    @supports (font-variation-settings: normal) {
     body {
-      font-family: 'Public Sans', sans-serif;
+      font-family: ${Theme.font.body}
     }
   }
 
   h1, .h1, h2, .h2, h3, .h3, dt {
     color: ${Theme.color.primary};
     font-family: 'Poppins';
-    font-weight: 700;
+    font-weight: ${Theme.font.fw700};
     line-height: 1;
     margin-bottom: .5em;
   }
@@ -63,7 +63,7 @@ const GlobalStyle = createGlobalStyle`
 
   @media screen and (min-width: ${BREAKPOINTS.desktop}) {
     body {
-      font-size: 1rem;
+      font-size: ${Theme.font.fs400};
       line-height: 1.5;
     }
   }
@@ -75,11 +75,11 @@ const GlobalStyle = createGlobalStyle`
   em {
     color: ${Theme.color.primary};
     font-size: 1.1em;
-    font-weight: 500;
+    font-weight: ${Theme.font.fw500};
   }
   
   strong {
-    font-weight: 600;
+    font-weight: ${Theme.font.fw600};
   }
 
   ol, ul, dl {
@@ -101,7 +101,7 @@ const GlobalStyle = createGlobalStyle`
 
   li::marker {
     color: ${Theme.color.primary};
-    font-weight: 600;
+    font-weight: ${Theme.font.fw600};
   }
 
   p:last-child {
