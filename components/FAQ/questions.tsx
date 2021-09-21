@@ -274,11 +274,11 @@ const questions: Question[] = [
         <p>
           If we need to come in through a fence panel, please make sure
           it&apos;s removed by the time we arrive. If we need to trim trees or
-          remove fence panel we will have to add an hourly surcharge.
+          remove fence panels we will have to add an hourly surcharge.
         </p>
         <p>
           Please call us on <CallLink /> and notify our staff if you have a
-          fence that needs removing or the area needs trees and branches cut
+          fence that needs removing or the area needs trees and/or branches cut
           down.
         </p>
       </>

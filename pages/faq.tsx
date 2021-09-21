@@ -37,6 +37,8 @@ function FAQPage(props: Props) {
           onClick={() => setExpandAll(expanded => !expanded)}
           variant="outline"
           $borderWidth="1px"
+          aria-pressed={isExpandAll}
+          aria-controls="faq"
         >
           Open / Close All
         </ToggleButton>
@@ -44,6 +46,7 @@ function FAQPage(props: Props) {
           allowMultipleExpanded={true}
           allowZeroExpanded={true}
           onChange={handleOnChange}
+          id="faq"
         >
           {questions.map(q => (
             <FAQ
