@@ -37,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    font-size: ${Theme.font.fs400};
+    font-size: ${Theme.font.fs300};
     line-height: 1.3;
   }
   
