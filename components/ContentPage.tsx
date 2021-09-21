@@ -63,10 +63,10 @@ const PageContent = styled.div`
 
 const AsideLayout = styled.div`
   display: flex;
-  width: 100%;
-  margin-top: 2rem;
   flex-flow: column nowrap;
   gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
 
   @media screen and (min-width: ${BREAKPOINTS.tablet}) {
     & {
