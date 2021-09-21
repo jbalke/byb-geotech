@@ -5,6 +5,7 @@ import {
   WIDTH,
   SPACING,
   BREAKPOINTS,
+  MOBILE_FONT,
 } from './style-constants';
 
 export const Theme = createTheme({
@@ -12,10 +13,12 @@ export const Theme = createTheme({
   width: WIDTH,
   spacing: SPACING,
   bp: BREAKPOINTS,
+  font: MOBILE_FONT,
 });
 export const DarkTheme = createTheme({
   color: DARK_THEME,
   width: WIDTH,
   spacing: SPACING,
   bp: BREAKPOINTS,
+  font: MOBILE_FONT,
 });

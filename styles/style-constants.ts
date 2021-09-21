@@ -76,6 +76,26 @@ export const DARK_THEME = {
   transition: 'color 300ms ease-out, background-color 300ms ease-out',
 } as const;
 
+export const MOBILE_FONT = {
+  body: '"Public Sans", sans-serif',
+  display: '"Rubik", "Poppins", sans-serif',
+
+  fs200: '0.75rem',
+  fs300: '1rem',
+  fs400: '1.25rem',
+  fs500: '1.375rem',
+  fs600: '1.75rem',
+  fs700: '2rem',
+  fs900: '2.125rem',
+  fsLarge: '4.25rem',
+
+  fw200: '200',
+  fw300: '300',
+  fw400: '400',
+  fw500: '500',
+  fw700: '700',
+};
+
 export const SPACING = {
   xs: 2,
   s: 4,
