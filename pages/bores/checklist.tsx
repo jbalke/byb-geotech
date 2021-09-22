@@ -11,7 +11,7 @@ const PageSection = styled.section``;
 
 const CheckList = styled.section`
   display: grid;
-  row-gap: 1rem;
+  row-gap: 0.75rem;
 `;
 
 const CheckItemHeading = styled.h2`
@@ -24,9 +24,13 @@ const StyledCheckItem = styled.div`
   grid-template-columns: 3fr auto;
   column-gap: 1.25rem;
 
+  h3 {
+    margin: 0;
+  }
+
   p {
     margin: 0;
-    margin-top: 1em;
+    margin-top: 0.5em;
   }
 `;
 
@@ -45,13 +49,12 @@ const CheckItem = ({
     <div
       css={`
         align-self: start;
-        padding: 0 1em;
-        font-size: 2rem;
-        line-height: 1;
-        color: ${Theme.color.grey};
+        font-size: ${Theme.font.fs700};
+        line-height: 0;
+        color: ${Theme.color.primaryLightest};
       `}
     >
-      <BsCheckBox />
+      <BsCheckBox display="inline-block" />
     </div>
   </StyledCheckItem>
 );

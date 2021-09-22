@@ -18,7 +18,6 @@ const StyledMain = styled.main`
   background-color: ${Theme.color.textBackground};
   color: ${Theme.color.text};
   flex: 1;
-  /* padding: ${Theme.spacing.l}; */
   transition: ${Theme.color.transition};
 `;
 

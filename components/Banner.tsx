@@ -7,23 +7,30 @@ import { Theme } from 'styles/theme';
 import defaultBgImage from '../public/images/banner-infinity.webp';
 
 const StyledBanner = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 20vh;
+  min-height: 150px;
   background-size: cover;
   background-repeat: no-repeat;
   color: ${Theme.color.white};
-  display: flex;
-  height: 20vh;
-  justify-content: center;
   line-height: 1;
-  position: relative;
-  min-height: 150px;
-  width: 100%;
 
   @media (min-width: ${BREAKPOINTS.tablet}) {
     & {
       height: 20vh;
       min-height: 250px;
       background-position: 50% 50%;
+    }
+  }
+
+  @media print {
+    & {
+      height: auto;
+      min-height: unset;
     }
   }
 `;
@@ -47,10 +54,7 @@ const BannerContent = styled.div`
   ::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background: rgba(0, 0, 0, 0.5);
   }
 

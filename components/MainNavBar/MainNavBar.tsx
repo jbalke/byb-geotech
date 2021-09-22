@@ -86,6 +86,12 @@ const NavLogoLink = styled(StyledNextLink)`
 const MobileControls = styled.div`
   align-items: center;
   display: flex;
+
+  @media print {
+    & {
+      display: none;
+    }
+  }
 `;
 
 const MobileMenuToggle = styled(Button)`
@@ -172,6 +178,12 @@ const PhoneQuote = styled.div`
     ${StyledLinkButton} {
       --fg: ${Theme.color.white};
       --focus-fg: ${Theme.color.primary};
+    }
+  }
+
+  @media print {
+    & {
+      display: none;
     }
   }
 `;

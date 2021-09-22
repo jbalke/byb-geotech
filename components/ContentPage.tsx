@@ -150,6 +150,12 @@ const RelatedPages = styled.div`
       margin-top: 0.4em;
     }
   }
+
+  @media print {
+    & {
+      display: none;
+    }
+  }
 `;
 
 export interface RelatedPage {

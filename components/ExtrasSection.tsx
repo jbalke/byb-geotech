@@ -90,6 +90,12 @@ const UsefulLinks = styled.div`
     width: auto;
     min-width: 300px;
   }
+
+  @media print {
+    & {
+      display: none;
+    }
+  }
 `;
 
 type ExtrasSectionsProps = {};
