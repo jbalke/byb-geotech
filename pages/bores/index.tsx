@@ -46,9 +46,8 @@ function index(props: Props) {
         </p>
         <p>
           There are a few things we need your help with to ensure we can get the
-          job done as quickly and smoothly as possible, see{' '}
-          <StyledNextLink href="/bores/checklist">here</StyledNextLink> for a
-          handy checklist.
+          job done as quickly and smoothly as possible, refer to our handy{' '}
+          <StyledNextLink href="/bores/checklist">checklist</StyledNextLink>.
         </p>
         <h2>But, aren&apos;t bores expensive?</h2>
         <p>
