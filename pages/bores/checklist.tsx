@@ -12,6 +12,10 @@ const PageSection = styled.section``;
 const CheckList = styled.section`
   display: grid;
   row-gap: 0.75rem;
+
+  p:first-child {
+    margin: 0;
+  }
 `;
 
 const CheckItemHeading = styled.h2`
@@ -90,8 +94,7 @@ function index(props: Props) {
             </p>
             <p>
               Call us on <CallLink /> if there are any obstacles that we may
-              need to navigate/remove, that you&apos;re unable to remove, before
-              we arrive to drill.
+              need to navigate/remove when we arrive to drill.
             </p>
           </CheckItem>
           <CheckItem title="Convenient to use?">
