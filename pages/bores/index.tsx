@@ -15,7 +15,7 @@ const relatedPages: RelatedPage[] = [
   { label: 'New Bore Checklist', href: '/bores/checklist' },
   { label: 'Request a Quote', href: '/request-a-quote' },
   { label: 'Bore Search', href: '/bore-search' },
-  { label: 'New Bore & Pump Tips', href: '/bores/new-install' },
+  { label: 'New Bore & Pump Tips', href: '/bores/new-install-tips' },
 ];
 
 type Props = {};

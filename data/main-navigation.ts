@@ -85,6 +85,11 @@ export const navLinks: MenuItem[] = [
         pages: [
           { title: 'FAQ', Icon: FaQuestionCircle, href: '/faq' },
           {
+            title: 'New Bore & Pump Tips',
+            Icon: FaQuestionCircle,
+            href: '/bores/new-install-tips',
+          },
+          {
             title: 'Groundwater Protection',
             Icon: FaQuestionCircle,
             href: '/help/groundwater-protection',
