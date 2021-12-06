@@ -125,7 +125,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       }));
 
       const knownBoresCount = bores.filter((b) => {
-        return !!b.depth;
+        return Boolean(b.depth);
       }).length;
 
       return {
