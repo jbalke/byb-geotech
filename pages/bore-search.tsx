@@ -38,10 +38,10 @@ const ClientRenderedMap = dynamic(() => import('../components/Map'), {
   },
 });
 
-type coords = [number, number];
+type Coords = [number, number];
 
 type Props = {
-  mapCenter: coords;
+  mapCenter: Coords;
   bores: Bore[];
   knownBoresCount: number;
   query?: boolean;
@@ -54,8 +54,8 @@ const BoreSearch = ({
   query = false,
 }: Props) => {
   const camera = useMemo(
-    () => ({ center: [mapX, mapY] as coords, zoom: query ? 14 : 11 }),
-    [mapX, mapY, query]
+    () => ({ center: [mapX, mapY] as Coords, zoom: query ? 14 : 11 }),
+    [mapX, mapY, query],
   );
 
   return (
