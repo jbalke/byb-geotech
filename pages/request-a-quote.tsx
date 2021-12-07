@@ -137,7 +137,7 @@ function RequestQuote(props: Props) {
       <Wrapper maxWidth="70ch" padding="xl">
         {formStatus === 'success' ? (
           <Message type="success">
-            We&apos;ve recieved your request and will be in touch soon! Thank
+            We&apos;ve received your request and will be in touch soon! Thank
             you.
           </Message>
         ) : (
