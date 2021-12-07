@@ -36,10 +36,10 @@ export default async function handler(
     const emailRes = await sendRequestInfoEmail(req.body);
 
     if (emailRes.messageId) {
-      return res.redirect(303, '/information-request');
+      return res.redirect(302, '/information-request');
     }
 
-    return res.redirect(303, '/contact');
+    return res.redirect(302, '/contact');
   }
   return res
     .status(400)
