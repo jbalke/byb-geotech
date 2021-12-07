@@ -1,7 +1,3 @@
 {
-  "version": 2,
-  "env": {
-    "MAIL_PASSWORD": "@mail_password",
-    "RECAPTCHA_SECRET": "@recaptcha-secret"
-  }
+  "version": 2
 }
