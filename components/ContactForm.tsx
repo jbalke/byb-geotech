@@ -10,7 +10,12 @@ import {
 import { useUIState } from 'context/ui-context';
 import React, { useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { Controller, NestedValue, useForm } from 'react-hook-form';
+import {
+  Controller,
+  NestedValue,
+  SubmitHandler,
+  useForm,
+} from 'react-hook-form';
 import Select from 'react-select';
 import styled from 'styled-components';
 import { Option } from 'types/form';
@@ -43,7 +48,7 @@ const RecaptchaContainer = styled.div`
   align-self: center;
 `;
 
-interface FormData {
+interface FormValues {
   name: string;
   email: string;
   phone: string;
@@ -54,8 +59,9 @@ interface FormData {
 type ContactFormsProps = {};
 
 function ContactForm(props: ContactFormsProps) {
-  const [formStatus, setFormStatus] =
-    useState<'idle' | 'pending' | 'success' | 'fail'>('idle');
+  const [formStatus, setFormStatus] = useState<
+    'idle' | 'pending' | 'success' | 'fail'
+  >('idle');
 
   const { theme } = useUIState();
   const recaptchaRef = useRef<ReCAPTCHA>(null!);
@@ -65,7 +71,7 @@ function ContactForm(props: ContactFormsProps) {
     register,
     handleSubmit,
     formState: { errors, isValid },
-  } = useForm<FormData>({
+  } = useForm<FormValues>({
     mode: 'all',
     defaultValues: {
       name: '',
@@ -76,7 +82,10 @@ function ContactForm(props: ContactFormsProps) {
     },
   });
 
-  const onSubmit = async ({ category: { label }, ...rest }: FormData) => {
+  const onSubmit: SubmitHandler<FormValues> = async ({
+    category: { label },
+    ...rest
+  }) => {
     setFormStatus('pending');
     const token = await recaptchaRef.current.executeAsync();
 
@@ -101,7 +110,7 @@ function ContactForm(props: ContactFormsProps) {
 
   if (formStatus === 'success') {
     return (
-      <Message type='success'>
+      <Message type="success">
         Thank you for your message, we&apos;ll be in touch as soon as possible!
       </Message>
     );

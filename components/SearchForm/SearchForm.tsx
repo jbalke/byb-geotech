@@ -57,7 +57,7 @@ const StyledForm = styled.form`
 
 type LocationOption = Option<[number, number]>;
 
-interface FormData {
+interface FormValues {
   name: string;
   email: string;
   address: NestedValue<LocationOption>;
@@ -100,7 +100,7 @@ function SearchForm({
     setValue,
     getValues,
     formState: { errors, isValid, isSubmitSuccessful },
-  } = useForm<FormData>({
+  } = useForm<FormValues>({
     mode: 'all',
     defaultValues: {
       name: '',
@@ -129,7 +129,7 @@ function SearchForm({
     }
   };
 
-  const onSubmit: SubmitHandler<FormData> = async (data: FormData) => {
+  const onSubmit: SubmitHandler<FormValues> = async data => {
     setFormStatus('pending');
     const token = await recaptchaRef.current.executeAsync();
 
