@@ -241,6 +241,10 @@ function App({ Component, pageProps, router }: Props) {
         />
         <meta name="theme-color" content="#006EE5" />
         <title>Backyard Bores</title>
+        <meta
+          name="description"
+          content="Your water bore and geotech drilling specialists since 2002. Covering Mackay from Bowen to Rockhampton and west to Clermont."
+        />
       </Head>
       <GlobalStyle />
       <UIProvider>

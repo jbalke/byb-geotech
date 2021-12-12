@@ -165,15 +165,22 @@ export interface RelatedPage {
 
 type indexProps = {
   title: string;
+  description: string;
   relatedPages: RelatedPage[];
   aside?: React.ReactNode;
   children: React.ReactNode;
 };
 
-function ContentPage({ title, relatedPages, aside, children }: indexProps) {
+function ContentPage({
+  title,
+  description,
+  relatedPages,
+  aside,
+  children,
+}: indexProps) {
   return (
     <>
-      <Banner title={title} />
+      <Banner title={title} description={description} />
       <Wrapper main padding="xl">
         <ContentLayout>
           <PageContent>{children}</PageContent>

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { BREAKPOINTS } from 'styles/style-constants';
 import { Theme } from 'styles/theme';
 import defaultBgImage from '../public/images/banner-infinity.webp';
+import { NextSeo } from 'next-seo';
 
 const StyledBanner = styled.div`
   position: relative;
@@ -66,16 +67,15 @@ const BannerContent = styled.div`
 `;
 type BannerProps = {
   title: string;
+  description?: string;
   image?: StaticImageData;
 };
 
-function Banner({ title, image }: BannerProps) {
+function Banner({ title, description, image }: BannerProps) {
   const imageSrc = image ?? defaultBgImage;
   return (
     <>
-      <Head>
-        <title>{title} | Backyard Bores</title>
-      </Head>
+      <NextSeo title={`${title} | Backyard Bores`} description={description} />
       <StyledBanner>
         <Image
           alt="Banner"

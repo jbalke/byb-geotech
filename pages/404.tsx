@@ -7,11 +7,11 @@ import SiteLayout from '../layouts/SiteLayout';
 function FourOhFour() {
   return (
     <>
-      <Banner title='Oops...' />
+      <Banner title="Oops..." />
       <Wrapper main padding={'xl'}>
         <div>
           <h1>404 - Page Not Found</h1>
-          <StyledNextLink href='/'>Go back home</StyledNextLink>
+          <StyledNextLink href="/">Go back home</StyledNextLink>
         </div>
       </Wrapper>
     </>

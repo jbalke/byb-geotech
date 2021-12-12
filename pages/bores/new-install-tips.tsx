@@ -20,7 +20,11 @@ type Props = {};
 
 function index(props: Props) {
   return (
-    <ContentPage title="New Bore & Pump Tips" relatedPages={relatedPages}>
+    <ContentPage
+      title="New Bore & Pump Tips"
+      description="How do you keep your new bore and pump running smoothly? Here we'll go into detail about everything you need to know to maintain your bore pump and maximise it's life."
+      relatedPages={relatedPages}
+    >
       <PageSection>
         <h2>New Bore Only</h2>
         <p>

@@ -134,7 +134,10 @@ function RequestQuote(props: Props) {
 
   return (
     <>
-      <Banner title="Request a Quote" />
+      <Banner
+        title="Request a Quote"
+        description="Request a quote quickly and easily online! We'll do our best to contact you with a quote as quickly as possible."
+      />
       <Wrapper maxWidth="70ch" padding="xl">
         {formStatus === 'success' ? (
           <Message type="success">

@@ -60,7 +60,10 @@ const BoreSearch = ({
 
   return (
     <>
-      <Banner title="Bore Search" />
+      <Banner
+        title="Bore Search"
+        description="Our Bore Search tool allows you to search for registered bores drilled in your area and provides useful information such as depth, flow rate and more."
+      />
       <Wrapper padding="xl">
         <MapSearchContainer>
           <SearchForm

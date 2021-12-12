@@ -15,6 +15,7 @@ function OurStory(props: Props) {
   return (
     <ContentPage
       title="Careers"
+      description="Interested in working with us, we're hiring!"
       relatedPages={[
         { label: 'Contact Us', href: '/contact' },
         { label: 'Our Story', href: '/about/our-story' },
