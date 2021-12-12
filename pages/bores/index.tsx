@@ -23,6 +23,7 @@ function index(props: Props) {
   return (
     <ContentPage
       title="Water Bore Drilling"
+      description="A bore can save you lots of money on your water bills, and they are not as expensive as you might think!"
       relatedPages={relatedPages}
       aside={
         <Aside type="question" title="Got more questions?">

@@ -8,7 +8,10 @@ type Props = {};
 function OurStory(props: Props) {
   return (
     <>
-      <Banner title="Our Story" />
+      <Banner
+        title="Our Story"
+        description="Learn more about our business and what sets us apart."
+      />
       <Wrapper maxWidth="70ch" padding="xl" main>
         <div>
           <p>

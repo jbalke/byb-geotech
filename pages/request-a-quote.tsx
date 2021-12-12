@@ -57,7 +57,7 @@ const StyledSelect = styled(Select)`
 `;
 
 type StringOption = Option<string>;
-interface FormData {
+interface FormValues {
   name: string;
   email: string;
   phone: string;
@@ -71,8 +71,9 @@ interface FormData {
 type Props = {};
 
 function RequestQuote(props: Props) {
-  const [formStatus, setFormStatus] =
-    useState<'idle' | 'pending' | 'success' | 'fail'>('idle');
+  const [formStatus, setFormStatus] = useState<
+    'idle' | 'pending' | 'success' | 'fail'
+  >('idle');
 
   const {
     register,
@@ -80,7 +81,7 @@ function RequestQuote(props: Props) {
     watch,
     control,
     formState: { errors },
-  } = useForm<FormData>({
+  } = useForm<FormValues>({
     mode: 'all',
     defaultValues: {
       name: '',
@@ -96,11 +97,11 @@ function RequestQuote(props: Props) {
   const { theme } = useUIState();
   const recaptchaRef = useRef<ReCAPTCHA>(null!);
 
-  const onSubmit: SubmitHandler<FormData> = async ({
+  const onSubmit: SubmitHandler<FormValues> = async ({
     suburb,
     service,
     ...rest
-  }: FormData) => {
+  }) => {
     setFormStatus('pending');
     const token = await recaptchaRef.current.executeAsync();
 
@@ -127,13 +128,16 @@ function RequestQuote(props: Props) {
   const sortedSuburbs = [
     { label: 'Other', value: 'other' },
     ...suburbs.sort((a, b) =>
-      a.label < b.label ? -1 : a.label > b.label ? 1 : 0
+      a.label < b.label ? -1 : a.label > b.label ? 1 : 0,
     ),
   ];
 
   return (
     <>
-      <Banner title="Request a Quote" />
+      <Banner
+        title="Request a Quote"
+        description="Request a quote quickly and easily online! We'll do our best to contact you with a quote as quickly as possible."
+      />
       <Wrapper maxWidth="70ch" padding="xl">
         {formStatus === 'success' ? (
           <Message type="success">

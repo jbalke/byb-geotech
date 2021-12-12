@@ -4,7 +4,7 @@ import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
-import { BsCheckBox } from 'react-icons/bs';
+import { BsCheck2Square } from 'react-icons/bs';
 import CallLink from 'components/CallLink';
 
 const PageSection = styled.section``;
@@ -58,7 +58,7 @@ const CheckItem = ({
         color: ${Theme.color.primaryLightest};
       `}
     >
-      <BsCheckBox display="inline-block" />
+      <BsCheck2Square display="inline-block" />
     </div>
   </StyledCheckItem>
 );
@@ -69,6 +69,7 @@ function index(props: Props) {
   return (
     <ContentPage
       title="New bore checklist"
+      description="A handy checklist for getting ready for a new bore to be drilled."
       relatedPages={[
         { label: 'Water Bore Drilling', href: '/bores' },
         { label: 'FAQ', href: '/faq' },

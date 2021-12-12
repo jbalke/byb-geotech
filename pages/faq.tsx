@@ -31,7 +31,10 @@ function FAQPage(props: Props) {
 
   return (
     <>
-      <Banner title="Frequently Asked Questions" />
+      <Banner
+        title="Frequently Asked Questions"
+        description="Find answers to all of the frequently asked questions about our bores, what's involved in drilling them, what to know before having a bore drilled, technical specifications and much more!"
+      />
       <Wrapper maxWidth="70ch" padding="xl">
         <ToggleButton
           onClick={() => setExpandAll(expanded => !expanded)}

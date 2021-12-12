@@ -58,7 +58,10 @@ type Props = {};
 function Contact(props: Props) {
   return (
     <>
-      <Banner title="Contact Us" />
+      <Banner
+        title="Contact Us"
+        description="You can contact us TOLL FREE on 1800 193 194, email or our easy-to-use contact form."
+      />
       <Wrapper padding="xl">
         <Container>
           <div>
