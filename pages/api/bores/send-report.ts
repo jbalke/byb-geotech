@@ -67,10 +67,10 @@ Address: ${address.label}
 Phone: ${phone}\n
 ${formatField('distance', 'DISTANCE (m)')}${formatField(
       'depth',
-      'DEPTH (m)'
+      'DEPTH (m)',
     )}${formatField('waterLevel', 'WATER LEVEL (m)')}${formatField(
       'flowRate',
-      'FLOW RATE (L/min)'
+      'FLOW RATE (L/min)',
     )}${formatField('salinity', 'SALINITY (PPM)')}
 ${boresReport}\n\n
 Call us on 0418 193 194 for your obligation free quote or just to answer any questions you many have.\n
@@ -84,7 +84,7 @@ https://backyardbores.com
       email,
       phone,
       bores: obfuscatedBores,
-      siteUrl: process.env.NEXT_PUBLIC_VERCEL_URL,
+      siteUrl: process.env.NEXT_PUBLIC_SITE_URL,
     }),
   };
 
