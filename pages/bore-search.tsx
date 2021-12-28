@@ -15,6 +15,8 @@ import { MAP_CENTER } from '../constants';
 import { BREAKPOINTS } from 'styles/style-constants';
 import { debug } from '../utils';
 
+const ONE_DAY = 60 + 60 + 24; //seconds
+
 const MapSearchContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -101,10 +103,19 @@ const BoreSearch = ({
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const {
-    query: { lng, lat, radius = '1000' },
-  } = context;
+export const getServerSideProps: GetServerSideProps = async ({
+  req,
+  res,
+  query,
+}) => {
+  res.setHeader(
+    'Cache-Control',
+    `public, max-age=${ONE_DAY * 7}, s-maxage=${
+      ONE_DAY * 3
+    }, stale-while-revalidate=${ONE_DAY * 28}`,
+  );
+
+  const { lng, lat, radius = '1000' } = query;
 
   if (lng && lat && isValidCoordinates(lng as string, lat as string)) {
     try {
@@ -115,19 +126,19 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       });
 
       await logSearch({
-        IPAddress: context.req.headers['x-forwarded-for'] as string,
+        IPAddress: req.headers['x-forwarded-for'] as string,
         location: {
           type: 'Point',
           coordinates: [Number(lng as string), Number(lat as string)],
         },
       });
 
-      const obfuscatedBores = bores.map((b) => ({
+      const obfuscatedBores = bores.map(b => ({
         ...b,
         location: obfuscateLocation(b.location),
       }));
 
-      const knownBoresCount = bores.filter((b) => {
+      const knownBoresCount = bores.filter(b => {
         return Boolean(b.depth);
       }).length;
 
