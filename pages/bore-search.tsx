@@ -15,7 +15,7 @@ import { MAP_CENTER } from '../constants';
 import { BREAKPOINTS } from 'styles/style-constants';
 import { debug } from '../utils';
 
-const ONE_DAY = 60 + 60 + 24; //seconds
+const ONE_DAY = 60 * 60 * 24; //seconds
 
 const MapSearchContainer = styled.div`
   display: grid;
