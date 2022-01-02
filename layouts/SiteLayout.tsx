@@ -38,7 +38,9 @@ const SiteLayout = ({ children }: PageProps) => {
         <StyledMain id="main-content">{children}</StyledMain>
         <ExtrasSection />
         <StyledFooter>
-          <small>Copyright &copy; 2021 Backyard Bores Pty Ltd</small>
+          <small>
+            Copyright &copy; {new Date().getFullYear()} Backyard Bores Pty Ltd
+          </small>
         </StyledFooter>
       </Container>
       <PageLoading />
