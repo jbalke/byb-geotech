@@ -9,11 +9,13 @@ import { useUIDispatch, useUIState } from 'context/ui-context';
 import { navLinks } from 'data/main-navigation';
 import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
 import Image from 'next/image';
+import link from 'next/link';
 import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
 import { BREAKPOINTS } from 'styles/style-constants';
 import { Theme } from 'styles/theme';
+import ActiveLink from '../ActiveLink';
 import DropdownContainer from './DropdownContainer';
 import NavBar from './NavBar';
 import NavbarItem from './NavBar/NavbarItem';
@@ -115,6 +117,10 @@ const SectionContainer = styled.div`
 const SectionPageContainer = styled.div`
   display: grid;
   gap: 0.7rem;
+
+  .active${StyledLink} {
+    color: ${Theme.color.linkHover};
+  }
 `;
 
 const PhoneQuote = styled.div`
@@ -240,9 +246,14 @@ const MainNavBar = () => {
                                   return (
                                     <IconLinkWrapper key={href}>
                                       <Icon />
-                                      <StyledNextLink href={href}>
-                                        <span>{title}</span>
-                                      </StyledNextLink>
+                                      <ActiveLink
+                                        activeClassName="active"
+                                        href={href}
+                                      >
+                                        <StyledLink>
+                                          <span>{title}</span>
+                                        </StyledLink>
+                                      </ActiveLink>
                                     </IconLinkWrapper>
                                   );
                                 })}

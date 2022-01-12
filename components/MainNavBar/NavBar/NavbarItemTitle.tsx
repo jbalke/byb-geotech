@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
+import ActiveLink from 'components/ActiveLink';
 
 const ItemTitle = styled.button<{ link?: boolean }>`
   align-items: center;
@@ -39,11 +39,11 @@ type NavbarItemTitleProps = {
 export const NavbarItemTitle = ({ href, children }: NavbarItemTitleProps) => {
   if (href) {
     return (
-      <Link href={href} passHref>
-        <ItemTitle as='a' link>
+      <ActiveLink activeClassName="active" href={href}>
+        <ItemTitle as="a" link>
           {children}
         </ItemTitle>
-      </Link>
+      </ActiveLink>
     );
   }
 
