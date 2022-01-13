@@ -32,8 +32,6 @@ export async function connectDB(): Promise<{ client: MongoClient; db: Db }> {
 
   if (!cached.promise) {
     const opts: MongoClientOptions = {
-      useUnifiedTopology: true,
-      useNewUrlParser: true,
       maxIdleTimeMS: 10000,
       socketTimeoutMS: 20000,
     };
