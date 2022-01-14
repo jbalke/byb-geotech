@@ -18,10 +18,10 @@ export const findNearbyBores = async ({
   const _lng = Number(lng);
 
   const { client, db } = await connectDB();
-  const bores = db.collection('bores');
+  const bores = db.collection<Bore>('bores');
 
-  const nearbyBores = (await bores
-    .find({
+  const nearbyBores = await bores
+    .find<Bore>({
       location: {
         $near: {
           $geometry: { type: 'Point', coordinates: [_lng, _lat] },
@@ -29,7 +29,7 @@ export const findNearbyBores = async ({
         },
       },
     })
-    .toArray()) as Bore[];
+    .toArray();
 
   return nearbyBores;
 };

@@ -1,4 +1,4 @@
-import { ObjectId } from 'bson';
+import { ObjectId } from 'mongodb';
 import { connectDB } from 'middleware/mongodb';
 import { Point } from 'types/geojson-types';
 import { debug } from '../utils';
