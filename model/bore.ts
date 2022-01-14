@@ -55,8 +55,8 @@ export const reportNearbyBores = async ({
   const { client, db } = await connectDB();
   const bores = db.collection('bores');
 
-  const nearbyBores = (await bores
-    .aggregate([
+  const nearbyBores = await bores
+    .aggregate<BoreDetail>([
       {
         $geoNear: {
           near: { type: 'Point', coordinates: [_lng, _lat] },
@@ -67,7 +67,7 @@ export const reportNearbyBores = async ({
         },
       },
     ])
-    .toArray()) as BoreDetail[];
+    .toArray();
 
   return nearbyBores;
 };
