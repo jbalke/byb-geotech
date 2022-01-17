@@ -22,7 +22,7 @@ function OurStory(props: Props) {
           <p>
             Our predecessor started Backyard Bores in 2002 and since taking
             control in 2013, we have continued to grow the business into new
-            markets and regions while increasing our capabilities while training
+            markets and regions while increasing our capabilities and training
             several drillers and offsiders.
           </p>
           <p>
