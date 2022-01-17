@@ -49,8 +49,8 @@ function OurStory(props: Props) {
             sites, port operations, bulk fuel storage and more.
           </p>
           <p>
-            We have experienced and certified project managers on staff to
-            manage your project from start to finish on-spec, on-time and on
+            Our experienced and certified project managers on staff can help you 
+            manage your project from start to finish, on-spec, on-time and on
             budget. Our close partnerships with local NDD (non-destructive
             drilling) vacuum trucks, concrete cutting and coring and sub-surface
             locators mean we can look after the administration of the whole
