@@ -1,6 +1,5 @@
 import ContentPage, { RelatedPage } from 'components/ContentPage';
 import { StyledLink } from 'components/Link';
-import StyledNextLink from 'components/Link/StyledNextLink';
 import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 import styled from 'styled-components';
@@ -11,7 +10,7 @@ const PageSection = styled.section``;
 
 const relatedPages: RelatedPage[] = [
   { label: 'Water Bore Drilling', href: '/bores' },
-  { label: 'FAQ', href: '/faq' },
+  { label: 'Drilling FAQ', href: '/faq' },
   { label: 'Request a Quote', href: '/request-a-quote' },
   { label: 'Bore Search', href: '/bore-search' },
 ];

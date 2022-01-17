@@ -79,8 +79,8 @@ function ServicesSection(props: ServicesSectionProps) {
       </SectionBanner>
       <ServiceCards>
         <ServiceCard
-          title='Bore Drilling & Cleaning'
-          href='/bores'
+          title="Bore Drilling & Cleaning"
+          href="/bores"
           imageSrc={drillingImg}
         >
           <p>
@@ -93,8 +93,8 @@ function ServicesSection(props: ServicesSectionProps) {
           </p>
         </ServiceCard>
         <ServiceCard
-          title='Pump Supply & Repairs'
-          href='/services/drilling'
+          title="Pump Sales & Repairs"
+          href="/pumps"
           imageSrc={pumpImg}
         >
           <p>
@@ -106,8 +106,8 @@ function ServicesSection(props: ServicesSectionProps) {
           <p>We can help.</p>
         </ServiceCard>
         <ServiceCard
-          title='Geotechnical Drilling'
-          href='/services/drilling'
+          title="Geotechnical Drilling"
+          href="/services/drilling"
           imageSrc={geotechImg}
         >
           <p>
@@ -119,11 +119,7 @@ function ServicesSection(props: ServicesSectionProps) {
             available.
           </p>
         </ServiceCard>
-        <ServiceCard
-          title='Help & Advice'
-          href='/help'
-          imageSrc={helpImg}
-        >
+        <ServiceCard title="Help & Advice" href="/help" imageSrc={helpImg}>
           <p>
             How to troubleshoot bore and/or pump issues. Are you pumping a lot
             of fine sand?

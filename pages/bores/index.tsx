@@ -11,7 +11,7 @@ import { PHONE } from '../../constants';
 const PageSection = styled.section``;
 
 const relatedPages: RelatedPage[] = [
-  { label: 'FAQ', href: '/faq' },
+  { label: 'Drilling FAQ', href: '/faq' },
   { label: 'New Bore Checklist', href: '/bores/checklist' },
   { label: 'Request a Quote', href: '/request-a-quote' },
   { label: 'Bore Search', href: '/bore-search' },
