@@ -119,7 +119,7 @@ function ServicesSection(props: ServicesSectionProps) {
             available.
           </p>
         </ServiceCard>
-        <ServiceCard title="Help & Advice" href="/help" imageSrc={helpImg}>
+        {/* <ServiceCard title="Help & Advice" href="/help" imageSrc={helpImg}>
           <p>
             How to troubleshoot bore and/or pump issues. Are you pumping a lot
             of fine sand?
@@ -128,7 +128,7 @@ function ServicesSection(props: ServicesSectionProps) {
           <p>Flooded pump/bore?</p>
           <p>Is the council putting meters on your bores? </p>
           <p>We can help.</p>
-        </ServiceCard>
+        </ServiceCard> */}
       </ServiceCards>
     </Container>
   );
