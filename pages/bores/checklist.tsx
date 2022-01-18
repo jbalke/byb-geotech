@@ -72,7 +72,7 @@ function index(props: Props) {
       description="A handy checklist for getting ready for a new bore to be drilled."
       relatedPages={[
         { label: 'Water Bore Drilling', href: '/bores' },
-        { label: 'FAQ', href: '/faq' },
+        { label: 'Drilling FAQ', href: '/faq' },
       ]}
     >
       <PageSection>

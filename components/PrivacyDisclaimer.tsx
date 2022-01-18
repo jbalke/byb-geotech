@@ -17,18 +17,18 @@ function PrivacyDisclaimer({ className }: PrivacyDisclaimerProps) {
         For more information please see the{' '}
         <strong>Office of the Australian Information Commissioner</strong>{' '}
         <ExternalLink
-          href='https://www.oaic.gov.au/privacy/the-privacy-act/'
-          label='here'
-          target='_blank'
+          href="https://www.oaic.gov.au/privacy/the-privacy-act/"
+          label="here"
+          target="_blank"
         />
         .
       </p>
       <p>
         You can read our Privacy Policy{' '}
         <ExternalLink
-          label='here'
-          href='/BBD-ENV_POL_&_PROC.pdf'
-          target='_blank'
+          label="here"
+          href="/resources/BBD-ENV_POL_&_PROC.pdf"
+          target="_blank"
         />
         .
       </p>

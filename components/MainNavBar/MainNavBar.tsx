@@ -9,7 +9,6 @@ import { useUIDispatch, useUIState } from 'context/ui-context';
 import { navLinks } from 'data/main-navigation';
 import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
 import Image from 'next/image';
-import link from 'next/link';
 import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';

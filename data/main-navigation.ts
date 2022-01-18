@@ -83,11 +83,16 @@ export const navLinks: MenuItem[] = [
     sections: [
       {
         pages: [
-          { title: 'FAQ', Icon: FaQuestionCircle, href: '/faq' },
+          { title: 'Drilling FAQ', Icon: FaQuestionCircle, href: '/faq' },
           {
             title: 'New Bore & Pump Tips',
             Icon: FaQuestionCircle,
             href: '/bores/new-install-tips',
+          },
+          {
+            title: 'Pump troubleshooting',
+            Icon: FaQuestionCircle,
+            href: '/pumps/troubleshooting',
           },
           {
             title: 'Groundwater Protection',
@@ -113,9 +118,9 @@ export const navLinks: MenuItem[] = [
     sections: [
       {
         pages: [
+          { title: 'Our Story', Icon: FaInfoCircle, href: '/about/our-story' },
           { title: 'Contact Us', Icon: FaInfoCircle, href: '/contact' },
           { title: 'Careers', Icon: FaInfoCircle, href: '/about/careers' },
-          { title: 'Our Story', Icon: FaInfoCircle, href: '/about/our-story' },
         ],
       },
     ],
