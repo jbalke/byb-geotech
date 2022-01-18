@@ -42,12 +42,12 @@ export const navLinks: MenuItem[] = [
           },
           {
             title: 'Pump troubleshooting',
-            Icon: FaWater,
+            Icon: FaFaucet,
             href: '/home-owners/pump-troubleshooting',
           },
           {
             title: 'Flow rate testing for council / DA',
-            Icon: FaWater,
+            Icon: FaFillDrip,
             href: '/home-owners/flow-rate-testing',
           },
         ],
