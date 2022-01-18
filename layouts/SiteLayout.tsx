@@ -39,7 +39,7 @@ const SiteLayout = ({ children }: PageProps) => {
         <ExtrasSection />
         <StyledFooter>
           <small>
-            Copyright &copy; {new Date().getFullYear()} Backyard Bores Pty Ltd
+            Copyright &copy; {new Date().getFullYear()} Backyard Bores & Geotech Drilling Pty Ltd
           </small>
         </StyledFooter>
       </Container>

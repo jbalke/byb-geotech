@@ -41,13 +41,13 @@ export const navLinks: MenuItem[] = [
             href: '/bores',
           },
           {
-            title: 'Pump Sales & Repairs',
-            Icon: FaWater,
-            href: '/pumps',
+            title: 'Pump troubleshooting',
+            Icon: FaFaucet,
+            href: '/home-owners/pump-troubleshooting',
           },
           {
             title: 'Flow rate testing for council / DA',
-            Icon: FaWater,
+            Icon: FaFillDrip,
             href: '/home-owners/flow-rate-testing',
           },
         ],
@@ -57,7 +57,7 @@ export const navLinks: MenuItem[] = [
         pages: [
           {
             title: 'Details & Projects',
-            Icon: FaWater,
+            Icon: FaPeopleArrows,
             href: '/geotech/projects',
           },
         ],
