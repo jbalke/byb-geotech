@@ -1,10 +1,13 @@
 import { IconType } from 'react-icons';
 import {
-  FaInfoCircle,
-  FaWater,
-  FaSearch,
-  FaQuestionCircle,
   FaCommentDollar,
+  FaFaucet,
+  FaFillDrip,
+  FaInfoCircle,
+  FaPeopleArrows,
+  FaQuestionCircle,
+  FaSearch,
+  FaWater,
 } from 'react-icons/fa';
 
 type PageLink = {
