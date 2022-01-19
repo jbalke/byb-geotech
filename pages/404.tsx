@@ -10,8 +10,15 @@ function FourOhFour() {
       <Banner title="Oops..." />
       <Wrapper main padding={'xl'}>
         <div>
-          <h1>404 - Page Not Found</h1>
-          <StyledNextLink href="/">Go back home</StyledNextLink>
+          <h1>404 - Page not Found</h1>
+          <p>
+            Either we broke something or you tried to visit a page that
+            doesn&apos;t exist.
+          </p>
+          <p>
+            <StyledNextLink href="/">Go back home</StyledNextLink> and try
+            again.
+          </p>
         </div>
       </Wrapper>
     </>
