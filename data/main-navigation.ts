@@ -44,9 +44,14 @@ export const navLinks: MenuItem[] = [
             href: '/bores',
           },
           {
+            title: 'Pump Sales & Repairs',
+            Icon: FaFaucet,
+            href: '/pumps/sales-and-repairs',
+          },
+          {
             title: 'Pump troubleshooting',
             Icon: FaFaucet,
-            href: '/home-owners/pump-troubleshooting',
+            href: '/pumps/troubleshooting',
           },
           {
             title: 'Flow rate testing for council / DA',
