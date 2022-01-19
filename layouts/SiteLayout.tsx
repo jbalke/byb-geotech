@@ -4,6 +4,7 @@ import { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import ExtrasSection from '../components/ExtrasSection';
+import { StyledLink } from '../components/Link';
 import PageLoading from '../components/PageLoading';
 
 const Container = styled.div`
@@ -22,10 +23,16 @@ const StyledMain = styled.main`
 `;
 
 const StyledFooter = styled.footer`
+  display: flex;
+  justify-content: space-between;
   color: ${Theme.color.darkGrey};
   background-color: ${Theme.color.black};
   transition: ${Theme.color.transition};
-  padding: 5px 2px 2px 2px;
+  padding: 5px;
+
+  ${StyledLink} {
+    --link-color: ${Theme.color.grey};
+  }
 `;
 
 type PageProps = { children: ReactNode };
@@ -39,7 +46,14 @@ const SiteLayout = ({ children }: PageProps) => {
         <ExtrasSection />
         <StyledFooter>
           <small>
-            Copyright &copy; {new Date().getFullYear()} Backyard Bores & Geotech Drilling Pty Ltd
+            Copyright &copy; {new Date().getFullYear()} Backyard Bores & Geotech
+            Drilling Pty Ltd
+          </small>
+          <small>
+            Created by{' '}
+            <StyledLink href="https://portfolio.johnbalke.com">
+              John Balke
+            </StyledLink>
           </small>
         </StyledFooter>
       </Container>
