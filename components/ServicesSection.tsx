@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { BREAKPOINTS } from 'styles/style-constants';
 import { Theme } from 'styles/theme';
 import drillingImg from '../public/images/backyard-bore.webp';
 import geotechImg from '../public/images/geotech.webp';
 import pumpImg from '../public/images/pump.webp';
-import helpImg from '../public/images/question-mark.png';
-import { BREAKPOINTS } from 'styles/style-constants';
 import ServiceCard from './ServiceCard';
 
 const Container = styled.section``;
@@ -94,7 +93,7 @@ function ServicesSection(props: ServicesSectionProps) {
         </ServiceCard>
         <ServiceCard
           title="Pump Sales & Repairs"
-          href="/pumps"
+          href="/pumps/sales-and-repairs"
           imageSrc={pumpImg}
         >
           <p>

@@ -65,9 +65,7 @@ const Title = styled.h2`
   line-height: 1;
 `;
 
-type Icons = { readonly [key: string]: JSX.Element };
-
-const icons: Icons = {
+const icons = {
   info: <BsInfoCircle />,
   question: <BsQuestionCircle />,
 };

@@ -1,10 +1,11 @@
+import CallLink from 'components/CallLink';
 import ContentPage, { RelatedPage } from 'components/ContentPage';
+import { ExternalLink, StyledLink } from 'components/Link';
 import { VideoContainer } from 'components/styled';
 import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 import styled, { css } from 'styled-components';
-import CallLink from 'components/CallLink';
-import { ExternalLink, StyledLink } from '../../components/Link';
+import { Theme } from 'styles/theme';
 
 const PageSection = styled.section``;
 
@@ -36,13 +37,17 @@ function index(props: Props) {
             & > li {
               margin-top: 1.5rem;
             }
+
+            h2 {
+              font-size: ${Theme.font.fs500};
+            }
           `}
         >
           <li>
-            <h3>
+            <h2>
               If your pump is running and no water is coming out, but the taps
               are open and it sounds normal.
-            </h3>
+            </h2>
             <strong>TURN OFF THE POWER!</strong>
             <p>
               You may need to prime your pump (especially if you haven&apos;t
@@ -68,11 +73,11 @@ function index(props: Props) {
             </p>
           </li>
           <li>
-            <h3>
+            <h2>
               {' '}
               Is your pump is making excessive noise, new noises (squealing), or
               the motor feels really hot to touch?
-            </h3>
+            </h2>
             <p>
               It could be that your pump has seen better days, please call us on{' '}
               <CallLink /> or Don Phimister on{' '}
@@ -83,11 +88,11 @@ function index(props: Props) {
             </p>
           </li>
           <li>
-            <h3>
+            <h2>
               Does your water flow rate start out good but after a while
               (seconds, minutes or hours) reduce back to a dribble? Then might
               come back good briefly then drop off again?
-            </h3>
+            </h2>
             <p>
               It could be the aquifer has been depleted, run dry, moved, shifted
               or the bore casing is choked with fine sand. All or any of these
@@ -95,10 +100,10 @@ function index(props: Props) {
             </p>
           </li>
           <li>
-            <h3>
+            <h2>
               You can hear gurgling coming from the bore right before the flow
               rate drops!
-            </h3>
+            </h2>
             <p>
               Like #3 above, the usual cause of this is the pump is removing
               more water than the bore can replenish. If the bore has been
@@ -116,9 +121,9 @@ function index(props: Props) {
             </p>
           </li>
           <li>
-            <h3>
+            <h2>
               My bore pump is top dressing my lawn with fine sand, is that bad?
-            </h3>
+            </h2>
             <p>Yes, and no.</p>
             The main causes of this are:
             <p></p>
@@ -151,10 +156,10 @@ function index(props: Props) {
             </p>
           </li>
           <li>
-            <h3>
+            <h2>
               My bore water is causing brown/orange stains on my
               pump/fence/house/driveway?
-            </h3>
+            </h2>
             <p>
               The main cause of this is iron bacteria, please see this{' '}
               <ExternalLink
@@ -185,11 +190,11 @@ function index(props: Props) {
             </p>
           </li>
           <li>
-            <h3>
+            <h2>
               After the recent floods/earthquakes/cyclones, my bore/pump has
               stopped working, is this possible and can I claim it on household
               insurance?
-            </h3>
+            </h2>
             <p>
               This is possible, please make use of our free appraisal service of
               your pump. We are happy to provide your insurer with whatever
@@ -197,10 +202,10 @@ function index(props: Props) {
             </p>
           </li>
           <li>
-            <h3>
+            <h2>
               My pump is humming, the motor is not turning and no water is
               coming out?
-            </h3>
+            </h2>
             <p>
               <strong>TURN IT OFF IMMEDIATELY!</strong> We cannot stress this
               enough.
@@ -211,10 +216,10 @@ function index(props: Props) {
             </p>
           </li>
           <li>
-            <h3>
+            <h2>
               My pump is still running after I have turned the taps off, is that
               bad?
-            </h3>
+            </h2>
             <p>
               It is normal for the pump to continue running for up to 30 seconds
               after you have turned the taps off as it builds pressure before

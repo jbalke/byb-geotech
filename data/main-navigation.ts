@@ -44,12 +44,17 @@ export const navLinks: MenuItem[] = [
             href: '/bores',
           },
           {
-            title: 'Pump troubleshooting',
+            title: 'Pump Sales & Repairs',
             Icon: FaFaucet,
-            href: '/home-owners/pump-troubleshooting',
+            href: '/pumps/sales-and-repairs',
           },
           {
-            title: 'Flow rate testing for council / DA',
+            title: 'Pump Troubleshooting',
+            Icon: FaFaucet,
+            href: '/pumps/troubleshooting',
+          },
+          {
+            title: 'Flow Rate Testing for Council/DA',
             Icon: FaFillDrip,
             href: '/home-owners/flow-rate-testing',
           },
@@ -93,7 +98,7 @@ export const navLinks: MenuItem[] = [
             href: '/bores/new-install-tips',
           },
           {
-            title: 'Pump troubleshooting',
+            title: 'Pump Troubleshooting',
             Icon: FaQuestionCircle,
             href: '/pumps/troubleshooting',
           },
@@ -103,12 +108,12 @@ export const navLinks: MenuItem[] = [
             href: '/help/groundwater-protection',
           },
           {
-            title: 'Flooding / Cyclones',
+            title: 'Flooding/Cyclones',
             Icon: FaQuestionCircle,
             href: '/help/flooding',
           },
           {
-            title: 'PFAS / PFOA',
+            title: 'PFAS/PFOA',
             Icon: FaQuestionCircle,
             href: '/help/pfas-pfoa',
           },
