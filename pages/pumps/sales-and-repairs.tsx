@@ -1,15 +1,13 @@
+import Aside from 'components/Aside';
 import ContentPage, { RelatedPage } from 'components/ContentPage';
-import { VideoContainer } from 'components/styled';
 import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
-import styled, { css } from 'styled-components';
-import CallLink from 'components/CallLink';
-import { ExternalLink, StyledLink } from '../../components/Link';
-import Aside from '../../components/Aside';
+import styled from 'styled-components';
 
 const PageSection = styled.section``;
 
 const relatedPages: RelatedPage[] = [
+  { label: 'Pump Troubleshooting', href: '/pumps/troubleshooting' },
   { label: 'Water Bore Drilling', href: '/bores' },
   { label: 'Drilling FAQ', href: '/faq' },
   { label: 'Request a Quote', href: '/request-a-quote' },
@@ -21,7 +19,7 @@ type Props = {};
 function index(props: Props) {
   return (
     <ContentPage
-      title="Pump Sales and Repairs"
+      title="Pump Sales & Repairs"
       description="We sell and install bore pumps to suit your needs."
       relatedPages={relatedPages}
       aside={
