@@ -49,11 +49,6 @@ export const navLinks: MenuItem[] = [
             href: '/pumps/sales-and-repairs',
           },
           {
-            title: 'Pump Troubleshooting',
-            Icon: FaFaucet,
-            href: '/pumps/troubleshooting',
-          },
-          {
             title: 'Flow Rate Testing for Council/DA',
             Icon: FaFillDrip,
             href: '/home-owners/flow-rate-testing',
