@@ -54,10 +54,10 @@ function index(props: Props) {
           <li><em>Downhole camera</em> inspections and video reports</li>
           <li><em>Decommissioning</em> bores & wells</li>
           <li><em>Deep earthing</em>, drilling for installation of earthing rods at substations</li>
-          <li><em>Cathodic protection</em> of fuel oil pipelines</li>
+          <li><em>Cathodic protection</em> and pre-cannistered anode/cable installation for fuel oil pipelines</li>
         </ul>
-
-        <p> </p>
+        <p>
+          You can call us on <CallLink /> to see how we can help your project achieve success.</p>
         <p> </p>
         <h2>1 Quote, 1 Invoice</h2>
         <p>
@@ -75,10 +75,12 @@ function index(props: Props) {
         <li>Concrete cutter and corer (up to 300mm thick)</li>
         </ul>
         <p> </p>
-    
-        <h2>
-          We have completed more environmental drilling than anyone else
-        </h2>
+        <h3>Experience, skills & local knowledge</h3>
+        <p>
+        Backyard Bores & Geotech Drilling Pty Ltd have drilled thousands of soil sampling and 
+        groundwater test holes and installed hundreds of ground water monitoring wells 
+        between Bowen and Rockhampton over the last 20 years.
+        </p>
         <p>
         We have drilled and installed <em>3 times*</em> the number of monitoring 
         wells around Mackay compared to any other drilling company.  Why?  
@@ -86,54 +88,60 @@ function index(props: Props) {
         the right methods for the right reason by utilising wisdom, judgment 
         and discretion in the pursuit of your project’s goals.  </p>
         <p>(*Jan 2022 Queensland Spatial Data extract)        </p>
-        <h3>Where to put the bore</h3>
+        <p> </p>
+        <h3>Workplace Health & Risk</h3>
         <p>
-          Our drilling rig is mounted on a light truck which will need access to
-          the location you&apos;d like the bore drilled. See the{' '}
-          <StyledNextLink href="/faq">FAQ</StyledNextLink> for truck dimensions
-          and more.
+         We care about our team's health and risk levels at work and have
+         WH&R Policies and Procedures, WH&R Plans, SWMS, and JRAs that put the crew first.
+         As at January 2022 we have a <em>zero lost time injury</em> rate. 
         </p>
+        <p> </p>
+        <h3>PFAS  PFOS Firefighting Foam</h3>
         <p>
-          Is there power nearby for the pump and, if not, how costly it might be
-          to install? While the pump does not need to be directly on the bore
-          (under the house, in a shed, etc), please consider how easy it will be
-          to distribute the water from the pump outlet to where you will need
-          it.
+        We have have drilled hundreds of soil sampling and groundwater test holes and installed dozens of ground water monitoring wells in suspected PFAS / PFOA areas.
+        Our very strict PFAS drilling quality control process allows for the most accurate samples possible.  Please contact us for more information.
         </p>
-        <p>
-          If you think your preferred location might be difficult to access or
-          needs fence sections removed or trees cut back, call us on{' '}
-          <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
-            {PHONE.MAIN.DISPLAY}
-          </StyledLink>{' '}
-          to discuss your options.
+        <p> </p>
+        <h3>Past Project Partners</h3>
+        <p>Backyard Bores & Geotech Drilling Pty Ltd have successfully completed works for the following:
+
+        <ul>
+        <li>Mackay Regional Council</li>
+        <li>Isaac Regional Council</li>
+        <li>Kleinfelder Environmental Consultants</li>
+        <li>CatCon Engineering & Construction</li>
+        <li>OWAD Environment</li>
+        <li>Cardno Geotechnic Services</li>
+        <li>Environmental Management and Remediation Pty Ltd</li>
+        <li>Ogilvie Civil & Mining</li>
+        <li>Environmental Earth Sciences</li>
+        <li>Coffey Geotechnics</li>
+        <li>Douglas Partners</li>
+        <li>GHD</li>
+        <li>CQG</li>
+        <li>EPIC Environmental</li>
+        <li>North Queensland Airports Group (Mackay Airport)</li>
+        <li>North Queensland Bulk Ports</li>
+        <li>Caltex, Mobil, Puma, Origin Gas, Ergon </li>
+        <li>Onesteel</li>
+        <li>Aurizon</li>
+        <li>Sibelco Australia</li>
+        <li>Prensa</li>
+        <li>Urbex</li>
+        <li>AESTEC </li>
+        <li>ATOM - Australian Terminal Operations Management</li>
+        <li>Auscor</li>
+        <li>CMW Geosciences</li>
+        <li>Wilmar</li>
+        <li>BP Australia</li>
+        <li>AECOM</li>
+        <li>Rock n Road Bitumen</li>
+        <li>UGM</li>
+        <li>Abbot Point Operations</li>
+        <li>East Point Developments</li>
+        </ul>
         </p>
-        <h3>Workplace Healthj & Risk</h3>
-        <p>
-          Please try to locate the underground services on your property,
-          especially the pipe to the sewer mains.
-        </p>
-        <p>
-          If you&apos;re not sure where any services are on your property, we
-          can contact the council for this information but for an additional
-          fee. See the <StyledNextLink href="/faq">FAQ</StyledNextLink> for more
-          information.
-        </p>
-        <h3>Disposal of soil</h3>
-        <p>
-          Usually there are 3 - 5 wheelbarrow loads of material that you need to
-          find a place for as we cannot take this with us. If you have any holes
-          or low points in your yard, this will be a great time to fill them.
-        </p>
-        <h2>I&apos;ve decided I want a bore, what next?</h2>
-        <p>
-          You can call us on <CallLink /> for a free quote but why not try our{' '}
-          <StyledNextLink href="/request-a-quote">
-            online quote form
-          </StyledNextLink>
-          ? It&apos;s quick and easy and we&apos;ll typically contact you with a
-          quote in less than an hour (during normal business hours)!
-        </p>
+
       </PageSection>
 
       {/* <StyledLinkButton href="/bores/new-install" fullWidth margin="1rem auto">
