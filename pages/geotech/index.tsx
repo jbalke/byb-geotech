@@ -11,12 +11,10 @@ import { PHONE } from '../../constants';
 const PageSection = styled.section``;
 
 const relatedPages: RelatedPage[] = [
-  { label: 'Drilling FAQ', href: '/faq' },
-  { label: 'New Bore Checklist', href: '/bores/checklist' },
   { label: 'Request a Quote', href: '/request-a-quote' },
   { label: 'Bore Search', href: '/bore-search' },
-  { label: 'New Bore & Pump Tips', href: '/bores/new-install-tips' },
-];
+  { label: 'Drilling FAQ', href: '/faq' },
+  ];
 
 type Props = {};
 function index(props: Props) {
@@ -35,18 +33,19 @@ function index(props: Props) {
       }
     >
       <PageSection>
-      <p> Backyard Bores & Geotech Drilling Pty Ltd are your North Queensland Geotechnical & Environmental Drilling specialists.
+      <p> Backyard Bores & Geotech Drilling Pty Ltd are your Mackay region Geotechnical & Environmental Drilling specialists.
         </p>        
-        <h2>We offer the following environmental drilling and geotechnical products</h2>
+        <h2>We offer the following environmental drilling and geotechnical products and capabilities</h2>
         <ul>
-          <li><em>Contaminated soil</em>/sand sampling (including asbestos) with equipment decon (Environmental Management Register and Contaminated Land Register listed sites)
-          </li>
+          <li><em>Contaminated soil</em>/sand sampling (including asbestos) with equipment decon (Environmental Management Register and Contaminated Land Register listed sites)          </li>
           <li>Drilling and installing piezometer <em>monitoring wells</em> up to 60m depth</li>
           <li>NDD, SPT (Standard Penetration Testing), DCP (Dynamic Cone Penetrometer), Geoprobe and push tubes, split spoon and auger sampling (AS1289, AS1726-2017, ASTM D3441 - ASTM D1586 - 08a)</li>
+          <li>Auger drilling from 80mm to 250mm dia, continuous flight and hollow stem</li>
+          <li>Rotary air (rock) drilling from 100mm to 300mm dia</li>
           <li>Specialist <em>PFAS</em> / PFOA (fire fighting foam) contaminated soil sampling and environmental drilling</li>
           <li><em>Test pumping</em> of bores to <strong>Australian Standard AS2368–1990 Test Pumping of Water Wells</strong> from 2 hours to 28 days in duration.  Includes creation of official documents for council requirements of subdivisions (<em>Develompent Approval</em> for 0.3L/s over 6 hour period with recovery)</li>
           <li><em>Flow rate logging</em> and data analysis from 0.1L/s to 100L/s</li>
-          <li><em>Water level logging</em> from hours to years with data capture, transmission and analysis</li>
+          <li><em>Water level logging</em> from hours during a pump test to years in situ with data capture, transmission and analysis</li>
           <li><em>Water quality testing</em> for salt (TDS & conductivity), iron (TDI), pH, free chlorine, total hardness & alkalinity</li>
           <li>Comprehensive <em>drinking water testing</em> can be arranged (pesticides, heavy metals, trace elements, PFAS, PFOA etc)</li>
           <li><em>Well development</em> using a combination of over pumping, surging or air lifting to protect the natural water sample</li>
@@ -57,7 +56,7 @@ function index(props: Props) {
           <li><em>Cathodic protection</em> and pre-cannistered anode/cable installation for fuel oil pipelines</li>
         </ul>
         <p>
-          You can call us on <CallLink /> to see how we can help your project achieve success.</p>
+          Pleasecall us on <CallLink /> to see how we can help your project reach successful completion.</p>
         <p> </p>
         <h2>1 Quote, 1 Invoice</h2>
         <p>
