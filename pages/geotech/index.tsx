@@ -22,8 +22,8 @@ type Props = {};
 function index(props: Props) {
   return (
     <ContentPage
-      title="Geotech Drilling"
-      description="A bore can save you lots of money on your water bills, and they are not as expensive as you might think!"
+      title="Environmental & Geotech Drilling"
+      description="Backyard Bores & Geotech Drilling Pty Ltd are your Mackay region Geotechnical & Environmental Drilling specialists"
       relatedPages={relatedPages}
       aside={
         <Aside type="question" title="Got more questions?">
@@ -35,40 +35,57 @@ function index(props: Props) {
       }
     >
       <PageSection>
-        <h2>Why get a bore?</h2>
+      <p> Backyard Bores & Geotech Drilling Pty Ltd are your North Queensland Geotechnical & Environmental Drilling specialists.
+        </p>        
+        <h2>We offer the following environmental drilling and geotechnical products</h2>
+        <ul>
+          <li><em>Contaminated soil</em>/sand sampling (including asbestos) with equipment decon (Environmental Management Register and Contaminated Land Register listed sites)
+          </li>
+          <li>Drilling and installing piezometer <em>monitoring wells</em> up to 60m depth</li>
+          <li>NDD, SPT (Standard Penetration Testing), DCP (Dynamic Cone Penetrometer), Geoprobe and push tubes, split spoon and auger sampling (AS1289, AS1726-2017, ASTM D3441 - ASTM D1586 - 08a)</li>
+          <li>Specialist <em>PFAS</em> / PFOA (fire fighting foam) contaminated soil sampling and environmental drilling</li>
+          <li><em>Test pumping</em> of bores to <strong>Australian Standard AS2368–1990 Test Pumping of Water Wells</strong> from 2 hours to 28 days in duration.  Includes creation of official documents for council requirements of subdivisions (<em>Develompent Approval</em> for 0.3L/s over 6 hour period with recovery)</li>
+          <li><em>Flow rate logging</em> and data analysis from 0.1L/s to 100L/s</li>
+          <li><em>Water level logging</em> from hours to years with data capture, transmission and analysis</li>
+          <li><em>Water quality testing</em> for salt (TDS & conductivity), iron (TDI), pH, free chlorine, total hardness & alkalinity</li>
+          <li>Comprehensive <em>drinking water testing</em> can be arranged (pesticides, heavy metals, trace elements, PFAS, PFOA etc)</li>
+          <li><em>Well development</em> using a combination of over pumping, surging or air lifting to protect the natural water sample</li>
+          <li>Production well (steel and PVC) investigation and cleaning</li>
+          <li><em>Downhole camera</em> inspections and video reports</li>
+          <li><em>Decommissioning</em> bores & wells</li>
+          <li><em>Deep earthing</em>, drilling for installation of earthing rods at substations</li>
+          <li><em>Cathodic protection</em> of fuel oil pipelines</li>
+        </ul>
+
+        <p> </p>
+        <p> </p>
+        <h2>1 Quote, 1 Invoice</h2>
         <p>
-          You can save lots of money on your water bills! A single bore can save
-          you thousands of dollars over its life.
+          Let Backyard Bores and Geotech Drilling <strong>reduce your paperwork and 
+          administrative overhead</strong> by providing you with 1 quote to cover NDD, 
+          underground utility locating, concrete cutting and coring, drilling, providing
+          samples and installing monitoring wells.
         </p>
-        <p>
-          We can have a new bore drilled (with pump) within a morning or
-          afternoon and you can be watering your lawn before we drive away. You
-          don&apos;t even have to be home at the time!
+        <p>  
+          We have a long-term working relationship with Mackay's best:
         </p>
-        <p>
-          There are a few things we need your help with to ensure we can get the
-          job done as quickly and smoothly as possible, refer to our handy{' '}
-          <StyledNextLink href="/bores/checklist">checklist</StyledNextLink>.
-        </p>
-        <h2>But, aren&apos;t bores expensive?</h2>
-        <p>
-          They are not expensive at all! We are offering a great price using the
-          latest, international best practice standards and equipment for a
-          completed and cased PVC bore.
-        </p>
-        <p>
-          Most areas can have a bore drilled and a pump equipped for{' '}
-          <em>less than $2900!</em>
-        </p>
-        <p>We also offer a Seniors and Carers discount!</p>
+        <ul>
+        <li>NDD (vacuum truck) company </li>
+        <li>Underground utility locators with GPR (ground penetrating radar)</li>
+        <li>Concrete cutter and corer (up to 300mm thick)</li>
+        </ul>
+        <p> </p>
+    
         <h2>
-          OK, so what else do I need to consider before having a bore drilled?
+          We have completed more environmental drilling than anyone else
         </h2>
         <p>
-          While we try our best to make the whole process as simple and
-          hassle-free as possible, here&apos;s a few things you should consider
-          before deciding to have a bore drilled.
-        </p>
+        We have drilled and installed <em>3 times*</em> the number of monitoring 
+        wells around Mackay compared to any other drilling company.  Why?  
+        Because our team uses the right equipment with the right processes and 
+        the right methods for the right reason by utilising wisdom, judgment 
+        and discretion in the pursuit of your project’s goals.  </p>
+        <p>(*Jan 2022 Queensland Spatial Data extract)        </p>
         <h3>Where to put the bore</h3>
         <p>
           Our drilling rig is mounted on a light truck which will need access to
@@ -91,7 +108,7 @@ function index(props: Props) {
           </StyledLink>{' '}
           to discuss your options.
         </p>
-        <h3>Location of utilities</h3>
+        <h3>Workplace Healthj & Risk</h3>
         <p>
           Please try to locate the underground services on your property,
           especially the pipe to the sewer mains.
