@@ -5,8 +5,8 @@ import { StyledLink } from 'components/Link';
 import StyledNextLink from 'components/Link/StyledNextLink';
 import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
-import styled from 'styled-components';
 import { PHONE } from '../../constants';
+import styled, { css } from 'styled-components';
 
 const PageSection = styled.section``;
 
@@ -31,7 +31,14 @@ function index(props: Props) {
           </p>
         </Aside>
       }
-    >
+    PageSection
+    css={css`
+      h2,
+      h3 {
+        margin-top: 1.5em;
+      }
+    `}
+  >
       <PageSection>
       <p> Backyard Bores & Geotech Drilling Pty Ltd are your Mackay region Geotechnical & Environmental Drilling specialists.
         </p>        
