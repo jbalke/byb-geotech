@@ -106,7 +106,7 @@ function ServicesSection(props: ServicesSectionProps) {
         </ServiceCard>
         <ServiceCard
           title="Geotechnical Drilling"
-          href="/services/drilling"
+          href="/geotech"
           imageSrc={geotechImg}
         >
           <p>
@@ -114,7 +114,7 @@ function ServicesSection(props: ServicesSectionProps) {
             Monitoring wells, Geoprobe and push tubes, split spoon, etc).
           </p>
           <p>
-            Learn More for a full list of our Geotech drilling products
+            Click here for a full list of our Geotech drilling products
             available.
           </p>
         </ServiceCard>

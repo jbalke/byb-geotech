@@ -31,8 +31,7 @@ function index(props: Props) {
           </p>
         </Aside>
       }
-   
-  >
+     >
       <PageSection>
       css={css`
       h2,
