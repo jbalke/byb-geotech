@@ -30,14 +30,14 @@ function index(props: Props) {
         </Aside>
       }
     >
-      <PageSection>
-        css=
-        {css`
+      <PageSection
+        css={css`
           h2,
           h3 {
             margin-top: 1.5em;
           }
         `}
+      >
         <p>
           Backyard Bores & Geotech Drilling Pty Ltd are your Mackay region
           Geotechnical & Environmental Drilling specialists.
