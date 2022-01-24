@@ -61,7 +61,7 @@ export const navLinks: MenuItem[] = [
           {
             title: 'Details & Projects',
             Icon: FaPeopleArrows,
-            href: '/geotech/projects',
+            href: '/geotech',
           },
         ],
       },
