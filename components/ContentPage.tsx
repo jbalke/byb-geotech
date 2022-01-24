@@ -169,6 +169,7 @@ type indexProps = {
   relatedPages: RelatedPage[];
   aside?: React.ReactNode;
   children: React.ReactNode;
+  image?: StaticImageData;
 };
 
 function ContentPage({
@@ -177,10 +178,11 @@ function ContentPage({
   relatedPages,
   aside,
   children,
+  image,
 }: indexProps) {
   return (
     <>
-      <Banner title={title} description={description} />
+      <Banner title={title} description={description} image={image} />
       <Wrapper main padding="xl">
         <ContentLayout>
           <PageContent>{children}</PageContent>
