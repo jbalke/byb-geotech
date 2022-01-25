@@ -106,7 +106,7 @@ function ServicesSection(props: ServicesSectionProps) {
         </ServiceCard>
         <ServiceCard
           title="Geotechnical Drilling"
-          href="/services/drilling"
+          href="/geotech"
           imageSrc={geotechImg}
         >
           <p>
