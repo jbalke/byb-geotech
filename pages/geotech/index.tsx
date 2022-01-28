@@ -50,13 +50,13 @@ function index(props: Props) {
         </h2>
         <ul>
           <li>
-            <em>Contaminated soil</em>/sand sampling (including asbestos) with
+            <b>Contaminated soil</b>/sand sampling (including asbestos) with
             equipment decon (Environmental Management Register and Contaminated
             Land Register listed sites)
           </li>
           <li>
-            Drilling and installing piezometer <em>monitoring wells</em> up to
-            60m depth
+            Drilling and installing piezometer <b>monitoring wells</b> up to 60m
+            depth
           </li>
           <li>
             NDD, SPT (Standard Penetration Testing), DCP (Dynamic Cone
@@ -69,51 +69,51 @@ function index(props: Props) {
           </li>
           <li>Rotary air (rock) drilling from 100mm to 300mm dia</li>
           <li>
-            Specialist <em>PFAS</em> / PFOA (fire fighting foam) contaminated
-            soil sampling and environmental drilling
+            Specialist <b>PFAS</b> / PFOA (fire fighting foam) contaminated soil
+            sampling and environmental drilling
           </li>
           <li>
-            <em>Test pumping</em> of bores to{' '}
+            <b>Test pumping</b> of bores to{' '}
             <strong>
               Australian Standard AS2368–1990 Test Pumping of Water Wells
             </strong>{' '}
             from 2 hours to 28 days in duration. Includes creation of official
             documents for council requirements of subdivisions (
-            <em>Develompent Approval</em> for 0.3L/s over 6 hour period with
+            <b>Develompent Approval</b> for 0.3L/s over 6 hour period with
             recovery)
           </li>
           <li>
-            <em>Flow rate logging</em> and data analysis from 0.1L/s to 100L/s
+            <b>Flow rate logging</b> and data analysis from 0.1L/s to 100L/s
           </li>
           <li>
-            <em>Water level logging</em> from hours during a pump test to years
-            in situ with data capture, transmission and analysis
+            <b>Water level logging</b> from hours during a pump test to years in
+            situ with data capture, transmission and analysis
           </li>
           <li>
-            <em>Water quality testing</em> for salt (TDS & conductivity), iron
+            <b>Water quality testing</b> for salt (TDS & conductivity), iron
             (TDI), pH, free chlorine, total hardness & alkalinity
           </li>
           <li>
-            Comprehensive <em>drinking water testing</em> can be arranged
+            Comprehensive <b>drinking water testing</b> can be arranged
             (pesticides, heavy metals, trace elements, PFAS, PFOA etc)
           </li>
           <li>
-            <em>Well development</em> using a combination of over pumping,
-            surging or air lifting to protect the natural water sample
+            <b>Well development</b> using a combination of over pumping, surging
+            or air lifting to protect the natural water sample
           </li>
           <li>Production well (steel and PVC) investigation and cleaning</li>
           <li>
-            <em>Downhole camera</em> inspections and video reports
+            <b>Downhole camera</b> inspections and video reports
           </li>
           <li>
-            <em>Decommissioning</em> bores & wells
+            <b>Decommissioning</b> bores & wells
           </li>
           <li>
-            <em>Deep earthing</em>, drilling for installation of earthing rods
-            at substations
+            <b>Deep earthing</b>, drilling for installation of earthing rods at
+            substations
           </li>
           <li>
-            <em>Cathodic protection</em> and pre-cannistered anode/cable
+            <b>Cathodic protection</b> and pre-cannistered anode/cable
             installation for fuel oil pipelines
           </li>
         </ul>
@@ -174,7 +174,7 @@ function index(props: Props) {
           We care about our team&apos;s health and risk levels at work and have
           WH&R Policies and Procedures, WH&R Plans, SWMS, and JRAs that put the
           crew first. As at January 2022 we have a{' '}
-          <em>zero lost time injury</em> rate.
+          <em>zero lost time injury rate</em>.
         </p>
         <h3>PFAS PFOS Firefighting Foam</h3>
         <p>

@@ -82,6 +82,11 @@ const GlobalStyle = createGlobalStyle`
     font-weight: ${Theme.font.fw600};
   }
 
+  b {
+    color: ${Theme.color.primary};
+    font-weight: ${Theme.font.fw700};
+  }
+
   ol, ul, dl {
     margin:0
   }
