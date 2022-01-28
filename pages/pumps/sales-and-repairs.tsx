@@ -66,6 +66,8 @@ function index(props: Props) {
           drilling day and you can be watering your lawn before we drive out the
           driveway.
         </p>
+        <p>
+          Please call us on <CallLink /> to see how we can help with a new or replacement pump.</p>
       </PageSection>
     </ContentPage>
   );

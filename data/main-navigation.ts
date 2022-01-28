@@ -2,7 +2,6 @@ import { IconType } from 'react-icons';
 import {
   FaCommentDollar,
   FaFaucet,
-  FaFillDrip,
   FaInfoCircle,
   FaPeopleArrows,
   FaQuestionCircle,
@@ -47,11 +46,6 @@ export const navLinks: MenuItem[] = [
             title: 'Pump Sales & Repairs',
             Icon: FaFaucet,
             href: '/pumps/sales-and-repairs',
-          },
-          {
-            title: 'Flow Rate Testing for Council/DA',
-            Icon: FaFillDrip,
-            href: '/home-owners/flow-rate-testing',
           },
         ],
       },

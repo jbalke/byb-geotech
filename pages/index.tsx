@@ -104,7 +104,7 @@ function Home() {
           <h1>Backyard Bores & Geotech Drilling</h1>
           <HeroSubText>
             Your water bore and geotech drilling specialists since 2002.
-            Covering Mackay from Bowen to Rockhampton and west to Clermont.
+            Covering the Mackay region from Bowen to Rockhampton and west to Clermont.
           </HeroSubText>
         </HeroContentWrapper>
       </Hero>
