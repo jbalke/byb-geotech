@@ -4,9 +4,17 @@ import ContentPage, { RelatedPage } from 'components/ContentPage';
 import StyledNextLink from 'components/Link/StyledNextLink';
 import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-const PageSection = styled.section``;
+const PageSection = styled.section`
+  h2:not(:first-child) {
+    margin-top: 1.5em;
+  }
+
+  h3 {
+    margin-top: 2em;
+  }
+`;
 
 const relatedPages: RelatedPage[] = [
   { label: 'Request a Quote', href: '/request-a-quote' },
@@ -29,15 +37,17 @@ function index(props: Props) {
           </p>
         </Aside>
       }
-
-     >
+    >
       <PageSection>
-       
-    
-      <p> Backyard Bores & Geotech Drilling Pty Ltd are your Mackay region Geotechnical & Environmental Drilling specialists.
-        </p>        
-        <h2>We offer the following environmental drilling and geotechnical products and capabilities</h2>
+        <p>
+          Backyard Bores & Geotech Drilling Pty Ltd are your Mackay region
+          Geotechnical & Environmental Drilling specialists.
+        </p>
 
+        <h2>
+          We offer the following environmental drilling and geotechnical
+          products and capabilities
+        </h2>
         <ul>
           <li>
             <em>Contaminated soil</em>/sand sampling (including asbestos) with
@@ -108,9 +118,9 @@ function index(props: Props) {
           </li>
         </ul>
         <p>
-
-          Please call us on <CallLink /> to see how we can help your project reach successful completion.</p>
-        <p> </p>
+          Please call us on <CallLink /> to see how we can help your project
+          reach successful completion.
+        </p>
 
         <h2>1 Quote, 1 Invoice</h2>
         <p>
@@ -128,6 +138,7 @@ function index(props: Props) {
           </li>
           <li>Concrete cutter and corer (up to 300mm thick)</li>
         </ul>
+
         <h3>Experience, skills & local knowledge</h3>
         <p>
           Backyard Bores & Geotech Drilling Pty Ltd have drilled thousands of
@@ -136,23 +147,26 @@ function index(props: Props) {
           last 20 years.
         </p>
         <p>
+          We have drilled and installed <em>3 times*</em> the number of
+          monitoring wells around Mackay compared to any other drilling company.
+          Why? Because our team uses the right equipment with the right
+          processes and the right methods for the right reason by utilising
+          wisdom, judgment and discretion in the pursuit of your project&apos;s
+          goals.
+        </p>
+        <p>(*Jan 2022 Queensland Spatial Data extract) </p>
 
-        We have drilled and installed <em>3 times*</em> the number of monitoring 
-        wells around Mackay compared to any other drilling company.  Why?  
-        Because our team uses the right equipment with the right processes and 
-        the right methods for the right reason by utilising wisdom, judgment 
-        and discretion in the pursuit of your project’s goals.  </p>
-        <p>(*Jan 2022 Queensland Spatial Data extract)        </p>
-      
-        <p> </p>
         <h3>Licenced drillers - Every monitoring well logged</h3>
         <p>
-        Backyard Bores & Geotech Drilling Pty Ltd have Queensland licensed drillers and we log 
-        every monitoring well we drill as required by the obligation of our licenses. 
-        Ask your other drilling companies if they are using a licensed driller and if that driller
-        logs EVERY monitoring well.  Consequences for all involved are harsh.</p>
-        <p>        Every well > 6m MUST be drilled by a licensed driller and a log submitted.
-        <p> </p>
+          Backyard Bores & Geotech Drilling Pty Ltd have Queensland licensed
+          drillers and we log every monitoring well we drill as required by the
+          obligation of our licenses. Ask your other drilling companies if they
+          are using a licensed driller and if that driller logs EVERY monitoring
+          well. Consequences for all involved are harsh.
+        </p>
+        <p>
+          Every well deeper than 6m <strong>MUST</strong> be drilled by a
+          licensed driller and a log submitted.
         </p>
 
         <h3>Workplace Health & Risk</h3>
@@ -170,6 +184,7 @@ function index(props: Props) {
           control process allows for the most accurate samples possible. Please
           contact us for more information.
         </p>
+
         <h3>Past Project Partners</h3>
         <p>
           Backyard Bores & Geotech Drilling Pty Ltd have successfully completed
