@@ -3,6 +3,7 @@ import ContentPage, { RelatedPage } from 'components/ContentPage';
 import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 import styled from 'styled-components';
+import CallLink from 'components/CallLink';
 
 const PageSection = styled.section``;
 
