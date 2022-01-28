@@ -33,12 +33,8 @@ function index(props: Props) {
       }
      >
       <PageSection>
-      css={css`
-      h2,
-      h3 {
-        margin-top: 1.5em;
-      }
-    `}
+       
+    
       <p> Backyard Bores & Geotech Drilling Pty Ltd are your Mackay region Geotechnical & Environmental Drilling specialists.
         </p>        
         <h2>We offer the following environmental drilling and geotechnical products and capabilities</h2>
@@ -62,7 +58,7 @@ function index(props: Props) {
           <li><em>Cathodic protection</em> and pre-cannistered anode/cable installation for fuel oil pipelines</li>
         </ul>
         <p>
-          Pleasecall us on <CallLink /> to see how we can help your project reach successful completion.</p>
+          Please call us on <CallLink /> to see how we can help your project reach successful completion.</p>
         <p> </p>
         <h2>1 Quote, 1 Invoice</h2>
         <p>
@@ -93,7 +89,17 @@ function index(props: Props) {
         the right methods for the right reason by utilising wisdom, judgment 
         and discretion in the pursuit of your project’s goals.  </p>
         <p>(*Jan 2022 Queensland Spatial Data extract)        </p>
+      
         <p> </p>
+        <h3>Licenced drillers - Every monitoring well logged</h3>
+        <p>
+        Backyard Bores & Geotech Drilling Pty Ltd have Queensland licensed drillers and we log 
+        every monitoring well we drill as required by the obligation of our licenses. 
+        Ask your other drilling companies if they are using a licensed driller and if that driller
+        logs EVERY monitoring well.  Consequences for all involved are harsh.</p>
+        <p>        Every well > 6m MUST be drilled by a licensed driller and a log submitted.
+        <p> </p>
+        </p>
         <h3>Workplace Health & Risk</h3>
         <p>
          We care about our team's health and risk levels at work and have
