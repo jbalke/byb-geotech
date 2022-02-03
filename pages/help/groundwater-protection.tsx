@@ -95,7 +95,7 @@ function index(props: Props) {
         <p>
           We come from the land, we only have bore water to drink and live off,
           so we understand your needs and concerns. Trust the locals to put you
-          first. It's your land, you have the choice of who conducts the
+          first. It&apos;s your land, you have the choice of who conducts the
           monitoring / sampling / drilling of water and recording of data from
           your bores.
         </p>
