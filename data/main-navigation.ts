@@ -80,11 +80,11 @@ export const navLinks: MenuItem[] = [
     sections: [
       {
         pages: [
-          { title: 'Drilling FAQ', Icon: FaQuestionCircle, href: '/faq' },
+          { title: 'Drilling FAQ', Icon: FaQuestionCircle, href: '/help/faq' },
           {
             title: 'New Bore & Pump Tips',
             Icon: FaQuestionCircle,
-            href: '/bores/new-install-tips',
+            href: '/help/new-install-tips',
           },
           {
             title: 'Pump Troubleshooting',

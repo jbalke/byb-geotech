@@ -6,7 +6,7 @@ import SiteLayout from 'layouts/SiteLayout';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { v4 } from 'uuid';
-import Banner from '../components/Banner';
+import Banner from '../../components/Banner';
 
 const ToggleButton = styled(Button)`
   align-self: flex-end;
@@ -37,7 +37,7 @@ function FAQPage(props: Props) {
       />
       <Wrapper maxWidth="70ch" padding="xl">
         <ToggleButton
-          onClick={() => setExpandAll(expanded => !expanded)}
+          onClick={() => setExpandAll((expanded) => !expanded)}
           variant="outline"
           $borderWidth="1px"
           aria-pressed={isExpandAll}
@@ -51,7 +51,7 @@ function FAQPage(props: Props) {
           onChange={handleOnChange}
           id="faq"
         >
-          {questions.map(q => (
+          {questions.map((q) => (
             <FAQ
               key={q.uuid}
               uuid={q.uuid}
