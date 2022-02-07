@@ -58,8 +58,9 @@ function index(props: Props) {
             </li>
             <li>Free Chlorine - FCl in PPM. 0 is great</li>
             <li>
-              ORP - Oxidation Reduction Potential, is a measure of a substance's
-              ability to either oxidize or reduce another substance.
+              ORP - Oxidation Reduction Potential, is a measure of a
+              substance&apos;s ability to either oxidize or reduce another
+              substance.
             </li>
             <li>
               Total Hardness - Water hardness is caused by the presence of
@@ -70,9 +71,9 @@ function index(props: Props) {
         </p>
         <p>
           *We can conduct these tests for free if we are in your area at the
-          time and don't need to make a special trip just for your test. If you
-          can wait, the next time we are going past we will drop by and do the
-          tests for free, otherwise a nominal fee will apply.
+          time and don&apos;t need to make a special trip just for your test. If
+          you can wait, the next time we are going past we will drop by and do
+          the tests for free, otherwise a nominal fee will apply.
         </p>
         <p>
           <b>Comprehensive Drinking Water Tests</b> can be carried out by Mackay
