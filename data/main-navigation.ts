@@ -92,6 +92,16 @@ export const navLinks: MenuItem[] = [
             href: '/pumps/troubleshooting',
           },
           {
+            title: 'Bore Cleanout',
+            Icon: FaQuestionCircle,
+            href: '/help/bore-cleanout',
+          },
+          {
+            title: 'Water Testing Services',
+            Icon: FaQuestionCircle,
+            href: '/help/water-testing',
+          },
+          {
             title: 'Groundwater Protection',
             Icon: FaQuestionCircle,
             href: '/help/groundwater-protection',

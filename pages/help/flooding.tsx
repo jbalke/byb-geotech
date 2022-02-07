@@ -3,16 +3,19 @@ import { StyledLink } from 'components/Link';
 import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 import styled from 'styled-components';
+import StyledNextLink from 'components/Link/StyledNextLink';
 import { VideoContainer } from 'components/styled';
 import { PHONE } from '../../constants';
 
 const PageSection = styled.section``;
 
 const relatedPages: RelatedPage[] = [
+  { label: 'Bore Water Testing', href: '/help/water-testing' },
+  { label: 'Bore Cleanout', href: '/help/bore-cleanout' },
   { label: 'Water Bore Drilling', href: '/bores' },
   { label: 'Drilling FAQ', href: '/help/faq' },
-  { label: 'Request a Quote', href: '/request-a-quote' },
   { label: 'Bore Search', href: '/bore-search' },
+  { label: 'Request a Quote', href: '/request-a-quote' },
 ];
 
 type Props = {};
@@ -25,81 +28,163 @@ function index(props: Props) {
       relatedPages={relatedPages}
     >
       <PageSection>
-        <h2>Groundwater monitoring / groundwater protection</h2>
+        <h2>What to do Before a Potential Flood Event</h2>
         <p>
-          <strong>
-            We all need to do our part to protect this vital resource.
-          </strong>
+          <b>Your Bore</b>
+        </p>
+        <p>
+          If the area surrounding your bore is prone to having water accumulate
+          during heavy rain, then it&apos;s best to act now.
+        </p>
+        <p>
+          Inspect the top of the bore casing and make sure there is a good seal
+          around the hole in the cap where the poly pipe(s) go into the bore
+          casing. If there are large gaps (more than 3mm on each side), use a
+          wet area sealant to fill in the gaps. If that is not available, do
+          your best to stuff a rag into the gaps all the way around.
+        </p>
+        <p>
+          If you don&apos;t have a bore cap at all, it&apos;s best to get duct
+          tape and go nuts sealing that PVC casing off!
+        </p>
+        <p>
+          Put a small hole in the duct tape so the changing levels of water in
+          the bore don&apos;t cause the tape to blow out (yes we have seen it
+          before) Afterwards, contact us to get a replacement bore cap and a
+          free bore appraisal so you are prepared for next time.
         </p>
       </PageSection>
       <PageSection>
         <p>
-          <b>
-            95% Of all the freshwater in the world is groundwater (excluding
-            polar ice caps). Surface freshwater (lakes, rivers and dams) only
-            make up 3%. (ngwa.org)
-          </b>
+          <b>Your Pump</b>
         </p>
         <p>
-          The <b>Bravus (Adani) Carmichael Mine</b> has been great publicity to
-          bring into the fore the health and sustainability of our limited
-          groundwater reserves.
+          Look to see where your surface pump is, if it&apos;s likely to get
+          covered (even partially) by flood waters, lift the pump up. The best
+          way is to put a Besser block or bricks under the pump. All pumps
+          directly above the bore casing will lift straight up; it may take two
+          people to complete this task but you could lose thousands if you
+          don&apos;t act.
+        </p>
+        <PageSection>
+          <h2>What to do During a Flood Event</h2>
+
+          <p>
+            If you can see or hear water leaking into your bore casing, or you
+            can see the bore casing is completely covered by flood waters, or
+            there is no cap on the bore or it has large gaps and your pump is
+            not underwater, the best thing is to turn the pump on and pump that
+            dirty overland flood water out ASAP.
+          </p>
+          <p>
+            Obviously, if you are experiencing a cyclone, don&apos;t go outside.
+          </p>
+          <p>
+            If pumping water out of your bore will make the flooding situation
+            worse for anyone, leave the pump and bore alone. Just remember, if
+            your pump is under water, don&apos;t turn it on!
+          </p>
+          <p>
+            Run the pump and discharge the water into a functioning drain for as
+            long as the water is covering the bore casing.
+          </p>
+          <p>
+            If all the drains are backed up, don&apos;t run the pump, this will
+            make the flood worse.
+          </p>
+          <p>
+            As soon as the flood waters drop below the level of the casing, run
+            the pump and pump the flood waters out of the bore. We need to
+            protect our precious aquifers as best we can.
+          </p>
+        </PageSection>
+        <PageSection>
+          <h2>What to do After a Flood Event, Cleanup</h2>
+
+          <p>
+            Bore water should not be used for drinking or food preparation if
+            you suspect flood water entered the bore casing.
+          </p>
+          <p>
+            If you do suspect the bore was underwater, check out our{' '}
+            <StyledNextLink href="/help/bore-cleanout">
+              bore cleanout
+            </StyledNextLink>{' '}
+            page for more infomation about getting your bore blown clean.{' '}
+          </p>
+
+          <p>
+            If you choose not to blow the bore clean, it&apos;s best to
+            disinfect the water in the bore, the following disinfection
+            procedure is recommended by DRDMW:
+          </p>
+          <ol>
+            <li>
+              Add 15 grams of dry pool chlorine per 100 litres of bore water. A
+              4” bore casing has volume of approx. 10L per metre, if your bore
+              is 10m deep, add 15g of dry pool chlorine.
+            </li>
+            <li>
+              Leave it in the bore for 4 hours then turn the pump on but put the
+              outlet hose back down into the casing, creating a loop.
+            </li>
+            <li>
+              Pump the water back into the bore for 30 minutes. If the bore
+              overflows, reduce the flow rate. If that still doesnt work then
+              skip to step 4.
+            </li>
+            <li>
+              Take the outlet hose out and continue to pump the bore water onto
+              grass or down the drain for 2 hours.
+            </li>
+          </ol>
+
+          <p>
+            If there is any sign the pump or pressure switch/controller went
+            under water (or the control box if you have a submersible), then{' '}
+            <b>DO NOT USE IT!</b> Call us ASAP on{' '}
+            <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
+              {PHONE.MAIN.DISPLAY}
+            </StyledLink>{' '}
+            to arrange for a free pump and bore inspection.
+          </p>
+          <p>
+            If you know the bore went underwater but your pump (or control box)
+            did not, then at the very least, run the pump for 3-4 hours once the
+            flood water has subsided to clean out the introduced flood waters.
+          </p>
+          <p>
+            The bore water may be discoloured from flooding or just from the
+            amount of rain entering the aquifer over the last few days.
+          </p>
+          <p>
+            Check out our{' '}
+            <StyledNextLink href="/help/water-testing">
+              water testing
+            </StyledNextLink>{' '}
+            page for more infomation about the water quality testing services we
+            offer (for <b>FREE!</b>) and other more compreshensive testing
+            options.
+          </p>
+        </PageSection>
+        <p>
+          <h3>Advice for Insurance Claims</h3>
         </p>
         <p>
-          If you are worried about the health and productivity of your bores /
-          production wells, we can assist. If you have land leased to
-          others/companies/miners and they are using or interacting with the
-          groundwater, we can assist with initial baseline quality and flow
-          testing and short or long term depth and salinity monitoring.
+          If your pump was flooded/submerged/inundated, we can inspect the pump
+          and provide a document stating the pump was damaged in the flood
+          thereby allowing you to claim this on your insurance.{' '}
         </p>
         <p>
-          Only by conducting <b>accurate testing and monitoring</b> can we
-          develop a reliable picture of the health and viability of our
-          groundwater aquifers.
+          If you have Motor Burnout inclusions on your policy this can also help
+          the claim progress successfully.
         </p>
         <p>
-          <h3>Services offered by Backyard Bores & Geotech Drilling</h3>
-        </p>
-        <ul>
-          <li>
-            Flow rate testing of existing bores/wells from 0.2 litres per second
-            up to 35L/s, constant rate or stepped test
-          </li>
-          <li>
-            Automated measuring and recording of flow rates in L/s from 10
-            minutes duration to 72 hours
-          </li>
-          <li>
-            Providing analysis and producing reports from the flow rate data
-            with trends
-          </li>
-          <li>
-            Drilling new monitoring wells in accordance with international
-            industry best practice standards and conforming to Qld government
-            requirements
-          </li>
-          <li>
-            Automated measuring and recording of water depth and salinity / pH
-            for short term (up to 72 hours) and long term (up to 4 years)
-          </li>
-          <li>
-            Alerting and alarms if adjustable limits have been reached, (Min and
-            Max: salinity, flow rate, water levels)
-          </li>
-          <li>
-            Centralised data logging from multiple sites with near real-time
-            data transfer
-          </li>
-        </ul>
-        <p>
-          We come from the land, we only have bore water to drink and live off,
-          so we understand your needs and concerns. Trust the locals to put you
-          first. It&apos;s your land, you have the choice of who conducts the
-          monitoring / sampling / drilling of water and recording of data from
-          your bores.
-        </p>
-        <p>
-          <b>Choose Backyard Bores and Geotech Drilling.</b>
+          We can supply and install your new pump. Please call us on{' '}
+          <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
+            {PHONE.MAIN.DISPLAY}
+          </StyledLink>{' '}
+          for a full quote on your replacement pump.
         </p>
       </PageSection>
     </ContentPage>

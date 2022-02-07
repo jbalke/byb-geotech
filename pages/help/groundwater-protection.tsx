@@ -1,16 +1,16 @@
 import ContentPage, { RelatedPage } from 'components/ContentPage';
-import { StyledLink } from 'components/Link';
+import CallLink from 'components/CallLink';
 import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 import styled from 'styled-components';
-import { VideoContainer } from 'components/styled';
-import { PHONE } from '../../constants';
 
 const PageSection = styled.section``;
 
 const relatedPages: RelatedPage[] = [
-  { label: 'Water Bore Drilling', href: '/bores' },
-  { label: 'Drilling FAQ', href: '/help/faq' },
+  { label: 'Geotech Drilling', href: '/geotech' },
+  { label: 'Water Testing Services', href: '/help/water-testing' },
+  { label: 'PFAS/PFOA Contamination Advice', href: '/help/pfas-pfoa' },
+  { label: 'Flooding / Cyclone Advice', href: '/help/flooding' },
   { label: 'Request a Quote', href: '/request-a-quote' },
   { label: 'Bore Search', href: '/bore-search' },
 ];
@@ -100,7 +100,7 @@ function index(props: Props) {
           your bores.
         </p>
         <p>
-          <b>Choose Backyard Bores and Geotech Drilling.</b>
+          <b>Choose Backyard Bores and Geotech Drilling.</b> <CallLink />
         </p>
       </PageSection>
     </ContentPage>

@@ -147,42 +147,44 @@ function index(props: Props) {
           last 20 years.
         </p>
         <p>
-          We have drilled and installed <em>3 times*</em> the number of
-          monitoring wells around Mackay compared to any other drilling company.
-          Why? Because our team uses the right equipment with the right
-          processes and the right methods for the right reason by utilising
-          wisdom, judgment and discretion in the pursuit of your project&apos;s
-          goals.
+          We have drilled and installed <b>3 times*</b> the number of monitoring
+          wells around Mackay compared to any other drilling company. Why?
+          Because our team uses the right equipment with the right processes and
+          the right methods for the right reason by utilising wisdom, judgment
+          and discretion in the pursuit of your project&apos;s goals.
         </p>
         <p>(*Jan 2022 Queensland Spatial Data extract) </p>
 
-        <h3>Licenced drillers - Every monitoring well logged</h3>
+        <h3>Licensed drillers - Every monitoring well logged</h3>
         <p>
           Backyard Bores & Geotech Drilling Pty Ltd have Queensland licensed
-          drillers and we log every monitoring well we drill as required by the
-          obligation of our licenses. Ask your other drilling companies if they
-          are using a licensed driller and if that driller logs EVERY monitoring
-          well. Consequences for all involved are harsh.
+          drillers and we log every monitoring well we drill <b>as required</b>{' '}
+          by the obligation of our licenses. Ask the other drilling companies
+          quoting on jobs if they are using a licensed driller and if that
+          driller logs EVERY monitoring well. Consequences for all involved in
+          not logging monitoring wells are harsh.
         </p>
         <p>
-          Every well deeper than 6m <strong>MUST</strong> be drilled by a
-          licensed driller and a log submitted.
+          Every monitoring well deeper than 6m <strong>MUST</strong> be drilled
+          by a licensed driller and a log submitted.
         </p>
 
         <h3>Workplace Health & Risk</h3>
         <p>
           We care about our team&apos;s health and risk levels at work and have
           WH&R Policies and Procedures, WH&R Plans, SWMS, and JRAs that put the
-          crew first. As at January 2022 we have a{' '}
-          <em>zero lost time injury rate</em>.
+          crew first. As at February 2022 we have a{' '}
+          <b>zero lost time injury rate</b>.
         </p>
         <h3>PFAS PFOS Firefighting Foam</h3>
         <p>
           We have have drilled hundreds of soil sampling and groundwater test
           holes and installed dozens of ground water monitoring wells in
-          suspected PFAS / PFOA areas. Our very strict PFAS drilling quality
-          control process allows for the most accurate samples possible. Please
-          contact us for more information.
+          suspected/confirmed PFAS / PFOA areas. Our very strict PFAS drilling
+          quality control process allows for the most accurate samples possible.{' '}
+        </p>
+        <p>
+          Call us on <CallLink /> for more information.
         </p>
 
         <h3>Past Project Partners</h3>
@@ -223,6 +225,31 @@ function index(props: Props) {
             <li>UGM</li>
             <li>Abbot Point Operations</li>
             <li>East Point Developments</li>
+          </ul>
+        </p>
+        <h3>Common Details We Require to Provide a Quote</h3>
+        <p>
+          <ul>
+            <li>Number of holes to drill</li>
+            <li>Number of monitoring wells to install</li>
+            <li>Physical location of the drilling</li>
+            <li>Concrete cutting or coring required</li>
+            <li>Vacuum NDD required</li>
+            <li>Protruding monumment or flush mount Gatic cover</li>
+            <li>Bollards required</li>
+            <li>What type of sampling is required</li>
+            <li>What depths and frequencies these samples are required</li>
+            <li>
+              Is stem/equipment decon required between holes and what type of
+              decon is preferred
+            </li>
+            <li>Estimated completion dates of work</li>
+            <li>What paperwork (SWMS, JRA, WH&R) is required</li>
+            <li>
+              What off/on site inductions are our crew required to undertake
+            </li>
+            <li>Are there any site specific PPE requirements</li>
+            <li>Are there any drilling rig specifications required</li>
           </ul>
         </p>
       </PageSection>

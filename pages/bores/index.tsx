@@ -57,10 +57,21 @@ function index(props: Props) {
           completed and cased PVC bore.
         </p>
         <p>
-          Most areas can have a bore drilled and a pump equipped for{' '}
+          Most areas can have a bore drilled <b>and</b> a pump equipped for{' '}
           <em>less than $2900!</em>
         </p>
         <p>We also offer a Seniors and Carers discount!</p>
+        <p>
+          <b>15%</b> discount off original price of water bore drilling and
+          installation.{' '}
+        </p>
+        <p>
+          <b>10%</b> discount off original price to supply and install pump.
+        </p>
+        <p>
+          Not valid with any other offer. No other offers allowed, discount
+          applies to standard drilling rates not to already discounted rates.
+        </p>
         <h2>
           OK, so what else do I need to consider before having a bore drilled?
         </h2>

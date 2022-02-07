@@ -107,7 +107,7 @@ const questions: Question[] = [
           If you are a commercial enterprise or intend to use the water for a
           commercial purpose,{' '}
           <StyledLink href="/contact">contact us</StyledLink> and we can advise
-          the best contact at DNRME for your Development Permit application.
+          the best contact at DRDMW for your Development Permit application.
         </p>
       </>
     ),
