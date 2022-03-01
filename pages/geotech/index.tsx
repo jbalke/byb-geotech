@@ -79,7 +79,7 @@ function index(props: Props) {
             </strong>{' '}
             from 2 hours to 28 days in duration. Includes creation of official
             documents for council requirements of subdivisions (
-            <b>Develompent Approval</b> for 0.3L/s over 6 hour period with
+            <b>Development Approval</b> for 0.3L/s over 6 hour period with
             recovery)
           </li>
           <li>
@@ -178,8 +178,8 @@ function index(props: Props) {
         </p>
         <h3>PFAS PFOS Firefighting Foam</h3>
         <p>
-          We have have drilled hundreds of soil sampling and groundwater test
-          holes and installed dozens of ground water monitoring wells in
+          We have drilled hundreds of soil sampling and groundwater test holes
+          and installed dozens of ground water monitoring wells in
           suspected/confirmed PFAS / PFOA areas. Our very strict PFAS drilling
           quality control process allows for the most accurate samples possible.{' '}
         </p>
@@ -191,67 +191,67 @@ function index(props: Props) {
         <p>
           Backyard Bores & Geotech Drilling Pty Ltd have successfully completed
           works for the following:
-          <ul>
-            <li>Mackay Regional Council</li>
-            <li>Isaac Regional Council</li>
-            <li>Kleinfelder Environmental Consultants</li>
-            <li>CatCon Engineering & Construction</li>
-            <li>OWAD Environment</li>
-            <li>Cardno Geotechnic Services</li>
-            <li>Environmental Management and Remediation Pty Ltd</li>
-            <li>Ogilvie Civil & Mining</li>
-            <li>Environmental Earth Sciences</li>
-            <li>Coffey Geotechnics</li>
-            <li>Douglas Partners</li>
-            <li>GHD</li>
-            <li>CQG</li>
-            <li>EPIC Environmental</li>
-            <li>North Queensland Airports Group (Mackay Airport)</li>
-            <li>North Queensland Bulk Ports</li>
-            <li>Caltex, Mobil, Puma, Origin Gas, Ergon </li>
-            <li>Onesteel</li>
-            <li>Aurizon</li>
-            <li>Sibelco Australia</li>
-            <li>Prensa</li>
-            <li>Urbex</li>
-            <li>AESTEC </li>
-            <li>ATOM - Australian Terminal Operations Management</li>
-            <li>Auscor</li>
-            <li>CMW Geosciences</li>
-            <li>Wilmar</li>
-            <li>BP Australia</li>
-            <li>AECOM</li>
-            <li>Rock n Road Bitumen</li>
-            <li>UGM</li>
-            <li>Abbot Point Operations</li>
-            <li>East Point Developments</li>
-          </ul>
         </p>
+        <ul>
+          <li>Mackay Regional Council</li>
+          <li>Isaac Regional Council</li>
+          <li>Kleinfelder Environmental Consultants</li>
+          <li>CatCon Engineering & Construction</li>
+          <li>OWAD Environment</li>
+          <li>Cardno Geotechnic Services</li>
+          <li>Environmental Management and Remediation Pty Ltd</li>
+          <li>Ogilvie Civil & Mining</li>
+          <li>Environmental Earth Sciences</li>
+          <li>Coffey Geotechnics</li>
+          <li>Douglas Partners</li>
+          <li>GHD</li>
+          <li>CQG</li>
+          <li>EPIC Environmental</li>
+          <li>North Queensland Airports Group (Mackay Airport)</li>
+          <li>North Queensland Bulk Ports</li>
+          <li>Caltex, Mobil, Puma, Origin Gas, Ergon </li>
+          <li>Onesteel</li>
+          <li>Aurizon</li>
+          <li>Sibelco Australia</li>
+          <li>Prensa</li>
+          <li>Urbex</li>
+          <li>AESTEC </li>
+          <li>ATOM - Australian Terminal Operations Management</li>
+          <li>Auscor</li>
+          <li>CMW Geosciences</li>
+          <li>Wilmar</li>
+          <li>BP Australia</li>
+          <li>AECOM</li>
+          <li>Rock n Road Bitumen</li>
+          <li>UGM</li>
+          <li>Abbot Point Operations</li>
+          <li>East Point Developments</li>
+        </ul>
+
         <h3>Common Details We Require to Provide a Quote</h3>
-        <p>
-          <ul>
-            <li>Number of holes to drill</li>
-            <li>Number of monitoring wells to install</li>
-            <li>Physical location of the drilling</li>
-            <li>Concrete cutting or coring required</li>
-            <li>Vacuum NDD required</li>
-            <li>Protruding monumment or flush mount Gatic cover</li>
-            <li>Bollards required</li>
-            <li>What type of sampling is required</li>
-            <li>What depths and frequencies these samples are required</li>
-            <li>
-              Is stem/equipment decon required between holes and what type of
-              decon is preferred
-            </li>
-            <li>Estimated completion dates of work</li>
-            <li>What paperwork (SWMS, JRA, WH&R) is required</li>
-            <li>
-              What off/on site inductions are our crew required to undertake
-            </li>
-            <li>Are there any site specific PPE requirements</li>
-            <li>Are there any drilling rig specifications required</li>
-          </ul>
-        </p>
+
+        <ul>
+          <li>Number of holes to drill</li>
+          <li>Number of monitoring wells to install</li>
+          <li>Physical address or GPS of the drilling sites</li>
+          <li>Concrete cutting or coring required</li>
+          <li>Vacuum NDD required</li>
+          <li>Protruding monument or flush mount Gatic cover</li>
+          <li>Bollards required</li>
+          <li>What type of sampling is required</li>
+          <li>What depths and frequencies these samples are required</li>
+          <li>
+            Is stem/equipment decon required between holes and what type of
+            decon is preferred
+          </li>
+          <li>Estimated completion dates of work</li>
+          <li>What paperwork (SWMS, JRA, WH&R) is required</li>
+          <li>
+            What off/on site inductions are our crew required to undertake
+          </li>
+          <li>Are there any site specific PPE requirements</li>
+          <li>Are there any drilling rig specifications required</li>
+        </ul>
       </PageSection>
 
       {/* <StyledLinkButton href="/bores/new-install" fullWidth margin="1rem auto">

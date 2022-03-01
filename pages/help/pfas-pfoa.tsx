@@ -1,17 +1,16 @@
 import ContentPage, { RelatedPage } from 'components/ContentPage';
-import { StyledLink } from 'components/Link';
+import { ExternalLink } from 'components/Link';
 import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 import styled from 'styled-components';
-import { VideoContainer } from 'components/styled';
-import { PHONE } from '../../constants';
 
 const PageSection = styled.section``;
 
 const relatedPages: RelatedPage[] = [
-  { label: 'Water Bore Drilling', href: '/bores' },
-  { label: 'Drilling FAQ', href: '/help/faq' },
-  { label: 'Request a Quote', href: '/request-a-quote' },
+  { label: 'Water Testing', href: '/help/water-testing' },
+  { label: 'Geotech Services', href: '/geotech/index' },
+  { label: 'Bore Cleanout', href: '/help/bore-cleanout' },
+  { label: 'Groundwater Protection', href: '/help/groundwater-protection' },
   { label: 'Bore Search', href: '/bore-search' },
 ];
 
@@ -21,87 +20,168 @@ function index(props: Props) {
   return (
     <ContentPage
       title="PFAS / PFOA advice"
-      description="PFAS / PFOA advice for your bore"
+      description="PFAS / PFOA advice for your health and bore water usage"
       relatedPages={relatedPages}
     >
       <PageSection>
-        <h2>Groundwater monitoring / groundwater protection</h2>
+        <h2>What are PFOA / PFAS (fire fighting foam)?</h2>
         <p>
-          <strong>
-            We all need to do our part to protect this vital resource.
-          </strong>
+          As per Environmental Health Standing Committee (enHealth) of the
+          Australian Health Protection Principal Committee:
+        </p>
+        <p>
+          <i>
+            {' '}
+            “Per- and poly-fluoroalkyl substances, or “PFAS”, are a class of
+            manufactured chemicals that have been used since the 1950s to make
+            products that resist heat, stains, grease and water. Until recently,
+            this group of chemicals was known as “perfluorinated chemicals”, or
+            “PFCs”. The name change has come about to avoid confusion with
+            another group of chemicals that are relevant to climate change,
+            which are also known as “PFCs”.
+          </i>
+        </p>
+        <p>
+          Products that may contain PFAS include furniture and carpets treated
+          for stain resistance, foams used for firefighting, fast food or
+          packaged food containers, make up and personal care products and
+          cleaning products. Other chemicals used in these applications may be
+          precursors to PFAS, and the PFAS are formed when these chemicals are
+          released into the environment.
+        </p>
+        <p>
+          PFAS are of concern around the world because they are not readily
+          broken down in the environment and so can persist for a long time.
+          Their widespread use and persistence means that many types of PFAS are
+          ubiquitous global contaminants.
+        </p>
+        <p>
+          The PFAS of most concern are perfluorooctane sulfonate (PFOS) and
+          perfluorooctanoic acid (PFOA). Many countries have phased out, or are
+          in the process of phasing out the use of PFOS and PFOA due to concerns
+          about their persistence, bioaccumulation and toxicity. Perfluorohexane
+          sulfonate (PFHxS) is another chemical of the PFAS group and is present
+          in some fire-fighting foams. PFHxS have also been used as raw
+          materials or precursors to produce PFAS-based products.
+        </p>
+        <p>
+          Because of their widespread use, people in Australia commonly have
+          some PFOS, PFOA and PFHxS in their body. PFOS and PFOA are readily
+          absorbed through the gut, and once these chemicals are in a
+          person&apos;s body it takes about two to nine years, depending on the
+          study, before those levels go down by half, even if no more is taken
+          in.”
         </p>
       </PageSection>
       <PageSection>
+        <h2>Local advice from your local drillers</h2>
         <p>
-          <b>
-            95% Of all the freshwater in the world is groundwater (excluding
-            polar ice caps). Surface freshwater (lakes, rivers and dams) only
-            make up 3%. (ngwa.org)
-          </b>
+          Backyard Bores & Geotech Drilling Pty Ltd have drilled hundreds of
+          soil sampling and groundwater test holes and installed dozens of
+          ground water monitoring wells in suspected PFAS / PFOA areas between
+          Bowen and Rockhampton over the last few years.
         </p>
         <p>
-          The <b>Bravus (Adani) Carmichael Mine</b> has been great publicity to
-          bring into the fore the health and sustainability of our limited
-          groundwater reserves.
+          We have a very strict PFAS drilling quality control process that we
+          adhere to. This allows for the most accurate samples possible. Please
+          contact us for more information.
         </p>
         <p>
-          If you are worried about the health and productivity of your bores /
-          production wells, we can assist. If you have land leased to
-          others/companies/miners and they are using or interacting with the
-          groundwater, we can assist with initial baseline quality and flow
-          testing and short or long term depth and salinity monitoring.
+          The two main areas around Mackay that have suspected (or confirmed)
+          samples of PFAS are around the Mackay Airport and the NQBP Mackay Port
+          (and possibly around Hay Point Coal Terminal). North Queensland Bulk
+          Ports Corporation (NQBP) Acting CEO Brendan Webb said "while testing
+          had shown the presence of PFAS, based on the information available, it
+          represented a low risk to human health."
         </p>
         <p>
-          {' '}
-          Only by conducting <b>accurate testing and monitoring</b> can we
-          develop a reliable picture of the health and viability of our
-          groundwater aquifers.{' '}
+          Check the images at the bottom of the page and if you are in the
+          shaded regions and have a water bore, please read this advice given in
+          person to me by the Queensland Health Chief Medical Officer of Health
+          Protection Branch.
+          <ol>
+            <li>Don&apos;t drink the bore water.</li>
+            <li>
+              Don&apos;t water leafy green vegetables or root vegetables with
+              bore water and then consume them.
+            </li>
+            <li>
+              Do continue to use the bore water for watering the yard, grass,
+              trees.
+            </li>
+            <li>
+              Do continue the use the bore water for watering fruit trees.
+            </li>
+            <li>
+              PFAS cannot enter the body through contact with the skin, it can
+              only be ingested.{' '}
+            </li>
+          </ol>
         </p>
         <p>
-          <h3>Services offered by Backyard Bores & Geotech Drilling</h3>
+          If you live in the shaded areas, drilling a new bore is still a great
+          way to cut down on council water rates, we just need to be wise with
+          our use of the water. 92% of the people who have a domestic bore use
+          it for keeping gardens lush and grass green and healthy.
         </p>
+        <p>
+          If you have concerns, please read the links below or call us and we
+          can discuss your options. Your bore water can be tested for a fee to
+          look for traces of PFAS.
+        </p>
+        <p>
+          For more information on PFAS / PFOA, please see the links to recently
+          published documents from relevant authorities.
+        </p>
+
         <ul>
           <li>
-            Flow rate testing of existing bores/wells from 0.2 litres per second
-            up to 35L/s, constant rate or stepped test
-          </li>
-          <li>
-            Automated measuring and recording of flow rates in L/s from 10
-            minutes duration to 72 hours
-          </li>
-          <li>
-            Providing analysis and producing reports from the flow rate data
-            with trends
-          </li>
-          <li>
-            Drilling new monitoring wells in accordance with international
-            industry best practice standards and conforming to Qld government
-            requirements
-          </li>
-          <li>
-            Automated measuring and recording of water depth and salinity / pH
-            for short term (up to 72 hours) and long term (up to 4 years)
-          </li>
-          <li>
-            Alerting and alarms if adjustable limits have been reached, (Min and
-            Max: salinity, flow rate, water levels)
-          </li>
-          <li>
-            Centralised data logging from multiple sites with near real-time
-            data transfer
+            <em>Queensland Health</em> have published a
+            <ExternalLink
+              href="https://backyardbores.com/resources/QHealth_pfas-fact-sheet.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              label=" fact sheet here"
+            />{' '}
           </li>
         </ul>
-        <p>
-          We come from the land, we only have bore water to drink and live off,
-          so we understand your needs and concerns. Trust the locals to put you
-          first. It&apos;s your land, you have the choice of who conducts the
-          monitoring / sampling / drilling of water and recording of data from
-          your bores.
-        </p>
-        <p>
-          <b>Choose Backyard Bores and Geotech Drilling.</b>
-        </p>
+
+        <ul>
+          <li>
+            <em>Air Services Australia</em> have published an information sheet
+            relating to the contamination in the
+            <ExternalLink
+              href="http://www.airservicesaustralia.com/wp-content/uploads/Mackay-Airport_information-sheet-010819.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              label=" Mackay Airport here"
+            />{' '}
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <em>Environmental Health Standing Committee</em> (enHealth) of the
+            Australian Health Protection Principal Committee have an
+            <ExternalLink
+              href="https://www1.health.gov.au/internet/main/publishing.nsf/content/A12B57E41EC9F326CA257BF0001F9E7D/$File/PFAS-guide-stat-enHealth-2019.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              label=" information sheet here"
+            />{' '}
+          </li>
+        </ul>
+        <ul>
+          <li>
+            The Australian Federal <em>Department of Health</em> have a page for
+            <ExternalLink
+              href="https://www1.health.gov.au/internet/main/publishing.nsf/Content/ohp-pfas-hbgv.htm"
+              target="_blank"
+              rel="noopener noreferrer"
+              label=" Health Based Guidance Values here"
+            />{' '}
+          </li>
+        </ul>
       </PageSection>
     </ContentPage>
   );

@@ -5,7 +5,15 @@ import React from 'react';
 import styled from 'styled-components';
 import CallLink from 'components/CallLink';
 
-const PageSection = styled.section``;
+const PageSection = styled.section`
+  h2:not(:first-child) {
+    margin-top: 1.5em;
+  }
+
+  h3 {
+    margin-top: 2em;
+  }
+`;
 
 const relatedPages: RelatedPage[] = [
   { label: 'Water Testing Services', href: '/help/water-testing' },
@@ -34,39 +42,39 @@ function index(props: Props) {
           We can arrange a bore cleaning using one of several methods depending
           on the bore location and the issue.
         </p>
-        <p>Here are some reasons you would need to clean out your bore:</p>
-        <p> - The water coming out of your bore has changed colour</p>
-        <p> - You are now pumping lots of sand</p>
-        <p> - The bore water has an new odour </p>
-        <p> - The bore has not be used / pumped in over 12 months</p>
-        <p> - The bore has not had a cap secured to it for a period of time</p>
-        <p>
-          {' '}
-          - The bore has been flooded or you suspect overland flooding has
-          entered the bore casing{' '}
-        </p>
+        <p>Here are some reasons your bore would need a clean out:</p>
+        <ul>
+          <li>The water coming out of your bore has changed colour</li>
+          <li>You are now pumping lots of sand</li>
+          <li>The bore water has an new odour </li>
+          <li>The bore has not be used / pumped in over 12 months</li>
+          <li>The bore has not had a cap secured to it for a period of time</li>
+          <li>
+            The bore has been flooded or you suspect overland flooding has
+            entered the bore casing
+          </li>
+        </ul>
       </PageSection>
       <PageSection>
-        <p>
-          <h3>For Town Bores under 12m Deep</h3>
-        </p>
+        <h3>For Town Bores under 12m Deep</h3>
+
         <p>We can clean your bore using one of the following methods:</p>
-        <p>
-          <ul>
-            <li>
-              High flow pumping - removes some organic matter and sands up to
-              3mm diameter
-            </li>
-            <li>
-              Specially designed gernie/venturi - removes most organic matter
-              and sand up to 10mm diameter
-            </li>
-            <li>
-              Trailer mounted compressor - removes just about everything but not
-              always the best option
-            </li>
-          </ul>
-        </p>
+
+        <ul>
+          <li>
+            High flow pumping - removes some organic matter and sands up to 3mm
+            diameter
+          </li>
+          <li>
+            Specially designed gernie/venturi - removes most organic matter and
+            sand up to 10mm diameter
+          </li>
+          <li>
+            Trailer mounted compressor - removes just about everything but not
+            always the best option
+          </li>
+        </ul>
+
         <p>
           The cost to clean your town bore will depend on the method most
           recommended for your area, the issue, the bore casing material and the
@@ -96,9 +104,12 @@ function index(props: Props) {
         <p>
           We have seen bore casing shatter and bores collapse when they are
           blown out by people who don&apos;t understand the construction of a
-          bore and what could go wrong.
+          bore and what could go wrong. The only fix was to drill a new bore.
         </p>
-        <p>Use a driller, someone who knows what they are doing.</p>
+        <p>
+          Use a driller to blow your bore clean, someone who knows what they are
+          doing.
+        </p>
         <p>
           Call us on <CallLink /> and we can recommend another driller most
           suited to your area/location.

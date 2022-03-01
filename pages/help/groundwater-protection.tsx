@@ -4,7 +4,15 @@ import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 import styled from 'styled-components';
 
-const PageSection = styled.section``;
+const PageSection = styled.section`
+  h2:not(:first-child) {
+    margin-top: 1.5em;
+  }
+
+  h3 {
+    margin-top: 2em;
+  }
+`;
 
 const relatedPages: RelatedPage[] = [
   { label: 'Geotech Drilling', href: '/geotech' },

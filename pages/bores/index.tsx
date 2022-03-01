@@ -10,8 +10,16 @@ import { PHONE } from '../../constants';
 
 const PageSection = styled.section``;
 
+const Subtext = styled.p`
+  font-family: 'Public Sans';
+  font-style: italic;
+  font-size: 0.8em;
+  line-height: 1.3;
+  letter-spacing: 0.04em;
+`;
+
 const relatedPages: RelatedPage[] = [
-  { label: 'Drilling FAQ', href: '/faq' },
+  { label: 'Drilling FAQ', href: '/help/faq' },
   { label: 'New Bore Checklist', href: '/bores/checklist' },
   { label: 'Request a Quote', href: '/request-a-quote' },
   { label: 'Bore Search', href: '/bore-search' },
@@ -23,13 +31,13 @@ function index(props: Props) {
   return (
     <ContentPage
       title="Water Bore Drilling"
-      description="A bore can save you lots of money on your water bills, and they are not as expensive as you might think!"
+      description="A bore can save you lots of money on your water bills, and they are not expensive!"
       relatedPages={relatedPages}
       aside={
         <Aside type="question" title="Got more questions?">
           <p>
             You might find the answer over at our{' '}
-            <StyledNextLink href="/faq">FAQ</StyledNextLink>!
+            <StyledNextLink href="/help/faq">FAQ</StyledNextLink>!
           </p>
         </Aside>
       }
@@ -41,9 +49,9 @@ function index(props: Props) {
           you thousands of dollars over its life.
         </p>
         <p>
-          We can have a new bore drilled (with pump) within a morning or
-          afternoon and you can be watering your lawn before we drive away. You
-          don&apos;t even have to be home at the time!
+          We can drill a new bore and supply and install your new pump within a
+          morning or afternoon and you can be watering your lawn before we drive
+          away. You don&apos;t even have to be home at the time!
         </p>
         <p>
           There are a few things we need your help with to ensure we can get the
@@ -51,14 +59,15 @@ function index(props: Props) {
           <StyledNextLink href="/bores/checklist">checklist</StyledNextLink>.
         </p>
         <h2>But, aren&apos;t bores expensive?</h2>
+        <p>They are not expensive at all! </p>
         <p>
-          They are not expensive at all! We are offering a great price using the
-          latest, international best practice standards and equipment for a
-          completed and cased PVC bore.
+          We have perfected a local modification using the latest, international
+          best practice methods, standards and equipment for a completed and
+          cased PVC bore.
         </p>
         <p>
-          Most areas can have a bore drilled <b>and</b> a pump equipped for{' '}
-          <em>less than $2900!</em>
+          Most areas can have a bore drilled <b>and</b> a pump supplied and
+          installed for <em>less than $2900!</em> inc GST
         </p>
         <p>We also offer a Seniors and Carers discount!</p>
         <p>
@@ -68,10 +77,12 @@ function index(props: Props) {
         <p>
           <b>10%</b> discount off original price to supply and install pump.
         </p>
-        <p>
+        <Subtext>
           Not valid with any other offer. No other offers allowed, discount
-          applies to standard drilling rates not to already discounted rates.
-        </p>
+          applies to standard drilling rates not to already discounted rates. We
+          need to see your Seniors or Carers card for the discount to be
+          applied.
+        </Subtext>
         <h2>
           OK, so what else do I need to consider before having a bore drilled?
         </h2>
@@ -84,15 +95,15 @@ function index(props: Props) {
         <p>
           Our drilling rig is mounted on a light truck which will need access to
           the location you&apos;d like the bore drilled. See the{' '}
-          <StyledNextLink href="/faq">FAQ</StyledNextLink> for truck dimensions
-          and more.
+          <StyledNextLink href="/help/faq">FAQ</StyledNextLink> for truck
+          dimensions and more.
         </p>
         <p>
           Is there power nearby for the pump and, if not, how costly it might be
           to install? While the pump does not need to be directly on the bore
-          (under the house, in a shed, etc), please consider how easy it will be
-          to distribute the water from the pump outlet to where you will need
-          it.
+          (it can be under the house, in a shed, through a fence, etc), please
+          consider how easy it will be to distribute the water from the pump
+          outlet to where you will need it.
         </p>
         <p>
           If you think your preferred location might be difficult to access or
@@ -110,8 +121,8 @@ function index(props: Props) {
         <p>
           If you&apos;re not sure where any services are on your property, we
           can contact the council for this information but for an additional
-          fee. See the <StyledNextLink href="/faq">FAQ</StyledNextLink> for more
-          information.
+          fee. See the <StyledNextLink href="/help/faq">FAQ</StyledNextLink> for
+          more information.
         </p>
         <h3>Disposal of soil</h3>
         <p>

@@ -2,10 +2,18 @@ import ContentPage, { RelatedPage } from 'components/ContentPage';
 import SiteLayout from 'layouts/SiteLayout';
 import React from 'react';
 import styled from 'styled-components';
-import StyledNextLink from 'components/Link/StyledNextLink';
+import { ExternalLink } from 'components/Link';
 import CallLink from 'components/CallLink';
 
-const PageSection = styled.section``;
+const PageSection = styled.section`
+  h2:not(:first-child) {
+    margin-top: 1.5em;
+  }
+
+  h3 {
+    margin-top: 2em;
+  }
+`;
 
 const relatedPages: RelatedPage[] = [
   { label: 'Bore Cleaning', href: '/help/bore-cleanout' },
@@ -78,14 +86,12 @@ function index(props: Props) {
         <p>
           <b>Comprehensive Drinking Water Tests</b> can be carried out by Mackay
           Regional Council Laboratory on (07) 4961 9042. Visit the
-          <StyledNextLink
+          <ExternalLink
             href="https://www.mackay.qld.gov.au/residents/services/water/mackay_water_and_waste_laboratory_services"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            {' '}
-            MRC Laboratory{' '}
-          </StyledNextLink>
+            label=" MRC Laboratory"
+          />{' '}
           site for more information.
         </p>
       </PageSection>
