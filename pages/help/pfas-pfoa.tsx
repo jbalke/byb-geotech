@@ -32,13 +32,14 @@ function index(props: Props) {
         <p>
           <i>
             {' '}
-            “Per- and poly-fluoroalkyl substances, or “PFAS”, are a class of
-            manufactured chemicals that have been used since the 1950s to make
-            products that resist heat, stains, grease and water. Until recently,
-            this group of chemicals was known as “perfluorinated chemicals”, or
-            “PFCs”. The name change has come about to avoid confusion with
-            another group of chemicals that are relevant to climate change,
-            which are also known as “PFCs”.
+            &quot;Per- and poly-fluoroalkyl substances, or &quot;PFAS&quot;, are
+            a class of manufactured chemicals that have been used since the
+            1950s to make products that resist heat, stains, grease and water.
+            Until recently, this group of chemicals was known as
+            &quot;perfluorinated chemicals&quot;, or &quot;PFCs&quot;. The name
+            change has come about to avoid confusion with another group of
+            chemicals that are relevant to climate change, which are also known
+            as &quot;PFCs&quot;.
           </i>
         </p>
         <p>
@@ -70,7 +71,7 @@ function index(props: Props) {
           absorbed through the gut, and once these chemicals are in a
           person&apos;s body it takes about two to nine years, depending on the
           study, before those levels go down by half, even if no more is taken
-          in.”
+          in.&quot;
         </p>
       </PageSection>
       <PageSection>
@@ -90,9 +91,9 @@ function index(props: Props) {
           The two main areas around Mackay that have suspected (or confirmed)
           samples of PFAS are around the Mackay Airport and the NQBP Mackay Port
           (and possibly around Hay Point Coal Terminal). North Queensland Bulk
-          Ports Corporation (NQBP) Acting CEO Brendan Webb said "while testing
-          had shown the presence of PFAS, based on the information available, it
-          represented a low risk to human health."
+          Ports Corporation (NQBP) Acting CEO Brendan Webb said &quot;while
+          testing had shown the presence of PFAS, based on the information
+          available, it represented a low risk to human health.&quot;
         </p>
         <p>
           Check the images at the bottom of the page and if you are in the
