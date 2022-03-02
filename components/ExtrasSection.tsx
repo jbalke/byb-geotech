@@ -108,11 +108,12 @@ function ExtrasSection(props: ExtrasSectionsProps) {
           <Title>Backyard Bores Pty Ltd</Title>
           <p>
             Your water bore and geotech drilling specialists since 2002.
-            Covering Mackay from Bowen to Rockhampton and west to Clermont.
+            Covering the Mackay region from Bowen to Rockhampton and west to
+            Clermont.
           </p>
           <p>
-            We have drilled 3x more groundwater monitoring wells in Mackay than
-            any other drilling company.
+            We have drilled 3x more groundwater monitoring wells around Mackay
+            than any other drilling company.
           </p>
         </CompanyInfo>
         <UsefulLinks>

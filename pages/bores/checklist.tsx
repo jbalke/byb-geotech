@@ -72,7 +72,7 @@ function index(props: Props) {
       description="A handy checklist for getting ready for a new bore to be drilled."
       relatedPages={[
         { label: 'Water Bore Drilling', href: '/bores' },
-        { label: 'Drilling FAQ', href: '/faq' },
+        { label: 'Drilling FAQ', href: '/help/faq' },
       ]}
     >
       <PageSection>
@@ -82,7 +82,8 @@ function index(props: Props) {
             <ul>
               <li>
                 Is the location accessible by our light truck? See our{' '}
-                <StyledNextLink href="/faq">FAQ</StyledNextLink> for dimensions.
+                <StyledNextLink href="/help/faq">FAQ</StyledNextLink> for
+                dimensions.
               </li>
               <li>
                 Are there trees, branches or other obstacles (such as fence
@@ -107,10 +108,16 @@ function index(props: Props) {
           </CheckItem>
           <CheckItem title="Power?">
             <p>
-              How easy (and costly) will it be to get power to the pump? Please
-              keep in mind that the pump does not need to be directly on top of
-              the bore, it can be inside a fence, under your house, in a shed,
-              etc.
+              How easy (and costly) will it be to get power to the pump? You do
+              NOT need to hardwire an external powerpoint right next to the
+              bore/pump/pump shed. They can run off an extension lead from a
+              shed or house indefinitely
+            </p>
+          </CheckItem>
+          <CheckItem title="Pump location?">
+            <p>
+              The pump does not need to be directly on top of the bore, it can
+              be the other side of a fence, under your house, in a shed, etc.
             </p>
           </CheckItem>
         </CheckList>
@@ -119,8 +126,8 @@ function index(props: Props) {
           <div>
             <p>
               Please try to locate the underground services on your property,
-              the hardest one to find is the pipe from your house to the sewer
-              mains.
+              the hardest one to find is the wasste line from your house to the
+              sewer mains.
             </p>
             <p>
               Call us if you have concerns, we can apply for the plans from

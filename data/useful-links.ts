@@ -1,6 +1,5 @@
 export const usefulLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Drilling FAQ', href: '/faq' },
   { label: 'Water Bore Drilling', href: '/bores' },
   { label: 'New Bore & Pump Tips', href: '/bores/new-install-tips' },
   { label: 'Request a Quote', href: '/request-a-quote' },

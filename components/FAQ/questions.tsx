@@ -29,25 +29,25 @@ const questions: Question[] = [
     panel: (
       <>
         <p>
-          A bore is a means to take water from the underground aquifer and this
-          water brought to the surface by an electric or solar pump or by a
-          mechanical windmill.
+          A bore is a means to take water from the underground aquifer
+          (groundwater table) and this water brought to the surface by an
+          electric or solar pump or by a mechanical windmill.
         </p>
         <p>
-          The most common type of modern bore is made from PVC and is 100mm –
-          150mm diameter with an electric pump attached.
+          The most common type of modern bore casing is made from PVC and is
+          100mm – 150mm diameter with an electric pump attached.
         </p>
         <p>
           There are other types of bores and they all differ slightly in their
           construction and appearance.
         </p>
         <p>
-          A steel or PVC pipe 25 – 50mm diameter coming out of the ground is
+          A steel or PVC pipe 25 – 40mm diameter coming out of the ground is
           likely to be a spear.
         </p>
         <p>
-          A water well approx. 900mm to 1800mm diameter is also a means to
-          extract ground water using a pump or windmill.
+          A water well with approx. 900mm to 1800mm diameter concrete rings is
+          also a means to extract ground water using a pump or windmill.
         </p>
         <p>
           Water bores can be made from steel or PVC and can vary from 75mm to
@@ -63,13 +63,13 @@ const questions: Question[] = [
     panel: (
       <>
         <p>
-          Cheaper than you might think! We are offering a great price using the
-          latest, international best practice standards and equipment for a
-          completed and cased PVC bore.
+          Cheaper than you might think! We have perfected a local modification
+          using the latest, international best practice methods, standards and
+          equipment for a completed and cased PVC bore.
         </p>
         <p>
           Most areas can have a bore drilled and a pump equipped for less than
-          $2900.
+          $2900. inc GST.
         </p>
         <p>
           <em>Seniors and Carers discount available!*</em>
@@ -100,14 +100,14 @@ const questions: Question[] = [
         </p>
         <p>
           There are some small areas south of the river that are sensitive and
-          it’s best to contact us so we can discuss the limited requirements in
-          these small areas.
+          it&apos;s best to contact us so we can discuss the limited
+          requirements in these small areas.
         </p>
         <p>
           If you are a commercial enterprise or intend to use the water for a
           commercial purpose,{' '}
           <StyledLink href="/contact">contact us</StyledLink> and we can advise
-          the best contact at DNRME for your Development Permit application.
+          the best contact at DRDMW for your Development Permit application.
         </p>
       </>
     ),
@@ -155,7 +155,7 @@ const questions: Question[] = [
           Drilling and casing can take 4-6 hours depending on the material being
           drilled and the depth.
           <br />
-          It&apos;s a four step process:
+          It&apos;s a five step process:
         </p>
         <ol>
           <li>Drilling</li>
@@ -164,7 +164,8 @@ const questions: Question[] = [
             Cleaning out the inside of the casing to remove damaging sands, muds
             and clay
           </li>
-          <li>Flow rate, salt, iron, PH, testing (if required).</li>
+          <li>Flow rate and water quality testing</li>
+          <li>Pump installation</li>
         </ol>
       </>
     ),
@@ -274,7 +275,7 @@ const questions: Question[] = [
         <p>
           If we need to come in through a fence panel, please make sure
           it&apos;s removed by the time we arrive. If we need to trim trees or
-          remove fence panels we will have to add an hourly surcharge.
+          remove fence panels, we will have to add an hourly surcharge.
         </p>
         <p>
           Please call us on <CallLink /> and notify our staff if you have a
