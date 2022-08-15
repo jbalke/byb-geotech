@@ -234,11 +234,14 @@ function index(props: Props) {
           <li>Number of holes to drill</li>
           <li>Number of monitoring wells to install</li>
           <li>Physical address or GPS of the drilling sites</li>
-          <li>Concrete cutting or coring required</li>
-          <li>Vacuum NDD required</li>
+          <li>Is concrete cutting or coring required</li>
+          <li>Is vacuum NDD required or hand auger to 1m or 1.5m</li>
           <li>Protruding monument or flush mount Gatic cover</li>
           <li>Bollards required</li>
-          <li>What type of sampling is required</li>
+          <li>
+            What type of sampling is required (from auger at depth, push tube,
+            split spoon)
+          </li>
           <li>What depths and frequencies these samples are required</li>
           <li>
             Is stem/equipment decon required between holes and what type of
@@ -250,7 +253,7 @@ function index(props: Props) {
             What off/on site inductions are our crew required to undertake
           </li>
           <li>Are there any site specific PPE requirements</li>
-          <li>Are there any drilling rig specifications required</li>
+          <li>Are there any drilling rig limitations</li>
         </ul>
       </PageSection>
 
