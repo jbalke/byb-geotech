@@ -16,9 +16,10 @@ const PageSection = styled.section`
 `;
 
 const relatedPages: RelatedPage[] = [
-  { label: 'Bore Cleaning', href: '/help/bore-cleanout' },
-  { label: 'Water Bore Drilling', href: '/bores' },
-  { label: 'Drilling FAQ', href: '/help/faq' },
+  { label: 'Bore Cleanout', href: '/help/bore-cleanout' },
+  { label: 'Flooding / Cyclone Advice', href: '/help/flooding' },
+  { label: 'Geotech Drilling', href: '/geotech' },
+  { label: 'PFAS/PFOA Contamination Advice', href: '/help/pfas-pfoa' },
   { label: 'Request a Quote', href: '/request-a-quote' },
   { label: 'Bore Search', href: '/bore-search' },
 ];
