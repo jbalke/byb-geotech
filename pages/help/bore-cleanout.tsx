@@ -17,8 +17,7 @@ const PageSection = styled.section`
 
 const relatedPages: RelatedPage[] = [
   { label: 'Water Testing Services', href: '/help/water-testing' },
-  { label: 'Water Bore Drilling', href: '/bores' },
-  { label: 'Drilling FAQ', href: '/help/faq' },
+  { label: 'Flooding / Cyclone Advice', href: '/help/flooding' },
   { label: 'Request a Quote', href: '/request-a-quote' },
   { label: 'Bore Search', href: '/bore-search' },
 ];
