@@ -10,7 +10,7 @@ const PageSection = styled.section``;
 
 const relatedPages: RelatedPage[] = [
   { label: 'Water Bore Drilling', href: '/bores' },
-  { label: 'Drilling FAQ', href: '/faq' },
+  { label: 'Drilling FAQ', href: '/help/faq' },
   { label: 'Request a Quote', href: '/request-a-quote' },
   { label: 'Bore Search', href: '/bore-search' },
 ];
@@ -34,26 +34,44 @@ function index(props: Props) {
         </p>
         <ol>
           <li>
+            Always keep the cap on the bore when not equipped with a pump.
+          </li>
+          <li>
+            Drill hole(s) in the cap just the right size for the poly pipe you
+            use; leave no gaps.
+          </li>
+          <li>
             Equip the bore with a pump <strong>ASAP</strong>.
           </li>
           <li>Run the pump every other day for a minimum of 10-30 mins.</li>
           <li>
-            Keep the cap on the bore at all times when not equipped with a pump.
+            Always cover your pump and pump electrical boxes from direct sun and
+            rain.
           </li>
         </ol>
       </PageSection>
       <PageSection>
-        <h2>New Pump Only</h2>
+        <h2>Supplying and fitting your own pump</h2>
         <p>
-          When installing your pump, make sure the lowest part of the foot valve
+          If you are sourcing your own pump, take a copy of the details of the
+          bore to your favourite pump supplier and tell them precisely what you
+          plan to use the water for, and how (pop-ups, round sprinklers,
+          travelling irrigators, wobblers, drippers, irrigation etc.)
+        </p>
+        <p>
+          When installing your pump, ensure the lowest part of the foot valve
           assembly is 600mm from the bottom of the bore. An easy way is to
           assemble the strainer, foot valve, poly fitting, and poly pipe and
           lower that into the bore until it hits the bottom. Then lift up an
           arms-length and use your poly cutters to cut the poly there. Slip your
-          PVC cap over the poly then secure the poly fitting.
+          PVC cap over the poly, then secure the poly fitting.
         </p>
         <p>
-          <strong>In the first 2 months after your pump installation:</strong>
+          NOTE: The faster you take water out of the bore, the more fine sand
+          will be sucked up and through the system.
+        </p>
+        <p>
+          <h2>In the first 2 months after your pump installation:</h2>
         </p>
         <ol>
           <li>
@@ -61,31 +79,30 @@ function index(props: Props) {
             least).
           </li>
           <li>
-            DO NOT trust the automatic pressure switch. At night, turn the pump
-            off at the power point. If you are going away for a weekend or for
-            more than 4 hours, turn the pump off at the power point.
+            Do not trust the automatic pressure switch initially. At night, turn
+            the pump off at the power point. If you are going away for a weekend
+            or for a day, turn the pump off at the power point.
           </li>
           <li>
-            Test fill a bucket with bore water once a week and carefully tip out
-            to see how much sand is in the bucket. 1-2 teaspoons in a 20L bucket
-            is within the operating range of the pump. Check that the sand is
-            fine (&lt;0.5mm) and not coarse granules. If you see 2mm granules
+            Fill a bucket with bore water once a week and carefully tip out the
+            water to see how much sand is left in the bucket. 1-2 teaspoons in a
+            20L bucket is within the pump's operating range. Check that the sand
+            is fine (&lt;0.5mm) and not coarse grains. If you see 2mm grains,
             please call us.
           </li>
           <li>
-            You may see some discoloured water when the pump is first turned on.
-            This is normal if it goes away after 10L has passed through the
-            pump. If after 2 minutes of running the water is still dirty, call
-            us.{' '}
+            You may see discoloured water when the pump is first turned on. This
+            is normal if it goes away after 10L has passed through the pump. If
+            after 2 minutes of running the water is still dirty, call us.
           </li>
           <li>
-            Do not put the hose outlet through anything with a fine nozzle like:
-            hand triggers; soaker hoses; or pop up sprinklers. These will block
-            up initially.
+            Do not put the hose outlet through anything with a fine nozzle like
+            hand triggers with mist, soaker hoses, or pop up sprinklers. These
+            will block up initially. Wait a few weeks.
           </li>
         </ol>
         <p>
-          <strong>For the rest of the pump&apos;s life:</strong>
+          <h2>General Pump Tips</h2>
         </p>
         <ul>
           <li>
@@ -97,7 +114,7 @@ function index(props: Props) {
             .
           </li>
           <li>
-            If the pump motor runs and no water comes out an open ended hose
+            If the pump motor runs and no water comes out an of open ended hose
             outlet with no sprinklers or attachments, check out our website on
             how to prime a pump.
           </li>
@@ -106,7 +123,7 @@ function index(props: Props) {
             years when out of the weather.
           </li>
           <li>
-            If the pump just hums when turned on,{' '}
+            If the pump only hums when turned on,{' '}
             <strong>TURN IT OFF IMMEDIATELY!</strong> Then call us.
           </li>
           <li>

@@ -95,8 +95,8 @@ function index(props: Props) {
               We need about a 2m radius of cleared area.
             </p>
             <p>
-              Call us on <CallLink /> if there are any obstacles that we may
-              need to navigate/remove when we arrive to drill.
+              Call us on <CallLink /> if there are any obstacles we may need to
+              navigate/remove when we arrive to drill.
             </p>
           </CheckItem>
           <CheckItem title="Convenient to use?">
@@ -111,13 +111,13 @@ function index(props: Props) {
               How easy (and costly) will it be to get power to the pump? You do
               NOT need to hardwire an external powerpoint right next to the
               bore/pump/pump shed. They can run off an extension lead from a
-              shed or house indefinitely
+              shed or house indefinitely.
             </p>
           </CheckItem>
           <CheckItem title="Pump location?">
             <p>
-              The pump does not need to be directly on top of the bore, it can
-              be the other side of a fence, under your house, in a shed, etc.
+              The pump does not need to be directly on top of the bore; it can
+              be on the other side of a fence, under your house, in a shed, etc.
             </p>
           </CheckItem>
         </CheckList>
@@ -125,19 +125,19 @@ function index(props: Props) {
           <CheckItemHeading>Locate Utilities</CheckItemHeading>
           <div>
             <p>
-              Please try to locate the underground services on your property,
-              the hardest one to find is the wasste line from your house to the
-              sewer mains.
+              Please try to locate the underground services on your property;
+              the hardest one to find is the waste water pipe from your house to
+              the sewer mains.
             </p>
             <p>
-              Call us if you have concerns, we can apply for the plans from
-              council for a $85 fee.
+              Call us if you have concerns, and we can apply for the plans from
+              council for a $105 fee.
             </p>
           </div>
           <CheckItem title="Sewer mains" />
           <CheckItem title="House drainage" />
           <CheckItem title="Town/storm water" />
-          <CheckItem title="Down pipes" />
+          <CheckItem title="Downpipes" />
           <CheckItem title="Phone" />
           <CheckItem title="Power" />
         </CheckList>

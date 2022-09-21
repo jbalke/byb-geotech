@@ -28,13 +28,13 @@ function index(props: Props) {
       relatedPages={relatedPages}
     >
       <PageSection>
-        <h2>What to do Before a Potential Flood Event</h2>
+        <h2>What to do BEFORE a Potential Flood Event</h2>
         <p>
           <b>Your Bore</b>
         </p>
         <p>
-          If the area surrounding your bore is prone to having water accumulate
-          during heavy rain, then it&apos;s best to act now.
+          If the area surrounding your bore is prone to water accumulation
+          during heavy rain, it&apos;s best to act now.
         </p>
         <p>
           Inspect the top of the bore casing and make sure there is a good seal
@@ -48,10 +48,10 @@ function index(props: Props) {
           tape and go nuts sealing that PVC casing off!
         </p>
         <p>
-          Put a small hole in the duct tape so the changing levels of water in
-          the bore don&apos;t cause the tape to blow out (yes we have seen it
-          before) Afterwards, contact us to get a replacement bore cap and a
-          free bore appraisal so you are prepared for next time.
+          Put a small hole in the duct tape so the changing water levels in the
+          bore don&apos;t cause the tape to blow out (yes, we have seen it
+          before). Afterwards, contact us to get a replacement bore cap and a
+          free bore appraisal, so you are prepared for next time.
         </p>
       </PageSection>
       <PageSection>
@@ -59,21 +59,21 @@ function index(props: Props) {
           <b>Your Pump</b>
         </p>
         <p>
-          Look to see where your surface pump is, if it&apos;s likely to get
+          Look to see where your surface pump is; if it&apos;s likely to get
           covered (even partially) by flood waters, lift the pump up. The best
           way is to put a Besser block or bricks under the pump. All pumps
           directly above the bore casing will lift straight up; it may take two
-          people to complete this task but you could lose thousands if you
+          people to complete this task, but you could lose thousands if you
           don&apos;t act.
         </p>
         <PageSection>
-          <h2>What to do During a Flood Event</h2>
+          <h2>What to do DURING a Flood Event</h2>
 
           <p>
             If you can see or hear water leaking into your bore casing, or you
-            can see the bore casing is completely covered by flood waters, or
-            there is no cap on the bore or it has large gaps and your pump is
-            not underwater, the best thing is to turn the pump on and pump that
+            can see the flood waters completely covering the bore, or there is
+            no cap on the bore, or it has large gaps, and your pump is not
+            underwater, the best thing is to turn the pump on and pump that
             dirty overland flood water out ASAP.
           </p>
           <p>
@@ -82,15 +82,15 @@ function index(props: Props) {
           <p>
             If pumping water out of your bore will make the flooding situation
             worse for anyone, leave the pump and bore alone. Just remember, if
-            your pump is under water, don&apos;t turn it on!
+            your pump is/was underwater, don&apos;t turn it on!
           </p>
           <p>
             Run the pump and discharge the water into a functioning drain for as
             long as the water is covering the bore casing.
           </p>
           <p>
-            If all the drains are backed up, don&apos;t run the pump, this will
-            make the flood worse.
+            If all the drains are backed up, don&apos;t run the pump; this will
+            worsen the flood.
           </p>
           <p>
             As soon as the flood waters drop below the level of the casing, run
@@ -99,49 +99,49 @@ function index(props: Props) {
           </p>
         </PageSection>
         <PageSection>
-          <h2>What to do After a Flood Event, Cleanup</h2>
+          <h2>What to do AFTER a Flood Event, Cleanup</h2>
 
           <p>
             Bore water should not be used for drinking or food preparation if
             you suspect flood water entered the bore casing.
           </p>
           <p>
-            If you do suspect the bore was underwater, check out our{' '}
+            If you suspect the bore was underwater, check out our{' '}
             <StyledNextLink href="/help/bore-cleanout">
               bore cleanout
             </StyledNextLink>{' '}
-            page for more infomation about getting your bore blown clean.{' '}
+            page for more information about getting your bore cleaned.{' '}
           </p>
 
           <p>
-            If you choose not to blow the bore clean, it&apos;s best to
-            disinfect the water in the bore, the following disinfection
-            procedure is recommended by DRDMW:
+            If you choose not to use our bore cleaning services, it&apos;s best
+            to disinfect the water in the bore, DRDMW recommends the following
+            disinfection procedure:
           </p>
           <ol>
             <li>
               Add 15 grams of dry pool chlorine per 100 litres of bore water. A
-              4” bore casing has volume of approx. 10L per metre, if your bore
-              is 10m deep, add 15g of dry pool chlorine.
+              4” bore casing has a volume of approx. 10L per metre; if your bore
+              has 10m of water in it, add 15g of dry pool chlorine.
             </li>
             <li>
-              Leave it in the bore for 4 hours then turn the pump on but put the
-              outlet hose back down into the casing, creating a loop.
+              Leave it in the bore for 4 hours, then turn the pump on but put
+              the outlet hose back down into the casing, creating a loop.
             </li>
             <li>
               Pump the water back into the bore for 30 minutes. If the bore
-              overflows, reduce the flow rate. If that still doesnt work then
-              skip to step 4.
+              overflows, reduce the flow rate. If that still doesn&apos;t work,
+              then skip to step 4.
             </li>
             <li>
-              Take the outlet hose out and continue to pump the bore water onto
-              grass or down the drain for 2 hours.
+              Take the outlet hose out and pump the bore water onto grass or
+              down the drain for 2 hours.
             </li>
           </ol>
 
           <p>
-            If there is any sign the pump or pressure switch/controller went
-            under water (or the control box if you have a submersible), then{' '}
+            If there is any sign that the pump or pressure switch/controller
+            went underwater (or the control box if you have a submersible),
             <b>DO NOT USE IT!</b> Call us ASAP on{' '}
             <StyledLink href={`tel:${PHONE.MAIN.NUMBER}`}>
               {PHONE.MAIN.DISPLAY}
@@ -149,7 +149,7 @@ function index(props: Props) {
             to arrange for a free pump and bore inspection.
           </p>
           <p>
-            If you know the bore went underwater but your pump (or control box)
+            If you know the bore went underwater, but your pump (or control box)
             did not, then at the very least, run the pump for 3-4 hours once the
             flood water has subsided to clean out the introduced flood waters.
           </p>
@@ -162,9 +162,9 @@ function index(props: Props) {
             <StyledNextLink href="/help/water-testing">
               water testing
             </StyledNextLink>{' '}
-            page for more infomation about the water quality testing services we
-            offer (for <b>FREE!</b>) and other more compreshensive testing
-            options.
+            page for more information about our water quality testing services
+            we offer (for <b>FREE!</b>) and other more comprehensive testing
+            options available for a fee.
           </p>
         </PageSection>
         <p>
@@ -172,12 +172,12 @@ function index(props: Props) {
         </p>
         <p>
           If your pump was flooded/submerged/inundated, we can inspect the pump
-          and provide a document stating the pump was damaged in the flood
-          thereby allowing you to claim this on your insurance.{' '}
+          and provide a document stating the pump was damaged in the flood,
+          allowing you to claim this on your insurance.{' '}
         </p>
         <p>
-          If you have Motor Burnout inclusions on your policy this can also help
-          the claim progress successfully.
+          If you have Motor Burnout inclusions on your policy, this can also
+          help the claim progress successfully.
         </p>
         <p>
           We can supply and install your new pump. Please call us on{' '}

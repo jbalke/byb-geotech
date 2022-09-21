@@ -50,8 +50,8 @@ function index(props: Props) {
         </p>
         <p>
           The <b>Bravus (Adani) Carmichael Mine</b> has been great publicity to
-          bring into the fore the health and sustainability of our limited
-          groundwater reserves.
+          bring the health and sustainability of our limited groundwater
+          reserves to the fore.
         </p>
         <p>
           If you are worried about the health and productivity of your bores /
@@ -92,7 +92,7 @@ function index(props: Props) {
             for short term (up to 72 hours) and long term (up to 4 years)
           </li>
           <li>
-            Alerting and alarms if adjustable limits have been reached, (Min and
+            Alerting and alarms if adjustable limits have been reached (Min and
             Max: salinity, flow rate, water levels)
           </li>
           <li>
@@ -103,12 +103,12 @@ function index(props: Props) {
         <p>
           We come from the land, we only have bore water to drink and live off,
           so we understand your needs and concerns. Trust the locals to put you
-          first. It&apos;s your land, you have the choice of who conducts the
+          first. It&apos;s your land; you have the choice of who conducts the
           monitoring / sampling / drilling of water and recording of data from
           your bores.
         </p>
         <p>
-          <b>Choose Backyard Bores and Geotech Drilling.</b> <CallLink />
+          <b>Choose Backyard Bores & Geotech Drilling.</b> <CallLink />
         </p>
       </PageSection>
     </ContentPage>

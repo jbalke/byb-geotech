@@ -23,7 +23,7 @@ const relatedPages: RelatedPage[] = [
   { label: 'New Bore Checklist', href: '/bores/checklist' },
   { label: 'Request a Quote', href: '/request-a-quote' },
   { label: 'Bore Search', href: '/bore-search' },
-  { label: 'New Bore & Pump Tips', href: '/bores/new-install-tips' },
+  { label: 'New Bore & Pump Tips', href: '/help/new-install-tips' },
 ];
 
 type Props = {};
@@ -50,12 +50,12 @@ function index(props: Props) {
         </p>
         <p>
           We can drill a new bore and supply and install your new pump within a
-          morning or afternoon and you can be watering your lawn before we drive
-          away. You don&apos;t even have to be home at the time!
+          morning or afternoon, and you can be watering your lawn before we
+          drive away. You don&apos;t even have to be home at the time!
         </p>
         <p>
           There are a few things we need your help with to ensure we can get the
-          job done as quickly and smoothly as possible, refer to our handy{' '}
+          job done as quickly and smoothly as possible; refer to our handy{' '}
           <StyledNextLink href="/bores/checklist">checklist</StyledNextLink>.
         </p>
         <h2>But, aren&apos;t bores expensive?</h2>
@@ -66,29 +66,30 @@ function index(props: Props) {
           cased PVC bore.
         </p>
         <p>
-          Most areas can have a bore drilled <b>and</b> a pump supplied and
-          installed for <em>less than $2900!</em> inc GST
+          Most areas can have a bore drilled, <b>and</b> a pump supplied and
+          installed for <em>less than $3300!</em> inc GST
         </p>
         <p>We also offer a Seniors and Carers discount!</p>
         <p>
-          <b>15%</b> discount off original price of water bore drilling and
+          <b>15%</b> discount off the original price of water bore drilling and
           installation.{' '}
         </p>
         <p>
-          <b>10%</b> discount off original price to supply and install pump.
+          <b>10%</b> discount off the original price to supply and install the
+          pump.
         </p>
         <Subtext>
-          Not valid with any other offer. No other offers allowed, discount
-          applies to standard drilling rates not to already discounted rates. We
-          need to see your Seniors or Carers card for the discount to be
-          applied.
+          Not valid with any other offer. No other offers are allowed; discount
+          applies to standard drilling rates only and not already discounted
+          rates. We need to see your Seniors or Carers card for the discount to
+          be applied.
         </Subtext>
         <h2>
-          OK, so what else do I need to consider before having a bore drilled?
+          OK, what else do I need to consider before having a bore drilled?
         </h2>
         <p>
           While we try our best to make the whole process as simple and
-          hassle-free as possible, here&apos;s a few things you should consider
+          hassle-free as possible, here are a few things you should consider
           before deciding to have a bore drilled.
         </p>
         <h3>Where to put the bore</h3>
@@ -101,7 +102,7 @@ function index(props: Props) {
         <p>
           Is there power nearby for the pump and, if not, how costly it might be
           to install? While the pump does not need to be directly on the bore
-          (it can be under the house, in a shed, through a fence, etc), please
+          (it can be under the house, in a shed, through a fence, etc.), please
           consider how easy it will be to distribute the water from the pump
           outlet to where you will need it.
         </p>
@@ -119,25 +120,25 @@ function index(props: Props) {
           especially the pipe to the sewer mains.
         </p>
         <p>
-          If you&apos;re not sure where any services are on your property, we
-          can contact the council for this information but for an additional
-          fee. See the <StyledNextLink href="/help/faq">FAQ</StyledNextLink> for
-          more information.
+          If you&apos;re unsure where any services are on your property, we can
+          contact the council for this information (for an additional $100 fee).
+          See the <StyledNextLink href="/help/faq">FAQ</StyledNextLink> for more
+          details.
         </p>
         <h3>Disposal of soil</h3>
         <p>
-          Usually there are 3 - 5 wheelbarrow loads of material that you need to
+          Usually, there are 3 - 5 wheelbarrow loads of material you need to
           find a place for as we cannot take this with us. If you have any holes
           or low points in your yard, this will be a great time to fill them.
         </p>
-        <h2>I&apos;ve decided I want a bore, what next?</h2>
+        <h2>I&apos;ve decided I want a bore; what&apos;s next?</h2>
         <p>
-          You can call us on <CallLink /> for a free quote but why not try our{' '}
+          You can call us on <CallLink /> for a free quote, but why not try our{' '}
           <StyledNextLink href="/request-a-quote">
             online quote form
           </StyledNextLink>
-          ? It&apos;s quick and easy and we&apos;ll typically contact you with a
-          quote in less than an hour (during normal business hours)!
+          ? It&apos;s quick and easy, and we&apos;ll typically contact you with
+          a response in less than an hour (during regular business hours)!
         </p>
       </PageSection>
 
