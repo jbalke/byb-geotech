@@ -85,10 +85,10 @@ const BoreSearch = ({
           </p>
           <p>
             <strong>
-              Search results are based on or contains data provided by the State
-              of Queensland (2021)
+              Search results are based on or contain data provided by the State
+              of Queensland (2022)
             </strong>
-            . In consideration of the State permitting the use of this data you
+            . In consideration of the State permitting the use of this data, you
             acknowledge and agree that the State gives no warranty in relation
             to the data (including accuracy, reliability, completeness,
             currency, or suitability) and accepts no liability (including

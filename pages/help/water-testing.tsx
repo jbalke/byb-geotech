@@ -51,7 +51,7 @@ function index(props: Props) {
             </li>
             <li>
               TDS - Total Dissolvable Solids/Salts (sodium, magnesium, calcium,
-              potasium) - in PPM. &#8804;250 is great
+              potassium) - in PPM. &#8804;250 is great
             </li>
             <li>
               pH - Power of Hydrogen (acidity or alkalinity). 6.5 to 7.5 is
@@ -62,18 +62,17 @@ function index(props: Props) {
             </li>
             <li>
               Conductivity - a measure of the ability of water to pass an
-              electrical current, measured in microsiemens per centimeter.
+              electrical current, measured in micro siemens per centimetre.
               &#8804;400 is great
             </li>
             <li>Free Chlorine - FCl in PPM. 0 is great</li>
             <li>
-              ORP - Oxidation Reduction Potential, is a measure of a
-              substance&apos;s ability to either oxidize or reduce another
-              substance.
+              ORP - Oxidation Reduction Potential measures a substance&apos;s
+              ability to oxidise or reduce another substance.
             </li>
             <li>
-              Total Hardness - Water hardness is caused by the presence of
-              alkaline earths, primarily calcium and magnesium. 0 is great
+              Total Hardness - Water hardness is caused by alkaline earths,
+              primarily calcium and magnesium. 0 is great
             </li>
             <li>Alkalinity - As a backup to pH. Neutral is great.</li>
           </ul>
@@ -81,8 +80,8 @@ function index(props: Props) {
         <p>
           *We can conduct these tests for free if we are in your area at the
           time and don&apos;t need to make a special trip just for your test. If
-          you can wait, the next time we are going past we will drop by and do
-          the tests for free, otherwise a nominal fee will apply.
+          you can wait, we will drop by and do the tests for free the next time
+          we are going past. Otherwise a nominal fee will apply.
         </p>
         <p>
           <b>Comprehensive Drinking Water Tests</b> can be carried out by Mackay
@@ -101,14 +100,15 @@ function index(props: Props) {
         <h2>Bore Water Flow rate / Yield Testing Services</h2>
         <h3>Professional Water Monitoring and Testing Services</h3>
         <p>
-          We can provide the following testing services for short and long term.
+          We can provide the following testing services for the short and long
+          term.
           <ul>
             <li>
               Flow rate testing of existing bores/wells from 0.2 litres per
               second up to 35L/s, constant rate, stepped test or combination
             </li>
             <li>
-              Automated measuring and recording of flow rates in from 10 minutes
+              Automated measuring and recording of flow rates from 10 minutes
               duration to 72 hours
             </li>
             <li>
@@ -121,7 +121,7 @@ function index(props: Props) {
               for short term (up to 72 hours) and long term (up to 4 years)
             </li>
             <li>
-              Alerting and alarms if adjustable limits have been reached, (Min
+              Alerting and alarms if adjustable limits have been reached (Min
               and Max: salinity, flow rate, water levels)
             </li>
             <li>
@@ -135,7 +135,8 @@ function index(props: Props) {
         </p>
         <p>
           We can provide you with certified flow rate testing results with
-          graphs and trends to assist your development application to council.
+          graphs and trends to assist your development application to the
+          council.
         </p>
         <p>
           MRC Planning Scheme Policies, Section 1.8.1, Water Reticulation, Bore
@@ -151,7 +152,7 @@ function index(props: Props) {
               test and based on drawdown and recovery readings
             </li>
             <li>
-              Bore capacity shall be assessed on 0.3 litres/second per dwelling
+              Bore capacity shall be assessed at 0.3 litres/second per dwelling
               unit
             </li>
             <li>
@@ -183,19 +184,19 @@ function index(props: Props) {
             <li>water flow rate logging equipment</li>
             <li>a laptop to view logged data in realtime</li>
             <li>
-              hoses/poly pipes, conectors and fittings to complete the task
+              hoses/poly pipes, connectors and fittings to complete the task
             </li>
             <li>
-              water quality testing apparartus for free onsite water quality
+              water quality testing apparatus for free onsite water quality
               testing.
             </li>
           </ul>
         </p>
         <p>
-          After we collect the data and complete the onsite test including bore
-          recharge (as per Austrralian Standard AS2368–1990), we can analyze the
+          After we collect the data and complete the onsite test, including bore
+          recharge (as per Australian Standard AS2368–1990), we can analyse the
           data to produce our certified flow rate test report with trends to
-          assist your submission to council.{' '}
+          assist your submission to the council.{' '}
         </p>
         <p>
           Call us on <CallLink /> to discuss your needs.

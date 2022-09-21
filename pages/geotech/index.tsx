@@ -19,7 +19,7 @@ const PageSection = styled.section`
 const relatedPages: RelatedPage[] = [
   { label: 'Request a Quote', href: '/request-a-quote' },
   { label: 'Bore Search', href: '/bore-search' },
-  { label: 'Drilling FAQ', href: '/faq' },
+  { label: 'Drilling FAQ', href: '/help/faq' },
 ];
 
 type Props = {};
@@ -33,7 +33,7 @@ function index(props: Props) {
         <Aside type="question" title="Got more questions?">
           <p>
             You might find the answer over at our{' '}
-            <StyledNextLink href="/faq">FAQ</StyledNextLink>!
+            <StyledNextLink href="/help/faq">FAQ</StyledNextLink>!
           </p>
         </Aside>
       }
@@ -46,7 +46,7 @@ function index(props: Props) {
 
         <h2>
           We offer the following environmental drilling and geotechnical
-          products and capabilities
+          products and capabilities:
         </h2>
         <ul>
           <li>
@@ -95,7 +95,7 @@ function index(props: Props) {
           </li>
           <li>
             Comprehensive <b>drinking water testing</b> can be arranged
-            (pesticides, heavy metals, trace elements, PFAS, PFOA etc)
+            (pesticides, heavy metals, trace elements, PFAS, PFOA etc.)
           </li>
           <li>
             <b>Well development</b> using a combination of over pumping, surging
@@ -126,8 +126,8 @@ function index(props: Props) {
         <p>
           Let Backyard Bores and Geotech Drilling{' '}
           <strong>reduce your paperwork and administrative overhead</strong> by
-          providing you with 1 quote to cover NDD, underground utility locating,
-          concrete cutting and coring, drilling, providing samples and
+          providing you with one quote to cover NDD, underground utility
+          locating, concrete cutting and coring, drilling, providing samples and
           installing monitoring wells.
         </p>
         <p>We have a long-term working relationship with Mackay&apos;s best:</p>
@@ -143,22 +143,22 @@ function index(props: Props) {
         <p>
           Backyard Bores & Geotech Drilling Pty Ltd have drilled thousands of
           soil sampling and groundwater test holes and installed hundreds of
-          ground water monitoring wells between Bowen and Rockhampton over the
+          groundwater monitoring wells between Bowen and Rockhampton over the
           last 20 years.
         </p>
         <p>
           We have drilled and installed <b>3 times*</b> the number of monitoring
           wells around Mackay compared to any other drilling company. Why?
           Because our team uses the right equipment with the right processes and
-          the right methods for the right reason by utilising wisdom, judgment
-          and discretion in the pursuit of your project&apos;s goals.
+          the methods for the right reason by utilising wisdom, judgment and
+          discretion in the pursuit of your project&apos;s goals.
         </p>
         <p>(*Jan 2022 Queensland Spatial Data extract) </p>
 
         <h3>Licensed drillers - Every monitoring well logged</h3>
         <p>
           Backyard Bores & Geotech Drilling Pty Ltd have Queensland licensed
-          drillers and we log every monitoring well we drill <b>as required</b>{' '}
+          drillers, and we log every monitoring well we drill <b>as required</b>{' '}
           by the obligation of our licenses. Ask the other drilling companies
           quoting on jobs if they are using a licensed driller and if that
           driller logs EVERY monitoring well. Consequences for all involved in
@@ -166,21 +166,21 @@ function index(props: Props) {
         </p>
         <p>
           Every monitoring well deeper than 6m <strong>MUST</strong> be drilled
-          by a licensed driller and a log submitted.
+          by a licensed driller, and a log submitted.
         </p>
 
         <h3>Workplace Health & Risk</h3>
         <p>
           We care about our team&apos;s health and risk levels at work and have
           WH&R Policies and Procedures, WH&R Plans, SWMS, and JRAs that put the
-          crew first. As at February 2022 we have a{' '}
+          crew first. As of September 2022, we have a{' '}
           <b>zero lost time injury rate</b>.
         </p>
         <h3>PFAS PFOS Firefighting Foam</h3>
         <p>
           We have drilled hundreds of soil sampling and groundwater test holes
-          and installed dozens of ground water monitoring wells in
-          suspected/confirmed PFAS / PFOA areas. Our very strict PFAS drilling
+          and installed dozens of groundwater monitoring wells in
+          suspected/confirmed PFAS / PFOA areas. Our rigorous PFAS drilling
           quality control process allows for the most accurate samples possible.{' '}
         </p>
         <p>
@@ -228,7 +228,7 @@ function index(props: Props) {
           <li>East Point Developments</li>
         </ul>
 
-        <h3>Common Details We Require to Provide a Quote</h3>
+        <h3>Standard Details We Require to Provide a Quote</h3>
 
         <ul>
           <li>Number of holes to drill</li>
@@ -242,9 +242,9 @@ function index(props: Props) {
             What type of sampling is required (from auger at depth, push tube,
             split spoon)
           </li>
-          <li>What depths and frequencies these samples are required</li>
+          <li>What depths and frequencies are these samples required</li>
           <li>
-            Is stem/equipment decon required between holes and what type of
+            Is stem/equipment decon required between holes, and what type of
             decon is preferred
           </li>
           <li>Estimated completion dates of work</li>
@@ -257,7 +257,7 @@ function index(props: Props) {
         </ul>
       </PageSection>
 
-      {/* <StyledLinkButton href="/bores/new-install" fullWidth margin="1rem auto">
+      {/* <StyledLinkButton href="/help/new-install-tips" fullWidth margin="1rem auto">
         Learn how to maintain a new bore and/or pump.
       </StyledLinkButton> */}
     </ContentPage>

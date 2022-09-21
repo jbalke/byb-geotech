@@ -38,24 +38,27 @@ function index(props: Props) {
           <b></b>
         </p>
         <p>
-          We can arrange a bore cleaning using one of several methods depending
-          on the bore location and the issue.
+          We can arrange a bore cleaning using several methods depending on the
+          bore location, its accessibility and the issue.
         </p>
-        <p>Here are some reasons your bore would need a clean out:</p>
+        <p>Here are some reasons your bore would need a clean-out:</p>
         <ul>
           <li>The water coming out of your bore has changed colour</li>
           <li>You are now pumping lots of sand</li>
-          <li>The bore water has an new odour </li>
-          <li>The bore has not be used / pumped in over 12 months</li>
-          <li>The bore has not had a cap secured to it for a period of time</li>
+          <li>The bore water has a new odour </li>
+          <li>The bore has not been used/pumped in over 12 months</li>
           <li>
-            The bore has been flooded or you suspect overland flooding has
+            The bore has not had a cap secured to it for anything longer than 1
+            week
+          </li>
+          <li>
+            The bore has been flooded, or you suspect overland flooding has
             entered the bore casing
           </li>
         </ul>
       </PageSection>
       <PageSection>
-        <h3>For Town Bores under 12m Deep</h3>
+        <h3>For bores under 12m Deep</h3>
 
         <p>We can clean your bore using one of the following methods:</p>
 
@@ -69,8 +72,8 @@ function index(props: Props) {
             sand up to 10mm diameter
           </li>
           <li>
-            Trailer mounted compressor - removes just about everything but not
-            always the best option
+            Trailer-mounted compressor - removes just about everything but is
+            not always the best option
           </li>
         </ul>
 
@@ -79,38 +82,39 @@ function index(props: Props) {
           recommended for your area, the issue, the bore casing material and the
           bore yield.
         </p>
-        <p>Usually a bore can be cleaned for $150-$200.</p>
+        <p>Usually, a bore can be cleaned for $150-$200.</p>
         <p>
           Call us on <CallLink /> to discuss your bore issues.
         </p>
       </PageSection>
       <PageSection>
-        <h3>For Rural Area Bores over 12m Deep</h3>
+        <h3>For bores over 12m Deep</h3>
         <p>
-          We recommend you call one of the few rock-drillers in town who use a
+          We recommend you call one of the few rock drillers in town who use a
           high-flow high-pressure air compressor as part of their drilling
-          process. They will know how to best clean out a deeper bore
+          process. They will know how to clean out a deeper bore best.
         </p>
 
         <p>
-          Usually a bore can be blown clean for $700-$900 as long as you can
-          remove the pump and poly pipes in the bore first.
+          Usually, a bore can be blown clean for $700-$900 if you can remove the
+          pump and poly pipes in the bore first.
         </p>
         <p>
           <b>NOTE</b>: It&apos;s not as simple as running some poly down a bore,
-          hiring a big compressor and let it rip.
+          hiring a big compressor and letting it rip.
         </p>
         <p>
           We have seen bore casing shatter and bores collapse when they are
-          blown out by people who don&apos;t understand the construction of a
-          bore and what could go wrong. The only fix was to drill a new bore.
+          blown out by people who don&apos;t understand the construction and
+          workings of a bore and what could potentially go wrong. The only fix
+          was to drill a new bore.
         </p>
         <p>
           Use a driller to blow your bore clean, someone who knows what they are
           doing.
         </p>
         <p>
-          Call us on <CallLink /> and we can recommend another driller most
+          Call us on <CallLink />, and we can recommend another driller most
           suited to your area/location.
         </p>
       </PageSection>

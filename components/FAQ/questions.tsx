@@ -30,15 +30,15 @@ const questions: Question[] = [
       <>
         <p>
           A bore is a means to take water from the underground aquifer
-          (groundwater table) and this water brought to the surface by an
-          electric or solar pump or by a mechanical windmill.
+          (groundwater table), and this water is brought to the surface by an
+          electric or solar pump or a mechanical windmill.
         </p>
         <p>
           The most common type of modern bore casing is made from PVC and is
           100mm – 150mm diameter with an electric pump attached.
         </p>
         <p>
-          There are other types of bores and they all differ slightly in their
+          There are other types of bores, and they all differ slightly in their
           construction and appearance.
         </p>
         <p>
@@ -47,11 +47,11 @@ const questions: Question[] = [
         </p>
         <p>
           A water well with approx. 900mm to 1800mm diameter concrete rings is
-          also a means to extract ground water using a pump or windmill.
+          also a means to extract groundwater using a pump or windmill.
         </p>
         <p>
           Water bores can be made from steel or PVC and can vary from 75mm to
-          350mm diameter.
+          350mm in diameter.
         </p>
         <p>Flow rates can vary from 5L/min to 50 L/s.</p>
       </>
@@ -69,7 +69,7 @@ const questions: Question[] = [
         </p>
         <p>
           Most areas can have a bore drilled and a pump equipped for less than
-          $2900. inc GST.
+          $3300. inc GST.
         </p>
         <p>
           <em>Seniors and Carers discount available!*</em>
@@ -82,7 +82,7 @@ const questions: Question[] = [
           for an obligation free quote!
         </p>
         <Subtext>
-          *Not valid with any other offer. No other offers allowed, discount
+          *Not valid with any other offer. No other offers allowed; discount
           applies to standard drilling rates not to already discounted rates.
         </Subtext>
       </>
@@ -95,13 +95,13 @@ const questions: Question[] = [
       <>
         <p>
           <em>No</em>. If you are a homeowner and intend to use the water for
-          non-commercial purposes (yards, pool, gardens, lawns) there is{' '}
-          <em>no restriction</em> drilling for water.
+          non-commercial purposes (yards, pool, gardens, lawns), there is{' '}
+          <em>no restriction</em> on drilling for water.
         </p>
         <p>
-          There are some small areas south of the river that are sensitive and
-          it&apos;s best to contact us so we can discuss the limited
-          requirements in these small areas.
+          Some small areas south of the river have been declared sensitive and
+          it&apos;s best to contact us to discuss the additional restrictions
+          and requirements for these small areas.
         </p>
         <p>
           If you are a commercial enterprise or intend to use the water for a
@@ -118,29 +118,30 @@ const questions: Question[] = [
     panel: (
       <>
         <p>
-          <strong>Backyard Bores and Geotech Drilling</strong> have several
-          licensed drillers and we work to relevant government requirements.
+          <strong>Backyard Bores and Geotech Drilling</strong> engage several
+          licensed drillers and we work according to relevant government
+          requirements.
         </p>
         <p>
           If you are getting a quote from any driller, ask for their licence
-          number and to see their current Queensland Driller&apos;s Licence. You
-          can search for their name on the{' '}
+          number and to see their current Queensland Driller&apos;s Licence.
+          Before you engage them to drill, you can search for their name on the{' '}
           <strong>Qld Registered Drillers List</strong>{' '}
           <ExternalLink
             href="https://www.dnrm.qld.gov.au/__data/assets/pdf_file/0004/99760/drillers-register.pdf"
             target="_blank"
             label="here"
           />{' '}
-          before you engage them to drill. If they are{' '}
-          <strong>not listed</strong>, they are <strong>not licensed</strong>.
-          Chances are, if they don&apos;t have a Driller&apos;s Licence, they
-          won’t construct the bore to ensure the best long-term performance as
-          per industry international best practices. They probably won&apos;t
-          have <strong>public liability insurance</strong> either. If they
-          damage anything at your property, YOU will have to foot the bill.
+          . If they are <strong>not listed</strong>, they are{' '}
+          <strong>not licensed</strong>. Chances are, if they don&apos;t have a
+          Driller&apos;s Licence, they won’t construct the bore to ensure the
+          best long-term performance as per industry international best
+          practices. They probably won&apos;t have{' '}
+          <strong>public liability insurance</strong> either. If they damage
+          anything on your property, YOU will have to foot the bill.
         </p>
         <p>
-          Use a licensed driller who has all relevant insurances, why risk it to
+          Use a licensed driller who has all relevant insurances; why risk it to
           save a couple of hundred dollars?
         </p>
       </>
@@ -152,8 +153,8 @@ const questions: Question[] = [
     panel: (
       <>
         <p>
-          Drilling and casing can take 4-6 hours depending on the material being
-          drilled and the depth.
+          Depending on the material being drilled and the depth, drilling and
+          casing can take 4-6 hours .
           <br />
           It&apos;s a five step process:
         </p>
@@ -161,7 +162,7 @@ const questions: Question[] = [
           <li>Drilling</li>
           <li>Installing casing</li>
           <li>
-            Cleaning out the inside of the casing to remove damaging sands, muds
+            Cleaning out the inside of the casing to remove damaging sands, mud
             and clay
           </li>
           <li>Flow rate and water quality testing</li>
@@ -190,10 +191,9 @@ const questions: Question[] = [
     panel: (
       <>
         <p>
-          100mm diameter casing with factory cut fine slots (0.4 - 0.5mm) is
-          used in the majority of bores, some locations need 0.8mm. We can
-          install 5”, 125mm casing or 80mm casing as required, surcharges may
-          apply.
+          100mm inner diameter casing with factory-cut fine slots (0.4 - 0.5mm)
+          is used in the majority of bores, some locations require 0.8mm. We can
+          install 5”, 125mm casing or 80mm casing as required; surcharges apply.
         </p>
       </>
     ),
@@ -215,7 +215,7 @@ const questions: Question[] = [
           <li>
             How easy (and costly) will it be to get power to the pump? Please
             keep in mind that the pump does not need to be directly on top of
-            the bore, it can be inside a fence, under your house, in a shed,
+            the bore; it can be inside a fence, under your house, in a shed,
             etc.
           </li>
           <li>
@@ -234,27 +234,27 @@ const questions: Question[] = [
     panel: (
       <>
         <p>
-          Please try to locate the underground services on your property, the
+          Please try to locate the underground services on your property; the
           hardest one to find is the pipe from your house to the sewer mains.
         </p>
         <p>
           If you have your house drainage plans (house connection plans), that
-          would be fantastic. Also look for town water, power, storm water, down
+          would be fantastic. Also, look for town water, power, stormwater, down
           pipes, phone etc.
         </p>
         <p>
-          We will contact 1100 (Dial Before you Dig) but they only provide
-          locations of power, major sewer and telephone at the street, not on
+          We will contact 1100 (Dial Before you Dig), but they only provide
+          locations of power, major sewer and telephone along the street, not on
           your property.
         </p>
         <p>
-          It’s <em>VERY IMPORTANT</em> for you to locate these services as it is
-          your responsibility as the landowner or their authorised
+          It&apos;s <em>VERY IMPORTANT</em> for you to locate these services as
+          it is your responsibility as the landowner or their authorised
           representative.
         </p>
         <p>
-          Call us on <CallLink /> if you have concerns, we can apply for the
-          plans from council for a $85 fee.
+          Call us on <CallLink /> if you have concerns; we can apply for the
+          plans from council for a $105 fee.
         </p>
       </>
     ),
@@ -269,13 +269,13 @@ const questions: Question[] = [
           need about a 2m radius of cleared area.
         </p>
         <p>
-          If there are trees or stumps, branches or shrubs in the immediate area
+          If there are trees, stumps, branches or shrubs in the immediate area,
           please trim or remove them.
         </p>
         <p>
-          If we need to come in through a fence panel, please make sure
-          it&apos;s removed by the time we arrive. If we need to trim trees or
-          remove fence panels, we will have to add an hourly surcharge.
+          We will have to add an hourly surcharge if we need to come in through
+          a fence panel, or if we need to trim trees. Please make sure these are
+          done before we arrive, if possible.
         </p>
         <p>
           Please call us on <CallLink /> and notify our staff if you have a
@@ -300,8 +300,8 @@ const questions: Question[] = [
           location.
         </p>
         <p>
-          If you have any concerns, please call us on <CallLink /> and we can
-          come inspect and do some measurements.
+          If you have any concerns, please call us on <CallLink />, and we can
+          come to inspect and do some measurements.
         </p>
       </>
     ),
@@ -317,11 +317,11 @@ const questions: Question[] = [
             href="https://backyardbores.youcanbook.me/"
             label="here"
           />{' '}
-          to access our online calendar but we operate 7 days a week.
+          to access our online calendar, but we operate 7 days a week.
         </p>
         <p>
           Some weeks we can be fully booked with local or out-of-town projects.
-          It’s best to check the calendar to see when we have a free block.
+          It&apos;s best to check the calendar to see when we have a free block.
         </p>
       </>
     ),
@@ -333,7 +333,7 @@ const questions: Question[] = [
       <>
         <p>
           <em>YES!</em> We accept Visa and Mastercard payments or direct bank
-          transfer.
+          transfers.
         </p>
       </>
     ),
@@ -341,11 +341,11 @@ const questions: Question[] = [
   {
     uuid: v4(),
     heading:
-      'Can you drill in South Mackay, East Mackay, Ooralea, Bakers Creek, Walkerston, etc?',
+      'Can you drill in South Mackay, East Mackay, Ooralea, Bakers Creek, Walkerston, etc.?',
     panel: (
       <>
         <p>
-          Please call us on <CallLink /> to discuss your options but often times{' '}
+          Please call us on <CallLink /> to discuss your options, but often{' '}
           <em>YES</em> you can.
         </p>
       </>
@@ -353,7 +353,7 @@ const questions: Question[] = [
   },
   {
     uuid: v4(),
-    heading: 'Do you drill outside of Mackay area?',
+    heading: 'Do you drill outside of the Mackay area?',
     panel: (
       <>
         <p>
@@ -369,12 +369,12 @@ const questions: Question[] = [
   },
   {
     uuid: v4(),
-    heading: 'Does backyard bores do divining, witching or dowsing for water?',
+    heading: 'Does Backyard Bores do divining, witching or dowsing for water?',
     panel: (
       <>
         <p>
           No. It doesn&apos;t work for us but{' '}
-          <StyledLink href="/contact">contact us</StyledLink> and we can give
+          <StyledLink href="/contact">contact us</StyledLink>, and we can give
           you the numbers of several local diviners.
         </p>
         <p>
