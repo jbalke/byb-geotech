@@ -86,9 +86,9 @@ function index(props: Props) {
           <li>
             Fill a bucket with bore water once a week and carefully tip out the
             water to see how much sand is left in the bucket. 1-2 teaspoons in a
-            20L bucket is within the pump's operating range. Check that the sand
-            is fine (&lt;0.5mm) and not coarse grains. If you see 2mm grains,
-            please call us.
+            20L bucket is within the pump&apos;s operating range. Check that the
+            sand is fine (&lt;0.5mm) and not coarse grains. If you see 2mm
+            grains, please call us.
           </li>
           <li>
             You may see discoloured water when the pump is first turned on. This
