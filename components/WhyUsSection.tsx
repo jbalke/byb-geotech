@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
-import backgroundImage from '../public/images/why-us.png';
+import backgroundImage from '../public/images/why-us.webp';
 import { BREAKPOINTS } from 'styles/style-constants';
 import { Theme } from 'styles/theme';
 
