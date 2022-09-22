@@ -153,7 +153,7 @@ function index(props: Props) {
           the methods for the right reason by utilising wisdom, judgment and
           discretion in the pursuit of your project&apos;s goals.
         </p>
-        <p>(*Jan 2022 Queensland Spatial Data extract) </p>
+        <p>(*Jul 2022 Queensland Spatial Data extract) </p>
 
         <h3>Licensed drillers - Every monitoring well logged</h3>
         <p>
@@ -195,6 +195,7 @@ function index(props: Props) {
         <ul>
           <li>Mackay Regional Council</li>
           <li>Isaac Regional Council</li>
+          <li>Whitsunday Regional Council</li>
           <li>Kleinfelder Environmental Consultants</li>
           <li>CatCon Engineering & Construction</li>
           <li>OWAD Environment</li>
