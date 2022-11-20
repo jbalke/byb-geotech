@@ -39,6 +39,15 @@ ctrl p - find file eaily in explorer
   
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+Settign up a new PC for VSC, migh tneed to do 
+npm install next -g
+then check the install 
+npm audit
+Then fix iussues with 
+npm audit fix
+
+then go back to runnign the dev env with 
+npm run dev
 
 ## [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
