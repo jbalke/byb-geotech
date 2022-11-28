@@ -26,12 +26,12 @@ function OurStory(props: Props) {
             several drillers and offsiders.
           </p>
           <p>
-            We enjoy helping you and give back to the community through
+            We enjoy helping you and giving back to the community through
             sponsorship of various activities and sporting clubs (cycling clubs
             and lawn bowls clubs) and have been for many years.
           </p>
           <p>
-            We specialise in providing land-owners access to ground water for
+            We specialise in providing land-owners access to groundwater for
             their needs and we can provide accurate, detailed, and easy to
             access local bore and groundwater log data and invaluable experience
             to better inform you before we work. Our senior driller has over 20
@@ -49,8 +49,8 @@ function OurStory(props: Props) {
             sites, port operations, bulk fuel storage and more.
           </p>
           <p>
-            Our experienced and certified project managers on staff can help you 
-            manage your project from start to finish, on-spec, on-time and on
+            Our experienced and certified project managers on staff can help you
+            manage your project from start to finish, on spec, on time and on
             budget. Our close partnerships with local NDD (non-destructive
             drilling) vacuum trucks, concrete cutting and coring and sub-surface
             locators mean we can look after the administration of the whole
