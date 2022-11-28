@@ -29,7 +29,7 @@ function OurStory(props: Props) {
         </p>
         <p>
           The roles would be casual and ad-hoc, sometimes it&apos;s 3 months
-          between jobs, sometimes it&apos;s a 100 hour week.
+          between jobs, and sometimes it&apos;s a 100 hour week.
         </p>
         <p>
           <strong>Necessary Requirements:</strong>
@@ -48,7 +48,7 @@ function OurStory(props: Props) {
               Willing to submit to a police check and random drug test screening
               if required
             </li>
-            <li>LR truck licence (&lt;8t)</li>
+            <li>MR truck licence (&lt;6t)GVM</li>
             <li>First aid certificate</li>
             <li>
               To live and work in a low risk and productive manner at all times
@@ -59,7 +59,7 @@ function OurStory(props: Props) {
               You need to be fit and healthy as the job can be physically and
               mentally demanding with long hours
             </li>
-            <li>Have a good work ethic and capable of hard work.</li>
+            <li>Have a good work ethic and are capable of hard work.</li>
           </ul>
         </p>
         <p>
@@ -102,7 +102,7 @@ function OurStory(props: Props) {
         <p>
           Working in a drilling team is interesting, different every day,
           challenging and rewarding but not suited to everyone. You must enjoy
-          working outdoors, using your initiative, have determination and a
+          working outdoors, using your initiative, and have determination and
           resilience not required in most jobs.
         </p>
         <h2>Interested?</h2>
@@ -121,7 +121,7 @@ function OurStory(props: Props) {
         </p>
         <p>
           We will personally respond to every email, unlike job agencies and 90%
-          of jobs people apply for these days, because that is the respectful
+          of jobs people apply for these days because that is the respectful
           thing to do.
         </p>
       </PageSection>
