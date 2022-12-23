@@ -138,10 +138,10 @@ const questions: Question[] = [
         <p>Roughly 800gph = 60L/min = 1L/s</p>
         <p>
           <b>Divining, witching or dowsing: </b>A method some people use to
-          "locate" groundwater using wires, branches or twigs. It is akin to
-          religion, those who believe in it will swear by it using faith and
-          those who do not believe will use the lack of peer reviewed scientific
-          papers and studies to debunk it.
+          &quot;locate&quot; groundwater using wires, branches or twigs. It is
+          akin to religion, those who believe in it will swear by it using faith
+          and those who do not believe will use the lack of peer reviewed
+          scientific papers and studies to debunk it.
         </p>
         <p>
           It doesn&apos;t work for us, but luckily we don&apos;t need to divine
@@ -198,8 +198,8 @@ const questions: Question[] = [
         </p>
         <p>
           <b>Jet Pump (surface): </b>Usually means a Deep Well Injector pump
-          (see below) but people have their own ideas. The "Jet" is the special
-          venturi injector at the bottom of the bore.
+          (see below) but people have their own ideas. The &quot;Jet&quot; is
+          the special venturi injector at the bottom of the bore.
         </p>
         <p>
           <b>Deep Well Injector Pump (surface): </b>Has 2 pipes going down a
@@ -217,12 +217,12 @@ const questions: Question[] = [
           - higher flow up the larger poly pipe to the outlets.
         </p>
         <p>
-          <b>Submersible Pump: </b>Subs come in many different sizes from 2"
-          (50mm) dia to 8" (200mm) dia and everything in between. They live
-          submersed under water and push water up to the surface. It takes less
-          energy (watts) to push water compared to sucking it from the surface
-          so subs are usually lower wattage and higher flow compared to surface
-          pumps.
+          <b>Submersible Pump: </b>Subs come in many different sizes from
+          2&quot; (50mm) dia to 8&quot; (200mm) dia and everything in between.
+          They live submersed under water and push water up to the surface. It
+          takes less energy (watts) to push water compared to sucking it from
+          the surface so subs are usually lower wattage and higher flow compared
+          to surface pumps.
         </p>
         <p>
           <b>Priming or Prime a Pump: </b> Surface pumps almost always require
