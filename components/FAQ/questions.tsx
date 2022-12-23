@@ -59,6 +59,235 @@ const questions: Question[] = [
   },
   {
     uuid: v4(),
+    heading: 'So much jargon, what does it all mean?',
+    panel: (
+      <>
+        <p>
+          We will briefly explain some of the terms that are specific to bores,
+          pumps and water that you may not be familiar with.
+        </p>
+        <h3>Bore and Casing specific</h3>
+        <p>
+          <b>Groundwater, water table, aquifer</b>: These all refer to water
+          that is below the surface. How it got there and how long it has been
+          there is sometimes unknown. Sometimes, groundwater can be 1-2m below
+          the surface, other times 300m or more. Water bore drilling aims to
+          provide access to this groundwater and allow it to be brought(pumped)
+          to the surface.
+        </p>
+        <p>
+          How much groundwater exists under your property is unknown by drillers
+          and geotechnical experts. Only with years of experience and accurate
+          record keeping can we recommend a likely flow rate tailored to your
+          location.
+        </p>
+        <p>
+          <b>Casing</b>: The main aim of casing is to allow water to flow into
+          the bore and to prevent other particles (sand, clays, rocks) from
+          entering. Bores require a strong walled tube from the water to the
+          surface to stop the open hole from collapsing and destroying the bore
+          and to allow access to water. The most common type of modern bore
+          casing is made from PVC and is 100mm – 150mm in diameter with an
+          electric pump attached.
+        </p>
+        <p>
+          Steel is sometimes used as bore casing but usually only for very deep
+          bores (&gt;60m) or for production (irrigation) bores (&gt;200mm dia)
+        </p>
+        <p>
+          PVC Casing comes in 2 different parts, slotted and plain. Slotted
+          casing has cuts or slots, cut into the casing to let the water in.
+          Sometimes these slots need to be very fine width(0.5mm or less) to
+          stop fine sand (Andergrove, Bucasia). Other areas can have 5mm to 10mm
+          slots to let the water in.
+        </p>
+        <p>
+          Plain casing is used from above the water bearing material to the
+          surface to allow access to the water and stop any surface contaminants
+          (rocks, soil, sand, leaves, animals, pesticides) from entering the
+          groundwater.
+        </p>
+        <p>
+          <b>Screens: </b>An alternative to slotted casing is a screen. Screens
+          are wire wound mesh and vary in length and diameter. They also have
+          different slot sizes to allow water in and keep sand and rocks out. A
+          200mm dia production well, for example would have 3m to 6m of screen
+          in the water table and usually a 2 or 3mm aperture.
+        </p>
+        <p>
+          <b>Spears: </b>An example of a smaller screen installation is often
+          called a spear. Spears usually have a 600mm long x 50mm dia screen
+          screwed to the bottom of a 40 or 50mm dia steel or galvanised steel
+          pipe. This pipe is direct buried in the ground is is a permanent
+          installation. The pump is attached to the top of the pipe and special
+          vacuum bilge pumps are required to prime the pump.
+        </p>
+        <p>
+          For many reasons, spears are much less reliable than PVC bores and are
+          more expensive to install due to the cost of the steel pipe and
+          screen. Spears will always rust and because they operate as a vacuum,
+          the smallest rust hole will render the whole installation inoperable
+          and a new bore will need to be drilled as a replacement.
+        </p>
+        <p>
+          <b>Yield: </b>Bores are(should be) tested by the driller to determine
+          the flow rate they can sustain while being pumped. Bore yield is
+          usually measured in litres per second (L/s), litres per minute (L/min)
+          or gallons per hour (gph).
+        </p>
+        <p>Roughly 800gph = 60L/min = 1L/s</p>
+        <p>
+          <b>Divining, witching or dowsing: </b>A method some people use to
+          "locate" groundwater using wires, branches or twigs. It is akin to
+          religion, those who believe in it will swear by it using faith and
+          those who do not believe will use the lack of peer reviewed scientific
+          papers and studies to debunk it.
+        </p>
+        <p>
+          It doesn&apos;t work for us, but luckily we don&apos;t need to divine
+          for water because we have a very extensive database of bores and
+          thousands of test holes to confirm our recommendations at your
+          location.
+        </p>
+        <h3>Some Initialisms</h3>
+        <p>
+          <b>TD: </b>Total Depth or Target Depth. The depth from the surface or
+          top of the casing to the very bottom of the hole or cased bore.
+        </p>
+        <p>
+          <b>SWL: </b>Standing Water Level. The depth from the surface or top of
+          the casing to the water table when no pumping is occurring.
+        </p>
+        <p>
+          <b>DD: </b>Draw Down. The depth from the surface or top of the casing
+          to the water level when the bore is being test pumped. The draw down
+          is usually the deepest level the water reached at a specific flow
+          rate.
+        </p>
+        <p>
+          <b>DP: </b>Development Permit. A permit issued by DRDMW to allow
+          commercial entities to take groundwater for a specific purpose.
+        </p>
+        <h3>Pumps and water flow specific</h3>
+        <p>
+          <b>Surface Pump: </b>Any of the multiple varieties of pumps that live
+          on the surface as opposed to a submersible that lives underwater.
+        </p>
+        <p>
+          Surface pumps vary greatly in their physical size, motor wattage, flow
+          rates and their pressure delivery. the most common brands of surface
+          pumps are DAB (green), Davey (yellow) and Onga (blue).
+        </p>
+        <p>
+          <b>Suction Pump (surface): </b>The most common type of pump around
+          Mackay is the suction pump. This is a pump that is installed on the
+          surface and has a single pipe that goes down inside the bore casing to
+          the water table. The pump uses suction (like a straw in a drink) to
+          suck water from the SWL(standing water level) and deliver it at
+          pressure to the outlets.
+        </p>
+        <p>
+          Suction pumps are no longer useful when the DD(draw down) reaches
+          approximately 7.8m. A deep well injector or submersible will be
+          required if the drawdown reaches that depth.
+        </p>
+        <p>
+          Suction pumps are usually less than 2200W and deliver a maximum of
+          about 90L/min. They range in price from $200 (Bunnings special) to
+          $2400 for a 45kg pump that delivers 70L/min at 70psi.
+        </p>
+        <p>
+          <b>Jet Pump (surface): </b>Usually means a Deep Well Injector pump
+          (see below) but people have their own ideas. The "Jet" is the special
+          venturi injector at the bottom of the bore.
+        </p>
+        <p>
+          <b>Deep Well Injector Pump (surface): </b>Has 2 pipes going down a
+          bore casing, and at the bottom is a special venturi injector. Also
+          called Jet pumps, these pump installations are usually only for bores
+          where the SWL and/or DD are deeper than 7.8m as they are much more
+          expensive than a suction pump and use more power for bores where the
+          DD is less than 7.8m .
+        </p>
+        <p>
+          The 2 pipes are slightly different sizes, and some of the water
+          delivered to the surface gets recycled back down the poly pipes to
+          feed the injector. The injector takes high pressure - low flow water
+          in from the pump on the smaller poly pipe, and delivers lower pressure
+          - higher flow up the larger poly pipe to the outlets.
+        </p>
+        <p>
+          <b>Submersible Pump: </b>Subs come in many different sizes from 2"
+          (50mm) dia to 8" (200mm) dia and everything in between. They live
+          submersed under water and push water up to the surface. It takes less
+          energy (watts) to push water compared to sucking it from the surface
+          so subs are usually lower wattage and higher flow compared to surface
+          pumps.
+        </p>
+        <p>
+          <b>Priming or Prime a Pump: </b> Surface pumps almost always require
+          priming. This is a method of filling the entire length of the poly
+          pipe(s) from the bottom of the bore to the pump inlet with water so
+          the surface pump can suck water, not air. Very few surface pumps are
+          self-priming.
+        </p>
+        <p>
+          We have a video showing different methods to prime a surface pump, but
+          the most reliable method is the windmill method.
+        </p>
+        <p>
+          <b>Foot Valve or Check Valve: </b> A one-way valve that is at the
+          bottom of the poly pipe down a bore casing. It only allows water to
+          flow one way, up the pipe towards the pump. When the pump turns off,
+          the FV stops the water from draining completely out of the poly pipe.
+          If the water drains out of the poly pipe, the pump setup will need to
+          be primed again before use.
+        </p>
+        <p>
+          <b>Pressure Switch: </b> A device that automatically turns the pump on
+          and off based on the pressure in the pump bowl or outlet poly pipe. It
+          is usually mounted on the side of the pump bowl and is connected to
+          the pump by a wire. Pressure switches and sandy bores are problematic,
+          and many pumps have been damaged by the design flaws inherent to
+          standard pressure switches.
+        </p>
+        <p>
+          <b>Pressure Controller: </b> An electronic device (usually with a
+          digital display) that automatically turns the pump on and off based on
+          the pressure and flow (or lack thereof) of water flowing through the
+          controller. Pressure controllers are a much better and more reliable
+          solution where sand is an issue.
+        </p>
+        <p>
+          Pressure controllers have 2 very important in-built safety measures:
+          zero flow cut off and over current cut off. These measures protect
+          your pump from further damage.
+        </p>
+        <p>
+          The main difference between controllers and switches is that water
+          usually flows through a controller and it can monitor the pressure and
+          detect a lack of flow and monitor the current use of the pump.
+          Pressure switches cannot provide either of these benefits, so we
+          prefer all new pump installations (surface or submersible) to have
+          pressure controllers.
+        </p>
+        <p>
+          <b>Pressure Gauge: </b> A device that shows the pressure in the pump
+          bowl or going through a controller. It is either mounted on the pump
+          bowl or outlet poly line or is inside the controller and measures the
+          water pressure in PSI or Bar.
+        </p>
+
+        <p>
+          <b>Head: </b> The height of water in metres. Head is the same as
+          pressure but measured in metres of water (or Bar) instead of psi.
+          Every 10m of head equals 15psi.
+        </p>
+      </>
+    ),
+  },
+  {
+    uuid: v4(),
     heading: 'How much does drilling a bore typically cost?',
     panel: (
       <>
