@@ -128,6 +128,7 @@ export const navLinks: MenuItem[] = [
           { title: 'Our Story', Icon: FaInfoCircle, href: '/about/our-story' },
           { title: 'Contact Us', Icon: FaInfoCircle, href: '/contact' },
           { title: 'Careers', Icon: FaInfoCircle, href: '/about/careers' },
+          { title: 'ForSale', Icon: FaInfoCircle, href: '/about/for-sale' },
         ],
       },
     ],

@@ -94,13 +94,13 @@ function FourOhFour() {
         <Image
           alt="Looks like a dry hole"
           src={OopsBgImage}
-          layout="fill"
+          layout="intrinsic"
           objectFit="cover"
           placeholder="blur"
         />
         <OopsContentWrapper>
           <OopsSubText>
-            The page you were sent to does not exist. Take a trip back to the
+            The page you were linked to does not exist. Take a trip back to the
             home page or navigate through the menus to locate the page you were
             after.
           </OopsSubText>
