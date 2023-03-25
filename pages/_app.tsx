@@ -1,6 +1,7 @@
 import MobileMainNav from 'components/MobileMainNav';
 import { UIProvider, useUIState } from 'context/ui-context';
 import type { AppProps } from 'next/app';
+import { Analytics } from '@vercel/analytics/react';
 import Head from 'next/head';
 import { Fragment, ReactElement } from 'react';
 import { createGlobalStyle } from 'styled-components';
@@ -258,6 +259,7 @@ function App({ Component, pageProps, router }: Props) {
         </Layout>
         <MobileMainNav />
       </UIProvider>
+      <Analytics />
     </>
   );
 }
