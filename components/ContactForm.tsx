@@ -5,7 +5,7 @@ import {
   StyledInput,
   StyledLabel,
   StyledTextarea,
-  SubmitButton
+  SubmitButton,
 } from 'components/styled';
 import { useUIState } from 'context/ui-context';
 import React, { useRef, useState } from 'react';
@@ -77,6 +77,7 @@ function ContactForm(props: ContactFormsProps) {
       name: '',
       email: '',
       phone: '',
+      // @ts-expect-error RHF V7 limitation #7895
       category: ContactCategories[0],
       message: '',
     },
@@ -141,7 +142,7 @@ function ContactForm(props: ContactFormsProps) {
         placeholder="Your email address"
         {...register('email', {
           required: 'Required',
-          validate: value => isEmail(value) || 'Not a valid emaill address',
+          validate: (value) => isEmail(value) || 'Not a valid emaill address',
         })}
       />
       <InputSubtext id="emailDescribe">
