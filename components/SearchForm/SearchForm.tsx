@@ -71,8 +71,8 @@ type SearchFormProps = {
 };
 
 const getLocationOptions = debounce((query: string, callback: any) => {
-  client<FeatureCollection>(geocodeAPI(query)).then(data => {
-    const _data = data.features.map(feature => ({
+  client<FeatureCollection>(geocodeAPI(query)).then((data) => {
+    const _data = data.features.map((feature) => ({
       value: feature.center,
       label: feature.place_name,
     }));
@@ -111,10 +111,11 @@ function SearchForm({
 
   const handleChange = (
     option: LocationOption | null,
-    action: ActionMeta<LocationOption>,
+    action: ActionMeta<LocationOption>
   ) => {
     setFormStatus('idle');
 
+    // @ts-expect-error RHF V7 limitation #7895
     setValue('address', option ?? { value: [0, 0], label: '' }, {
       shouldValidate: true,
       shouldDirty: true,
@@ -129,7 +130,7 @@ function SearchForm({
     }
   };
 
-  const onSubmit: SubmitHandler<FormValues> = async data => {
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
     setFormStatus('pending');
     const token = await recaptchaRef.current.executeAsync();
 
@@ -207,7 +208,7 @@ function SearchForm({
                 placeholder="Your email address"
                 {...register('email', {
                   required: 'Required',
-                  validate: value =>
+                  validate: (value) =>
                     isEmail(value) || 'Not a valid email address',
                 })}
               />

@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
