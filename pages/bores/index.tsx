@@ -77,13 +77,14 @@ function index(props: Props) {
           cased PVC bore.
         </p>
         <p>
-          Most areas can have a bore drilled, <b>and</b> a pump supplied and
-          installed for <em>less than $3300!</em> inc GST
+          Most of our suitable drilling areas can have a bore drilled,{' '}
+          <b>and</b> a pump supplied and installed for <em>less than $4000!</em>{' '}
+          inc GST
         </p>
         <p>We also offer a Seniors and Carers discount!</p>
         <p>
           <b>15%</b> discount off the original price of water bore drilling and
-          installation.{' '}
+          casing installation.{' '}
         </p>
         <p>
           <b>10%</b> discount off the original price to supply and install the

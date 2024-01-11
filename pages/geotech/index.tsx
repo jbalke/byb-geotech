@@ -40,8 +40,8 @@ function index(props: Props) {
     >
       <PageSection>
         <p>
-          Backyard Bores & Geotech Drilling Pty Ltd are your Mackay region
-          Geotechnical & Environmental Drilling specialists.
+          Backyard Bores & Geotech Drilling Pty Ltd are your Geotechnical &
+          Environmental Drilling specialists in the Mackay region.
         </p>
 
         <h2>
@@ -99,7 +99,7 @@ function index(props: Props) {
           </li>
           <li>
             <b>Well development</b> using a combination of over pumping, surging
-            or air lifting to protect the natural water sample
+            or air lifting to protect the natural water table
           </li>
           <li>Production well (steel and PVC) investigation and cleaning</li>
           <li>
@@ -147,13 +147,13 @@ function index(props: Props) {
           last 20 years.
         </p>
         <p>
-          We have drilled and installed <b>3 times*</b> the number of monitoring
+          We have drilled and installed <b>4 times*</b> the number of monitoring
           wells around Mackay compared to any other drilling company. Why?
           Because our team uses the right equipment with the right processes and
           the methods for the right reason by utilising wisdom, judgment and
           discretion in the pursuit of your project&apos;s goals.
         </p>
-        <p>(*Jul 2022 Queensland Spatial Data extract) </p>
+        <p>(*Jul 2023 Queensland Spatial Data extract) </p>
 
         <h3>Licensed drillers - Every monitoring well logged</h3>
         <p>
@@ -173,8 +173,8 @@ function index(props: Props) {
         <p>
           We care about our team&apos;s health and risk levels at work and have
           WH&R Policies and Procedures, WH&R Plans, SWMS, and JRAs that put the
-          crew first. As of September 2022, we have a{' '}
-          <b>zero lost time injury rate</b>.
+          crew first. As of January 2024, we have a{' '}
+          <b>zero lost time injury rate since 2012</b>.
         </p>
         <h3>PFAS PFOS Firefighting Foam</h3>
         <p>
