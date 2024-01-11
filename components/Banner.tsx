@@ -1,5 +1,4 @@
-import Head from 'next/head';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 import { BREAKPOINTS } from 'styles/style-constants';
