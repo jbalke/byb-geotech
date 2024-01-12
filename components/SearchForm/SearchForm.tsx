@@ -115,7 +115,7 @@ function SearchForm({
   ) => {
     setFormStatus('idle');
 
-    // @ts-expect-error RHF V7 limitation #7895
+    //  at ts-expect-error RHF V7 limitation #7895
     setValue('address', option ?? { value: [0, 0], label: '' }, {
       shouldValidate: true,
       shouldDirty: true,
