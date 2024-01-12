@@ -77,7 +77,7 @@ function ContactForm(props: ContactFormsProps) {
       name: '',
       email: '',
       phone: '',
-      // @ts-expect-error RHF V7 limitation #7895
+      // at ts-expect-error RHF V7 limitation #7895
       category: ContactCategories[0],
       message: '',
     },
