@@ -102,7 +102,7 @@ function index(props: Props) {
           <li>
             <b>Polymer removal</b> and cleanup of mud (polymer) drilled holes using physical brushing, air lifting, sodium hypochlorite injection, and capture of the toxic polymer wastewater for approved disposal
           </li>
-          <li>Production well (steel and PVC) investigation and cleaning</li>
+          <li><b>Production well</b> (high flow and large diameter) steel and PVC investigation and cleaning</li>
           <li>
             <b>Downhole camera</b> inspections and video reports
           </li>
@@ -110,7 +110,7 @@ function index(props: Props) {
             <b>Decommissioning</b> bores & wells
           </li>
           <li>
-            Drilling monitoring wells and installing vibrating wire piezometers (VWP) up to 200m
+            Drilling monitoring wells and installing vibrating wire piezometers (<b>VWP</b>) up to 200m
             deep
           </li>
           <li>
