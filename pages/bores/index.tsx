@@ -46,23 +46,23 @@ function index(props: Props) {
       <PageSection>
         <h2>Why get a bore?</h2>
         <p>
-          You can save lots of money on your water bills! A single bore can save
+          You can save a lot of money off your water bills! A single bore can save
           you thousands of dollars a year. See our analysis and calculations at
           the bottom of this page.
         </p>
         <p>
-          Let us help you along your journey to becoming self sufficient with
+          Let us help you along your journey to becoming self-sufficient with
           your garden and yard watering needs. We can drill a new bore and
           supply and install your new pump within a morning or afternoon, and
-          you can be watering your lawn before we drive away. You don&apos;t
+          you can water your lawn before we drive away. You don&apos;t
           even have to be home at the time!
         </p>
         <p>
-          Bores and pumps might be very new to you so we are here to answer your
+          Bores and pumps and their jargon might be very new to you, so we are here to answer your
           questions, and if we cannot assist you directly, we will provide you
           with contacts of those who can help you better. Check out our{' '}
           <StyledNextLink href="/help/faq">FAQ</StyledNextLink> on jargon for
-          some more plain english explanation of terms.
+          some more plain English explanations of terms.
         </p>
         <p>
           There are a few things we need your help with to ensure we can get the
@@ -72,13 +72,13 @@ function index(props: Props) {
         <h2>But, aren&apos;t bores expensive?</h2>
         <p>They are not expensive at all! </p>
         <p>
-          We have perfected a local modification using the latest, international
+          We use a local modification to an existing drilling method that is based on the latest international
           best practice methods, standards and equipment for a completed and
           cased PVC bore.
         </p>
         <p>
           Most of our suitable drilling areas can have a bore drilled,{' '}
-          <b>and</b> a pump supplied and installed for <em>less than $4000!</em>{' '}
+          <b>and</b> a pump supplied and installed for <em>less than $3900!</em>{' '}
           inc GST
         </p>
         <p>We also offer a Seniors and Carers discount!</p>
@@ -154,7 +154,7 @@ function index(props: Props) {
         </p>
         <h2>$$$ Bore & Pump vs Town Water Supply - a price comparison</h2>
         <p>
-          Why should you consider a bore and pump (around $3300) when you can
+          Why should you consider a bore and pump (around $3900) when you can
           buy a lot of town water for that price? Let&apos;s discuss it below.
         </p>
         <h3>Assumptions used below</h3>
@@ -166,7 +166,7 @@ function index(props: Props) {
             year are:{' '}
           </p>{' '}
           <p>Tariff 1 - (0-150 kilolitres) per half year $1.86/kL</p>
-          <p> Tariff 2 - Over 150 kilolitres per half year $2.76/kL</p>
+          <p> Tariff 2 - Over 150 kilolitres per half year $2.91/kL</p>
           <p></p>
           <ul>
             <li>
@@ -190,11 +190,11 @@ function index(props: Props) {
               Ergon tariff (Tariff 11) at 24.34c/kWh
             </li>
             <li>
-              Original bore cost of $2000 pro rated over 10 years (expected
+              Original bore cost of $2600 pro rated over 10 years (expected
               lifespan of a bore is 20-50+ years)
             </li>
             <li>
-              Original big pump cost of $1600 pro rated over 5 years (expected
+              Original big pump cost of $1300 pro rated over 5 years (expected
               lifespan of a protected, maintained and serviced DAB is 6-12+
               years)
             </li>
@@ -225,10 +225,10 @@ function index(props: Props) {
             $113.66
           </p>
           <p>Big pump overall yearly costs: </p>
-          <p>Bore cost pro rated over 10 years = $200/year</p>
-          <p>Big pump cost pro rated over 5 years = $320/year</p>
+          <p>Bore cost pro rated over 10 years = $260/year</p>
+          <p>Big pump cost pro rated over 5 years = $260/year</p>
           <p>Big pump power costs for 1 year = $197</p>
-          <p>Total Bore + Big pump cost = $200+$320+$197 = $717</p>
+          <p>Total Bore + Big pump cost = $260+$260+$197 = $717</p>
           <p>
             Big pump cost per kL for comparison to MRC: $717/2242 ={' '}
             <b>32c per kL</b>
@@ -245,29 +245,29 @@ function index(props: Props) {
         <h3>Town water - the easy calculation</h3>
         <p>First 150kL @ $1.86/kL = $279</p>
         <p>
-          Compare to big pump delivery: 2242kL - 150kL = 2092kL@$2.76/kL =
-          $5,773
+          Compare to big pump delivery: 2242kL - 150kL = 2092kL@$2.91/kL =
+          $6,087
         </p>
         <p>
           Total town water costs per year comparing to big pump (excluding
-          network charges): $279 + $5773 = <b>$6052</b>
+          network charges): $279 + $6087 = <b>$6366</b>
         </p>
         <p>
-          Compare to small pump delivery: 1495kL - 150kL = 1345kL@$2.76/kL =
-          $3,712
+          Compare to small pump delivery: 1495kL - 150kL = 1345kL@$2.91/kL =
+          $3,913
         </p>
         <p>
           Total town water costs per year comparing to small pump (excluding
-          network charges): $279 + $3712 = <b>$3991</b>
+          network charges): $279 + $3913 = <b>$4192</b>
         </p>
         <h3>Wrap up and summary</h3>
         <p>
           Using town water, and comparing water usage to the big pump, your
-          yearly costs would be <b>$6052</b> in water and excess water charges
+          yearly costs would be <b>$6366</b> in water and excess water charges
           to put 2,242kL of water on your yard/pool/garden.
         </p>
         <p>
-          But, a new bore and pump only cost $3300 and the pro rated yearly
+          But, a new bore and pump only cost $3900 and the pro rated yearly
           costs for the same volume are <b>$717</b>
         </p>
         <p>
@@ -276,7 +276,7 @@ function index(props: Props) {
           to put 1,495kL of water on your yard/pool/garden.
         </p>
         <p>
-          But, a new bore and pump only cost $3300 and the pro rated yearly
+          But, a new bore and pump only cost $3900 and the pro rated yearly
           costs for the same volume are <b>$533</b>
         </p>
       </PageSection>
