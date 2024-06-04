@@ -110,10 +110,13 @@ function index(props: Props) {
             <b>Decommissioning</b> bores & wells
           </li>
           <li>
-            <b>Deep earthing</b>, drilling for installation of earthing rods at
-            substations
+            Drilling monitoring wells and installing vibrating wire piezometers (VWP) up to 200m
+            deep
           </li>
           <li>
+            <b>Deep earthing</b>, drilling for installation of earthing rods at
+            substations
+          </li>          <li>
             <b>Cathodic protection</b> and pre-cannistered anode/cable
             installation for fuel oil pipelines
           </li>
