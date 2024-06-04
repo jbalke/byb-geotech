@@ -49,11 +49,10 @@ function AboutSection(props: AboutSectionProps) {
           Water Bore <span>Drilling</span>
         </h2>
         <p>
-          With our small drilling rig mounted on the back of a very manoeuvrable
-          light truck, we can drill in your back yard (or front yard) to find
-          water for any purpose. With our large drilling rig (operated by our
-          sister company) we can drill your rock bore for stock, domestic, and
-          irrigation use (up to 300mm diameter).
+          With our fleet of drilling rigs, we can drill in your backyard (or front yard) to find
+          water for any purpose.  Our small rigs are either mounted on the back of very manoeuvrable
+          light trucks or track-mounted for tight access areas.  Our mid-sized heavy-rigid truck-mounted water bore rigs are very efficient workhorses. Our large track-mounted drilling rigs are capable of 1000m deep holes and 
+          irrigation bores use (up to 450mm diameter).
         </p>
       </Wrapper>
     </Container>
