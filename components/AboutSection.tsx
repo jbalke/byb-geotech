@@ -52,7 +52,7 @@ function AboutSection(props: AboutSectionProps) {
           With our fleet of drilling rigs, we can drill in your backyard (or front yard) to find
           water for any purpose.  Our small rigs are either mounted on the back of very manoeuvrable
           light trucks or track-mounted for tight access areas.  Our mid-sized heavy-rigid truck-mounted water bore rigs are very efficient workhorses. Our large track-mounted drilling rigs are capable of 1000m deep holes and 
-          irrigation bores use (up to 450mm diameter).
+          irrigation bores up to 450mm diameter.
         </p>
       </Wrapper>
     </Container>
