@@ -112,7 +112,7 @@ function ExtrasSection(props: ExtrasSectionsProps) {
             Clermont.
           </p>
           <p>
-            We have drilled 3x more groundwater monitoring wells around Mackay
+            We have drilled 4x more groundwater monitoring wells around Mackay
             than any other drilling company.
           </p>
         </CompanyInfo>
