@@ -55,7 +55,7 @@ function index(props: Props) {
             Land Register listed sites)
           </li>
           <li>
-            Drilling and installing piezometer <b>monitoring wells</b> up to 60m
+            Drilling and installing piezometer <b>monitoring wells</b> up to 200m
             depth
           </li>
           <li>
@@ -65,9 +65,9 @@ function index(props: Props) {
           </li>
           <li>
             Auger drilling from 80mm to 250mm dia, continuous flight and hollow
-            stem
+            stem up to 24m deep
           </li>
-          <li>Rotary air (rock) drilling from 100mm to 300mm dia</li>
+          <li>Rotary air (rock) drilling from 100mm to 450mm dia and up to 1000m deep</li>
           <li>
             Specialist <b>PFAS</b> / PFOA (fire fighting foam) contaminated soil
             sampling and environmental drilling
@@ -78,15 +78,13 @@ function index(props: Props) {
               Australian Standard AS2368–1990 Test Pumping of Water Wells
             </strong>{' '}
             from 2 hours to 28 days in duration. Includes creation of official
-            documents for council requirements of subdivisions (
-            <b>Development Approval</b> for 0.3L/s over 6 hour period with
-            recovery)
+            documents for government requirements.
           </li>
           <li>
             <b>Flow rate logging</b> and data analysis from 0.1L/s to 100L/s
           </li>
           <li>
-            <b>Water level logging</b> from hours during a pump test to years in
+            <b>Water level depth logging</b> from hours during a pump test to years in
             situ with data capture, transmission and analysis
           </li>
           <li>
@@ -100,6 +98,9 @@ function index(props: Props) {
           <li>
             <b>Well development</b> using a combination of over pumping, surging
             or air lifting to protect the natural water table
+          </li>
+          <li>
+            <b>Polymer removal</b> and cleanup of mud (polymer) drilled holes using physical brushing, air lifting, sodium hypochlorite injection, and capture of the toxic polymer wastewater for approved disposal
           </li>
           <li>Production well (steel and PVC) investigation and cleaning</li>
           <li>
