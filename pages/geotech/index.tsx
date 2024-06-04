@@ -202,6 +202,8 @@ function index(props: Props) {
           <li>Whitsunday Regional Council</li>
           <li>Kleinfelder Environmental Consultants</li>
           <li>CatCon Engineering & Construction</li>
+          <li>WSP</li>
+          <li>Aurecon</li>
           <li>OWAD Environment</li>
           <li>Cardno Geotechnic Services</li>
           <li>Environmental Management and Remediation Pty Ltd</li>
@@ -210,6 +212,7 @@ function index(props: Props) {
           <li>Coffey Geotechnics</li>
           <li>Douglas Partners</li>
           <li>GHD</li>
+          <li>EMM Consulting</li>
           <li>CQG</li>
           <li>EPIC Environmental</li>
           <li>North Queensland Airports Group (Mackay Airport)</li>
