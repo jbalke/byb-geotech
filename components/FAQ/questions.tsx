@@ -298,7 +298,7 @@ const questions: Question[] = [
         </p>
         <p>
           Most areas can have a bore drilled and a pump equipped for less than
-          $3300. inc GST.
+          $3900. inc GST.
         </p>
         <p>
           <em>Seniors and Carers discount available!*</em>
@@ -362,7 +362,7 @@ const questions: Question[] = [
             label="here"
           />{' '}
           . If they are <strong>not listed</strong>, they are{' '}
-          <strong>not licensed</strong>. Chances are, if they don&apos;t have a
+          <strong>not licensed</strong>. Chances are if they don&apos;t have a
           Driller&apos;s Licence, they won’t construct the bore to ensure the
           best long-term performance as per industry international best
           practices. They probably won&apos;t have{' '}
@@ -391,7 +391,7 @@ const questions: Question[] = [
           <li>Drilling</li>
           <li>Installing casing</li>
           <li>
-            Cleaning out the inside of the casing to remove damaging sands, mud
+            Cleaning out the inside of the casing to remove damaging sands, silt
             and clay
           </li>
           <li>Flow rate and water quality testing</li>
@@ -521,11 +521,18 @@ const questions: Question[] = [
     panel: (
       <>
         <p>
-          Our rig is mounted on a light truck and is 2.35m wide (at the
+          Our small rig is mounted on a light truck and is 2.35m wide (at the
           mirrors), 5.7m long and 2.7m high.
         </p>
         <p>
-          We need to reverse the truck over the top of the desired drilling
+          Our small tracked rig is 2m wide, 5.7m long and 2.1m high.
+        </p>
+        <p>
+          Our larger rigs are mounted on heavy rigid trucks and are 2.35m wide (at the
+          mirrors), 11m long and 2.9m high.
+        </p>
+        <p>
+          We need to reverse the truck/rig over the top of the desired drilling
           location.
         </p>
         <p>
@@ -537,6 +544,22 @@ const questions: Question[] = [
   },
   {
     uuid: v4(),
+    heading: 'Do you use toxic chemicals while drilling?',
+    panel: (
+      <>
+        <p>
+          <em>NO.</em>  Unlike mud (polymer) drilling methods, auger and rotary air do not use <em>ANY</em> chemicals in our drilling process.
+        </p>
+        <p>
+          Our rotary air hammer needs lubrication and that can be achieved using vegetable oil (Crisco), just like you cook with.
+        </p>
+        <p>
+          While we have the capability to perform mud drilling on multiple drilling rigs, we chose not to use that polluting, toxic technique to drill.  It always leaves behind trace toxic elements and is the worst possible method to drill a bore where water needs to be extracted, either for monitoring or for productive use.
+        </p>
+      </>
+    ),
+  },
+  {    uuid: v4(),
     heading: 'How can I see what days/times you are available to drill?',
     panel: (
       <>
