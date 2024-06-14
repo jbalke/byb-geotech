@@ -161,8 +161,8 @@ function index(props: Props) {
         <p>
           {' '}
           <p>
-            Mackay Regional Council issue water notices every six months in May
-            and November. Water consumption charges for the 2021/2022 financial
+            Mackay Regional Council issues water notices every six months in May
+            and November. Water consumption charges for the 2024/2025 financial
             year are:{' '}
           </p>{' '}
           <p>Tariff 1 - (0-150 kilolitres) per half year $1.86/kL</p>
@@ -170,7 +170,7 @@ function index(props: Props) {
           <p></p>
           <ul>
             <li>
-              Flow and pressure from the bore pump is the same as town supply
+              Flow and pressure from the bore pump is the same as the town supply
             </li>
             <li>
               Dry season = May – November usage: 2 hours per day, 14 hours per
@@ -186,20 +186,20 @@ function index(props: Props) {
               motor and up to 45L/min delivery
             </li>
             <li>
-              Solar panels are not considered and power usage is at the highest
+              Solar panels are not considered, and power usage is at the highest
               Ergon tariff (Tariff 11) at 24.34c/kWh
             </li>
             <li>
-              Original bore cost of $2600 pro rated over 10 years (expected
+              Original bore cost of $2600 pro-rated over 10 years (expected
               lifespan of a bore is 20-50+ years)
             </li>
             <li>
-              Original big pump cost of $1300 pro rated over 5 years (expected
+              Original big pump cost of $1300 pro-rated over 5 years (expected
               lifespan of a protected, maintained and serviced DAB is 6-12+
               years)
             </li>
             <li>
-              Original small pump cost of $1100 pro rated over 5 years (expected
+              Original small pump cost of $1100 pro-rated over 5 years (expected
               lifespan of a protected, maintained and serviced DAB is 6-12+
               years)
             </li>
@@ -225,8 +225,8 @@ function index(props: Props) {
             $113.66
           </p>
           <p>Big pump overall yearly costs: </p>
-          <p>Bore cost pro rated over 10 years = $260/year</p>
-          <p>Big pump cost pro rated over 5 years = $260/year</p>
+          <p>Bore cost pro-rated over 10 years = $260/year</p>
+          <p>Big pump cost pro-rated over 5 years = $260/year</p>
           <p>Big pump power costs for 1 year = $197</p>
           <p>Total Bore + Big pump cost = $260+$260+$197 = $717</p>
           <p>
@@ -234,7 +234,7 @@ function index(props: Props) {
             <b>32c per kL</b>
           </p>
           <p>Small pump overall yearly costs: </p>
-          <p>Small pump cost pro rated over 5 years = $220/year</p>
+          <p>Small pump cost pro-rated over 5 years = $220/year</p>
           <p>Small pump power costs for 1 year = $113</p>
           <p>Total Bore + small pump cost = $200+$220+$113 = $533</p>
           <p>
@@ -249,7 +249,7 @@ function index(props: Props) {
           $6,087
         </p>
         <p>
-          Total town water costs per year comparing to big pump (excluding
+          Total town water costs per year compared to big pump (excluding
           network charges): $279 + $6087 = <b>$6366</b>
         </p>
         <p>
@@ -257,26 +257,26 @@ function index(props: Props) {
           $3,913
         </p>
         <p>
-          Total town water costs per year comparing to small pump (excluding
+          Total town water costs per year compared to small pump (excluding
           network charges): $279 + $3913 = <b>$4192</b>
         </p>
         <h3>Wrap up and summary</h3>
         <p>
-          Using town water, and comparing water usage to the big pump, your
+          Using town water and comparing water usage to the big pump, your
           yearly costs would be <b>$6366</b> in water and excess water charges
           to put 2,242kL of water on your yard/pool/garden.
         </p>
         <p>
-          But, a new bore and pump only cost $3900 and the pro rated yearly
+          But, a new bore and pump only cost $3900 and the pro-rated yearly
           costs for the same volume are <b>$717</b>
         </p>
         <p>
-          Using town water, and comparing water usage to the small pump, your
+          Using town water and comparing water usage to the small pump, your
           yearly costs would be <b>$3991</b> in water and excess water charges
           to put 1,495kL of water on your yard/pool/garden.
         </p>
         <p>
-          But, a new bore and pump only cost $3900 and the pro rated yearly
+          But, a new bore and pump only cost $3900 and the pro-rated yearly
           costs for the same volume are <b>$533</b>
         </p>
       </PageSection>
