@@ -50,7 +50,7 @@ function index(props: Props) {
         </h2>
         <ul>
           <li>
-            <b>Contaminated soil</b>/sand sampling (including asbestos) with
+            Providing <b>contaminated soil</b> sampling with
             equipment decon (Environmental Management Register and Contaminated
             Land Register listed sites)
           </li>
@@ -92,7 +92,7 @@ function index(props: Props) {
             (TDI), pH, free chlorine, total hardness & alkalinity
           </li>
           <li>
-            Comprehensive <b>drinking water testing</b> can be arranged
+            Comprehensive <b>drinking water testing</b> can be arranged through our partners
             (pesticides, heavy metals, trace elements, PFAS, PFOA etc.)
           </li>
           <li>
