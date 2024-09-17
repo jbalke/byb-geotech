@@ -49,25 +49,25 @@ function index(props: Props) {
           products and capabilities:
         </h2>
         <ul>
-          <li>
-            Providing <b>contaminated soil</b> sampling with
-            equipment decon (Environmental Management Register and Contaminated
-            Land Register listed sites)
-          </li>
-          <li>
+           <li>
             Drilling and installing piezometer <b>monitoring wells</b> up to 200m
             depth
-          </li>
-          <li>
-            NDD, SPT (Standard Penetration Testing), DCP (Dynamic Cone
-            Penetrometer), Geoprobe and push tubes, split spoon and auger
-            sampling (AS1289, AS1726-2017, ASTM D3441 - ASTM D1586 - 08a)
           </li>
           <li>
             Auger drilling from 80mm to 250mm dia, continuous flight and hollow
             stem up to 24m deep
           </li>
           <li>Rotary air (rock) drilling from 100mm to 450mm dia and up to 1000m deep</li>
+                    <li>
+            Providing <b>contaminated soil</b> samples with
+            equipment decon (Environmental Management Register and Contaminated
+            Land Register listed sites)
+          </li>
+          <li>
+            NDD, SPT (Standard Penetration Testing), DCP (Dynamic Cone
+            Penetrometer), Geoprobe and push tubes, split spoon and auger
+            sampling (AS1289, AS1726-2017, ASTM D3441 - ASTM D1586 - 08a)
+          </li>
           <li>
             Specialist <b>PFAS</b> / PFOA (fire fighting foam) contaminated soil
             sampling and environmental drilling
