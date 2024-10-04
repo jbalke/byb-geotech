@@ -51,7 +51,7 @@ function index(props: Props) {
         <ul>
            <li>
             Drilling and installing piezometer <b>monitoring wells</b> up to 200m
-            depth.  We log all of our monitoring wells, unlike all of the southern-based drillers that blow into town.  Less than 5% of their work is logged or completed correctly, especially at service stations.  Check it out on Qld Globe.
+            depth.  Unlike all of the southern-based drillers that blow into town, we log all of our monitoring wells.  Less than 5% of their work is logged or completed correctly, especially at service stations.  Check it out on Qld Globe.
           </li>
           <li>
             Auger drilling from 80mm to 250mm dia, continuous flight and hollow
@@ -96,10 +96,10 @@ function index(props: Props) {
           </li>
           <li>
             <b>Well development</b> using a combination of over pumping, surging
-            or air lifting to protect the natural water table
+            or airlifting to protect the natural water table
           </li>
           <li>
-            <b>Polymer removal</b> and cleanup of mud (polymer) drilled holes using physical brushing, air lifting, sodium hypochlorite injection, and capture of the toxic polymer wastewater for approved disposal
+            <b>Polymer removal</b> and cleanup of mud (polymer) drilled holes using physical brushing, airlifting, sodium hypochlorite injection, and capture of the toxic polymer wastewater for approved disposal
           </li>
           <li><b>Production well</b> (high flow and large diameter) steel and PVC investigation and cleaning</li>
           <li>
@@ -150,22 +150,23 @@ function index(props: Props) {
           last 20 years.
         </p>
         <p>
-          We have drilled and installed <b>4 times*</b> the number of monitoring
-          wells around Mackay compared to any other drilling company. Why?
+          We have drilled and installed <b>5 times*</b> the number of monitoring
+          wells around Mackay compared to any other drilling company. Why is that?
           Because our team uses the right equipment with the right processes and
-          the methods for the right reason by utilising wisdom, judgment and
+          the methods for the right reason by utilising wisdom, judgment, and
           discretion in the pursuit of your project&apos;s goals.
         </p>
-        <p>(*Jul 2023 Queensland Spatial Data extract) </p>
+        <p>(*Jul 2024 Queensland Spatial Data extract) </p>
 
-        <h3>Licensed drillers - Every monitoring well logged</h3>
+        <h3>Qld Licensed drillers - Every monitoring well logged</h3>
         <p>
           Backyard Bores & Geotech Drilling Pty Ltd have Queensland licensed
           drillers, and we log every monitoring well we drill <b>as required</b>{' '}
-          by the obligation of our licenses. Ask the other drilling companies
-          quoting on jobs if they are using a licensed driller and if that
-          driller logs EVERY monitoring well. Consequences for all involved in
-          not logging monitoring wells are harsh.
+          by the obligation of our water bore drilling licenses. Ask the other drilling companies
+          quoting on jobs for copiers of their logs or the RN on Qld Globe.  Ask them if they use a licensed driller and if that
+          driller logs EVERY monitoring well. The consequences for all involved in
+        not logging monitoring wells are harsh.  Look at Qld Globe and, in particular, every service station to see how many other companies log their groundwater monitoring wells.  
+          Almost none of them.  Don't risk possible legal actions and definitely bad publicity by using untrustworthy companies and drillers that don't log groundwater monitoring wells.
         </p>
         <p>
           Every monitoring well deeper than 6m <strong>MUST</strong> be drilled
