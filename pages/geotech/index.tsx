@@ -166,7 +166,7 @@ function index(props: Props) {
           quoting on jobs for copiers of their logs or the RN on Qld Globe.  Ask them if they use a licensed driller and if that
           driller logs EVERY monitoring well. The consequences for all involved in
         not logging monitoring wells are harsh.  Look at Qld Globe and, in particular, every service station to see how many other companies log their groundwater monitoring wells.  
-          Almost none of them.  Don't risk possible legal actions and definitely bad publicity by using untrustworthy companies and drillers that don't log groundwater monitoring wells.
+          Almost none of them.  Do not risk possible legal actions and definitely bad publicity by using untrustworthy companies and drillers that never log groundwater monitoring wells.
         </p>
         <p>
           Every monitoring well deeper than 6m <strong>MUST</strong> be drilled
