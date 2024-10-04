@@ -163,14 +163,13 @@ function index(props: Props) {
           Backyard Bores & Geotech Drilling Pty Ltd have Queensland licensed
           drillers, and we log every monitoring well we drill <b>as required</b>{' '}
           by the obligation of our water bore drilling licenses. Ask the other drilling companies
-          quoting on jobs for copiers of their logs or the RN on Qld Globe.  Ask them if they use a licensed driller and if that
+          quoting on jobs for copies of their logs or the RN on Qld Globe.  Ask them if they use a licensed driller and if that
           driller logs EVERY monitoring well. The consequences for all involved in
         not logging monitoring wells are harsh.  Look at Qld Globe and, in particular, every service station to see how many other companies log their groundwater monitoring wells.  
-          Almost none of them.  Do not risk possible legal actions and definitely bad publicity by using untrustworthy companies and drillers that never log groundwater monitoring wells.
+          Almost none of them.  Do not risk possible fines, legal action, and bad publicity by using untrustworthy companies and drillers that never log groundwater monitoring wells.
         </p>
         <p>
-          Every monitoring well deeper than 6m <strong>MUST</strong> be drilled
-          by a licensed driller, and a log submitted.
+          Every monitoring well <strong>MUST</strong> be drilled by a licensed driller, and a log must be submitted to adhere to the Qld government regulations.
         </p>
 
         <h3>Workplace Health & Risk</h3>
