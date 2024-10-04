@@ -51,7 +51,7 @@ function index(props: Props) {
         <ul>
            <li>
             Drilling and installing piezometer <b>monitoring wells</b> up to 200m
-            depth
+            depth.  We log all of our monitoring wells, unlike all of the southern-based drillers that blow into town.  Less than 5% of their work is logged or completed correctly, especially at service stations.  Check it out on Qld Globe.
           </li>
           <li>
             Auger drilling from 80mm to 250mm dia, continuous flight and hollow
@@ -59,9 +59,8 @@ function index(props: Props) {
           </li>
           <li>Rotary air (rock) drilling from 100mm to 450mm dia and up to 1000m deep</li>
                     <li>
-            Providing <b>contaminated soil</b> samples with
-            equipment decon (Environmental Management Register and Contaminated
-            Land Register listed sites)
+            Providing soil samples with
+            equipment decon (Environmental Management Register listed sites)
           </li>
           <li>
             NDD, SPT (Standard Penetration Testing), DCP (Dynamic Cone
@@ -69,7 +68,7 @@ function index(props: Props) {
             sampling (AS1289, AS1726-2017, ASTM D3441 - ASTM D1586 - 08a)
           </li>
           <li>
-            Specialist <b>PFAS</b> / PFOA (fire fighting foam) contaminated soil
+            Specialist <b>PFAS</b> / PFOA (fire fighting foam) soil
             sampling and environmental drilling
           </li>
           <li>
