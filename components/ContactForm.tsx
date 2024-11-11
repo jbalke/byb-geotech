@@ -142,7 +142,7 @@ function ContactForm(props: ContactFormsProps) {
         placeholder="Your email address"
         {...register('email', {
           required: 'Required',
-          validate: (value) => isEmail(value) || 'Not a valid emaill address',
+          validate: (value) => isEmail(value) || 'Not a valid email address',
         })}
       />
       <InputSubtext id="emailDescribe">
