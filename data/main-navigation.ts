@@ -35,21 +35,6 @@ export const navLinks: MenuItem[] = [
     title: 'Services',
     sections: [
       {
-        title: 'Home Owners',
-        pages: [
-          {
-            title: 'Water Bore Drilling',
-            Icon: FaWater,
-            href: '/bores',
-          },
-          {
-            title: 'Pump Sales & Repairs',
-            Icon: FaFaucet,
-            href: '/pumps/sales-and-repairs',
-          },
-        ],
-      },
-      {
         title: 'Geotechnical',
         pages: [
           {
@@ -69,11 +54,6 @@ export const navLinks: MenuItem[] = [
         ],
       },
     ],
-  },
-  {
-    title: 'Bore Search',
-    Icon: FaSearch,
-    href: '/bore-search',
   },
   {
     title: 'Help & Advice',
