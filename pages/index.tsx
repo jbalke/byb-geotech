@@ -1,5 +1,4 @@
 import AboutSection from 'components/AboutSection';
-import BoreSearchSection from 'components/BoreSearchSection';
 import GetQuoteSection from 'components/GetQuoteSection';
 import ServicesSection from 'components/ServicesSection';
 import WhyUsSection from 'components/WhyUsSection';
@@ -103,8 +102,8 @@ function Home() {
         <HeroContentWrapper>
           <h1>Backyard Bores & Geotech Drilling</h1>
           <HeroSubText>
-            Your water bore and geotech drilling specialists since 2002.
-            Covering the Mackay region from Bowen to Rockhampton and west to Clermont.
+            Your geotech drilling specialists since 2002. Covering the Mackay
+            region from Bowen to Rockhampton and west to Clermont.
           </HeroSubText>
         </HeroContentWrapper>
       </Hero>
@@ -112,7 +111,6 @@ function Home() {
       <ServicesSection />
       <GetQuoteSection />
       <WhyUsSection />
-      <BoreSearchSection />
     </>
   );
 }

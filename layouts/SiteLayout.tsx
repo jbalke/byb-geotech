@@ -1,11 +1,10 @@
 import MainNavBar from 'components/MainNavBar';
-import SkipToMain from 'components/SkipToMain';
 import { ReactElement, ReactNode } from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import ExtrasSection from '../components/ExtrasSection';
 import { StyledLink } from '../components/Link';
-import PageLoading from '../components/PageLoading';
+``;
 
 const Container = styled.div`
   display: flex;
@@ -57,7 +56,6 @@ const SiteLayout = ({ children }: PageProps) => {
           </small>
         </StyledFooter>
       </Container>
-      <PageLoading />
     </>
   );
 };
