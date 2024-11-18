@@ -78,33 +78,6 @@ function ServicesSection(props: ServicesSectionProps) {
       </SectionBanner>
       <ServiceCards>
         <ServiceCard
-          title="Bore Drilling & Cleaning"
-          href="/bores"
-          imageSrc={drillingImg}
-        >
-          <p>
-            If you are looking for water to keep the yard green, top up the
-            pool, or reduce the high cost of town water, we can come and drill
-            for water in your backyard (or front yard), saving you money.
-          </p>
-          <p>
-            What do you need to prepare before a bore can be drilled or cleaned?
-          </p>
-        </ServiceCard>
-        <ServiceCard
-          title="Pump Sales & Repairs"
-          href="/pumps/sales-and-repairs"
-          imageSrc={pumpImg}
-        >
-          <p>
-            Do you require a new pump (surface, pressure, jet, submersible,
-            solar)?
-          </p>
-          <p>Do you need a new pressure tank or pressure switch?</p>
-          <p>Is your pump in need of repairs?</p>
-          <p>We can help.</p>
-        </ServiceCard>
-        <ServiceCard
           title="Geotechnical Drilling"
           href="/geotech"
           imageSrc={geotechImg}
