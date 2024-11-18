@@ -93,14 +93,14 @@ function Contact(props: Props) {
                 </StyledLink>
               </p>
             </ContactDetails>
-            <StyledAside type="question" title="Looking for bores near you?">
+            {/* <StyledAside type="question" title="Looking for bores near you?">
               <p>
                 Try our new{' '}
                 <StyledNextLink href="/bore-search">Bore Search</StyledNextLink>
                 ! Just enter your address to see how many bores are nearby.{' '}
                 <strong>It&apos;s free!</strong>
               </p>
-            </StyledAside>
+            </StyledAside> */}
           </div>
         </Container>
         <StyledPrivacyDisclaimer />

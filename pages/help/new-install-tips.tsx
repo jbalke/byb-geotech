@@ -12,7 +12,6 @@ const relatedPages: RelatedPage[] = [
   { label: 'Water Bore Drilling', href: '/bores' },
   { label: 'Drilling FAQ', href: '/help/faq' },
   { label: 'Request a Quote', href: '/request-a-quote' },
-  { label: 'Bore Search', href: '/bore-search' },
 ];
 
 type Props = {};

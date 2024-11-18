@@ -11,7 +11,6 @@ const relatedPages: RelatedPage[] = [
   { label: 'Geotech Services', href: '/geotech/index' },
   { label: 'Bore Cleanout', href: '/help/bore-cleanout' },
   { label: 'Groundwater Protection', href: '/help/groundwater-protection' },
-  { label: 'Bore Search', href: '/bore-search' },
 ];
 
 type Props = {};

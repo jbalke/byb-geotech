@@ -21,7 +21,6 @@ const relatedPages: RelatedPage[] = [
   { label: 'Geotech Drilling', href: '/geotech' },
   { label: 'PFAS/PFOA Contamination Advice', href: '/help/pfas-pfoa' },
   { label: 'Request a Quote', href: '/request-a-quote' },
-  { label: 'Bore Search', href: '/bore-search' },
 ];
 
 type Props = {};

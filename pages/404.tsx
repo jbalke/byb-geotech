@@ -129,10 +129,6 @@ function FourOhFour() {
             </StyledNextLink>{' '}
             Page
           </p>
-          <p>
-            <StyledNextLink href="/bore-search">Bore Search</StyledNextLink>{' '}
-            Page
-          </p>
         </div>
       </Wrapper>
     </>

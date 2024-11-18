@@ -20,10 +20,7 @@ const Subtext = styled.p`
 
 const relatedPages: RelatedPage[] = [
   { label: 'Drilling FAQ', href: '/help/faq' },
-  { label: 'New Bore Checklist', href: '/bores/checklist' },
   { label: 'Request a Quote', href: '/request-a-quote' },
-  { label: 'Bore Search', href: '/bore-search' },
-  { label: 'New Bore & Pump Tips', href: '/help/new-install-tips' },
   { label: 'Contact Us', href: '/contact' },
 ];
 
@@ -46,23 +43,23 @@ function index(props: Props) {
       <PageSection>
         <h2>Why get a bore?</h2>
         <p>
-          You can save a lot of money off your water bills! A single bore can save
-          you thousands of dollars a year. See our analysis and calculations at
-          the bottom of this page.
+          You can save a lot of money off your water bills! A single bore can
+          save you thousands of dollars a year. See our analysis and
+          calculations at the bottom of this page.
         </p>
         <p>
           Let us help you along your journey to becoming self-sufficient with
           your garden and yard watering needs. We can drill a new bore and
           supply and install your new pump within a morning or afternoon, and
-          you can water your lawn before we drive away. You don&apos;t
-          even have to be home at the time!
+          you can water your lawn before we drive away. You don&apos;t even have
+          to be home at the time!
         </p>
         <p>
-          Bores and pumps and their jargon might be very new to you, so we are here to answer your
-          questions, and if we cannot assist you directly, we will provide you
-          with contacts of those who can help you better. Check out our{' '}
-          <StyledNextLink href="/help/faq">FAQ</StyledNextLink> on jargon for
-          some more plain English explanations of terms.
+          Bores and pumps and their jargon might be very new to you, so we are
+          here to answer your questions, and if we cannot assist you directly,
+          we will provide you with contacts of those who can help you better.
+          Check out our <StyledNextLink href="/help/faq">FAQ</StyledNextLink> on
+          jargon for some more plain English explanations of terms.
         </p>
         <p>
           There are a few things we need your help with to ensure we can get the
@@ -72,9 +69,9 @@ function index(props: Props) {
         <h2>But, aren&apos;t bores expensive?</h2>
         <p>They are not expensive at all! </p>
         <p>
-          We use a local modification to an existing drilling method that is based on the latest international
-          best practice methods, standards and equipment for a completed and
-          cased PVC bore.
+          We use a local modification to an existing drilling method that is
+          based on the latest international best practice methods, standards and
+          equipment for a completed and cased PVC bore.
         </p>
         <p>
           Most of our suitable drilling areas can have a bore drilled,{' '}
@@ -170,7 +167,8 @@ function index(props: Props) {
           <p></p>
           <ul>
             <li>
-              Flow and pressure from the bore pump is the same as the town supply
+              Flow and pressure from the bore pump is the same as the town
+              supply
             </li>
             <li>
               Dry season = May – November usage: 2 hours per day, 14 hours per

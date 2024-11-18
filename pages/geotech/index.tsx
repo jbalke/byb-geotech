@@ -18,7 +18,6 @@ const PageSection = styled.section`
 
 const relatedPages: RelatedPage[] = [
   { label: 'Request a Quote', href: '/request-a-quote' },
-  { label: 'Bore Search', href: '/bore-search' },
   { label: 'Drilling FAQ', href: '/help/faq' },
 ];
 
@@ -49,18 +48,24 @@ function index(props: Props) {
           products and capabilities:
         </h2>
         <ul>
-           <li>
-            Drilling and installing piezometer <b>monitoring wells</b> up to 200m
-            depth.  Unlike all of the southern-based drillers that blow into town, we log all of our monitoring wells.  Less than 5% of their work is logged or completed correctly, especially at service stations.  Check it out on Qld Globe.
+          <li>
+            Drilling and installing piezometer <b>monitoring wells</b> up to
+            200m depth. Unlike all of the southern-based drillers that blow into
+            town, we log all of our monitoring wells. Less than 5% of their work
+            is logged or completed correctly, especially at service stations.
+            Check it out on Qld Globe.
           </li>
           <li>
             Auger drilling from 80mm to 250mm dia, continuous flight and hollow
             stem up to 24m deep
           </li>
-          <li>Rotary air (rock) drilling from 100mm to 450mm dia and up to 1000m deep</li>
-                    <li>
-            Providing soil samples with
-            equipment decon (Environmental Management Register listed sites)
+          <li>
+            Rotary air (rock) drilling from 100mm to 450mm dia and up to 1000m
+            deep
+          </li>
+          <li>
+            Providing soil samples with equipment decon (Environmental
+            Management Register listed sites)
           </li>
           <li>
             NDD, SPT (Standard Penetration Testing), DCP (Dynamic Cone
@@ -68,8 +73,8 @@ function index(props: Props) {
             sampling (AS1289, AS1726-2017, ASTM D3441 - ASTM D1586 - 08a)
           </li>
           <li>
-            Specialist <b>PFAS</b> / PFOA (fire fighting foam) soil
-            sampling and environmental drilling
+            Specialist <b>PFAS</b> / PFOA (fire fighting foam) soil sampling and
+            environmental drilling
           </li>
           <li>
             <b>Test pumping</b> of bores to{' '}
@@ -83,25 +88,31 @@ function index(props: Props) {
             <b>Flow rate logging</b> and data analysis from 0.1L/s to 100L/s
           </li>
           <li>
-            <b>Water level depth logging</b> from hours during a pump test to years in
-            situ with data capture, transmission and analysis
+            <b>Water level depth logging</b> from hours during a pump test to
+            years in situ with data capture, transmission and analysis
           </li>
           <li>
             <b>Water quality testing</b> for salt (TDS & conductivity), iron
             (TDI), pH, free chlorine, total hardness & alkalinity
           </li>
           <li>
-            Comprehensive <b>drinking water testing</b> can be arranged through our partners
-            (pesticides, heavy metals, trace elements, PFAS, PFOA etc.)
+            Comprehensive <b>drinking water testing</b> can be arranged through
+            our partners (pesticides, heavy metals, trace elements, PFAS, PFOA
+            etc.)
           </li>
           <li>
             <b>Well development</b> using a combination of over pumping, surging
             or airlifting to protect the natural water table
           </li>
           <li>
-            <b>Polymer removal</b> and cleanup of mud (polymer) drilled holes using physical brushing, airlifting, sodium hypochlorite injection, and capture of the toxic polymer wastewater for approved disposal
+            <b>Polymer removal</b> and cleanup of mud (polymer) drilled holes
+            using physical brushing, airlifting, sodium hypochlorite injection,
+            and capture of the toxic polymer wastewater for approved disposal
           </li>
-          <li><b>Production well</b> (high flow and large diameter) steel and PVC investigation and cleaning</li>
+          <li>
+            <b>Production well</b> (high flow and large diameter) steel and PVC
+            investigation and cleaning
+          </li>
           <li>
             <b>Downhole camera</b> inspections and video reports
           </li>
@@ -109,13 +120,14 @@ function index(props: Props) {
             <b>Decommissioning</b> bores & wells
           </li>
           <li>
-            Drilling monitoring wells and installing vibrating wire piezometers (<b>VWP</b>) up to 200m
-            deep
+            Drilling monitoring wells and installing vibrating wire piezometers
+            (<b>VWP</b>) up to 200m deep
           </li>
           <li>
             <b>Deep earthing</b>, drilling for installation of earthing rods at
             substations
-          </li>          <li>
+          </li>{' '}
+          <li>
             <b>Cathodic protection</b> and pre-cannistered anode/cable
             installation for fuel oil pipelines
           </li>
@@ -151,10 +163,10 @@ function index(props: Props) {
         </p>
         <p>
           We have drilled and installed <b>5 times*</b> the number of monitoring
-          wells around Mackay compared to any other drilling company. Why is that?
-          Because our team uses the right equipment with the right processes and
-          the methods for the right reason by utilising wisdom, judgment, and
-          discretion in the pursuit of your project&apos;s goals.
+          wells around Mackay compared to any other drilling company. Why is
+          that? Because our team uses the right equipment with the right
+          processes and the methods for the right reason by utilising wisdom,
+          judgment, and discretion in the pursuit of your project&apos;s goals.
         </p>
         <p>(*Jul 2024 Queensland Spatial Data extract) </p>
 
@@ -162,14 +174,20 @@ function index(props: Props) {
         <p>
           Backyard Bores & Geotech Drilling Pty Ltd have Queensland licensed
           drillers, and we log every monitoring well we drill <b>as required</b>{' '}
-          by the obligation of our water bore drilling licenses. Ask the other drilling companies
-          quoting on jobs for copies of their logs or the RN on Qld Globe.  Ask them if they use a licensed driller and if that
-          driller logs EVERY monitoring well. The consequences for all involved in
-        not logging monitoring wells are harsh.  Look at Qld Globe and, in particular, every service station to see how many other companies log their groundwater monitoring wells.  
-          Almost none of them.  Do not risk possible fines, legal action, and bad publicity by using untrustworthy companies and drillers that never log groundwater monitoring wells.
+          by the obligation of our water bore drilling licenses. Ask the other
+          drilling companies quoting on jobs for copies of their logs or the RN
+          on Qld Globe. Ask them if they use a licensed driller and if that
+          driller logs EVERY monitoring well. The consequences for all involved
+          in not logging monitoring wells are harsh. Look at Qld Globe and, in
+          particular, every service station to see how many other companies log
+          their groundwater monitoring wells. Almost none of them. Do not risk
+          possible fines, legal action, and bad publicity by using untrustworthy
+          companies and drillers that never log groundwater monitoring wells.
         </p>
         <p>
-          Every monitoring well <strong>MUST</strong> be drilled by a licensed driller, and a log must be submitted to adhere to the Qld government regulations.
+          Every monitoring well <strong>MUST</strong> be drilled by a licensed
+          driller, and a log must be submitted to adhere to the Qld government
+          regulations.
         </p>
 
         <h3>Workplace Health & Risk</h3>

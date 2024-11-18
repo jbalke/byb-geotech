@@ -14,7 +14,6 @@ const relatedPages: RelatedPage[] = [
   { label: 'Bore Cleanout', href: '/help/bore-cleanout' },
   { label: 'Water Bore Drilling', href: '/bores' },
   { label: 'Drilling FAQ', href: '/help/faq' },
-  { label: 'Bore Search', href: '/bore-search' },
   { label: 'Request a Quote', href: '/request-a-quote' },
 ];
 
