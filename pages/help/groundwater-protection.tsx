@@ -18,7 +18,6 @@ const relatedPages: RelatedPage[] = [
   { label: 'Geotech Drilling', href: '/geotech' },
   { label: 'Water Testing Services', href: '/help/water-testing' },
   { label: 'PFAS/PFOA Contamination Advice', href: '/help/pfas-pfoa' },
-  { label: 'Flooding / Cyclone Advice', href: '/help/flooding' },
   { label: 'Request a Quote', href: '/request-a-quote' },
 ];
 

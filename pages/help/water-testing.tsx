@@ -17,7 +17,6 @@ const PageSection = styled.section`
 
 const relatedPages: RelatedPage[] = [
   { label: 'Bore Cleanout', href: '/help/bore-cleanout' },
-  { label: 'Flooding / Cyclone Advice', href: '/help/flooding' },
   { label: 'Geotech Drilling', href: '/geotech' },
   { label: 'PFAS/PFOA Contamination Advice', href: '/help/pfas-pfoa' },
   { label: 'Request a Quote', href: '/request-a-quote' },

@@ -59,16 +59,6 @@ export const navLinks: MenuItem[] = [
         pages: [
           { title: 'Drilling FAQ', Icon: FaQuestionCircle, href: '/help/faq' },
           {
-            title: 'New Bore & Pump Tips',
-            Icon: FaQuestionCircle,
-            href: '/help/new-install-tips',
-          },
-          {
-            title: 'Pump Troubleshooting',
-            Icon: FaQuestionCircle,
-            href: '/pumps/troubleshooting',
-          },
-          {
             title: 'Bore Cleanout',
             Icon: FaQuestionCircle,
             href: '/help/bore-cleanout',
@@ -82,11 +72,6 @@ export const navLinks: MenuItem[] = [
             title: 'Groundwater Protection',
             Icon: FaQuestionCircle,
             href: '/help/groundwater-protection',
-          },
-          {
-            title: 'Flooding/Cyclones',
-            Icon: FaQuestionCircle,
-            href: '/help/flooding',
           },
           {
             title: 'PFAS/PFOA',
