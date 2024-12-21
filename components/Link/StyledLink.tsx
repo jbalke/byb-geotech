@@ -41,9 +41,11 @@ type ExternalLinkProps = {
   label: string;
 } & Omit<
   React.DetailedHTMLProps<
-      React.AnchorHTMLAttributes<HTMLAnchorElement>,
-      HTMLAnchorElement
-    >, 'ref'>;
+    React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HTMLAnchorElement
+  >,
+  'ref'
+>;
 
 export function ExternalLink({
   label,
