@@ -3,7 +3,7 @@ import Banner from '../components/Banner';
 import StyledNextLink from '../components/Link/StyledNextLink';
 import { Wrapper } from '../components/styled';
 import SiteLayout from '../layouts/SiteLayout';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import { BREAKPOINTS } from 'styles/style-constants';
