@@ -214,8 +214,8 @@ type LinkProps = {
 
 const LinkButton = ({ href, children, className }: LinkProps) => {
   return (
-    <Link href={href} passHref>
-      <a className={className}>{children}</a>
+    <Link href={href} passHref className={className}>
+      {children}
     </Link>
   );
 };

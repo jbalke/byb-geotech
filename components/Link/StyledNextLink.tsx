@@ -21,7 +21,7 @@ function StyledNextLink({
   ...props
 }: NextLinkButtonProps) {
   return (
-    <Link href={href} passHref>
+    <Link href={href} passHref legacyBehavior>
       <StyledLink as={tag} size={size} {...props} >
         {children}
       </StyledLink>

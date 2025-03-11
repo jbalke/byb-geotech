@@ -24,7 +24,7 @@ const ActiveLink = ({ children, activeClassName, ...props }: Props) => {
     : childClassName;
 
   return (
-    <Link {...props} passHref>
+    <Link {...props} passHref legacyBehavior>
       {React.cloneElement(children, {
         className: className || undefined,
         'aria-current': currentPage ? 'page' : undefined,
