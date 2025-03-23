@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import React from 'react';
 import styled from 'styled-components';
 import backgroundImage from '../public/images/why-us.webp';
@@ -40,10 +40,12 @@ function WhyUsSection(props: WhyUsProps) {
       <Image
         alt="Drilling"
         src={backgroundImage}
-        layout="fill"
-        objectFit="cover"
         placeholder="blur"
-      />
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: "cover"
+        }} />
       {/* <Content>
         <h2>Why Choose Us</h2>
       </Content> */}

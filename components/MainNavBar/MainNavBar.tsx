@@ -8,7 +8,7 @@ import StyledNextLink from 'components/Link/StyledNextLink';
 import { useUIDispatch, useUIState } from 'context/ui-context';
 import { navLinks } from 'data/main-navigation';
 import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
-import Image from "next/legacy/image";
+import Image from 'next/image';
 import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
@@ -213,7 +213,16 @@ const MainNavBar = () => {
     <MainNav>
       <Container>
         <NavLogoLink href="/" aria-label="backyard bores home page">
-          <Image src={LogoImg} alt="logo" height="50px" width="116px" />
+          <Image
+            src={LogoImg}
+            alt="logo"
+            height="50"
+            width="116"
+            style={{
+              maxWidth: '100%',
+              height: 'auto',
+            }}
+          />
         </NavLogoLink>
         <AnimateSharedLayout type="crossfade">
           <NavBar onMouseLeave={onMouseLeave}>
@@ -232,7 +241,7 @@ const MainNavBar = () => {
                       <DropdownContents
                         layout
                         itemCount={
-                          sections.filter(s => Boolean(s.title)).length
+                          sections.filter((s) => Boolean(s.title)).length
                         }
                       >
                         {sections.map((section, index) => {
@@ -240,7 +249,7 @@ const MainNavBar = () => {
                             <SectionContainer key={index}>
                               {section.title && <h2>{section.title}</h2>}
                               <SectionPageContainer>
-                                {section.pages.map(page => {
+                                {section.pages.map((page) => {
                                   const { Icon, title, href } = page;
                                   return (
                                     <IconLinkWrapper key={href}>

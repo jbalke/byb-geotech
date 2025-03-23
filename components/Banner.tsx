@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/legacy/image";
+import Image, { StaticImageData } from "next/image";
 import React from 'react';
 import styled from 'styled-components';
 import { BREAKPOINTS } from 'styles/style-constants';
@@ -79,10 +79,12 @@ function Banner({ title, description, image }: BannerProps) {
         <Image
           alt="Banner"
           src={imageSrc}
-          layout="fill"
-          objectFit="cover"
           placeholder="blur"
-        />
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover"
+          }} />
         <BannerContent>
           <h1>{title}</h1>
         </BannerContent>

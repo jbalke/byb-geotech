@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/legacy/image";
+import Image, { StaticImageData } from "next/image";
 import React from 'react';
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
@@ -115,11 +115,13 @@ function ServiceCard({
       <Image
         alt={title}
         src={imageSrc}
-        layout="fill"
-        objectFit="cover"
         quality={50}
         placeholder={placeholder}
-      />
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: "cover"
+        }} />
       <CardContent>
         <div>
           <CardTitle>{title}</CardTitle>

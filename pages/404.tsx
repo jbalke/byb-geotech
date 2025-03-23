@@ -3,7 +3,7 @@ import Banner from '../components/Banner';
 import StyledNextLink from '../components/Link/StyledNextLink';
 import { Wrapper } from '../components/styled';
 import SiteLayout from '../layouts/SiteLayout';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import { BREAKPOINTS } from 'styles/style-constants';
@@ -94,10 +94,12 @@ function FourOhFour() {
         <Image
           alt="Looks like a dry hole"
           src={OopsBgImage}
-          layout="intrinsic"
-          objectFit="cover"
           placeholder="blur"
-        />
+          style={{
+            maxWidth: "100%",
+            height: "auto",
+            objectFit: "cover"
+          }} />
         <OopsContentWrapper>
           <OopsSubText>
             The page you were linked to does not exist. Take a trip back to the
@@ -106,7 +108,6 @@ function FourOhFour() {
           </OopsSubText>
         </OopsContentWrapper>
       </Oops>
-
       <Wrapper main padding={'xl'}>
         <div>
           <p>

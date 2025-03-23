@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Theme } from 'styles/theme';
 import { BREAKPOINTS } from 'styles/style-constants';
 import StyledNextLink from './Link/StyledNextLink';
-import { StaticImageData } from "next/legacy/image";
+import { StaticImageData } from "next/image";
 
 const ContentLayout = styled.div`
   display: block;

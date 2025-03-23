@@ -3,7 +3,7 @@ import GetQuoteSection from 'components/GetQuoteSection';
 import ServicesSection from 'components/ServicesSection';
 import WhyUsSection from 'components/WhyUsSection';
 import SiteLayout from 'layouts/SiteLayout';
-import Image from "next/legacy/image";
+import Image from "next/image";
 import React from 'react';
 import styled from 'styled-components';
 import { BREAKPOINTS } from 'styles/style-constants';
@@ -95,10 +95,12 @@ function Home() {
         <Image
           alt="Backyard Bores & Geotech Drilling"
           src={heroBgImage}
-          layout="fill"
-          objectFit="cover"
           placeholder="blur"
-        />
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover"
+          }} />
         <HeroContentWrapper>
           <h1>Backyard Bores & Geotech Drilling</h1>
           <HeroSubText>
