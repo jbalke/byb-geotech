@@ -156,10 +156,6 @@ function App({ Component, pageProps, router }: Props) {
           crossOrigin=""
         />
         <link
-          rel="stylesheet"
-          href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
-        />
-        <link
           rel="apple-touch-icon"
           sizes="57x57"
           href="apple-touch-icon-57x57.png"
